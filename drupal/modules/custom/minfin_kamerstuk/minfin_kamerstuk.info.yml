@@ -1,0 +1,9 @@
+name: Minfin - Kamerstukken
+description: Module handeling the rendering of the kamerstukken
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin
+  - minfin_solr:minfin_solr

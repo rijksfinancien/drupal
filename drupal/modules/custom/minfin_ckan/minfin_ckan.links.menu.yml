@@ -1,0 +1,5 @@
+minfin_ckan.request_settings:
+  title: 'CKAN request settings'
+  description: 'Configure the CKAN request settings.'
+  parent: minfin.services
+  route_name: minfin_ckan.request_settings

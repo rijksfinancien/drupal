@@ -1,0 +1,96 @@
+.breadcrumb {
+  position: relative;
+  display: none;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 3px 15px;
+  background: none;
+
+  @include breakpoint($laptop) {
+    display: block;
+  }
+
+  ol {
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid $c-primary-400;
+
+    @include breakpoint($tablet) {
+      display: flex;
+
+      li + li {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+
+        &::before {
+          margin-right: 10px;
+          content: '>';
+          vertical-align: 1px;
+          color: $c-primary-400;
+        }
+      }
+    }
+
+    a {
+      font-size: 18px;
+      text-decoration: none;
+
+      &:hover, &:active, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Mobile breadcrumbs.
+.region-header .block-system-breadcrumb-block {
+  background-color: $c-primary-300;
+
+  .breadcrumb {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: $c-primary-300;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include breakpoint($tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    ol {
+      border-bottom: 0;
+    }
+
+    li:not(:last-child) {
+      display: none;
+    }
+
+    li:last-child::before {
+      font-family: 'minfin-icons' !important;
+      margin-right: 5px;
+      content: "\e939";
+      color: $c-primary-400;
+      vertical-align: -1px;
+    }
+
+    @include breakpoint($laptop) {
+      display: none;
+    }
+  }
+
+  // Hide mobile breadcrumbs on mobile.
+  .path-frontpage & {
+    display: none;
+  }
+}
+
+.block-general-budget-block + .block-system-breadcrumb-block {
+  .breadcrumb {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,92 @@
+#footer {
+  padding: 36px 0;
+  background: $c-primary-400;
+
+  @include breakpoint($desktop) {
+    padding: 70px 0 60px;
+  }
+
+  * {
+    color: white;
+  }
+
+  a:focus {
+    outline-color: $c-secondary-200;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      width: 100%;
+      @include breakpoint($laptop) {
+        width: auto;
+      }
+    }
+  }
+
+  .min-text {
+    font-family: $ff-secondary;
+    font-size: 26px;
+    margin-right: auto;
+    margin-bottom: 40px;
+
+    @include breakpoint($laptop) {
+      margin-bottom: 0;
+    }
+  }
+
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  .block {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        a {
+          display: block;
+          padding: 3px 0;
+          text-decoration: none;
+          background: none;
+
+          &:hover, &:focus, &:active {
+            text-decoration: underline;
+          }
+
+          &.is-active {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .region-footer {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    @include breakpoint($laptop) {
+      margin: 0 -60px;
+
+      > * {
+        width: auto;
+        margin: 0 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.pagination {
+  overflow: hidden;
+  margin: 1em 0;
+
+  &__index {
+    margin: 1.5em 0 0 0;
+
+    ul {
+      display: flex;
+      margin: .25em 0;
+      padding: 0;
+    }
+
+    li {
+      min-width: 2.35em;
+      margin-right: 1px;
+      list-style: none;
+      text-align: center;
+
+      &.active {
+        padding: 5px 12px;
+        color: $c-primary-100;
+        background: $c-primary-400;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        display: block;
+        padding: 5px 12px;
+        text-decoration: none;
+        background: $c-primary-100;
+
+        &:hover, &:focus, &:active {
+          color: $c-primary-400;
+          background: $c-primary-300;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    display: block;
+    clear: both;
+    margin: 1em 0;
+
+    label {
+      font-weight: 400;
+      margin: 0.5em 0;
+    }
+  }
+}

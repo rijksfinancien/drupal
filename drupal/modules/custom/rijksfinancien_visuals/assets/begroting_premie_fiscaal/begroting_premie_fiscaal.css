@@ -1,0 +1,95 @@
+.block-begroting-premie-fiscaal #visual-wrapper > div {
+  transition: all 0.5s ease-out;
+  margin-bottom: 30px;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk {
+  background-color: #d3d3d3;
+  padding: 10px;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk .label{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:18px;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk-wrapper.expanded .hoofdstuk > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk-wrapper.expanded {
+  height: auto !important;
+}
+
+.block-begroting-premie-fiscaal .chart-wrapper {
+  background-color: #f8f8f8;
+  display: none;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk-wrapper.expanded .chart-wrapper {
+  display: block;
+}
+
+.block-begroting-premie-fiscaal .article-link {
+  display: none;
+  color: #006090;
+  text-align:right;
+}
+
+.block-begroting-premie-fiscaal .back-link {
+  cursor: pointer;
+  color: #01689b;
+  display: block;
+  margin:10px 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.block-begroting-premie-fiscaal .hoofdstuk-wrapper.expanded .article-link {
+  display: block;
+  cursor:pointer;
+}
+
+.block-begroting-premie-fiscaal .bar.premie {
+  fill: #007bc7;
+}
+
+.block-begroting-premie-fiscaal .bar.fiscaal {
+  fill: #39870c;
+}
+
+.block-begroting-premie-fiscaal .bar.begroting {
+  fill: #ca005d;
+}
+
+.block-begroting-premie-fiscaal .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.block-begroting-premie-fiscaal .col-md-6 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .block-begroting-premie-fiscaal .col-md-6 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}

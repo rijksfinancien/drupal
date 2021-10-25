@@ -1,0 +1,25 @@
+uuid: 558edac3-3dee-43b4-a6f8-31312392062e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.language
+  module:
+    - system
+  theme:
+    - indicia_theme
+id: language
+theme: indicia_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:language'
+settings:
+  id: 'system_menu_block:language'
+  label: Taalkeuze
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

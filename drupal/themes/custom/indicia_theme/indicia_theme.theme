@@ -1,0 +1,129 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the indicia theme.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\node\NodeInterface;
+
+/**
+ * Function to easily add hooks.
+ *
+ * @param array $variables
+ *   The variables.
+ * @param string $hook
+ *   The name of the hook.
+ * @param string $function
+ *   The name of the function.
+ *
+ * @return array
+ *   The variables array.
+ */
+function hook_runner(array $variables, string $hook, string $function) {
+  $components = new RecursiveDirectoryIterator(drupal_get_path('theme', basename(__FILE__, '.theme')) . '/components/');
+  foreach (new RecursiveIteratorIterator($components) as $file) {
+    if ($file->getExtension() === 'theme') {
+      $pathName = $file->getPathName();
+      require_once $pathName;
+      $componentName = basename($pathName, '.theme');
+      $componentPHPName = str_replace('-', '_', $componentName);
+      $hookName = $function . '__' . $componentPHPName;
+      if (function_exists($hookName)) {
+        $hookName($variables, $hook);
+      }
+    }
+  }
+  return $variables;
+}
+
+/**
+ * Implements theme_preprocess_page() for page suggestion.
+ */
+function indicia_theme_preprocess_page(&$variables, $hook) {
+  $variables = hook_runner($variables, $hook, __FUNCTION__);
+}
+
+/**
+ * Implements theme_preprocess_page() for page pagragaph hooks.
+ */
+function indicia_theme_preprocess_paragraph(&$variables, $hook) {
+  $variables = hook_runner($variables, $hook, __FUNCTION__);
+}
+
+/**
+ * Implements indicia_theme_preprocess_html for page pagragaph hooks.
+ */
+function indicia_theme_preprocess_html(&$variables, $hook) {
+  $variables = hook_runner($variables, $hook, __FUNCTION__);
+  $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+}
+
+/**
+ * Implements theme_preprocess_links() Removes hreflang from li for HTML val.
+ */
+function indicia_theme_preprocess_links(&$variables, $hook) {
+  foreach ($variables['links'] as $link) {
+    if ($link['attributes']) {
+      $link['attributes']->removeAttribute('hreflang');
+    }
+  }
+}
+
+/**
+ * Implements theme_library_info_alter()
+ *
+ *  Replace library build versions with CI build version when BUILD is used.
+ */
+function indicia_theme_library_info_alter(&$libraries, $extension) {
+  foreach ($libraries as $key => $library) {
+    if (isset($libraries[$key]['version']) && $libraries[$key]['version'] === 'BUILD') {
+      $libraries[$key]['version'] = \Drupal::state()->get('build', '1.0.1');
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function indicia_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if ($variables['elements']['#plugin_id'] === 'page_title_block') {
+    if (\Drupal::routeMatch()->getRouteName() === 'minfin_beleidsevaluaties.beleidsonderzoek') {
+      $suggestions[] = 'block__page_title_block__beleidsonderzoek';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_fieldset().
+ */
+function indicia_theme_preprocess_fieldset(&$variables) {
+  if (isset($variables['attributes']['aria-required'])) {
+    unset($variables['attributes']['aria-required']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__PARAGRAPHTYPE().
+ */
+function indicia_theme_preprocess_paragraph__row(&$variables) {
+  if (isset($variables['content']['row_title'][0]['#context']['value'])) {
+    $id = $variables['content']['row_title'][0]['#context']['value'];
+    $id = preg_replace('~\([^()]*\)~', '', $id);
+    $id = trim($id);
+    $variables['attributes']['id'] = Html::getUniqueId($id);
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function indicia_theme_preprocess_node(&$variables) {
+  if (isset($variables['node']) && $variables['node'] instanceof NodeInterface && $variables['node']->hasField('show_anchors')) {
+    $value = $variables['node']->get('show_anchors')->getValue();
+    if (isset($value[0]['value']) && $value[0]['value']) {
+      $variables['#attached']['drupalSettings']['indicia_theme']['show_anchors'] = TRUE;
+    }
+  }
+}

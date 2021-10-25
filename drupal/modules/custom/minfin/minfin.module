@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Implements the module hooks.
+ */
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function minfin_element_info_alter(array &$types) {
+  // Attach our extra CSS for toolbar icons.
+  if (isset($types['toolbar'])) {
+    $types['toolbar']['#attached']['library'][] = 'minfin/toolbar';
+  }
+}
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function minfin_config_ignore_settings_alter(array &$settings) {
+  $settings[] = 'minfin.kamerstuk.text';
+}

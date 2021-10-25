@@ -1,0 +1,55 @@
+uuid: f4db7e1a-f878-4f90-b30f-0d868bfbeb26
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.teaser_block
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.teaser_block.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: teaser_block
+label: Text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      text: text
+    target_bundles_drag_drop:
+      blue_link_block:
+        weight: 10
+        enabled: false
+      column:
+        weight: 11
+        enabled: false
+      column_title:
+        weight: 12
+        enabled: false
+      image:
+        weight: 13
+        enabled: false
+      linkblock:
+        weight: 14
+        enabled: false
+      linklist:
+        weight: 15
+        enabled: false
+      row:
+        weight: 16
+        enabled: false
+      teaser_block:
+        weight: 17
+        enabled: false
+      text:
+        enabled: true
+        weight: 18
+field_type: entity_reference_revisions

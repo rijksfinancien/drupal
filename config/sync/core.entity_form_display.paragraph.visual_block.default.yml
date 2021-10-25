@@ -1,0 +1,26 @@
+uuid: 1b7a6a7d-50f4-4c62-bd6d-b7a099f03236
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.visual_block.visual_block
+    - paragraphs.paragraphs_type.visual_block
+  module:
+    - block_field
+id: paragraph.visual_block.default
+targetEntityType: paragraph
+bundle: visual_block
+mode: default
+content:
+  visual_block:
+    weight: 0
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+hidden:
+  created: true
+  status: true

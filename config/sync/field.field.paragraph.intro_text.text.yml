@@ -1,0 +1,21 @@
+uuid: be1c5379-576e-4800-bfe3-b5ac0022c7b5
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.text
+    - paragraphs.paragraphs_type.intro_text
+  module:
+    - text
+id: paragraph.intro_text.text
+field_name: text
+entity_type: paragraph
+bundle: intro_text
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install functions for minfin solr.
+ */
+
+/**
+ * Updated SOLR config.
+ */
+function minfin_solr_update_9001() {
+  $config = \Drupal::configFactory()->getEditable('minfin_solr.solr.settings');
+
+  $config->set('search_search_core', $config->get('search_core'));
+  $config->set('update_search_core', $config->get('update_core'));
+
+  $config->set('search_wie_ontvingen_core', 'wie-ontvingen');
+  $config->set('update_wie_ontvingen_core', 'wie-ontvingen');
+
+  $config->save();
+}

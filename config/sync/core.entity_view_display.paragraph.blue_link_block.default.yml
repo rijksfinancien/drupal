@@ -1,0 +1,36 @@
+uuid: 0d7c5666-94e2-4947-8120-54bccb205f3d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.blue_link_block.blue_link_block_link
+    - field.field.paragraph.blue_link_block.blue_link_block_subtitle
+    - paragraphs.paragraphs_type.blue_link_block
+  module:
+    - link
+id: paragraph.blue_link_block.default
+targetEntityType: paragraph
+bundle: blue_link_block
+mode: default
+content:
+  blue_link_block_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  blue_link_block_subtitle:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

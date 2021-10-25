@@ -1,0 +1,5 @@
+services:
+  indicia_profile.override:
+    class: Drupal\indicia_profile\ConfigOverride
+    tags:
+      - { name: config.factory.override, priority: 5 }

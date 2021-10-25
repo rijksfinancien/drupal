@@ -1,0 +1,39 @@
+.dialog-off-canvas-main-canvas {
+  width: 100%;
+
+  nav.tabs {
+    ul {
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: 0;
+        display: inline-block;
+        margin-right: 15px;
+
+        a {
+          font-size: $fs-base;
+          display: inline-block;
+          padding: 10px 15px;
+          text-decoration: none;
+          color: white;
+          background: $c-primary-400;
+
+          &:hover, &:focus, &:active {
+            color: white;
+            background: $c-primary-600;
+          }
+
+          &.is-active {
+            background: $c-primary-350;
+          }
+        }
+      }
+    }
+
+    &.tabs {
+      margin-bottom: 15px;
+    }
+  }
+}

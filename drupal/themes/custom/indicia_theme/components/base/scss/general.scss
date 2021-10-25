@@ -1,0 +1,209 @@
+#toolbar-administration {
+  margin-bottom: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-wrapper {
+  position: relative;
+  overflow: auto;
+  max-width: 100vw;
+  max-height: 100%;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 20px;
+    height: 100%;
+    content: '';
+    background: radial-gradient(ellipse at 100%, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0) 70%);
+  }
+
+  &.overflow {
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.icon-background {
+  font-size: 18px;
+  line-height: 40px;
+  display: inline-block;
+  box-sizing: content-box;
+  width: 40px;
+  cursor: pointer;
+  transition: .5s;
+  text-align: center;
+  color: $c-primary-400;
+  border-radius: 50%;
+  background: $c-primary-200;
+
+  &:hover, &:focus, &:active {
+    color: white;
+    background: $c-primary-400;
+  }
+}
+
+.block-page-title-block {
+  margin-bottom: 48px;
+
+  .container {
+    .page-title-wrapper {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-top: 36px;
+      padding-bottom: 24px;
+
+      @include breakpoint($tablet) {
+        padding-top: 24px;
+      }
+
+      .page-actions {
+        min-width: 56px;
+      }
+    }
+
+    .page-title {
+      margin-bottom: 0;
+      overflow-wrap: anywhere;
+
+      @include breakpoint($laptop) {
+        overflow-wrap: normal;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      display: block;
+      flex-basis: 100%;
+      width: calc(100% - 30px);
+      height: 2px;
+      content: '';
+      background: $c-primary-200;
+    }
+  }
+}
+
+.page-actions {
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  .action {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: .5s;
+    text-decoration: none;
+    color: $c-primary-400;
+
+    &:hover, &:focus, &:active {
+      color: $c-primary-600;
+
+      &::before {
+        color: $c-primary-600;
+      }
+    }
+
+    // Don't show the external link icon for page-actions.
+    &:after {
+      display: none;
+    }
+
+    &.download-action span[class*='icon'] {
+      margin-left: 8px;
+    }
+
+    &.mail-action {
+      margin-left: 8px;
+    }
+  }
+
+  button {
+    padding: 0;
+    color: $c-primary-400;
+    background: transparent;
+
+    &:hover, &:focus, &:active {
+      color: $c-primary-600;
+    }
+  }
+}
+
+.margin-b-60 {
+  margin-bottom: 60px;
+}
+
+.visual-link {
+  display: block;
+  padding: 5px 10px 50px;
+  text-decoration: none;
+  background: $c-primary-300 url("/themes/custom/indicia_theme/img/donut-teaser-sml.svg") bottom right no-repeat;
+  @include breakpoint($tablet) {
+    padding-right: 85px;
+    padding-bottom: 30px;
+  }
+
+  &::before {
+    font-family: 'minfin-icons' !important;
+    font-size: 12px;
+    margin-right: 10px;
+    content: "\e938";
+    vertical-align: 1px;
+  }
+
+  &:hover, &:focus, &:active {
+    background-color: $c-primary-200;
+  }
+}
+
+.flex {
+  display: flex;
+
+  & > div {
+    flex-grow: 1;
+  }
+}
+
+#swagger-ui .wrapper {
+  padding: 0;
+}
+
+.metadata {
+  display: none;
+}
+
+.container.back-to-overview-container {
+  &::after {
+    display: none;
+  }
+}
+
+.back-to-overview {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  .icon-arrow-down {
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 24px;
+    transform: rotate(90deg);
+  }
+}
+
+p.titel {
+  font-weight: bold;
+}

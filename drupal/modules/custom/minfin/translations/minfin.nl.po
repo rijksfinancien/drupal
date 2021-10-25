@@ -1,0 +1,346 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+msgid "The value was empty so it has been changed to %return"
+msgstr "De waarde was leeg en is aangepast naar %return"
+
+msgid "The value in column @column was empty so it has been changed to %return"
+msgstr "De waarde in column @column was leeg en is aangepast naar %return"
+
+msgid "Year doesn't match. You're trying to import the data for %year, but the value in column @column is %value"
+msgstr "Het jaar komt niet overeen. Je probeert een import te draaien voor %year, maar de waarde in kolom @column bevat %value"
+
+msgid "Phase doesn't match. You're trying to import the data for %phase, but the value in column @column is %value"
+msgstr "De fase komt niet overeen. Je probeert een import te draaien voor de fase %phase, maar de waarde in kolom @column bevat %value "
+
+msgid "The following column(s) can't be empty: @column."
+msgstr "De volgende kolom(men) mogen niet leeg zijn: @column."
+
+msgid "Column @column was empty, so we couldn't import the @field data."
+msgstr "Kolom @column was leeg, we konden hierdoor geen @field data importeren."
+
+msgid "Successfully imported file."
+msgstr "Bestand met succes geïmporteerd."
+
+msgid "Skipped"
+msgstr "Overgeslagen"
+
+msgid "Imported"
+msgstr "Geïmporteerd"
+
+msgid "Phase"
+msgstr "Fase"
+
+msgid "Phase suffix"
+ msgstr "Fase nummer"
+
+msgid "- Select type -"
+msgstr "- Selecteer type -"
+
+msgid "- Select phase -"
+msgstr "- Selecteer fase -"
+
+msgid "Are you sure you want to delete the log record?"
+msgstr "Weet u zeker dat u de log wilt verwijderen?"
+
+msgid "Note that you'll only remove the import record, the actual imported data will not be removed.<br />This action cannot be undone."
+msgstr "Let op. Je verwijdert allen de import log, de daadwerkelijk geïmporteerde data wordt niet verwijdert.<br />Deze actie kan niet ongedaan worden gemaakt."
+
+msgid "View the log"
+msgstr "Bekijk de logmeldingen"
+
+msgid "Linenumber"
+msgstr "Regelnummer"
+
+msgid "Message"
+msgstr "Bericht"
+
+msgid "Severity"
+msgstr "Ernst"
+
+msgid "Show errors with the following severity"
+msgstr "Toon foutmeldingen met de volgende classificaties"
+
+msgid "Show budget fases"
+msgstr "Toon begrotingsfasen"
+
+msgid "Hide budget fases"
+msgstr "Verberg begrotingsfasen"
+
+msgid "Table of contents"
+msgstr "Inhoudsopgave"
+
+msgid "Related information"
+msgstr "Gerelateerde informatie"
+
+msgid "Related visual"
+msgstr "Gerelateerde visual"
+
+msgid "View dossier"
+msgstr "Bekijk dossier"
+
+msgid "Policy review"
+msgstr "Beleidsdoorlichting"
+
+msgid "policy review"
+msgstr "beleidsdoorlichting"
+
+msgid "performance information"
+msgstr "beleidsinformatie"
+
+msgid "Performance information"
+msgstr "Beleidsinformatie"
+
+msgid "Policy information"
+msgstr "Beleidsinformatie"
+
+msgid "Reader mode"
+msgstr "Leesmodus"
+
+msgid "Budget table"
+msgstr "Budgettaire tabel"
+
+msgid "belastingplan_memorie_van_toelichting"
+msgstr "Belasting memorie van toelichting"
+
+msgid "belastingplan_staatsblad"
+msgstr "Belastingplan staatsblad"
+
+msgid "belastingplan_voorstel_van_wet"
+msgstr "Belastingplan voorstel van wet"
+
+msgid "financieel_jaarverslag"
+msgstr "Financieel jaarverslag"
+
+msgid "miljoenennota"
+msgstr "Miljoenennota"
+
+msgid "najaarsnota"
+msgstr "Najaarsnota"
+
+msgid "voorjaarsnota"
+msgstr "Voorjaarsnota"
+
+msgid "The uploaded file has less than @count columns. This file either doesn't match the required format, or isn't a valid CSV file (seperated by comma)."
+msgstr "Het geuploade bestand bevat minder dan @count kollomen. Dit kan komen doordat het niet het juiste bestand is, of doordat het bestand geen geldig CSV formaat is (met als scheidingsteken een komma)."
+
+msgid "Import name"
+msgstr "Import naam"
+
+msgid "Year"
+msgstr "jaar"
+
+msgid "File"
+msgstr "Bestand"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Sub type/Phase"
+msgstr "Subtype/Fase"
+
+msgid "Uploading file..."
+msgstr "Bestand aan het uploaden..."
+
+msgid "Import data"
+msgstr "Importeer data"
+
+msgid "The given articlenumber wasn't valid."
+msgstr "Het artikelnummer was niet geldig."
+
+msgid "Are you sure the value %value is correct? A period in a number is used to indicate a decimal."
+msgstr "Weet je zeker dat de waarde %value correct is? Een punt in een getal wordt gebruikt om een decimaal aan te geven."
+
+msgid "Are you sure the value %value in column @column is correct? A period in a number is used to indicate a decimal."
+msgstr "Weet je zeker dat de waarde %value in kolom @column correct is? Een punt in een getal wordt gebruikt om een decimaal aan te geven."
+
+msgid "The value %value isn't a valid integer so the value has been changed to %return"
+msgstr "De waarde %value is geen geldig getal en is aangepast naar %return"
+
+msgid "The value %value in column @column isn't a valid integer so the value has been changed to %return"
+msgstr "De waarde %value in kolom @column is geen geldig getal en is aangepast naar %return"
+
+msgid "The value %value isn't a valid chapter id so the value has been changed to %return"
+msgstr "De waarde %value is geen geldig hoofdstuknummer en is aangepast naar %return"
+
+msgid "The value %value isn't a valid article id so the value has been changed to %return"
+msgstr "De waarde %value is geen geldig artikelnummer en is aangepast naar %return"
+
+msgid "The given value %url isn't a valid URL."
+msgstr "De opgegeven waarde %url is geen valide URL."
+
+msgid "Column @column must contain either the value %allowed_values, but we found the value %value"
+msgstr "Kolom @column mag alleen de waarde %allowed_values bevatten, maar bevat nu de waarde %value"
+
+msgid "Unexpected failure in column @column to insert the @field data."
+msgstr "Onverwachte fout in kolom @column voor het toevoegen van de @field data."
+
+msgid "An unexpected error occurred while trying to import the this row."
+msgstr "Er is een onverwachte fout opgetreden bij het importeren van deze rij."
+
+msgid "No matching @type found for %value."
+msgstr "Geen geldige @type match gevonden voor de waarde %value."
+
+msgid "The number of chapters is too large to find a database match for articles."
+msgstr "Het aantal hoofdstukken is te groot om een database match voor artikelen te vinden."
+
+msgid "Note the records have only been added to the queue. This queue will automatically be processed by the cron, but might take a while to complete."
+msgstr "Let op de regels zijn alleen toegevoegd aan de queue. Deze queue wordt automatisch verwerkt door de cron, maar het kan even duren voordat deze volledig verwerkt is."
+
+msgid "The combination of column @columns cannot be empty, at least 1 column must be filled."
+msgstr "De combinatie van de kolommen @columns mag niet leeg zijn, teminste 1 kolom moet een waarde bevatten."
+
+msgid "The value in column @column1 is exactly the same as the value in column @column2."
+msgstr "De waarde in kolom @column1 is hetzelfde als de waarde in kolom @column2."
+
+msgid "No %table database record found for the value %value in column @column."
+msgstr "Geen %table database regel gevonden voor de waarde %value in kolom @column."
+
+msgid "@a or @b"
+msgstr "@a of @b"
+
+msgid "Dossier number"
+msgstr "Dossiernummer"
+
+msgid "Motions in dossier"
+msgstr "Moties in dossier"
+
+msgid "Email this page"
+msgstr "Deze pagina e-mailen"
+
+msgid "Print this page"
+msgstr "Deze pagina afdrukken"
+
+msgid "Toggle the searchbar"
+msgstr "De zoekbalk weergeven"
+
+msgid "Download this data"
+msgstr "Deze data downloaden"
+
+msgid "Enable reader mode"
+msgstr "Leesmodus aanzetten"
+
+msgid "Shared page:"
+msgstr "Gedeelde pagina:"
+
+msgid "I found this article interesting for you:"
+msgstr "Ik vond dit artikel interessant voor jou:"
+
+msgid "Couldn't create a case entry, as no case number was found."
+msgstr "Er kon geen dossier referentie aangemaakt worden omdat een geldig dossiernummer ontbrak."
+
+msgid "Choose department"
+msgstr "Kies departement"
+
+msgid "Choose article"
+msgstr "Kies artikel"
+
+msgid "Choose type research"
+msgstr "Kies type onderzoek"
+
+msgid "Search title"
+msgstr "Zoek titel"
+
+msgid "Choose status"
+msgstr "Kies status"
+
+msgid "Choose year"
+msgstr "Kies jaar"
+
+msgid "Type research"
+msgstr "Type onderzoek"
+
+msgid "Article"
+msgstr "Artikel"
+
+msgid "Department"
+msgstr "Departement"
+
+msgctxt "minfin_beleidsevaluaties"
+msgid "Title"
+msgstr "Titel"
+
+msgid "Exceptions"
+msgstr "Uitzonderingen"
+
+msgid "Kamerstuk exceptions"
+msgstr "Kamerstuk uitzonderingen"
+
+msgid "Back to the overview"
+msgstr "Terug naar overzicht"
+
+msgid "more"
+msgstr "meer"
+
+msgid "less"
+msgstr "minder"
+
+msgid "Annually ministrations perform hundreds of investigations to evaluate their policies. You can consult the most important studies through the table below. This concerns, among other things, so-called interdepartmental policy surveys and policy terminals."
+msgstr "Jaarlijks voeren ministeries honderden onderzoeken uit om hun beleid te evalueren. Via onderstaande tabel kunt u de belangrijkste onderzoeken raadplegen. Het gaat dan onder meer om zogenoemde Interdepartementale Beleidsonderzoeken en Beleidsdoorlichtingen."
+
+msgid "Evaluation system"
+msgstr "Evaluatiestelsel"
+
+msgid "Policy lighting"
+msgstr "Beleidsdoorlichtingen"
+
+msgid "Interdepartmental Policy Reviews (IBOs)"
+msgstr "Interdepartementale beleidsonderzoeken (IBO’s)"
+
+msgid "Toolbox Policy evaluations"
+msgstr "Toolbox Beleidsevaluaties"
+
+msgid "Instruments policy evaluation"
+msgstr "Instrumenten beleidsevaluatie"
+
+msgid "No documentation found."
+msgstr "Geen documentatie gevonden."
+
+msgid "Documentation"
+msgstr "Documentatie"
+
+msgid "Show documentation"
+msgstr "Toon documentatie"
+
+msgid "Upload date"
+msgstr "Upload datum"
+
+msgid "Uploaded by"
+msgstr "Geupload door"
+
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "Log message"
+msgstr "Log bericht"
+
+msgid "Severity"
+msgstr "Classificatie"
+
+msgctxt "minfin import"
+msgid "number"
+msgstr "getal"
+
+msgctxt "minfin import"
+msgid "number/empty"
+msgstr "getal/leeg"
+
+msgctxt "minfin import"
+msgid "amount"
+msgstr "bedrag"
+
+msgctxt "minfin import"
+msgid "complete URL"
+msgstr "volledige URL"
+
+msgctxt "minfin import"
+msgid "specific values (see explanation)"
+msgstr "specifieke waardes (zie uitleg)"

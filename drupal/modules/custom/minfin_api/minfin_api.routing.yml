@@ -1,0 +1,395 @@
+minfin_api.documentation:
+  path: '/doc/api'
+  defaults:
+    _title: 'API'
+    _controller: '\Drupal\minfin_api\Controller\SwaggerController::view'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.swagger:
+  path: '/doc/api/swagger.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\SwaggerController::swagger'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.begrotingsstaten:
+  path: '/json/begrotingsstaten/{jaar}/{vuo}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\BegrotingsstatenApiController::json'
+    hoofdstukMinfinId: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    vuo: O|U|V
+
+minfin_api.financiele_instrumenten:
+  path: '/json/financiele_instrumenten'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::json'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.artikelen:
+  path: '/json/financiele_instrumenten/artikelen'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::jsonArtikelen'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.hoofdstukken:
+  path: '/json/financiele_instrumenten/hoofdstukken'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::jsonHoofdstukken'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.ontvangers:
+  path: '/json/financiele_instrumenten/ontvangers'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::jsonOntvangers'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.regelingen:
+  path: '/json/financiele_instrumenten/regelingen'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::jsonRegelingen'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.old:
+  path: '/json/old/financiele_instrumenten'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenOldApiController::json'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.financiele_instrumenten.old.instrumenten:
+  path: '/json/old/financiele_instrumenten/instruments'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenOldApiController::jsonInstruments'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.fiscale_regelingen:
+  path: '/json/fiscale_regelingen/{jaar}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FiscaleRegelingenApiController::json'
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.single_array:
+  path: '/json/single/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\BegrotingsVisualApiController::json'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+    triple: FALSE
+    depth: 2
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: OWB|VB|O1|O2|JV
+    vuo: O|U|V
+
+minfin_api.json.tripple_array:
+  path: '/json/triple/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\BegrotingsVisualApiController::json'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+    triple: TRUE
+    depth: 2
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: OWB|VB|O1|O2|JV
+    vuo: O|U|V
+
+minfin_api.json.v2.tripple_array:
+  path: '/json/v2/triple/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\VolgenBegrotingsVerschuivingenVisualApiController::json'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+    triple: TRUE
+    depth: 2
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: OWB|VB|O1|O2|JV
+    vuo: O|U|V
+
+minfin_api.json.tripple_legenda:
+  path: '/json/legenda/triple/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\BegrotingsVisualApiController::getLegenda'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+    triple: TRUE
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: OWB|VB|O1|O2|JV
+    vuo: O|U|V
+
+minfin_api.json.get_chapters:
+  path: '/json/minfin/get_chapters/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\MinfinApiController::getChapters'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.available_phases:
+  path: '/json/minfin/available_phases'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\MinfinApiController::getAvailablePhases'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.get_last_phase:
+  path: '/json/minfin/last_phase'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\MinfinApiController::getLastPhase'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.csv.budgettaire_tabellen:
+  path: '/csv/budgettaire_tabellen/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\BegrotingsVisualApiController::csv'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: OWB|VB|O1|O2|JV
+    vuo: O|U|V
+
+minfin_api.verzelfstandigingen:
+  path: '/json/verzelfstandigingen'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\VerzelfstandigingenApiController::json'
+  requirements:
+    _permission: 'access content'
+
+# Corona visuals
+minfin_api.json.corona_visuals.available_years:
+  path: '/json/corona_visuals/available_years/{type}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::getAvailableYears'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.corona_visuals.automatische_stabilisatoren:
+  path: '/json/corona_visuals/automatische_stabilisatoren/{type}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::automatischeStabilisatoren'
+  requirements:
+    _permission: 'access content'
+    type: inkomsten|uitgaven|uitsplitsing
+
+minfin_api.json.corona_visuals.begroting_vs_realisatie:
+  path: '/json/corona_visuals/begroting_vs_realisatie/{jaar}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::begrotingVsRealisatie'
+    jaar: 2020
+    hoofdstukMinfinId: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.belastinguitstel:
+  path: '/json/corona_visuals/belastinguitstel/{jaar}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::belastinguitstel'
+    jaar: 2020
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.emu_saldo:
+  path: '/json/corona_visuals/emu_saldo'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::emuSaldo'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.corona_visuals.emu_schuld:
+  path: '/json/corona_visuals/emu_schuld'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::emuSchuld'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.corona_visuals.fiscalemaatregelen:
+  path: '/json/corona_visuals/fiscalemaatregelen/{jaar}/{id}/{id2}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::fiscalemaatregelen'
+    jaar: 2020
+    id: NULL
+    id2: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.garanties:
+  path: '/json/corona_visuals/garanties/{jaar}/{id}/{id2}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::garanties'
+    jaar: 2020
+    id: NULL
+    id2: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.leningen:
+  path: '/json/corona_visuals/leningen/{jaar}/{id}/{id2}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::leningen'
+    jaar: 2020
+    id: NULL
+    id2: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.tijdlijn_noodpakketten:
+  path: '/json/corona_visuals/tijdlijn_noodpakketten'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::tijdlijnNoodpakketten'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.corona_visuals.uitgavenmaatregelen:
+  path: '/json/corona_visuals/uitgavenmaatregelen/{jaar}/{id}/{id2}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::uitgavenmaatregelen'
+    jaar: 2020
+    id: NULL
+    id2: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.uitgavenplafonds:
+  path: '/json/corona_visuals/uitgavenplafonds/{jaar}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::uitgavenplafonds'
+    jaar: 2020
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.corona_visuals.uitgavenplafonds2:
+  path: '/json/corona_visuals/uitgavenplafonds2/{jaar}'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::uitgavenplafonds2'
+    jaar: 2020
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+# Remove these one the corona visuals work with the API's
+minfin_api.tmp.corona_visuals.fiscalemaatregelen:
+  path: '/fiscale-maatregelen.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::fiscalemaatregelen'
+    jaar: 2020
+    id: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.tmp.corona_visuals.belastinguitstel:
+  path: '/corona-uitstel-van-betaling.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::belastinguitstel'
+    jaar: 2020
+    id: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+
+minfin_api.json.tmp.automatische_stabilisatoren_uitsplitsing:
+  path: '/corona-automatische-stabilisatoren-uitsplitsing.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::automatischeStabilisatoren'
+    type: 'uitsplitsing'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.tmp.automatische_stabilisatoren_inkomsten:
+  path: '/corona-automatische-stabilisatoren-inkomsten.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::automatischeStabilisatoren'
+    type: 'inkomsten'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.json.tmp.automatische_stabilisatoren_uitgaven:
+  path: '/corona-automatische-stabilisatoren-uitgaven.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::automatischeStabilisatoren'
+    type: 'uitgaven'
+  requirements:
+    _permission: 'access content'
+
+# Check if the paths below can be removed.
+minfin_api.tmp.corona_visuals.uitgavenplafonds:
+  path: '/corona-uitgavenplafond.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::uitgavenplafonds'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.tmp.corona_visuals.uitgavenplafonds2:
+  path: '/corona-uitgavenplafond-2.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::uitgavenplafonds2'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.tmp.corona_visuals.emu_saldo:
+  path: '/corona-emu-saldo.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::emuSaldo'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.tmp.corona_visuals.emu_schuld:
+  path: '/corona-impact-op-de-staatsschuld.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::emuSchuld'
+  requirements:
+    _permission: 'access content'
+
+minfin_api.tmp.corona_visuals.begroting_vs_realisatie:
+  path: '/corona-begroting-vs-realisatie.json'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\CoronaVisualApiController::begrotingVsRealisatie'
+    jaar: 2020
+    vuo: U
+    hoofdstukMinfinId: NULL
+  requirements:
+    _permission: 'access content'

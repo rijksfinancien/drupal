@@ -1,0 +1,23 @@
+uuid: b22851c4-61cf-4899-adfa-8e01e72faee0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_title.column_title
+    - paragraphs.paragraphs_type.column_title
+id: paragraph.column_title.default
+targetEntityType: paragraph
+bundle: column_title
+mode: default
+content:
+  column_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

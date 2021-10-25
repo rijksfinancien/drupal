@@ -1,0 +1,20 @@
+uuid: c7445b63-8937-47a3-81cf-a1a409dd5b57
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_search
+  theme:
+    - indicia_theme
+id: minfinadvancedsearchblock
+theme: indicia_theme
+region: header
+weight: -6
+provider: null
+plugin: minfin_advanced_search_block
+settings:
+  id: minfin_advanced_search_block
+  label: 'MINFIN advanced search block'
+  provider: minfin_search
+  label_display: '0'
+visibility: {  }

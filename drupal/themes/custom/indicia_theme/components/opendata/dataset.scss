@@ -1,0 +1,26 @@
+nav#year {
+  margin-top: 30px;
+  margin-bottom: 0;
+  border-bottom: 10px solid $c-primary-300;
+
+  li {
+    margin-bottom: 0;
+
+    a {
+      font-weight: bold;
+
+      &.is-active {
+        color: $c-primary-600;
+        background: $c-primary-300;
+      }
+    }
+  }
+}
+
+.year-table {
+  display: none;
+
+  &:first-child {
+    display: block;
+  }
+}

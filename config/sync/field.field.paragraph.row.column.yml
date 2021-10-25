@@ -1,0 +1,35 @@
+uuid: acfc001e-43d9-40c4-b7d7-1bb8fe886dfc
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.column
+    - paragraphs.paragraphs_type.row
+  module:
+    - entity_reference_revisions
+id: paragraph.row.column
+field_name: column
+entity_type: paragraph
+bundle: row
+label: Column
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: {  }
+    target_bundles_drag_drop:
+      column:
+        enabled: true
+        weight: 3
+      column_type_2:
+        enabled: true
+        weight: 4
+      row:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

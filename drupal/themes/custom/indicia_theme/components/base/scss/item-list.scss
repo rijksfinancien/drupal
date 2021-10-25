@@ -1,0 +1,19 @@
+.item-list {
+  ul {
+    list-style: none;
+
+    li {
+      a {
+        text-decoration: none;
+
+        &::before {
+          font-family: 'minfin-icons' !important;
+          font-size: 12px;
+          margin-right: 10px;
+          content: "\e938";
+          vertical-align: 1px;
+        }
+      }
+    }
+  }
+}

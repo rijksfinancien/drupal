@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="container">
+    <h2>Algemene inleiding</h2>
+    <p itemprop="description">Via deze pagina heeft u toegang tot alle begrotingsinformatie met
+      betrekking tot {{ hoofdstuk_naam }}. Bovenaan kiest u voor de verschillende
+      documenten, hieronder zijn diverse grafieken verzameld. Bovendien hebben wij
+      de belangrijkste overzichten en Open Data bestanden uit dit
+      begrotingshoofdstuk voor u toegankelijk gemaakt.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+    <h2>Visuele dwarsdoorsnedes</h2>
+    <div class="field--name-column">
+      <div class="field__item">
+        <div class="field--name-column-title">Visuele begroting</div>
+        <p>De Rijksbegroting in beeld gebracht om de geplande uitgaven
+          inzichtelijker te maken.</p>
+        <a class="visual-link" href="{{ path('minfin_visuals', {'jaar': jaar, 'fase': 'begroting', 'vuo': 'uitgaven', 'hoofdstukMinfinId': hoofdstuk_minfin_id}) }}">Visuele begroting</a>
+      </div>
+      {#<div class="field__item">
+        <div class="field--name-column-title">Wie ontvingen</div>
+        <p>Hoeveel geld het Rijk verstrekt aan publieke organisaties en
+          bedrijven in beeld gebracht.</p>
+      </div>#}
+    </div>
+  </div>
+</div>

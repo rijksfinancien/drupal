@@ -1,0 +1,21 @@
+uuid: f4ff15d0-d449-4305-b1e9-430ab651ba81
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.title
+    - paragraphs.paragraphs_type.linkblock
+  module:
+    - text
+id: paragraph.linkblock.title
+field_name: title
+entity_type: paragraph
+bundle: linkblock
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

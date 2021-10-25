@@ -1,0 +1,19 @@
+uuid: 25cd65fb-ba22-4b9d-ab53-7e75a7dfbcd1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.row_title
+    - paragraphs.paragraphs_type.row
+id: paragraph.row.row_title
+field_name: row_title
+entity_type: paragraph
+bundle: row
+label: 'Row title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

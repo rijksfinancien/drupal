@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install file for minfin search.
+ */
+
+/**
+ * Move the SOLR config to a sub module.
+ */
+function minfin_search_update_8001() {
+  \Drupal::service('module_installer')->install(['minfin_search']);
+
+  $configFactory = \Drupal::service('config.factory');
+  $oldConfigFile = $configFactory->getEditable('minfin_search.solr.settings');
+  $newConfigFile = $configFactory->getEditable('minfin_solr.solr.settings');
+  if ($oldData = $oldConfigFile->getRawData()) {
+    $newConfigFile->setData($oldData);
+    $newConfigFile->save();
+  }
+  $oldConfigFile->delete();
+}

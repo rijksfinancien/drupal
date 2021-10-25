@@ -1,0 +1,10 @@
+uuid: 839dd6a8-19a2-48e4-a9db-2d243c5bf849
+langcode: nl
+status: true
+dependencies: {  }
+id: blue_link_block
+label: 'Blue link block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

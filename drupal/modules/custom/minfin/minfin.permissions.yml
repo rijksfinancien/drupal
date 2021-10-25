@@ -1,0 +1,27 @@
+view minfin settings:
+  title: 'View minfin settings'
+  description: 'Allow user to see the Minfin settings menu item'
+
+administer minfin settings:
+  title: 'Administer minfin settings'
+
+administer minfin services:
+  title: 'Administer minfin services'
+
+administer minfin importer:
+  title: 'Administer minfin import'
+
+view mf_dossier entity:
+  title: 'View dossier entity'
+
+add mf_dossier entity:
+  title: 'Add dossier entity'
+
+edit mf_dossier entity:
+  title: 'Edit dossier entity'
+
+delete mf_dossier entity:
+  title: 'Delete dossier entity'
+
+administer mf_dossier entity:
+  title: 'Administer dossier entity'

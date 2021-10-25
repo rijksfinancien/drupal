@@ -1,0 +1,131 @@
+begroting_premie_fiscaal:
+  version: 1.0.0
+  js:
+    assets/begroting_premie_fiscaal/libraries/d3-v4/js/d3.min.js: {minified: true, preprocess: false}
+    assets/begroting_premie_fiscaal/begroting_premie_fiscaal.js: {preprocess: false}
+  css:
+    theme:
+      assets/begroting_premie_fiscaal/begroting_premie_fiscaal.css: { preprocess: false}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+begroting_vs_miljoenennota:
+  version: 1.0.0
+  js:
+    assets/begroting_vs_miljoenennota/js/chunk-vendors.js: {minified: true, preprocess: false}
+    assets/begroting_vs_miljoenennota/js/app.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/begroting_vs_miljoenennota/css/chunk-vendors.css: {minified: true, preprocess: false}
+      assets/begroting_vs_miljoenennota/css/app.css: {minified: true, preprocess: false}
+
+begroting_vs_realisatie:
+  version: 1.0.1
+  js:
+    assets/begroting_vs_realisatie/js/jquery_3_2_1.js: {preprocess: false}
+    assets/begroting_vs_realisatie/js/d3.min.js: {minified: true, preprocess: false}
+    assets/begroting_vs_realisatie/js/tether.min.js: {minified: true, preprocess: false}
+    assets/begroting_vs_realisatie/js/data.js: {preprocess: false}
+    assets/begroting_vs_realisatie/js/draw.js: {preprocess: false}
+    assets/begroting_vs_realisatie/js/index.js: {preprocess: false}
+  css:
+    theme:
+      assets/begroting_vs_realisatie/css/begroting_vs_realisatie.css: {preprocess: false}
+
+bouwstenen_belastingstelsel:
+  version: 1.0.0
+  js:
+    assets/bouwstenen_belastingstelsel/js/app.e661fd38.js: {minified: true, preprocess: false}
+    assets/bouwstenen_belastingstelsel/js/canvg.edb9c7a5.js: {minified: true, preprocess: false}
+    assets/bouwstenen_belastingstelsel/js/chunk-vendors.06757f53.js: {minified: true, preprocess: false}
+    assets/bouwstenen_belastingstelsel/js/pdfmake.b17ba0e4.js: {minified: true, preprocess: false}
+    assets/bouwstenen_belastingstelsel/js/xlsx.59fa7f36.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/bouwstenen_belastingstelsel/css/chunk-vendors.2d065fb2.css: {minified: true, preprocess: false}
+      assets/bouwstenen_belastingstelsel/css/app.80604aa3.css: {minified: true, preprocess: false}
+
+brede_maatschappelijke_herowverwegingen:
+  version: 1.0.1
+  js:
+    assets/brede_maatschappelijke_heroverwegingen/js/app.8a89e506.js: {minified: true, preprocess: false}
+    assets/brede_maatschappelijke_heroverwegingen/js/canvg.ec7f8197.js: {minified: true, preprocess: false}
+    assets/brede_maatschappelijke_heroverwegingen/js/chunk-vendors.cdd6d24a.js: {minified: true, preprocess: false}
+    assets/brede_maatschappelijke_heroverwegingen/js/pdfmake.dc7bac4c.js: {minified: true, preprocess: false}
+    assets/brede_maatschappelijke_heroverwegingen/js/xlsx.64ea4103.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/brede_maatschappelijke_heroverwegingen/css/chunk-vendors.a385397c.css: {minified: true, preprocess: false}
+      assets/brede_maatschappelijke_heroverwegingen/css/app.a94ed332.css: {minified: true, preprocess: false}
+
+fiscale_regelingen:
+  version: 1.0.1
+  js:
+    assets/fiscale_regelingen/js/app.f69986e2.js: {minified: true, preprocess: false}
+    assets/fiscale_regelingen/js/canvg.6af214e0.js: {minified: true, preprocess: false}
+    assets/fiscale_regelingen/js/chunk-vendors.ad4da909.js: {minified: true, preprocess: false}
+    assets/fiscale_regelingen/js/pdfmake.1bdfd416.js: {minified: true, preprocess: false}
+    assets/fiscale_regelingen/js/xlsx.644cc364.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/fiscale_regelingen/css/app.850c2bb1.css: {minified: true, preprocess: false}
+
+ombuigings_en_intensiveringslijst:
+  version: 1.0.2
+  js:
+    assets/ombuigings_en_intensiveringslijst/js/app.896f71f4.js: {minified: true, preprocess: false}
+    assets/ombuigings_en_intensiveringslijst/js/canvg.f7b46d31.js: {minified: true, preprocess: false}
+    assets/ombuigings_en_intensiveringslijst/js/chunk-vendors.5a55eb2a.js: {minified: true, preprocess: false}
+    assets/ombuigings_en_intensiveringslijst/js/pdfmake.b17ba0e4.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/ombuigings_en_intensiveringslijst/css/chunk-vendors.01216e90.css: {minified: true, preprocess: false}
+      assets/ombuigings_en_intensiveringslijst/css/app.23fe8516.css: {minified: true, preprocess: false}
+
+rutteii_vs_rutte_iii:
+  version: 2.0.0
+  js:
+    assets/rutteii_vs_rutte_iii/js/d3.min.js: {minified: true, preprocess: false}
+    assets/rutteii_vs_rutte_iii/js/data.js: {preprocess: false}
+    assets/rutteii_vs_rutte_iii/js/draw.js: {preprocess: false}
+    assets/rutteii_vs_rutte_iii/js/index.js: {preprocess: false}
+  css:
+    theme:
+      assets/rutteii_vs_rutte_iii/css/rutteii_vs_rutte_iii.css: {preprocess: false}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+studiegroep_begrotingsruimte:
+  version: 1.0.0
+  js:
+    assets/studiegroep_begrotingsruimte/js/app.e874aa4f.js: {minified: true, preprocess: false}
+    assets/studiegroep_begrotingsruimte/js/chunk-vendors.bb88c3a9.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/studiegroep_begrotingsruimte/css/app.96a01b6c.css: {minified: true, preprocess: false}
+
+verzelfstandigingen:
+  version: 1.0.1
+  js:
+    assets/verzelfstandigingen/js/d3.min.js: {minified: true, preprocess: false}
+    assets/verzelfstandigingen/js/verzelfstandigingen.min.js: {minified: true, preprocess: false}
+    assets/verzelfstandigingen/js/verzelfstandigingen-init.js: {preprocess: false}
+  css:
+    theme:
+      assets/verzelfstandigingen/css/verzelfstandigingen.css: {preprocess: false}
+      assets/verzelfstandigingen/css/verzelfstandigingen-icons.css: {preprocess: false}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+wie_ontvingen:
+  version: 1.0.9
+  js:
+    assets/wie_ontvingen/js/chunk-vendors.js: {minified: true, preprocess: false}
+    assets/wie_ontvingen/js/app.js: {minified: true, preprocess: false}
+  css:
+    theme:
+      assets/wie_ontvingen/css/chunk-vendors.css: {minified: true, preprocess: false}
+      assets/wie_ontvingen/css/app.css: {minified: true, preprocess: false}

@@ -1,0 +1,8 @@
+uuid: 6dc4405e-af7e-4a1c-bf5e-ba5d347ef5bd
+langcode: nl
+status: true
+dependencies: {  }
+id: service
+label: Service
+description: 'Footer service menu'
+locked: false

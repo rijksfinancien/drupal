@@ -1,0 +1,19 @@
+uuid: 98c72b43-9244-4b30-9680-9d9a39c5a6e5
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.blue_link_block_link
+field_name: blue_link_block_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

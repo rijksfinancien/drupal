@@ -1,0 +1,23 @@
+uuid: 8f0d9bc5-9c0f-4d9b-b26b-bfe0a41c4e53
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3NOiSBMBGHe1kVq0fScDAOZPOvZKcoLIezF5_ORAWsw
+id: admin
+label: Beheerdersprofiel
+description: 'Configuratie voor site-beheerders'
+conf:
+  extensions: '*'
+  maxsize: !!float 0
+  quota: !!float 0
+  maxwidth: 0
+  maxheight: 0
+  replace: 0
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  folders:
+    -
+      path: .
+      permissions:
+        all: true

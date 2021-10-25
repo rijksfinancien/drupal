@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Implements the module hooks.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function minfin_budgettaire_tabellen_theme($existing, $type, $theme, $path) {
+  return [
+    'table_overview' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+  ];
+}

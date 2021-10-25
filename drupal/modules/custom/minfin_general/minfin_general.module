@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Provides general module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function minfin_general_theme($existing, $type, $theme, $path) {
+  return [
+    'visual_block' => [
+      'variables' => [
+        'title' => '',
+        'caption' => '',
+        'banner_style' => '',
+        'banner_url' => '',
+        'select' => '',
+      ],
+    ],
+    'open_data_block' => [
+      'variables' => [
+        'title' => '',
+        'columns' => [],
+      ],
+    ],
+    'budget_block' => [
+      'variables' => [
+        'tabs' => [],
+        'active_tab' => '',
+        'select_next_to_year' => 0,
+        'chapter_select' => [],
+        'content' => NULL,
+      ],
+    ],
+    'budget_block_links' => [
+      'variables' => [
+        'links' => [],
+      ],
+    ],
+    'minfin_archive' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+    'chapter_page' => [
+      'variables' => [
+        'hoofdstuk_naam' => '',
+        'hoofdstuk_minfin_id' => '',
+        'jaar' => '',
+      ],
+    ],
+  ];
+}

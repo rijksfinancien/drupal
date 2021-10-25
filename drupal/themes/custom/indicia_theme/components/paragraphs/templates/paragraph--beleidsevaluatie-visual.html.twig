@@ -1,0 +1,14 @@
+{# Based on from drupal/modules/contrib/paragraphs/templates/paragraph.html.twig #}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ drupal_block('minfin_beleidsevaluatie_visual_block') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

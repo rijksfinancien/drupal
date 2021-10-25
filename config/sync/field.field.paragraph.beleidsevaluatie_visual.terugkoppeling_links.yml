@@ -1,0 +1,23 @@
+uuid: c7545c1b-c6e2-4b47-aeba-47aef2eee7cf
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.terugkoppeling_links
+    - paragraphs.paragraphs_type.beleidsevaluatie_visual
+  module:
+    - link
+id: paragraph.beleidsevaluatie_visual.terugkoppeling_links
+field_name: terugkoppeling_links
+entity_type: paragraph
+bundle: beleidsevaluatie_visual
+label: Terugkoppeling
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,19 @@
+uuid: d4b66e1c-c88b-4f99-a738-912073475220
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_field
+    - paragraphs
+id: paragraph.visual_block
+field_name: visual_block
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

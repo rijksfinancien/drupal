@@ -1,0 +1,7 @@
+rijksfinancien_visuals.wie_ontvingen.begroting_vs_miljoenennota:
+  path: 'json/chart/begroting_vs_miljoenennota/{year}'
+  defaults:
+    _controller: '\Drupal\rijksfinancien_visuals\Controller\BegrotingVsMiljoenennotaController::getData'
+  requirements:
+    _permission: 'access content'
+    year: \d{4}$

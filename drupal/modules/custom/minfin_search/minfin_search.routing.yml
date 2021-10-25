@@ -1,0 +1,154 @@
+minfin_search.search:
+  path: 'zoek/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchController:content'
+    _title: 'Search'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.open_data:
+  path: 'zoek/open-data/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchOpenDataController:content'
+    _title: 'Open data'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.rbv:
+  path: 'zoek/rbv/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchRbvController:content'
+    _title: 'RBV'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.rijksbegroting:
+  path: 'zoek/rijksbegroting/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchRijksbegrotingController:content'
+    _title: 'Rijksbegroting'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+# English search pages.
+minfin_search.search.en:
+  path: 'search/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchController:content'
+    _title: 'Search'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.open_data.en:
+  path: 'search/open-data/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchOpenDataController:content'
+    _title: 'Open data'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.rbv.en:
+  path: 'search/rbv/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchRbvController:content'
+    _title: 'RBV'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.search.rijksbegroting.en:
+  path: 'search/rijksbegroting/{page}/{recordsPerPage}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchRijksbegrotingController:content'
+    _title: 'Rijksbegroting'
+    page: null
+    recordsPerPage: null
+  options:
+    parameters:
+      page:
+        type: 'minfin-search-int'
+      recordsPerPage:
+        type: 'minfin-search-int'
+  requirements:
+    _permission: 'access content'
+
+# AJAX callbacks.
+minfin_search.suggest:
+  path: 'ajax/suggest/{contentType}/{term}'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SuggestController::resultList'
+    _title: 'Suggestions'
+  requirements:
+    _permission: 'access content'
+
+minfin_search.update_row:
+  path: 'ajax/update_search_row'
+  defaults:
+    _controller: '\Drupal\minfin_search\Controller\SearchController::updateSearchRow'
+    _title: 'Update search row'
+  requirements:
+    _permission: 'access content'
+
+# Config.
+minfin_search.configuration:
+  path: '/admin/minfin/services/search'
+  defaults:
+    _form: '\Drupal\minfin_search\Form\SearchConfigForm'
+    _title: 'Search configuration'
+  requirements:
+    _permission: 'administer minfin search'

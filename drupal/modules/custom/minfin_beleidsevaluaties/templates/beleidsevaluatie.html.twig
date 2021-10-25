@@ -1,0 +1,94 @@
+<div class="beleidsevaluatie-detail">
+  <div class="limit-width">
+    <div class="beleidsevaluatie-metadata">
+      {% if beleidsevaluatie.opleverdatum %}
+        <div class="metadata-row">
+          <span>Jaar:</span>
+          <span>{{ beleidsevaluatie.opleverdatum }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.type %}
+        <div class="metadata-row">
+          <span>Soort:</span>
+          <span>{{ beleidsevaluatie.type }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.hoofdstuk %}
+        <div class="metadata-row">
+          <span>Betrokken partijen:</span>
+          <span>{{ beleidsevaluatie.hoofdstuk|join('<br />') }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.onafhankelijke_deskundige %}
+        <div class="metadata-row">
+          <span>Onafhankelijke deskundige:</span>
+          <span>{{ beleidsevaluatie.onafhankelijke_deskundige }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.status %}
+        <div class="metadata-row">
+          <span>Status:</span>
+          <span>{{ beleidsevaluatie.status }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.sea %}
+        <div class="metadata-row">
+          <span>SEA:</span>
+          <span>{{ beleidsevaluatie.sea }}</span>
+        </div>
+      {% endif %}
+
+      {% if beleidsevaluatie.departement %}
+        <div class="metadata-row">
+          <span>Departementen:</span>
+          <span>{{ beleidsevaluatie.departement }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="minfin-related">
+      <div class="header"><span class="toggle-icon">-</span><span class="text">Gerelateerde informatie</span></div>
+      <div class="slider">
+        <div class="content">
+          <div>
+            {% if beleidsevaluatie.aankondiging %}
+              <p>
+                <strong>Aankondiging/Taakopdracht:</strong><br/>
+                {{ beleidsevaluatie.aankondiging }}
+              </p>
+            {% endif %}
+            {% if beleidsevaluatie.hoofdrapport %}
+              <p>
+                <strong>Hoofdrapport:</strong><br/>
+                {{ beleidsevaluatie.hoofdrapport }}
+              </p>
+            {% endif %}
+            {% if beleidsevaluatie.kabinetsreactie_aanbiedingsbrief %}
+              <p>
+                <strong>Kabinetsreactie/Aanbiedingsbrief:</strong><br/>
+                {{ beleidsevaluatie.kabinetsreactie_aanbiedingsbrief }}
+              </p>
+            {% endif %}
+            {% if beleidsevaluatie.bijlage %}
+              <p>
+                <strong>Bijlagen:</strong>
+                {% for bijlage in beleidsevaluatie.bijlage %}
+                  <br/>
+                  {{ bijlage }}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Aanvullende informatie</h2>
+    {{ beleidsevaluatie.toelichting }}
+  </div>
+</div>

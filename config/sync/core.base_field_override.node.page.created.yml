@@ -1,0 +1,18 @@
+uuid: dffa9359-180f-46d3-bb19-012e90a23bdc
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.created
+field_name: created
+entity_type: node
+bundle: page
+label: 'Authored on'
+description: 'Het tijdstip waarop de node is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,14 @@
+uuid: fa7156ad-708f-4c16-9f58-ec1c911dc910
+langcode: nl
+status: true
+dependencies:
+  config:
+    - user.role.extrainfo_uploader
+  module:
+    - user
+id: user_remove_role_action.extrainfo_uploader
+label: 'De rol Extrainfo uploader verwijderen van de geselecteerde gebruikers(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: extrainfo_uploader

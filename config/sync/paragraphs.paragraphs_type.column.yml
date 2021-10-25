@@ -1,0 +1,12 @@
+uuid: bfca9e0b-4cb4-433a-a124-2b304ead8442
+langcode: nl
+status: true
+dependencies:
+  content:
+    - 'file:file:8e97c8d9-eb51-413a-bd2b-26a38e49f409'
+id: column
+label: Column
+icon_uuid: 8e97c8d9-eb51-413a-bd2b-26a38e49f409
+icon_default: null
+description: ''
+behavior_plugins: {  }

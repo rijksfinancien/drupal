@@ -1,0 +1,12 @@
+uuid: 3f020b80-dbe5-42dd-953f-dbc2a2c157c3
+langcode: nl
+status: true
+dependencies:
+  content:
+    - 'file:file:2c6f874f-da78-4df8-a10e-e6c1ffd9d529'
+id: row
+label: Row
+icon_uuid: 2c6f874f-da78-4df8-a10e-e6c1ffd9d529
+icon_default: null
+description: 'Adds a row to the page'
+behavior_plugins: {  }

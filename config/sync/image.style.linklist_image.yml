@@ -1,0 +1,15 @@
+uuid: 2519045a-7ec2-49b8-ab90-cf0555f542b3
+langcode: nl
+status: true
+dependencies: {  }
+name: linklist_image
+label: 'Linklist image (800 * 400)'
+effects:
+  bd66bbf4-ea12-478b-9db0-01be44d593a0:
+    uuid: bd66bbf4-ea12-478b-9db0-01be44d593a0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 400
+      anchor: center-center

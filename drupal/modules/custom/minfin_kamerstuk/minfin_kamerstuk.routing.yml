@@ -1,0 +1,512 @@
+minfin.kamerstuk.reindex:
+  path: '/admin/minfin/services/reindex-kamerstuk'
+  defaults:
+    _form: '\Drupal\minfin_kamerstuk\Form\KamerstukReindexForm'
+    _title: 'Herindexeren kamerstukken'
+  requirements:
+    _permission: 'minfin reindex kamerstuk'
+  options:
+    _admin_route: TRUE
+
+minfin.kamerstuk.delete:
+  path: '/admin/minfin/services/delete-kamerstuk'
+  defaults:
+    _form: '\Drupal\minfin_kamerstuk\Form\KamerstukDeleteForm'
+    _title: 'Delete kamerstukken'
+  requirements:
+    _permission: 'minfin delete kamerstuk'
+  options:
+    _admin_route: TRUE
+
+# Incidentele Suppletoire Begrotingen
+minfin.isb_memorie_van_toelichting.overview:
+  path: '/incidentele-suppletoire-begrotingen/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildOverview'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::getName'
+    phase: 'ISB'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildOverviewAccess'
+    year: \d{4}$
+
+minfin.isb_memorie_van_toelichting.table_of_contents:
+  path: '/incidentele-suppletoire-begrotingen/{year}/{phase}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildTableOfContents'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::getTitle'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+    phase: ISB\d{1,2}$
+
+minfin.isb_memorie_van_toelichting.anchor:
+  path: '/incidentele-suppletoire-begrotingen/{year}/{phase}/{hoofdstukMinfinId}/onderdeel/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenMemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+    phase: ISB\d{1,2}$
+
+minfin.isb_memorie_van_toelichting.voorstel_van_wet:
+  path: '/incidentele-suppletoire-begrotingen-voorstel-van-wet/{year}/{phase}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenVoorstelVanWetController::buildAnchorPage'
+    _title: ''
+    anchor: 'voorstel-van-wet'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\IncidenteleSuppletoireBegrotingenVoorstelVanWetController::buildAnchorPageAccess'
+    year: \d{4}$
+    phase: ISB\d{1,2}$
+
+# Memorie van toelichting routes.
+minfin.memorie_van_toelichting.overview:
+  path: '/memorie-van-toelichting/{year}/{phase}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildOverview'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::getName'
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildOverviewAccess'
+    year: \d{4}$
+
+minfin.memorie_van_toelichting.table_of_contents:
+  path: '/memorie-van-toelichting/{year}/{phase}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildTableOfContents'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::getChapterTitle'
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.memorie_van_toelichting.anchor:
+  path: '/memorie-van-toelichting/{year}/{phase}/{hoofdstukMinfinId}/onderdeel/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildAnchorPage'
+    _title: ''
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.memorie_van_toelichting.appendix:
+  path: '/memorie-van-toelichting/{year}/{phase}/{hoofdstukMinfinId}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildTableOfContents'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::getChapterTitle'
+    appendix: true
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.memorie_van_toelichting.appendix.anchor:
+  path: '/memorie-van-toelichting/{year}/{phase}/{hoofdstukMinfinId}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MemorieVanToelichtingController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.memorie_van_toelichting.voorstel_van_wet:
+  path: '/voorstel-van-wet/{year}/{phase}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\VoorstelVanWetController::buildAnchorPage'
+    _title: ''
+    anchor: 'voorstel-van-wet'
+  options:
+    parameters:
+      phase:
+        type: 'minfin-phase'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\VoorstelVanWetController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Jaarverslag routes.
+minfin.jaarverslag.overview:
+  path: '/jaarverslag/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildOverview'
+    _title: 'Jaarverslag'
+    phase: 'JV'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildOverviewAccess'
+    year: \d{4}$
+
+minfin.jaarverslag.table_of_contents:
+  path: '/jaarverslag/{year}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildTableOfContents'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::getChapterTitle'
+    phase: 'JV'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.jaarverslag.anchor:
+  path: '/jaarverslag/{year}/{hoofdstukMinfinId}/onderdeel/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildAnchorPage'
+    _title: ''
+    phase: 'JV'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.jaarverslag.appendix:
+  path: '/jaarverslag/{year}/{hoofdstukMinfinId}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildTableOfContents'
+    _title_callback: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::getChapterTitle'
+    phase: 'JV'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.jaarverslag.appendix.anchor:
+  path: '/jaarverslag/{year}/{hoofdstukMinfinId}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildAnchorPage'
+    _title: ''
+    phase: 'JV'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\JaarverslagController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Miljoenennota routes.
+minfin.miljoenennota.table_of_contents:
+  path: '/miljoenennota/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildTableOfContents'
+    _title: 'Miljoenennota'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.miljoenennota.anchor:
+  path: '/miljoenennota/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.miljoenennota.appendix:
+  path: '/miljoenennota/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildTableOfContents'
+    _title: 'Bijlagen bij Miljoenennota'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.miljoenennota.appendix.anchor:
+  path: '/miljoenennota/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\MiljoenennotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Financieel jaarverslag routes.
+minfin.financieel_jaarverslag.table_of_contents:
+  path: '/financieel-jaarverslag/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildTableOfContents'
+    _title: 'Financieel jaarverslag'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.financieel_jaarverslag.anchor:
+  path: '/financieel-jaarverslag/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.financieel_jaarverslag.appendix:
+  path: '/financieel-jaarverslag/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildTableOfContents'
+    _title: 'Bijlagen bij Financieel jaarverslag'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.financieel_jaarverslag.appendix.anchor:
+  path: '/financieel-jaarverslag/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\FinancieelJaarverslagController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Voorjaarsnota routes.
+minfin.voorjaarsnota.table_of_contents:
+  path: '/voorjaarsnota/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildTableOfContents'
+    _title: 'Voorjaarsnota'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.voorjaarsnota.anchor:
+  path: '/voorjaarsnota/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.voorjaarsnota.appendix:
+  path: '/voorjaarsnota/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildTableOfContents'
+    _title: 'Bijlagen bij Voorjaarsnota'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.voorjaarsnota.appendix.anchor:
+  path: '/voorjaarsnota/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\VoorjaarsnotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Najaarsnota routes.
+minfin.najaarsnota.table_of_contents:
+  path: '/najaarsnota/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildTableOfContents'
+    _title: 'Najaarsnota'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.najaarsnota.anchor:
+  path: '/najaarsnota/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.najaarsnota.appendix:
+  path: '/najaarsnota/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildTableOfContents'
+    _title: 'Bijlagen bij Najaarsnota'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.najaarsnota.appendix.anchor:
+  path: '/najaarsnota/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\NajaarsnotaController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Belastingplan memorie van toelichting routes.
+minfin.belastingplan_memorie_van_toelichting.table_of_contents:
+  path: '/belastingplan-memorie-van-toelichting/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildTableOfContents'
+    _title: 'Belastingplan'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_memorie_van_toelichting.anchor:
+  path: '/belastingplan-memorie-van-toelichting/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.belastingplan_memorie_van_toelichting.appendix:
+  path: '/belastingplan-memorie-van-toelichting/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildTableOfContents'
+    _title: 'Bijlagen bij Belastingplan'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_memorie_van_toelichting.appendix.anchor:
+  path: '/belastingplan-memorie-van-toelichting/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanMemorieVanToelichtingController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Belastingplan voorstel van wet routes.
+minfin.belastingplan_voorstel_van_wet.table_of_contents:
+  path: '/belastingplan-voorstel-van-wet/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildTableOfContents'
+    _title: 'Belastingplan'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_voorstel_van_wet.anchor:
+  path: '/belastingplan-voorstel-van-wet/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.belastingplan_voorstel_van_wet.appendix:
+  path: '/belastingplan-voorstel-van-wet/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildTableOfContents'
+    _title: 'Bijlagen bij Belastingplan'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_voorstel_van_wet.appendix.anchor:
+  path: '/belastingplan-voorstel-van-wet/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanVoorstelVanWetController::buildAnchorPageAccess'
+    year: \d{4}$
+
+# Belastingplan staatsblad routes.
+minfin.belastingplan_staatsblad.table_of_contents:
+  path: '/belastingplan-staatsblad/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildTableOfContents'
+    _title: 'Belastingplan'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_staatsblad.anchor:
+  path: '/belastingplan-staatsblad/{year}/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildAnchorPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildAnchorPageAccess'
+    year: \d{4}$
+
+minfin.belastingplan_staatsblad.appendix:
+  path: '/belastingplan-staatsblad/{year}/bijlage'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildTableOfContents'
+    _title: 'Bijlagen bij Belastingplan'
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildTableOfContentsAccess'
+    year: \d{4}$
+
+minfin.belastingplan_staatsblad.appendix.anchor:
+  path: '/belastingplan-staatsblad/{year}/bijlage/{anchor}'
+  defaults:
+    _controller: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildAnchorPage'
+    _title: ''
+    appendix: true
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\minfin_kamerstuk\Controller\BelastingplanStaatsbladController::buildAnchorPageAccess'
+    year: \d{4}$

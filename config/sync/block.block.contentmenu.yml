@@ -1,0 +1,38 @@
+uuid: 4d01c6ea-72c0-475e-9152-5234edfacace
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.content-menu
+  module:
+    - node
+    - system
+  theme:
+    - indicia_theme
+id: contentmenu
+theme: indicia_theme
+region: header
+weight: -2
+provider: null
+plugin: 'system_menu_block:content-menu'
+settings:
+  id: 'system_menu_block:content-menu'
+  label: 'Content menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

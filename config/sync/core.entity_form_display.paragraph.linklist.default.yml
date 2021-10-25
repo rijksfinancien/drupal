@@ -1,0 +1,39 @@
+uuid: 42f9375a-6add-47f5-99b1-705ae10a93d3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.linklist.link
+    - field.field.paragraph.linklist.link_list_title
+    - paragraphs.paragraphs_type.linklist
+  module:
+    - link
+id: paragraph.linklist.default
+targetEntityType: paragraph
+bundle: linklist
+mode: default
+content:
+  link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  link_list_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

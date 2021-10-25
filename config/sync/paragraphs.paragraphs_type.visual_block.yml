@@ -1,0 +1,10 @@
+uuid: d49d348d-ecdf-4643-ad4f-3c4ba7795270
+langcode: nl
+status: true
+dependencies: {  }
+id: visual_block
+label: 'Visual block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

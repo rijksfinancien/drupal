@@ -1,0 +1,131 @@
+minfin_visuals:
+  path: '/visuals/{jaar}/{fase}/{vuo}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}/{sub2}/{sub3}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\VisualController::build'
+    _title: 'Visuals'
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+    sub2: NULL
+    sub3: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: \d{4}$
+    fase: begroting|suppletoire1|suppletoire2|jaarverslag|owb|jv|o1|o2
+    vuo: ontvangsten|uitgaven|verplichtingen|o|u|v
+
+# Legacy redirect routes.
+
+minfin_visuals.legacy:
+  path: '/visuele-begroting/{jaar}/{fase}/{vuo}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: NULL
+    vuo: NULL
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+    fase: owb|jv|begroting|jaarverslag
+    vuo: o|u|v|ontvangsten|uitgaven|verplichtingen
+
+minfin_visuals.legacy_bu:
+  path: '/rijksbegroting/uitgaven-begroting/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'owb'
+    vuo: 'u'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+
+minfin_visuals.legacy_bo:
+  path: '/rijksbegroting/ontvangsten-begroting/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'owb'
+    vuo: 'o'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+
+minfin_visuals.legacy_bv:
+  path: '/rijksbegroting/verplichtingen-begroting/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'owb'
+    vuo: 'v'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+
+minfin_visuals.legacy_ju:
+  path: '/rijksbegroting/uitgaven-jaarverslag/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'jv'
+    vuo: 'u'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+
+minfin_visuals.legacy_jo:
+  path: '/rijksbegroting/ontvangsten-jaarverslag/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'jv'
+    vuo: 'o'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$
+
+minfin_visuals.legacy_jv:
+  path: '/rijksbegroting/verplichtingen-jaarverslag/{jaar}/{param1}/{param2}/{param3}/{param4}/{param5}'
+  defaults:
+    _controller: '\Drupal\minfin_visuals\Controller\RedirectController::redirectUser'
+    jaar: NULL
+    fase: 'jv'
+    vuo: 'v'
+    param1: NULL
+    param2: NULL
+    param3: NULL
+    param4: NULL
+    param5: NULL
+  requirements:
+    _permission: 'access content'
+    jaar: ^(201[5-9])|(20[2-9]\d)|(2[1-9]\d{2})$

@@ -1,0 +1,22 @@
+uuid: 705be823-0642-4a85-96fd-c97400c075d6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.status
+field_name: status
+entity_type: paragraph
+bundle: image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

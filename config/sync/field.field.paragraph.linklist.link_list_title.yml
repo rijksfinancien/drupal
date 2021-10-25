@@ -1,0 +1,19 @@
+uuid: 9ace987d-418f-4c76-9fa9-d3c95895b972
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link_list_title
+    - paragraphs.paragraphs_type.linklist
+id: paragraph.linklist.link_list_title
+field_name: link_list_title
+entity_type: paragraph
+bundle: linklist
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

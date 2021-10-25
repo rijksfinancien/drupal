@@ -1,0 +1,23 @@
+uuid: aa439975-32a7-4ef3-95cc-65386fc92160
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.begrip.description
+    - node.type.begrip
+  module:
+    - user
+id: node.begrip.teaser
+targetEntityType: node
+bundle: begrip
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  description: true
+  langcode: true

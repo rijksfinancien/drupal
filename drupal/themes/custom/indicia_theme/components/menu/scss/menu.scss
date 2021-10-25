@@ -1,0 +1,393 @@
+@import "components/_globals/mixins";
+
+.menu--main {
+  width: 100%;
+}
+
+#mainMenu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .home {
+    margin-right: auto;
+
+    @include breakpoint($laptop) {
+      margin-right: 0;
+    }
+
+    a {
+      &:hover, &:active, &:focus {
+        text-decoration: underline;
+
+        span:before {
+          text-decoration: none;
+        }
+      }
+
+      span:before {
+        text-decoration: none;
+        display: inline-block;
+      }
+    }
+
+    .rijks-text {
+      font-size: 18px;
+      display: none;
+
+      @include breakpoint($laptop) {
+        font-size: inherit;
+      }
+
+      .path-frontpage & {
+        display: block;
+
+        @include breakpoint($laptop) {
+          display: none;
+        }
+      }
+    }
+
+    .home-text {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+
+      @include breakpoint($laptop) {
+        font-size: inherit;
+      }
+
+      .path-frontpage & {
+        display: none;
+
+        @include breakpoint($laptop) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .rijks-textchart_legend {
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    color: white;
+
+    &:hover, &:focus, &:active {
+      color: $c-primary-300;
+    }
+  }
+
+  @include breakpoint($laptop) {
+    margin-bottom: 0;
+  }
+
+  a {
+    font-size: 16px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: $c-white;
+    background: none;
+
+    & span {
+      margin-right: 15px;
+    }
+
+    &.is-active {
+      color: $c-primary-600;
+    }
+
+    &:hover, &:active, &:focus {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline-color: $c-secondary-200;
+    }
+  }
+
+  > ul {
+    display: none;
+    margin: 0 -15px;
+    padding: 0 15px;
+    background: $c-primary-200;
+
+    @include breakpoint($tablet) {
+      margin: 10px -30px 0;
+      padding: 0 30px;
+    }
+
+    a {
+      &::before {
+        @extend .icon;
+        margin-right: 15px;
+        content: "\e938";
+      }
+    }
+  }
+
+  &.open {
+    // @todo Set height correctly.
+    ul {
+      position: absolute;
+      z-index: 900;
+      top: 100%;
+      left: 0;
+      display: block;
+      overflow: auto;
+      order: 3;
+      width: 100%;
+      height: 100vh;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+      padding: 32px 0;
+
+      @include breakpoint($tablet) {
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      li {
+        position: relative;
+        width: 100%;
+        min-width: 320px;
+        max-width: 350px + $gutter;
+        margin: 0 auto 16px;
+        padding: 0 15px;
+
+        @include breakpoint($tablet) {
+          max-width: 720px + $gutter;
+        }
+
+        @include breakpoint($laptop) {
+          max-width: 1005px + $gutter;
+        }
+
+        @include breakpoint($desktop) {
+          max-width: 1148px + $gutter;
+        }
+      }
+
+      a {
+        font-size: 18px;
+        color: $c-primary-400;
+
+        &:before {
+          font-size: 12px;
+          display: inline-block;
+        }
+
+        &:hover, &:active, &:focus {
+          text-decoration: underline;
+
+          &:before {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.open .searchToggle {
+    display: none;
+  }
+
+  ul li ul {
+    margin-left: 15px;
+
+    li a {
+      padding: 5px 0;
+    }
+  }
+
+  ul.mainMenuList {
+    margin-right: auto;
+
+    li {
+      display: block;
+    }
+  }
+
+  @include breakpoint($laptop) {
+    margin: 0 -15px;
+    padding: 0;
+
+    a {
+      font-size: 26px;
+      line-height: 30px;
+      display: block;
+      padding: 20px 15px;
+      color: white;
+
+      &::before {
+        display: none;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $c-primary-300;
+      }
+
+      &.is-active {
+        color: $c-primary-400;
+        background: $c-primary-200;
+      }
+    }
+
+    ul.mainMenuList {
+      display: flex;
+      order: unset;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      background: none;
+
+      ul {
+        display: none;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        span {
+          font-size: 1rem;
+          cursor: pointer;
+          color: white;
+
+          &:hover, &:focus, &:active {
+            color: $c-primary-300;
+          }
+        }
+      }
+    }
+  }
+
+  .searchToggle {
+    font-size: 20px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 10px;
+    color: #fff;
+    background: none;
+
+    &:hover, &:focus, &:active, &.active {
+      color: $c-primary-300;
+      background-color: #000;
+    }
+
+    &:focus {
+      outline-color: $c-secondary-200;
+    }
+  }
+
+  .navbarToggler {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+
+    .text {
+      display: none;
+    }
+
+    .bars {
+      .bar {
+        display: block;
+        width: 20px;
+        border-bottom: 3px solid white;
+
+        & + .bar {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      .text {
+        color: $c-primary-300;
+      }
+
+      .bars {
+        border-color: $c-primary-300;
+
+        .bar {
+          border-color: $c-primary-300;
+        }
+      }
+    }
+
+    @include breakpoint($laptop) {
+      display: none;
+    }
+  }
+
+  &.open .navbarToggler {
+    .text {
+      font-size: 18px;
+      display: block;
+      margin-right: 8px;
+
+      @include breakpoint($laptop) {
+        display: none;
+      }
+    }
+
+    .bar {
+      position: relative;
+    }
+
+    .bar:first-child {
+      top: 4px;
+      transform: rotate(45deg);
+    }
+
+    .bar:nth-child(2) {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .bar:last-child {
+      top: -3px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.home .icon-home {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+#submenu {
+  background: $c-primary-200;
+
+  ul {
+    margin: 0 -15px;
+    padding: 0;
+    list-style: none;
+
+    a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: $c-primary-600;
+
+      &:hover, &:focus, &:active {
+        color: $c-primary-400;
+      }
+    }
+  }
+}
+
+body.navbar-open {
+  overflow: hidden;
+  height: 100vh;
+}

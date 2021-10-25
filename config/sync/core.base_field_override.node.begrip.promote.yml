@@ -1,0 +1,22 @@
+uuid: 21a93c59-44f8-4818-a864-b8ac86ad83bb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.begrip
+id: node.begrip.promote
+field_name: promote
+entity_type: node
+bundle: begrip
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+.beleidsevaluatie-metadata {
+  padding: 16px 32px;
+  background-color: $c-gray-200;
+
+  .metadata-row {
+    display: flex;
+    margin-bottom: 0;
+
+    span:first-child {
+      font-weight: bold;
+      flex: 4;
+      margin-right: 16px;
+    }
+
+    span:last-child {
+      flex: 7;
+    }
+  }
+}

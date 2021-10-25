@@ -1,0 +1,31 @@
+#messages {
+  width: 100%;
+
+  .messages {
+    padding: 10px 0;
+    background: none;
+
+
+    &--status {
+      color: $c-status;
+      border-color: $c-status $c-status $c-status transparent; /* LTR */
+      background-color: $c-status-background;
+      box-shadow: -8px 0 0 $c-status; /* LTR */
+    }
+
+    &--warning {
+      color: $c-warning;
+      border-color: $c-warning $c-warning $c-warning transparent; /* LTR */
+      background-color: $c-warning-background;
+      box-shadow: -8px 0 0 $c-warning; /* LTR */
+    }
+
+    &--error {
+      color: $c-error;
+      border-color: $c-red-400;
+      background: $c-error-background;
+      box-shadow: -8px 0 0 $c-error;
+    }
+
+  }
+}

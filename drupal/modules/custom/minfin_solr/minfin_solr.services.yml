@@ -1,0 +1,8 @@
+services:
+  minfin_solr.solr_client:
+    class: Drupal\minfin_solr\SolrClient
+    arguments:
+      - '@serialization.json'
+      - '@http_client'
+      - '@logger.factory'
+      - '@config.factory'

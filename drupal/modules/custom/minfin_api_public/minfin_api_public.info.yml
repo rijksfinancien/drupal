@@ -1,0 +1,9 @@
+name: Minfin - Public API
+description: Provides the Public API for minfin
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin
+  - minfin_api:minfin_api

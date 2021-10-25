@@ -1,0 +1,25 @@
+uuid: 499a27f8-3546-4d95-a2a9-82639681ef8f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image.image
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.default
+targetEntityType: paragraph
+bundle: image
+mode: default
+content:
+  image:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: 28bbaa0d-819f-4a74-a526-54d3fea44620
+langcode: nl
+status: true
+dependencies: {  }
+id: teaser_block
+label: 'Teaser block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,786 @@
+artikel,begroting.ontwerp,begroting.suppl.1,begroting.suppl.2,begroting.vastgesteld,hoofdstuk,hoofdstuknummer,jaar,label,omschrijving,realisatie,saldo,uvo
+12,2355030,2511373.0,2260012.0,2365030,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,Hoofdwegennet,2231569.0,28443.0,U
+13,2228915,2453768.0,2159168.0,2218915,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,Spoorwegen,2154280.0,4888.0,U
+14,216332,218344.0,237249.0,216332,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,"Regionaal, lokale infra",236352.0,897.0,U
+15,872578,984370.0,905345.0,872578,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,Hoofdvaarwegennet,899296.0,6049.0,U
+17,181174,263406.0,130780.0,181174,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,Megaprojecten Verkeer en Vervoer,112472.0,18308.0,U
+18,24292,-291867.0,3043.0,24292,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,Overige uitgaven en ontvangsten,2113.0,930.0,U
+2,91859,94195.0,93945.0,91859,"B, Gemeentefonds",B,2017,Gemeentefonds,Onderzoek en bijdragen,92764.0,1181.0,U
+3,17544076,17918322.0,18083986.0,17544076,"B, Gemeentefonds",B,2017,Gemeentefonds,Programma,17982905.0,101081.0,U
+4,9507234,9809439.0,9830883.0,9557234,"B, Gemeentefonds",B,2017,Gemeentefonds,Integratie-uitkering sociaal Domein,9830578.0,305.0,U
+1,2199585,2285224.0,2569564.0,2199585,"C, Provinciefonds",C,2017,Provinciefonds,Provinciefonds,2569563.0,1.0,U
+1,32550,44246.0,44072.0,32550,"F, Diergezondheidsfonds",F,2017,Diergezondheidsfonds,Bewaking en bestrijding van dierziekten,57997.0,-13925.0,U
+1,32650,41534.0,41552.0,32650,"H, BES-fonds",H,2017,BES-fonds,BES-fonds,40985.0,567.0,U
+1,8009,8009.0,8009.0,8009,"I, De Koning",I,2017,De Koning,Uitkering leden Koninklijk Huis,7961.0,48.0,U
+2,27684,28289.0,28289.0,27684,"I, De Koning",I,2017,De Koning,Functionele uitgaven van de Koning,28289.0,0.0,U
+3,5728,5847.0,5886.0,5728,"I, De Koning",I,2017,De Koning,Doorbelaste uitgaven van andere begrotingen,5787.0,99.0,U
+1,11940,12070.0,12330.0,11940,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,Wetgeving en controle Eerste Kamer,10889.0,1441.0,U
+2,31675,31675.0,32390.0,31675,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,Uitgaven tbv van (oud) leden Tweede Kamer en leden EP,33580.0,-1190.0,U
+3,101005,103471.0,104293.0,101005,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,Wetgeving en controle Tweede Kamer,105349.0,-1056.0,U
+4,1472,1472.0,1484.0,1472,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,Wetgeving en controle Eerste en Tweede Kamer,1008.0,476.0,U
+10,-1912,1297.0,-1912.0,-1912,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,Nominaal en onvoorzien,0.0,-1912.0,U
+1,59314,58016.0,56603.0,59314,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Raad van State,56173.0,430.0,U
+2,28047,29379.0,28906.0,28047,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Algemene Rekenkamer,28576.0,330.0,U
+3,15230,16582.0,16585.0,15230,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",De Nationale Ombudsman,16266.0,319.0,U
+4,4671,5675.0,4841.0,4671,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kanselarij der Nederlandse Orden,4807.0,34.0,U
+6,2183,2201.0,2249.0,2183,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Aruba,2006.0,243.0,U
+7,3213,3240.0,3310.0,3213,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Curaçao,3052.0,258.0,U
+8,2358,2378.0,2429.0,2358,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Sint Maarten,2194.0,235.0,U
+10,0,2690.0,0.0,0,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Nominaal en onvoorzien,0.0,0.0,U
+1,59461,59119.0,58582.0,59461,"III, Algemene Zaken",III,2017,Algemene Zaken,Bevorderen eenheid regeringsbeleid,57639.0,943.0,U
+4,2390,2472.0,2472.0,2390,"III, Algemene Zaken",III,2017,Algemene Zaken,Kabinet van de Koning,2422.0,50.0,U
+5,1620,1958.0,1958.0,1620,"III, Algemene Zaken",III,2017,Algemene Zaken,Cie voor toezicht op de Inlichtingen- en veiligheidsdiensten,1509.0,449.0,U
+1,70858,77125.0,82929.0,70858,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Waarborgfunctie,69841.0,13088.0,U
+4,14676,16548.0,25967.0,14676,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Bevorderen sociaal-economische structuur,21359.0,4608.0,U
+5,186981,186981.0,197306.0,186981,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Schuldsanering/lopende inschrijving/leningen,225754.0,-28448.0,U
+6,18071,19292.0,21883.0,18071,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Apparaat,20556.0,1327.0,U
+7,1276,5722.0,2455.0,1276,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Nominaal en onvoorzien,0.0,2455.0,U
+8,0,0.0,96000.0,0,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,Wederopbouw bovenwindse eilanden,21491.0,74509.0,U
+1,46910957,54862025.0,54368325.0,46910957,"IXA, Nationale Schuld (Transactiebasis)",IXA,2017,Nationale Schuld (Transactiebasis),Financiering staatsschuld,54274741.0,93584.0,U
+2,1532727,1532754.0,1532754.0,1532727,"IXA, Nationale Schuld (Transactiebasis)",IXA,2017,Nationale Schuld (Transactiebasis),Kasbeheer,1552668.0,-19914.0,U
+1,2924355,3119769.0,3118719.0,2924355,"IXB, Financiën",IXB,2017,Financiën,Belastingen,3069422.0,49297.0,U
+2,21334,29118.0,25793.0,21334,"IXB, Financiën",IXB,2017,Financiën,Financiele Markten,21980.0,3813.0,U
+3,169528,167500.0,268750.0,169528,"IXB, Financiën",IXB,2017,Financiën,Financ. act. Publiek-Private sector,266104.0,2646.0,U
+4,121757,43929.0,43259.0,121757,"IXB, Financiën",IXB,2017,Financiën,Internationale Fin. Betrekkingen,39163.0,4096.0,U
+5,88145,70745.0,74140.0,88145,"IXB, Financiën",IXB,2017,Financiën,Exportkrediet- en investeringsverzekering,79488.0,-5348.0,U
+6,2922888,2932444.0,3025722.0,2922888,"IXB, Financiën",IXB,2017,Financiën,BTW-Compensatiefonds,3029706.0,-3984.0,U
+7,308,0.0,0.0,308,"IXB, Financiën",IXB,2017,Financiën,Beheer materiele activa,0.0,0.0,U
+10,90558,73592.0,5000.0,90558,"IXB, Financiën",IXB,2017,Financiën,Nominaal en onvoorzien,0.0,5000.0,U
+21,229148,238920.0,236174.0,229148,"IXB, Financiën",IXB,2017,Financiën,Centraal Apparaat,218518.0,17656.0,U
+1,536678,579972.0,468296.0,536678,"J, Deltafonds",J,2017,Deltafonds,Investeren in waterveiligheid,457927.0,10369.0,U
+2,38973,44917.0,16847.0,38973,"J, Deltafonds",J,2017,Deltafonds,Investeren in zoetwatervoorziening,11397.0,5450.0,U
+3,169466,172653.0,186747.0,169466,"J, Deltafonds",J,2017,Deltafonds,"Beheer, Onderhoud en vervanging",179456.0,7291.0,U
+4,0,0.0,6200.0,0,"J, Deltafonds",J,2017,Deltafonds,Experimenteren cf. art.111 Deltawet,6200.0,0.0,U
+5,133415,132438.0,288884.0,133415,"J, Deltafonds",J,2017,Deltafonds,Netwerkgebonden kosten en overige uitgaven,288322.0,562.0,U
+7,26124,37213.0,10709.0,26124,"J, Deltafonds",J,2017,Deltafonds,Investeren in Waterkwaliteit,7022.0,3687.0,U
+41,110249,114680.0,113727.0,110249,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Internationale rechtsorde en eerbiediging mensenrechten,114819.0,-1092.0,U
+42,250598,275740.0,272285.0,250598,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Veiligheid en stabiliteit,253968.0,18317.0,U
+43,7756749,7669647.0,7219155.0,7756749,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Europese Samenwerking,7197507.0,21648.0,U
+44,48541,51191.0,52068.0,51041,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Consulaire belangenbehartiging,49067.0,3001.0,U
+46,34158,53.0,0.0,34158,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Nominaal en onvoorzien,0.0,0.0,U
+47,679241,715740.0,731061.0,679241,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,Apparaat,748472.0,-17411.0,U
+31,5547979,6033855.0,6023291.0,5570295,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Nationale Politie,6020985.0,2306.0,U
+32,1469910,1476661.0,1457633.0,1471926,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Rechtspleging en rechtsbijstand,1451422.0,6211.0,U
+33,672645,729552.0,741546.0,689095,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Veiligheid en criminaliteitsbestrijding,731597.0,9949.0,U
+34,2575032,2651871.0,2645623.0,2585032,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Straffen en Beschermen,2639310.0,6313.0,U
+36,257893,263248.0,257281.0,261993,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Contraterrorisme en Nationaal Veiligheidsbeleid,255711.0,1570.0,U
+37,1627341,1540489.0,1532811.0,1632841,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Vreemdelingen,1526383.0,6428.0,U
+91,426082,443352.0,436752.0,426982,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Apparaatsuitgaven kerndepartement,424387.0,12365.0,U
+92,806,19469.0,6627.0,9030,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Nominaal en onvoorzien,0.0,6627.0,U
+93,3067,3067.0,3067.0,3067,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,Geheim,3318.0,-251.0,U
+1,0,38735.0,35629.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Openbaar bestuur en democratie,34147.0,1482.0,U
+2,0,215437.0,231600.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Algemene Inlichtingen- en Veiligheidsdienst,233767.0,-2167.0,U
+6,0,203600.0,200906.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Dienstverlenende en innovatieve overheid,198313.0,2593.0,U
+7,0,32306.0,30771.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Arbeidszaken overheid,28566.0,2205.0,U
+11,0,377377.0,380251.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Centraal Apparaat,366513.0,13738.0,U
+12,0,1370.0,13426.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Algemeen,13354.0,72.0,U
+13,0,21142.0,0.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Nominaal en onvoorzien,0.0,0.0,U
+61,30567,0.0,0.0,30567,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Openbaar bestuur en democratie,0.0,0.0,U
+62,212670,0.0,0.0,212670,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Algemene Inlichtingen- en Veiligheidsdienst,0.0,0.0,U
+66,161709,0.0,0.0,161709,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Dienstverlenende en innovatieve overheid,0.0,0.0,U
+67,30340,0.0,0.0,30340,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Arbeidszaken overheid,0.0,0.0,U
+71,305640,0.0,0.0,305640,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Centraal Apparaat,0.0,0.0,U
+72,1320,0.0,0.0,1320,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,Algemeen,0.0,0.0,U
+1,10245604,10501323.0,10486353.0,10245604,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Primair onderwijs,10494756.0,-8403.0,U
+3,7927940,8163657.0,8153729.0,7927940,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Voortgezet onderwijs,8143906.0,9823.0,U
+4,4217206,4240693.0,4207651.0,4217206,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Beroepsonderwijs en volwasseneneducatie,4209212.0,-1561.0,U
+6,2814350,2928834.0,2927152.0,2814350,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Hoger beroepsonderwijs,2925976.0,1176.0,U
+7,4310149,4441145.0,4444015.0,4310149,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Wetenschappelijk onderwijs,4443628.0,387.0,U
+8,11538,11789.0,11849.0,11538,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Internationaal onderwijsbeleid,11625.0,224.0,U
+9,179667,187774.0,173009.0,179667,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Arbeidsmarkt en personeelsbeleid,162367.0,10642.0,U
+11,4537556,4584855.0,4586387.0,4537556,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Studiefinanciering,4563829.0,22558.0,U
+12,89241,89609.0,90603.0,89241,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Tegemoetkoming studiekosten,92792.0,-2189.0,U
+13,6748,6786.0,6851.0,6748,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Lesgelden,7334.0,-483.0,U
+14,802568,749873.0,739641.0,827568,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Cultuur,738415.0,1226.0,U
+15,962699,976437.0,978322.0,962699,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Media,977791.0,531.0,U
+16,950780,1028722.0,1037671.0,950780,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Onderzoek en wetenschappen,1034753.0,2918.0,U
+25,14172,13311.0,12434.0,14172,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Emancipatie,12363.0,71.0,U
+91,-150051,0.0,0.0,-150051,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Nominaal en onvoorzien,0.0,0.0,U
+95,242370,256733.0,236365.0,242370,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",Apparaatskosten,234542.0,1823.0,U
+1,325793,258699.0,256119.0,325793,"X, Defensie",X,2017,Defensie,Opdracht Inzet,198791.0,57328.0,U
+2,721477,739074.0,789779.0,721477,"X, Defensie",X,2017,Defensie,Taakuitvoering Zeestrijdkrachten,794409.0,-4630.0,U
+3,1251341,1294046.0,1257674.0,1251341,"X, Defensie",X,2017,Defensie,Taakuitvoering Landstrijdkrachten,1282344.0,-24670.0,U
+4,681678,701591.0,742271.0,681678,"X, Defensie",X,2017,Defensie,Taakuitvoering Luchtstrijdkrachten,745213.0,-2942.0,U
+5,338752,381135.0,367874.0,338752,"X, Defensie",X,2017,Defensie,Taakuitvoering Koninklijke Marechaussee,371318.0,-3444.0,U
+6,1640538,1773826.0,1565036.0,1640538,"X, Defensie",X,2017,Defensie,Investeringen Krijgsmacht,1441839.0,123197.0,U
+7,830335,818564.0,825874.0,830335,"X, Defensie",X,2017,Defensie,Ondersteuning krijgsmacht door Defensie Materieel Org,816269.0,9605.0,U
+8,1162083,1177817.0,1208056.0,1161983,"X, Defensie",X,2017,Defensie,Ondersteuning krijgsmacht door Cdo Dienstencentra,1223267.0,-15211.0,U
+9,95717,93095.0,93098.0,95717,"X, Defensie",X,2017,Defensie,Algemeen,85193.0,7905.0,U
+10,1580732,1615532.0,1588543.0,1588732,"X, Defensie",X,2017,Defensie,Centraal apparaat,1572368.0,16175.0,U
+11,5389,5468.0,7511.0,5389,"X, Defensie",X,2017,Defensie,Geheime uitgaven,7874.0,-363.0,U
+12,52407,100177.0,0.0,52507,"X, Defensie",X,2017,Defensie,Nominaal en onvoorzien,0.0,0.0,U
+11,56206,55637.0,54451.0,56206,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Integraal waterbeleid,50701.0,3750.0,U
+13,102337,155569.0,136461.0,102337,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Ruimtelijke Ontwikkeling,136527.0,-66.0,U
+14,34406,45621.0,49233.0,34406,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Wegen en verkeersveiligheid,46179.0,3054.0,U
+16,32910,30712.0,22016.0,32910,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Openbaar vervoer en spoor,18804.0,3212.0,U
+17,14049,14018.0,18674.0,14049,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Luchtvaart,14982.0,3692.0,U
+18,27752,31363.0,31116.0,27752,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Scheepvaart en havens,29409.0,1707.0,U
+19,61434,78960.0,74028.0,61434,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Klimaat,70475.0,3553.0,U
+20,30402,18503.0,20317.0,30402,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Lucht en geluid,20563.0,-246.0,U
+21,20900,22549.0,22317.0,20900,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Duurzaamheid,21741.0,576.0,U
+22,33780,43367.0,47556.0,33780,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Omgevingsveiligheid en milieurisico's,45430.0,2126.0,U
+23,41719,41582.0,44028.0,41719,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,"Meteorologie, seismologie en aardobservatie",43959.0,69.0,U
+24,109561,104649.0,106759.0,109561,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Handhaving en toezicht,106759.0,0.0,U
+25,888311,915049.0,930277.0,888311,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Bijdrage BDU,930277.0,0.0,U
+26,6168329,5682359.0,5255138.0,6168329,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Bijdrage investeringsfondsen,5259841.0,-4703.0,U
+97,50480,148585.0,117688.0,50480,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Algemeen departement,114922.0,2766.0,U
+98,321827,346423.0,343700.0,321827,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Apparaatsuitgaven Kerndepartement,334417.0,9283.0,U
+99,21,136822.0,28050.0,21,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,Nominaal en onvoorzien,0.0,28050.0,U
+1,185726,186828.0,208875.0,185726,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Goed functionerende economie en markten,208679.0,196.0,U
+2,829851,863916.0,843858.0,829651,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Bedrijvenbeleid: innovatief en duurzaam ondernemen,843402.0,456.0,U
+3,145118,220533.0,229667.0,145118,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Toekomstfonds,130373.0,99294.0,U
+4,1902455,1925209.0,1909814.0,1902455,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Een doelmatige en duurzame energievoorziening,1887248.0,22566.0,U
+5,77600,86360.0,74045.0,77800,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Meerjarenprogramma Nationaal Coördinator Groningen,47099.0,26946.0,U
+6,538382,562824.0,615106.0,538382,"XIII, Economische Zaken",XIII,2017,Economische Zaken,"Een concurr., duurz.en veilige agro-, viss.- en voedeselket.",614513.0,593.0,U
+7,804513,806884.0,827176.0,804513,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Groen onderwijs van hoge kwaliteit,817051.0,10125.0,U
+8,125645,111077.0,110904.0,125645,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Natuur en biodiversiteit,115829.0,-4925.0,U
+40,334284,329720.0,404203.0,334284,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Apparaat,403194.0,1009.0,U
+41,0,94811.0,0.0,0,"XIII, Economische Zaken",XIII,2017,Economische Zaken,Nominaal en onvoorzien,0.0,0.0,U
+1,15992,16507.0,17077.0,16092,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Arbeidsmarkt,15854.0,1223.0,U
+2,6802144,6863850.0,6898845.0,6796544,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,"Bijstand, Participatiewet en Toeslagenwet",6809474.0,89371.0,U
+3,787,787.0,801.0,787,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Arbeidsongeschiktheid,804.0,-3.0,U
+4,3239793,3210443.0,3202478.0,3239793,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Jonggehandicapten,3202010.0,468.0,U
+5,190345,188045.0,167288.0,190345,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Werkloosheid,166729.0,559.0,U
+6,7450,7707.0,8193.0,7450,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Ziekte en zwangerschap,7578.0,615.0,U
+7,2597959,2625882.0,2661100.0,2597959,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Kinderopvang,2610681.0,50419.0,U
+8,24887,24663.0,25157.0,24887,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Oudedagsvoorziening,24175.0,982.0,U
+9,1253,1253.0,1276.0,1253,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Nabestaanden,1111.0,165.0,U
+10,5560635,5553653.0,5470620.0,5560635,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Tegemoetkoming ouders,5441004.0,29616.0,U
+11,434478,478856.0,491443.0,434478,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Uitvoeringskosten,490919.0,524.0,U
+12,13957930,12392520.0,12420195.0,13957930,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Rijksbijdragen,12420196.0,-1.0,U
+13,323351,306501.0,331839.0,323351,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Integratie en maatschappelijke samenhang,328040.0,3799.0,U
+96,278324,276449.0,275616.0,278824,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Apparaat,265018.0,10598.0,U
+98,37749,40649.0,37998.0,37749,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Algemeen,32974.0,5024.0,U
+99,128863,72900.0,1000.0,133863,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,Nominaal en onvoorzien,0.0,1000.0,U
+1,653099,644348.0,626966.0,653099,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Volksgezondheid,621682.0,5284.0,U
+2,3816813,3783625.0,3745894.0,3816813,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Curatieve zorg,3735344.0,10550.0,U
+3,3768067,3800349.0,3827938.0,3768067,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Langdurige zorg en ondersteuning,3818740.0,9198.0,U
+4,915450,981702.0,992907.0,915450,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Zorgbreed beleid,995681.0,-2774.0,U
+5,115531,107716.0,125582.0,82531,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Jeugd,110227.0,15355.0,U
+6,126704,68765.0,80915.0,126704,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Sport en bewegen,80358.0,557.0,U
+7,273515,283650.0,281215.0,273515,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Oorlogsgetroffenen en Herinneringen Tweede Wereldoorlog,280834.0,381.0,U
+8,4448121,4682592.0,4662514.0,4448121,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Tegemoetkoming specifieke kosten,4994270.0,-331756.0,U
+9,28185,30060.0,28508.0,28185,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Algemeen,33369.0,-4861.0,U
+10,259159,304448.0,335769.0,259159,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Apparaatsuitgaven,322293.0,13476.0,U
+11,-33446,26300.0,2220.0,-33446,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",Nominaal en Onvoorzien,0.0,2220.0,U
+41,496986,517562.0,497192.0,496986,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,Duurzame handel en investeringen,471994.0,25198.0,U
+42,660072,661579.0,670513.0,660072,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame ontwikkeling, voedselzekerheid en water",664774.0,5739.0,U
+43,727524,717148.0,728851.0,727524,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,Sociale vooruitgang,714000.0,14851.0,U
+44,469106,714474.0,690474.0,469106,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,Vrede en veiligheid voor ontwikkeling,676816.0,13658.0,U
+45,-107631,145000.0,243540.0,-107631,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,Versterkte kaders voor ontwikkeling,294132.0,-50592.0,U
+1,0,4109102.0,4136597.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Woningmarkt,4022685.0,113912.0,U
+2,0,174553.0,175449.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Woonomgeving en bouw,96521.0,78928.0,U
+3,0,50784.0,48283.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Kwaliteit Rijksdienst,47648.0,635.0,U
+6,0,106879.0,110334.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Uitvoering rijksvastgoedbeleid,105319.0,5015.0,U
+11,4103957,0.0,0.0,4103957,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Woningmarkt,0.0,0.0,U
+12,64510,0.0,0.0,64510,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Woonomgeving en bouw,0.0,0.0,U
+13,18234,0.0,0.0,18234,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Kwaliteit Rijksdienst,0.0,0.0,U
+16,125453,0.0,0.0,125453,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,Uitvoering rijksvastgoedbeleid,0.0,0.0,U
+12,2575982,2839668.0,2477273.0,2575982,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,Hoofdwegennet,2472330.0,4943.0,U
+13,2190386,2410301.0,2147707.0,2190386,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,Spoorwegen,2123334.0,24373.0,U
+14,246600,203156.0,102862.0,246600,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,"Regionaal, lokale infra",97268.0,5594.0,U
+15,964746,1005400.0,853287.0,964746,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,Hoofdvaarwegennet,845570.0,7717.0,U
+17,262497,323554.0,274762.0,262497,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,Megaprojecten Verkeer en Vervoer,269333.0,5429.0,U
+18,2966,55608.0,5730.0,1094,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,Overige uitgaven en ontvangsten,1729.0,4001.0,U
+2,4152,2711.0,2711.0,4152,"B, Gemeentefonds",B,2018,Gemeentefonds,Onderzoek,1602.0,1109.0,U
+3,18487363,19104670.0,19315055.0,18487363,"B, Gemeentefonds",B,2018,Gemeentefonds,Programma,19017123.0,297932.0,U
+4,9790355,10052561.0,10064714.0,9791155,"B, Gemeentefonds",B,2018,Gemeentefonds,Integratie-uitkering sociaal domein,10064409.0,305.0,U
+1,2187740,2312576.0,2454729.0,2187740,"C, Provinciefonds",C,2018,Provinciefonds,Provinciefonds,2454311.0,418.0,U
+1,34507,53903.0,54904.0,34507,"F, Diergezondheidsfonds",F,2018,Diergezondheidsfonds,Bewaking en bestrijding van dierziekten,50980.0,3924.0,U
+1,41386,41386.0,42079.0,41386,"H, BES-fonds",H,2018,BES-fonds,BES-fonds,39047.0,3032.0,U
+1,8152,8152.0,8152.0,8152,"I, De Koning",I,2018,De Koning,Grondwettelijke uitkering aan de leden vh Koninklijk Huis,8082.0,70.0,U
+2,28287,28913.0,28913.0,28287,"I, De Koning",I,2018,De Koning,Functionele uitgaven van de Koning,28913.0,0.0,U
+3,5845,6022.0,6021.0,5845,"I, De Koning",I,2018,De Koning,Doorbelaste uitgaven van andere begrotingen,5818.0,203.0,U
+1,12212,12331.0,12681.0,12212,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,Wetgeving en controle Eerste Kamer,12707.0,-26.0,U
+2,31346,31346.0,32059.0,31346,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,Uitgaven tbv van (oud) leden Tweede Kamer en leden EP,34521.0,-2462.0,U
+3,100818,102218.0,107469.0,100818,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,Wetgeving en controle Tweede Kamer,105456.0,2013.0,U
+4,1479,1479.0,1491.0,1479,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,Wetgeving en controle Eerste en Tweede Kamer,1171.0,320.0,U
+10,-1957,1294.0,-1957.0,-1957,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,Nominaal en onvoorzien,0.0,-1957.0,U
+1,54934,64409.0,61863.0,54934,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Raad van State,60428.0,1435.0,U
+2,28541,31213.0,31136.0,28541,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Algemene Rekenkamer,30574.0,562.0,U
+3,16311,18413.0,18525.0,16311,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",De Nationale Ombudsman,18339.0,186.0,U
+4,4730,5177.0,5645.0,4730,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kanselarij der Nederlandse Orden,5392.0,253.0,U
+6,1814,1836.0,1877.0,1814,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Aruba,1876.0,1.0,U
+7,2758,2790.0,3151.0,2758,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Curaçao,3008.0,143.0,U
+8,1980,2004.0,2560.0,1980,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Sint Maarten,2472.0,88.0,U
+9,2295,2295.0,2412.0,2295,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kiesraad,2393.0,19.0,U
+10,0,2649.0,0.0,0,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Nominaal en onvoorzien,0.0,0.0,U
+1,58308,63133.0,61618.0,61308,"III, Algemene Zaken",III,2018,Algemene Zaken,Bevorderen eenheid regeringsbeleid,60045.0,1573.0,U
+4,2431,2515.0,2514.0,2431,"III, Algemene Zaken",III,2018,Algemene Zaken,Kabinet van de Koning,2485.0,29.0,U
+5,2494,2551.0,2251.0,2494,"III, Algemene Zaken",III,2018,Algemene Zaken,Cie voor toezicht op de Inlichtingen- en veiligheidsdiensten,1943.0,308.0,U
+1,87274,47315.0,47559.0,40717,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Versterken rechtsstaat,45772.0,1787.0,U
+4,11005,11467.0,37905.0,11005,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Bevorderen sociaal-economische structuur,43677.0,-5772.0,U
+5,172431,172431.0,172431.0,172431,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Schuldsanering/lopende inschrijving/leningen,172432.0,-1.0,U
+6,21059,22834.0,26037.0,21059,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Apparaat,24972.0,1065.0,U
+7,1988,9310.0,6495.0,874,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Nog onverdeeld,0.0,6495.0,U
+8,0,205642.0,366360.0,0,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,Wederopbouw bovenwindse eilanden,338226.0,28134.0,U
+1,46566396,45109508.0,45934218.0,46645396,"IXA, Nationale Schuld (Transactiebasis)",IXA,2018,Nationale Schuld (Transactiebasis),Financiering staatsschuld,45830986.0,103232.0,U
+2,1532191,1532195.0,1798427.0,1532191,"IXA, Nationale Schuld (Transactiebasis)",IXA,2018,Nationale Schuld (Transactiebasis),Kasbeheer,2951006.0,-1152579.0,U
+1,2886061,3046847.0,3128545.0,2886061,"IXB, Financiën",IXB,2018,Financiën,Belastingen,3182408.0,-53863.0,U
+2,28769,21942.0,20766.0,28769,"IXB, Financiën",IXB,2018,Financiën,Financiele Markten,21917.0,-1151.0,U
+3,366932,366650.0,470151.0,366932,"IXB, Financiën",IXB,2018,Financiën,Financ. act. Publiek-Private sector,466499.0,3652.0,U
+4,419328,355400.0,355404.0,419328,"IXB, Financiën",IXB,2018,Financiën,Internationale Fin. Betrekkingen,502045.0,-146641.0,U
+5,75442,75442.0,75120.0,75442,"IXB, Financiën",IXB,2018,Financiën,Exportkrediet- en investeringsverzekering,42733.0,32387.0,U
+6,3010252,3013412.0,3236777.0,3010252,"IXB, Financiën",IXB,2018,Financiën,BTW-Compensatiefonds,3286561.0,-49784.0,U
+10,97019,51125.0,0.0,97019,"IXB, Financiën",IXB,2018,Financiën,Nominaal en onvoorzien,0.0,0.0,U
+21,233707,236164.0,233787.0,233707,"IXB, Financiën",IXB,2018,Financiën,Centraal Apparaat,234327.0,-540.0,U
+1,526713,446845.0,519296.0,526713,"J, Deltafonds",J,2018,Deltafonds,Investeren in waterveiligheid,515558.0,3738.0,U
+2,21863,37813.0,16224.0,21863,"J, Deltafonds",J,2018,Deltafonds,Investeren in zoetwatervoorziening,11739.0,4485.0,U
+3,188765,201283.0,211543.0,188765,"J, Deltafonds",J,2018,Deltafonds,"Beheer, Onderhoud en vervanging",207793.0,3750.0,U
+4,47730,47223.0,23003.0,47730,"J, Deltafonds",J,2018,Deltafonds,Experimenteren cf. art.111 Deltawet,20974.0,2029.0,U
+5,304609,297180.0,310280.0,276099,"J, Deltafonds",J,2018,Deltafonds,Netwerkgebonden kosten en overige uitgaven,307827.0,2453.0,U
+7,29648,84672.0,26369.0,29648,"J, Deltafonds",J,2018,Deltafonds,Investeren in Waterkwaliteit,19795.0,6574.0,U
+41,109805,120914.0,121675.0,109805,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Internationale rechtsorde en eerbiediging mensenrechten,120170.0,1505.0,U
+42,249370,292536.0,275953.0,249370,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Veiligheid en stabiliteit,238286.0,37667.0,U
+43,8389205,8414410.0,7984978.0,8389205,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Europese Samenwerking,7985994.0,-1016.0,U
+44,50093,62050.0,66270.0,50093,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Consulaire belangenbehartiging,60177.0,6093.0,U
+46,68329,3984.0,1296.0,72011,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Nominaal en onvoorzien,0.0,1296.0,U
+47,667613,793655.0,788864.0,667613,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,Apparaat,769414.0,19450.0,U
+31,5598229,5852939.0,5903847.0,5698929,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Politie,5901324.0,2523.0,U
+32,1459835,1453138.0,1441535.0,1459844,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Rechtspleging en rechtsbijstand,1436050.0,5485.0,U
+33,714452,760429.0,794000.0,731997,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Veiligheid en criminaliteitsbestrijding,776354.0,17646.0,U
+34,2475634,2508048.0,2643179.0,2406500,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Straffen en beschermen,2643347.0,-168.0,U
+36,278667,266696.0,273301.0,285677,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Contraterrorisme en nationaal veiligheidsbeleid,273373.0,-72.0,U
+37,1101094,1247661.0,1352079.0,1181800,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Migratie,1335918.0,16161.0,U
+91,429422,437763.0,430924.0,429959,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Apparaatsuitgaven kerndepartement,445144.0,-14220.0,U
+92,20137,4979.0,4363.0,20444,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Nog onverdeeld,0.0,4363.0,U
+93,3067,3067.0,3067.0,3067,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,Geheim,2536.0,531.0,U
+1,28920,51782.0,38545.0,28920,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Openbaar bestuur en democratie,37196.0,1349.0,U
+2,249167,252723.0,264881.0,249167,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Nationale veiligheid,265091.0,-210.0,U
+3,0,4121829.0,4685864.0,4157089,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Woningmarkt,4518316.0,167548.0,U
+4,0,357217.0,171431.0,247486,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Energietransitie gebouwde omgeving en bouwkwaliteit,176053.0,-4622.0,U
+5,0,136956.0,100915.0,107235,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Ruimtelijke ordening en omgevingswet,107456.0,-6541.0,U
+6,122211,184386.0,194762.0,148520,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Overheidsdienstverlening en informatiesamenleving,188841.0,5921.0,U
+7,27317,28317.0,27635.0,27317,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Werkgevers- en bedrijfsvoeringsbeleid,26403.0,1232.0,U
+8,0,68101.0,77477.0,19535,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Kwaliteit Rijksdienst,74031.0,3446.0,U
+9,0,117389.0,122415.0,111579,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Uitvoering Rijksvastgoedbeleid,117433.0,4982.0,U
+11,314783,420522.0,438467.0,342156,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Centraal apparaat,433319.0,5148.0,U
+12,10265,12405.0,12188.0,10265,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Algemeen,7262.0,4926.0,U
+13,6112,23679.0,0.0,6112,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,Nog onverdeeld,0.0,0.0,U
+1,10472423,10874767.0,11140220.0,10505757,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Primair onderwijs,11142533.0,-2313.0,U
+3,8123146,8715183.0,8728879.0,8460939,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Voortgezet onderwijs,8707896.0,20983.0,U
+4,4325690,4626535.0,4606759.0,4496879,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Beroepsonderwijs en volwasseneneducatie,4601918.0,4841.0,U
+6,3005161,3261029.0,3265136.0,3140498,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Hoger beroepsonderwijs,3262539.0,2597.0,U
+7,4483810,4859150.0,4860278.0,4696066,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Wetenschappelijk onderwijs,4860007.0,271.0,U
+8,11716,12643.0,12614.0,11716,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Internationaal onderwijsbeleid,12496.0,118.0,U
+9,181159,170800.0,150915.0,181159,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Arbeidsmarkt en personeelsbeleid,140384.0,10531.0,U
+11,5373215,5519076.0,6310867.0,5373215,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Studiefinanciering,6200225.0,110642.0,U
+12,89501,93701.0,81192.0,89501,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Tegemoetkoming studiekosten,80481.0,711.0,U
+13,6555,6672.0,12118.0,6555,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Lesgelden,12158.0,-40.0,U
+14,777883,864135.0,855132.0,787883,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Cultuur,852585.0,2547.0,U
+15,989426,977748.0,975203.0,989426,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Media,973392.0,1811.0,U
+16,1009038,1205943.0,1218535.0,1008396,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Onderzoek en wetenschappen,1216958.0,1577.0,U
+25,15444,15894.0,12975.0,15444,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Emancipatie,12929.0,46.0,U
+91,-244318,269682.0,0.0,269682,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Nominaal en onvoorzien,0.0,0.0,U
+95,250133,273141.0,250259.0,252663,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",Apparaatskosten,250379.0,-120.0,U
+1,335839,278933.0,283032.0,335839,"X, Defensie",X,2018,Defensie,Opdracht Inzet,232001.0,51031.0,U
+2,731436,843117.0,859954.0,786824,"X, Defensie",X,2018,Defensie,Taakuitvoering Zeestrijdkrachten,867185.0,-7231.0,U
+3,1293771,1370354.0,1324684.0,1321608,"X, Defensie",X,2018,Defensie,Taakuitvoering Landstrijdkrachten,1337845.0,-13161.0,U
+4,709310,765415.0,762598.0,721770,"X, Defensie",X,2018,Defensie,Taakuitvoering Luchtstrijdkrachten,771677.0,-9079.0,U
+5,361173,399091.0,405222.0,361774,"X, Defensie",X,2018,Defensie,Taakuitvoering Koninklijke Marechaussee,410737.0,-5515.0,U
+6,2009861,2965327.0,1774703.0,2098286,"X, Defensie",X,2018,Defensie,Investeringen Krijgsmacht,1736955.0,37748.0,U
+7,851960,856641.0,907113.0,860247,"X, Defensie",X,2018,Defensie,Ondersteuning krijgsmacht door Defensie Materieel Org,919071.0,-11958.0,U
+8,1127450,1258745.0,1287569.0,1155733,"X, Defensie",X,2018,Defensie,Ondersteuning krijgsmacht door Cdo Dienstencentra,1315775.0,-28206.0,U
+9,98233,114459.0,95683.0,98233,"X, Defensie",X,2018,Defensie,Algemeen,89598.0,6085.0,U
+10,1574248,1688322.0,1737166.0,1579275,"X, Defensie",X,2018,Defensie,Centraal apparaat,1728881.0,8285.0,U
+11,7470,7107.0,7470.0,7470,"X, Defensie",X,2018,Defensie,Geheime uitgaven,7155.0,315.0,U
+12,103202,153504.0,55136.0,123202,"X, Defensie",X,2018,Defensie,Nominaal en onvoorzien,0.0,55136.0,U
+11,44986,52655.0,48610.0,45789,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Integraal waterbeleid,44251.0,4359.0,U
+13,131496,41797.0,23011.0,53840,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Ruimtelijke Ontwikkeling,22459.0,552.0,U
+14,36725,39808.0,47182.0,36725,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Wegen en verkeersveiligheid,46558.0,624.0,U
+16,18622,18976.0,16383.0,18622,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Openbaar vervoer en spoor,15728.0,655.0,U
+17,15162,18097.0,21177.0,15162,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Luchtvaart,21913.0,-736.0,U
+18,25396,41083.0,39328.0,25396,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Scheepvaart en havens,39981.0,-653.0,U
+19,66915,52661.0,55977.0,45116,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Klimaat,55953.0,24.0,U
+20,34729,32042.0,23959.0,34374,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Lucht en geluid,23627.0,332.0,U
+21,19719,65268.0,53573.0,34421,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Duurzaamheid,52352.0,1221.0,U
+22,34937,45743.0,51675.0,34937,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Omgevingsveiligheid en milieurisico's,50160.0,1515.0,U
+23,50508,50448.0,52174.0,50508,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,"Meteorologie, seismologie en aardobservatie",52056.0,118.0,U
+24,103314,103314.0,116679.0,103314,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Handhaving en toezicht,116679.0,0.0,U
+25,881588,911155.0,929574.0,881588,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Bijdrage BDU,929574.0,0.0,U
+26,6595335,7009852.0,6330825.0,6564953,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Bijdrage investeringsfondsen,6335032.0,-4207.0,U
+97,57813,117830.0,122377.0,57813,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Algemeen departement,93648.0,28729.0,U
+98,313306,292708.0,303311.0,284403,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Apparaatsuitgaven Kerndepartement,298856.0,4455.0,U
+99,108,145421.0,-20060.0,108,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,Nominaal en onvoorzien,0.0,-20060.0,U
+1,186299,195432.0,203881.0,186154,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Goed functionerende economie en markten,201785.0,2096.0,U
+2,854865,913032.0,890253.0,826040,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Bedrijvenbeleid: innovatief en duurzaam ondernemen,875703.0,14550.0,U
+3,189595,292571.0,218881.0,189595,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Toekomstfonds,124189.0,94692.0,U
+4,2187002,2287433.0,2895066.0,2200115,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Een doelmatige en duurzame energievoorziening,2875719.0,19347.0,U
+5,38760,48981.0,143840.0,38760,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Een veilig Groningen met perspectief,80908.0,62932.0,U
+6,540378,637897.0,652132.0,548488,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,"Een concurr., duurz.en veilige agro-, viss.- en voedeselket.",661414.0,-9282.0,U
+7,809377,0.0,0.0,0,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Groen onderwijs van hoge kwaliteit,0.0,0.0,U
+8,105204,109841.0,114354.0,105204,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Natuur en biodiversiteit,110843.0,3511.0,U
+40,340475,338812.0,396378.0,300121,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Apparaat (EZK),297577.0,98801.0,U
+41,2500,49615.0,0.0,2500,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Nog onverdeeld (EZK),0.0,0.0,U
+42,0,41354.0,41354.0,41354,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Apparaat (LNV),126989.0,-85635.0,U
+43,0,64755.0,9498.0,0,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,Nog onverdeeld (LNV),0.0,9498.0,U
+1,509873,489936.0,493545.0,509873,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Arbeidsmarkt,486149.0,7396.0,U
+2,6810888,7074568.0,7098439.0,6724243,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,"Bijstand, Participatiewet en Toeslagenwet",7089379.0,9060.0,U
+3,824,824.0,790.0,824,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Arbeidsongeschiktheid,813.0,-23.0,U
+4,3298349,3226146.0,3279580.0,3298349,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Jonggehandicapten,3280192.0,-612.0,U
+5,156490,158874.0,108405.0,156490,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Werkloosheid,108108.0,297.0,U
+6,8118,8618.0,7901.0,8618,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Ziekte en zwangerschap,7904.0,-3.0,U
+7,2831198,2914188.0,2970118.0,2853198,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Kinderopvang,2958302.0,11816.0,U
+8,24447,25150.0,23315.0,24447,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Oudedagsvoorziening,23009.0,306.0,U
+9,1348,1348.0,1188.0,1348,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Nabestaanden,1020.0,168.0,U
+10,5599200,5489293.0,5499418.0,5604200,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Tegemoetkoming ouders,5493447.0,5971.0,U
+11,468574,513024.0,498100.0,498574,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Uitvoeringskosten,496242.0,1858.0,U
+12,11668318,13836536.0,13853107.0,11596718,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Rijksbijdragen,13852630.0,477.0,U
+13,317108,304828.0,304838.0,317108,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Integratie en maatschappelijke samenhang,290084.0,14754.0,U
+96,295856,308993.0,312390.0,308856,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Apparaat,302402.0,9988.0,U
+98,31084,33881.0,25318.0,31084,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Algemeen,22559.0,2759.0,U
+99,68718,184476.0,1096.0,68718,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,Nominaal en onvoorzien,0.0,1096.0,U
+1,666585,686105.0,661843.0,669585,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Volksgezondheid,651562.0,10281.0,U
+2,3521459,3508478.0,3462660.0,3523559,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Curatieve zorg,3449505.0,13155.0,U
+3,3905370,3988106.0,3923906.0,3935770,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Langdurige zorg en ondersteuning,3908966.0,14940.0,U
+4,1083233,1129171.0,1154749.0,1094983,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Zorgbreed beleid,1130063.0,24686.0,U
+5,90135,133516.0,122369.0,90135,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Jeugd,117753.0,4616.0,U
+6,136135,87380.0,88805.0,136135,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Sport en bewegen,86241.0,2564.0,U
+7,272798,272673.0,267558.0,272798,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Oorlogsgetroffenen en Herinneringen Tweede Wereldoorlog,266660.0,898.0,U
+8,5265822,5011948.0,4617777.0,5249091,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Tegemoetkoming specifieke kosten,5348368.0,-730591.0,U
+9,33140,41825.0,53996.0,33140,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Algemeen,53691.0,305.0,U
+10,272223,326408.0,373492.0,272473,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Apparaatsuitgaven,361603.0,11889.0,U
+11,-16222,64151.0,836.0,-16222,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",Nominaal en Onvoorzien,0.0,836.0,U
+41,508830,543901.0,538205.0,508830,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,Duurzame handel en investeringen,537160.0,1045.0,U
+42,666496,707556.0,714130.0,666496,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame ontwikkeling, voedselzekerheid en water",710799.0,3331.0,U
+43,724927,786327.0,814536.0,724927,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,Sociale vooruitgang,814757.0,-221.0,U
+44,396979,744979.0,816552.0,586979,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,Vrede en veiligheid voor ontwikkeling,811055.0,5497.0,U
+45,169071,240679.0,148345.0,212967,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,Versterkte kaders voor ontwikkeling,197359.0,-49014.0,U
+1,4147089,0.0,0.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2018,Wonen & Rijksdienst,Woningmarkt,0.0,0.0,U
+2,247486,0.0,0.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2018,Wonen & Rijksdienst,Woonomgeving en bouw,0.0,0.0,U
+3,19535,0.0,0.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2018,Wonen & Rijksdienst,Kwaliteit Rijksdienst,0.0,0.0,U
+6,111579,0.0,0.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2018,Wonen & Rijksdienst,Uitvoering rijksvastgoedbeleid,0.0,0.0,U
+12,3099638,3123695.0,2407742.0,3114638,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,Hoofdwegennet,2400171.0,7571.0,U
+13,2009388,2053171.0,1940173.0,2009388,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,Spoorwegen,1931571.0,8602.0,U
+14,192762,153619.0,153777.0,192762,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,"Regionaal, lokale infrastructuur",154962.0,-1185.0,U
+15,1291388,1361816.0,958193.0,1291388,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,Hoofdvaarwegennet,940693.0,17500.0,U
+17,692068,672416.0,333604.0,692068,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,Megaprojecten Verkeer en Vervoer,333324.0,280.0,U
+18,893,16819.0,3396.0,893,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,Overige uitgaven en ontvangsten,39.0,3357.0,U
+20,81897,29896.0,600.0,66897,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,"Verkenningen, reserveringen en investeringsruimte",0.0,600.0,U
+2,1711,4061.0,4061.0,1711,"B, Gemeentefonds",B,2019,Gemeentefonds,Onderzoek,3271.0,790.0,U
+3,25835515,26721469.0,26891555.0,25835515,"B, Gemeentefonds",B,2019,Gemeentefonds,Programma,26805106.0,86449.0,U
+4,4310733,4434162.0,4489911.0,4310733,"B, Gemeentefonds",B,2019,Gemeentefonds,Integratie-uitkering sociaal domein,4489605.0,306.0,U
+1,2407659,2419388.0,2499141.0,2407659,"C, Provinciefonds",C,2019,Provinciefonds,Provinciefonds,2467056.0,32085.0,U
+1,34585,57702.0,60373.0,34585,"F, Diergezondheidsfonds",F,2019,Diergezondheidsfonds,Bewaking en bestrijding van dierziekten,63156.0,-2783.0,U
+1,38279,42805.0,42805.0,38279,"H, BES-fonds",H,2019,BES-fonds,BES-fonds,44316.0,-1511.0,U
+1,8354,8354.0,8354.0,8354,"I, De Koning",I,2019,De Koning,Grondwettelijke uitkering aan de leden vh Koninklijk Huis,8330.0,24.0,U
+2,28914,29635.0,29635.0,28914,"I, De Koning",I,2019,De Koning,Functionele uitgaven van de Koning,29635.0,0.0,U
+3,5984,6172.0,6172.0,5984,"I, De Koning",I,2019,De Koning,Doorbelaste uitgaven van andere begrotingen,5935.0,237.0,U
+1,12464,12464.0,14468.0,12464,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,Wetgeving en controle Eerste Kamer,12636.0,1832.0,U
+2,31525,31525.0,32396.0,31525,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,Uitgaven tbv van (oud) leden Tweede Kamer en leden EP,33924.0,-1528.0,U
+3,102007,129937.0,128976.0,102007,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,Wetgeving en controle Tweede Kamer,125725.0,3251.0,U
+4,1491,1491.0,1508.0,1491,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,Wetgeving en controle Eerste en Tweede Kamer,1181.0,327.0,U
+10,-1957,3425.0,-412.0,-1957,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,Nog onverdeeld,0.0,-412.0,U
+1,59844,63610.0,65547.0,59844,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Raad van State,65394.0,153.0,U
+2,30223,31258.0,32385.0,30223,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Algemene Rekenkamer,32214.0,171.0,U
+3,17961,18504.0,19461.0,17961,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",De Nationale Ombudsman,19672.0,-211.0,U
+4,4282,5729.0,5825.0,4282,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kanselarij der Nederlandse Orden,5739.0,86.0,U
+6,1855,1874.0,2239.0,1855,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Aruba,2399.0,-160.0,U
+7,2819,2847.0,3386.0,2819,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Curaçao,2945.0,441.0,U
+8,2024,2069.0,2457.0,2024,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Sint Maarten,2400.0,57.0,U
+9,2345,2493.0,3242.0,2345,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kiesraad,3275.0,-33.0,U
+10,0,3350.0,0.0,0,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Nog onverdeeld,0.0,0.0,U
+1,62303,64442.0,63286.0,62303,"III, Algemene Zaken",III,2019,Algemene Zaken,Bevorderen eenheid regeringsbeleid,62034.0,1252.0,U
+4,2492,2589.0,2589.0,2492,"III, Algemene Zaken",III,2019,Algemene Zaken,Kabinet van de Koning,2532.0,57.0,U
+5,2551,2618.0,2372.0,2551,"III, Algemene Zaken",III,2019,Algemene Zaken,Cie voor toezicht op de Inlichtingen- en veiligheidsdiensten,1867.0,505.0,U
+1,40434,37734.0,42715.0,40434,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Versterken rechtsstaat,40422.0,2293.0,U
+4,11198,16953.0,30579.0,11198,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Bevorderen sociaal-economische structuur,28880.0,1699.0,U
+5,28517,62684.0,79143.0,28517,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Schuldsanering/lopende inschrijving/leningen,79143.0,0.0,U
+6,21428,26559.0,27586.0,21428,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Apparaat,26696.0,890.0,U
+7,1142,8157.0,6534.0,1142,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Nog onverdeeld,0.0,6534.0,U
+8,6037,47272.0,46728.0,6037,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,Wederopbouw bovenwindse eilanden,21299.0,25429.0,U
+1,35655308,35376400.0,37787166.0,35655308,"IXA, Nationale Schuld (Transactiebasis)",IXA,2019,Nationale Schuld (Transactiebasis),Financiering staatsschuld,40638067.0,-2850901.0,U
+2,1531675,1531675.0,1631675.0,1531675,"IXA, Nationale Schuld (Transactiebasis)",IXA,2019,Nationale Schuld (Transactiebasis),Kasbeheer,1384123.0,247552.0,U
+1,2776428,2902832.0,3142447.0,2776428,"IXB, Financiën",IXB,2019,Financiën,Belastingen,3061677.0,80770.0,U
+2,25023,25019.0,24936.0,25023,"IXB, Financiën",IXB,2019,Financiën,Financiele Markten,48564.0,-23628.0,U
+3,294050,1144312.0,1735110.0,294050,"IXB, Financiën",IXB,2019,Financiën,Financ. act. Publiek-Private sector,1693064.0,42046.0,U
+4,359220,363119.0,363150.0,359220,"IXB, Financiën",IXB,2019,Financiën,Internationale Fin. Betrekkingen,363829.0,-679.0,U
+5,83444,205244.0,206896.0,83444,"IXB, Financiën",IXB,2019,Financiën,Exportkrediet- en investeringsverzekering,198506.0,8390.0,U
+6,3225010,3227182.0,3453875.0,3225010,"IXB, Financiën",IXB,2019,Financiën,BTW-Compensatiefonds,3422490.0,31385.0,U
+9,416151,416151.0,400502.0,416151,"IXB, Financiën",IXB,2019,Financiën,Douane,391518.0,8984.0,U
+10,98411,112684.0,0.0,98411,"IXB, Financiën",IXB,2019,Financiën,Nog onverdeeld,0.0,0.0,U
+21,256491,256362.0,259495.0,256491,"IXB, Financiën",IXB,2019,Financiën,Centraal Apparaat,254814.0,4681.0,U
+1,407172,376571.0,529289.0,407172,"J, Deltafonds",J,2019,Deltafonds,Investeren in waterveiligheid,509245.0,20044.0,U
+2,25244,40010.0,8571.0,25244,"J, Deltafonds",J,2019,Deltafonds,Investeren in zoetwatervoorziening,6434.0,2137.0,U
+3,180288,181493.0,194658.0,180288,"J, Deltafonds",J,2019,Deltafonds,"Beheer, Onderhoud en vervanging",194722.0,-64.0,U
+4,32467,39660.0,25859.0,32467,"J, Deltafonds",J,2019,Deltafonds,Experimenteren cf. art. III Deltawet,20920.0,4939.0,U
+5,313272,320088.0,317170.0,313272,"J, Deltafonds",J,2019,Deltafonds,Netwerkgebonden kosten en overige uitgaven,316039.0,1131.0,U
+7,84443,105795.0,36640.0,84443,"J, Deltafonds",J,2019,Deltafonds,Investeren in Waterkwaliteit,28408.0,8232.0,U
+41,123487,128581.0,129233.0,123487,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Versterkte internationale rechtsorde,129197.0,36.0,U
+42,291000,292831.0,261851.0,291000,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Veiligheid en stabiliteit,247238.0,14613.0,U
+43,8745255,8641271.0,8596973.0,8745255,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Effectieve Europese Samenwerking,9307566.0,-710593.0,U
+44,50306,69198.0,71930.0,50306,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Consulaire dienstverlening en uitdragen Nederlandse waarden,63223.0,8707.0,U
+46,25868,1379.0,0.0,25868,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Nog onverdeeld,0.0,0.0,U
+47,740740,815895.0,813597.0,740740,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,Apparaat,805205.0,8392.0,U
+31,6041402,6260664.0,6303513.0,6054002,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Politie,6306609.0,-3096.0,U
+32,1497644,1585568.0,1577194.0,1497644,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Rechtspleging en rechtsbijstand,1574732.0,2462.0,U
+33,729731,929578.0,857643.0,868481,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Veiligheid en criminaliteitsbestrijding,849257.0,8386.0,U
+34,2686793,2839271.0,2908577.0,2686793,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Straffen en beschermen,2904553.0,4024.0,U
+36,271971,275210.0,262746.0,272471,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Contraterrorisme en nationaal veiligheidsbeleid,256921.0,5825.0,U
+37,1063580,1257790.0,1287115.0,1063580,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Migratie,1277149.0,9966.0,U
+91,434493,469923.0,477822.0,434493,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Apparaat kerndepartement,489477.0,-11655.0,U
+92,9394,32048.0,171168.0,19394,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Nog onverdeeld,0.0,171168.0,U
+93,3051,3051.0,3051.0,3051,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,Geheim,3574.0,-523.0,U
+1,59323,60795.0,57330.0,59323,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Openbaar bestuur en democratie,56472.0,858.0,U
+2,274253,284906.0,297331.0,274253,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Nationale veiligheid,296971.0,360.0,U
+3,4104213,4114026.0,4131682.0,4104213,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Woningmarkt,4069601.0,62081.0,U
+4,209008,264303.0,200640.0,286508,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Energietransitie gebouwde omgeving en bouwkwaliteit,206163.0,-5523.0,U
+5,102919,112203.0,122337.0,102919,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Ruimtelijke ordening en omgevingswet,123230.0,-893.0,U
+6,174479,180203.0,173772.0,174479,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Overheidsdienstverlening en informatiesamenleving,170827.0,2945.0,U
+7,33427,41705.0,41482.0,33427,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Werkgevers- en bedrijfsvoeringsbeleid,41061.0,421.0,U
+9,117329,120018.0,120578.0,117329,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Uitvoering Rijksvastgoedbeleid,118271.0,2307.0,U
+11,399997,446391.0,468719.0,401397,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Centraal apparaat,467234.0,1485.0,U
+12,6558,29266.0,76691.0,6558,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Algemeen,66964.0,9727.0,U
+13,0,29851.0,0.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,Nog onverdeeld,0.0,0.0,U
+1,11302361,11656187.0,11801438.0,11302361,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Primair onderwijs,11759120.0,42318.0,U
+3,8611856,8866628.0,9027992.0,8611856,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Voortgezet onderwijs,9009949.0,18043.0,U
+4,4576976,4676875.0,4661476.0,4596476,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Beroepsonderwijs en volwasseneneducatie,4654063.0,7413.0,U
+6,3277742,3391601.0,3400378.0,3277742,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Hoger beroepsonderwijs,3399821.0,557.0,U
+7,4898729,5127716.0,5132784.0,4898729,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Wetenschappelijk onderwijs,5132352.0,432.0,U
+8,12785,12905.0,12913.0,12785,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Internationaal onderwijsbeleid,12678.0,235.0,U
+9,168555,172212.0,173969.0,168555,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Arbeidsmarkt en personeelsbeleid,172073.0,1896.0,U
+11,5602726,5547695.0,5399637.0,5583226,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Studiefinanciering,5317390.0,82247.0,U
+12,93071,80381.0,80381.0,93071,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Tegemoetkoming studiekosten,76013.0,4368.0,U
+13,6649,12831.0,12831.0,6649,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Lesgelden,12831.0,0.0,U
+14,967703,967738.0,967337.0,967703,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Cultuur,960734.0,6603.0,U
+15,960829,1013434.0,1016563.0,1000829,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Media,1038789.0,-22226.0,U
+16,1228371,1235554.0,1251330.0,1228371,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Onderzoek en wetenschappen,1250760.0,570.0,U
+25,15880,16807.0,12691.0,15880,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Emancipatie,12540.0,151.0,U
+95,259975,268502.0,269609.0,259975,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",Apparaatskosten,266317.0,3292.0,U
+1,199488,247569.0,239974.0,199488,"X, Defensie",X,2019,Defensie,Opdracht Inzet,167502.0,72472.0,U
+2,842097,855588.0,949065.0,842097,"X, Defensie",X,2019,Defensie,Taakuitvoering Zeestrijdkrachten,948942.0,123.0,U
+3,1427287,1378299.0,1469378.0,1427287,"X, Defensie",X,2019,Defensie,Taakuitvoering Landstrijdkrachten,1497067.0,-27689.0,U
+4,799984,811638.0,859031.0,799984,"X, Defensie",X,2019,Defensie,Taakuitvoering Luchtstrijdkrachten,873248.0,-14217.0,U
+5,405344,421831.0,459766.0,405344,"X, Defensie",X,2019,Defensie,Taakuitvoering Koninklijke Marechaussee,460387.0,-621.0,U
+6,2839964,2859237.0,2680636.0,2839964,"X, Defensie",X,2019,Defensie,Investeringen Krijgsmacht,2523053.0,157583.0,U
+7,932220,929905.0,1048992.0,932220,"X, Defensie",X,2019,Defensie,Ondersteuning krijgsmacht door Defensie Materieel Org,1071290.0,-22298.0,U
+8,1279776,1330959.0,1400549.0,1279776,"X, Defensie",X,2019,Defensie,Ondersteuning krijgsmacht door Cdo Dienstencentra,1393756.0,6793.0,U
+9,105779,107917.0,108268.0,105779,"X, Defensie",X,2019,Defensie,Algemeen,93785.0,14483.0,U
+10,1626034,1610421.0,1683383.0,1626034,"X, Defensie",X,2019,Defensie,Centraal apparaat,1675816.0,7567.0,U
+11,7586,8664.0,16674.0,7586,"X, Defensie",X,2019,Defensie,Geheime uitgaven,14617.0,2057.0,U
+12,11494,319808.0,0.0,11494,"X, Defensie",X,2019,Defensie,Nominaal en onvoorzien,0.0,0.0,U
+11,45362,54519.0,52768.0,45362,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Integraal waterbeleid,48421.0,4347.0,U
+13,41436,40660.0,34054.0,41436,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Bodem en ondergrond,34025.0,29.0,U
+14,49917,112610.0,117345.0,93317,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Wegen en verkeersveiligheid,98715.0,18630.0,U
+16,13157,33785.0,30571.0,13157,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Openbaar vervoer en spoor,31659.0,-1088.0,U
+17,27329,31122.0,29619.0,27329,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Luchtvaart,28695.0,924.0,U
+18,38555,38777.0,57866.0,38555,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Scheepvaart en havens,57139.0,727.0,U
+19,46164,53261.0,57297.0,46164,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Uitvoering milieubeleid en internationaal,55891.0,1406.0,U
+20,27603,26684.0,36517.0,27603,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Lucht en geluid,36862.0,-345.0,U
+21,27462,34951.0,32840.0,49962,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Duurzaamheid,29867.0,2973.0,U
+22,33802,32150.0,31066.0,33802,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Omgevingsveiligheid en milieurisico's,30339.0,727.0,U
+23,52786,52786.0,55319.0,52786,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,"Meteorologie, seismologie en aardobservatie",55242.0,77.0,U
+24,108072,118072.0,134798.0,108072,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Handhaving en toezicht,134798.0,0.0,U
+25,899965,932721.0,955609.0,899965,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Bijdrage BDU,955610.0,-1.0,U
+26,7795954,7466828.0,6009398.0,7795954,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Bijdrage investeringsfondsen,6010410.0,-1012.0,U
+97,62073,91226.0,99041.0,62073,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Algemeen departement,79742.0,19299.0,U
+98,299115,312463.0,328995.0,299115,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Apparaatsuitgaven Kerndepartement,317541.0,11454.0,U
+99,-15992,195734.0,0.0,-15992,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,Nog onverdeeld,0.0,0.0,U
+1,196389,200660.0,251836.0,196389,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Goed functionerende economie en markten,251492.0,344.0,U
+2,889968,975006.0,923486.0,937668,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Bedrijvenbeleid: innovatie en ondernemerschap voor duurzame,913165.0,10321.0,U
+3,181977,263498.0,263700.0,177977,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Toekomstfonds,124308.0,139392.0,U
+4,2799175,2888550.0,2960256.0,2878275,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Een doelmatige en duurzame energievoorziening,2925027.0,35229.0,U
+5,140471,247393.0,833081.0,140471,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Een veilig Groningen met perspectief,825005.0,8076.0,U
+40,278382,287971.0,309088.0,278382,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Apparaat (EZK),298069.0,11019.0,U
+41,0,46951.0,0.0,0,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,Nog onverdeeld (EZK),0.0,0.0,U
+11,622720,748311.0,755165.0,646620,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2019,"Landbouw, Natuur en Voedselkwaliteit","Concurrerende, duurzame, veilige agro-, visserij- en voedsel",745627.0,9538.0,U
+12,119510,122818.0,649971.0,128010,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2019,"Landbouw, Natuur en Voedselkwaliteit",Natuur en biodiversiteit,649716.0,255.0,U
+50,108907,123940.0,143898.0,108907,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2019,"Landbouw, Natuur en Voedselkwaliteit",Apparaat,138841.0,5057.0,U
+51,31204,57559.0,0.0,31204,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2019,"Landbouw, Natuur en Voedselkwaliteit",Nog onverdeeld,0.0,0.0,U
+1,949968,811926.0,819822.0,951468,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Arbeidsmarkt,813555.0,6267.0,U
+2,7079146,6866853.0,6939361.0,7076646,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,"Bijstand, Participatiewet en Toeslagenwet",6927241.0,12120.0,U
+3,799,839.0,1155.0,799,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Arbeidsongeschiktheid,943.0,212.0,U
+4,3359378,3275109.0,3335534.0,3359378,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Jonggehandicapten,3329000.0,6534.0,U
+5,157104,124190.0,127382.0,158104,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Werkloosheid,124430.0,2952.0,U
+6,7527,11983.0,7921.0,7527,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Ziekte en zwangerschap,7652.0,269.0,U
+7,3286740,3249545.0,3368931.0,3286740,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Kinderopvang,3366184.0,2747.0,U
+8,26057,24734.0,25208.0,26057,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Oudedagsvoorziening,25215.0,-7.0,U
+9,1197,1110.0,1137.0,1197,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Nabestaanden,1194.0,-57.0,U
+10,5721498,5956594.0,5934876.0,5721498,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Tegemoetkoming ouders,5936534.0,-1658.0,U
+11,448044,497958.0,510600.0,448044,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Uitvoeringskosten,519222.0,-8622.0,U
+12,14245954,17358728.0,17425095.0,14245954,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Rijksbijdragen,17426873.0,-1778.0,U
+13,312024,276266.0,241787.0,312024,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Integratie en maatschappelijke samenhang,220838.0,20949.0,U
+96,332063,343303.0,365614.0,332063,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Apparaat,351632.0,13982.0,U
+98,34771,34238.0,33316.0,34771,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Algemeen,25081.0,8235.0,U
+99,173579,133955.0,8778.0,173579,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,Nominaal en onvoorzien,0.0,8778.0,U
+1,730754,775994.0,760915.0,768844,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Volksgezondheid,753343.0,7572.0,U
+2,3177587,3166508.0,3123329.0,3177587,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Curatieve zorg,3112270.0,11059.0,U
+3,5165018,6081144.0,6129388.0,5165018,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Langdurige zorg en ondersteuning,6110787.0,18601.0,U
+4,1211761,1223286.0,1362871.0,1230086,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Zorgbreed beleid,1348386.0,14485.0,U
+5,101104,156290.0,100099.0,101104,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Jeugd,90989.0,9110.0,U
+6,409498,341709.0,354385.0,409498,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Sport en bewegen,324146.0,30239.0,U
+7,260760,266846.0,257551.0,260760,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Oorlogsgetroffenen en Herinneringen Tweede Wereldoorlog,257533.0,18.0,U
+8,5051849,4931249.0,4936649.0,5051849,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Tegemoetkoming specifieke kosten,5582755.0,-646106.0,U
+9,25589,43464.0,38563.0,25589,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Algemeen,34920.0,3643.0,U
+10,311042,390820.0,425966.0,312192,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Apparaatsuitgaven,398874.0,27092.0,U
+11,-31169,70262.0,0.0,-31169,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",Nominaal en Onvoorzien,0.0,0.0,U
+41,524289,556726.0,526830.0,532289,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame economische ontwikkeling,handel en investeringen",515698.0,11132.0,U
+42,723477,730477.0,729618.0,730477,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame ontwikkeling, voedselzekerheid, water en klimaat",723347.0,6271.0,U
+43,767093,798798.0,794540.0,791093,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,Sociale vooruitgang,780599.0,13941.0,U
+44,777260,790260.0,785360.0,787260,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,"Vrede, veiligheid en duurzame ontwikkeling",771565.0,13795.0,U
+45,304005,126587.0,193560.0,255005,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,Multilaterale samenwerking en overige inzet,255594.0,-62034.0,U
+1,8503,8503.0,8503.0,8503,"I, De Koning",I,2020,De Koning,Grondwettelijke uitkering aan de leden van het Koninklijk Huis,8583.0,-80.0,U
+2,29635,30470.0,30470.0,29635,"I, De Koning",I,2020,De Koning,Functionele uitgaven van de Koning,30470.0,0.0,U
+3,6224,6471.0,6391.0,6224,"I, De Koning",I,2020,De Koning,Doorbelaste uitgaven van andere begrotingen,6414.0,-23.0,U
+1,13053,17527.0,17480.0,13303,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,Wetgeving en controle Eerste Kamer,16848.0,632.0,U
+10,0,6377.0,0.0,0,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,Nog onverdeeld,0.0,0.0,U
+2,32396,32396.0,33327.0,32396,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,Uitgaven tbv van (oud) leden Tweede Kamer en leden EP,33862.0,-535.0,U
+3,115178,133957.0,134321.0,124928,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,Wetgeving en controle Tweede Kamer,133988.0,333.0,U
+4,1508,1508.0,1520.0,1508,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,Wetgeving en controle Eerste en Tweede Kamer,904.0,616.0,U
+1,67034,72368.0,73804.0,67034,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Raad van State,72711.0,1093.0,U
+10,0,4118.0,0.0,0,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Nog onverdeeld,0.0,0.0,U
+2,33140,33390.0,34427.0,33140,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Algemene Rekenkamer,33276.0,1151.0,U
+3,19800,20650.0,21421.0,19800,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",De Nationale Ombudsman,20814.0,607.0,U
+4,4434,6918.0,6831.0,4434,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kanselarij der Nederlandse Orden,6801.0,30.0,U
+6,1908,1908.0,2382.0,1908,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Aruba,2096.0,286.0,U
+7,2896,2896.0,2976.0,2896,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Curaçao,2607.0,369.0,U
+8,2105,2124.0,2380.0,2105,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kabinet van de Gouverneur van Sint Maarten,2133.0,247.0,U
+9,2465,3988.0,3091.0,2465,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",Kiesraad,2668.0,423.0,U
+1,65271,71328.0,69154.0,65271,"III, Algemene Zaken",III,2020,Algemene Zaken,Bevorderen eenheid regeringsbeleid,70313.0,-1159.0,U
+2,2641,2784.0,2784.0,2641,"III, Algemene Zaken",III,2020,Algemene Zaken,Kabinet van de Koning,2715.0,69.0,U
+3,2411,2542.0,2542.0,2411,"III, Algemene Zaken",III,2020,Algemene Zaken,Commissie van Toezicht op de Inlichtingen- en Veiligheidsdiensten,2168.0,374.0,U
+1,13643,12334.0,12979.0,13643,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Versterken rechtsstaat,12836.0,143.0,U
+4,15838,61687.0,57239.0,15838,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Bevorderen sociaal-economische structuur,56995.0,244.0,U
+5,28516,630866.0,661467.0,163516,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Schuldsanering/lopende inschrijving/leningen,649573.0,11894.0,U
+6,23722,25193.0,28995.0,23722,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Apparaat,29879.0,-884.0,U
+7,1560,11679.0,7704.0,1560,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Nog onverdeeld,0.0,7704.0,U
+8,0,25429.0,115265.0,0,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,Wederopbouw Bovenwindse Eilanden,102682.0,12583.0,U
+1,125788,126941.0,131694.0,125788,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Versterkte internationale rechtsorde,124879.0,6815.0,U
+2,283826,271337.0,241438.0,280326,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Veiligheid en stabiliteit,233297.0,8141.0,U
+3,9069744,9184315.0,10011524.0,9069744,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Effectieve Europese samenwerking,9905692.0,105832.0,U
+4,54198,85886.0,86251.0,59798,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Consulaire dienstverlening en uitdragen Nederlandse waarden,80244.0,6007.0,U
+6,3027,5000.0,0.0,3027,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Nog onverdeeld,0.0,0.0,U
+7,814826,897228.0,848053.0,819826,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,Apparaat,806524.0,41529.0,U
+31,6264396,6452135.0,6500806.0,6271396,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Politie,6494298.0,6508.0,U
+32,1552858,1633463.0,1629339.0,1552858,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Rechtspleging en rechtsbijstand,1630354.0,-1015.0,U
+33,816616,1001539.0,911636.0,862216,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Veiligheid en criminaliteitsbestrijding,895192.0,16444.0,U
+34,2755868,2949544.0,3060282.0,2755868,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Straffen en beschermen,3050437.0,9845.0,U
+36,266427,266659.0,348612.0,266427,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Contraterrorisme en nationaal veiligheidsbeleid,337348.0,11264.0,U
+37,1236560,1521589.0,1462268.0,1236560,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Migratie,1455848.0,6420.0,U
+91,448044,489898.0,524359.0,448044,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Apparaat kerndepartement,515502.0,8857.0,U
+92,32402,89130.0,2000.0,32402,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Nog onverdeeld,0.0,2000.0,U
+93,3048,3048.0,3048.0,3048,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,Geheim,3249.0,-201.0,U
+1,59387,80613.0,75776.0,68387,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Openbaar bestuur en democratie,73195.0,2581.0,U
+10,0,177589.0,400298.0,98704,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Groningen versterken en perspectief,371232.0,29066.0,U
+11,401762,477298.0,592091.0,414206,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Centraal apparaat,599980.0,-7889.0,U
+12,21235,34614.0,42749.0,21235,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Algemeen,36480.0,6269.0,U
+13,0,54904.0,0.0,0,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Nog onverdeeld,0.0,0.0,U
+2,297861,302076.0,318979.0,297861,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Nationale veiligheid,321331.0,-2352.0,U
+3,4297396,4532349.0,4563641.0,4297396,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Woningmarkt,4576687.0,-13046.0,U
+4,480942,643932.0,506841.0,540942,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Energietransitie gebouwde omgeving en bouwkwaliteit,508200.0,-1359.0,U
+5,124755,114369.0,122843.0,124755,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Ruimtelijke ordening en omgevingswet,124673.0,-1830.0,U
+6,169975,181069.0,196846.0,169975,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Overheidsdienstverlening en informatiesamenleving,190203.0,6643.0,U
+7,34343,37037.0,39761.0,34343,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Werkgevers- en bedrijfsvoeringsbeleid,36415.0,3346.0,U
+9,128168,121757.0,129663.0,128168,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,Uitvoering Rijksvastgoedbeleid,122909.0,6754.0,U
+1,11685628,12398406.0,12228485.0,11673612,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Primair onderwijs,12226291.0,2194.0,U
+11,5221098,5323744.0,5178858.0,5221098,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Studiefinanciering,5171220.0,7638.0,U
+12,77439,74876.0,74876.0,77439,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Tegemoetkoming onderwijsbijdrage en schoolkosten,69366.0,5510.0,U
+13,13416,13780.0,13780.0,13416,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Lesgelden,13664.0,116.0,U
+14,1005094,1311096.0,1358000.0,1304072,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Cultuur,1356245.0,1755.0,U
+15,1023125,1093483.0,1094572.0,1023125,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Media,1084670.0,9902.0,U
+16,1172446,1180335.0,1149772.0,1172446,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Onderzoek en wetenschappen,1149725.0,47.0,U
+25,15167,14197.0,14249.0,15167,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Emancipatie,12014.0,2235.0,U
+3,8746746,9093557.0,9144402.0,8746413,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Voortgezet onderwijs,9135685.0,8717.0,U
+4,4680116,4820969.0,4865842.0,4679783,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Beroepsonderwijs en volwasseneneducatie,4864049.0,1793.0,U
+6,3416799,3512213.0,3512611.0,3416799,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Hoger beroepsonderwijs,3511341.0,1270.0,U
+7,5202998,5415953.0,5419627.0,5202998,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Wetenschappelijk onderwijs,5418229.0,1398.0,U
+8,12830,12989.0,12903.0,12830,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Internationaal onderwijsbeleid,12810.0,93.0,U
+9,167519,172304.0,157892.0,168518,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Arbeidsmarkt en personeelsbeleid,155273.0,2619.0,U
+91,0,0.0,0.0,0,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Nominaal en onvoorzien,0.0,0.0,U
+95,277396,291755.0,283751.0,277396,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",Apparaatskosten,280933.0,2818.0,U
+1,35170500,34954000.0,34887328.0,35170500,"IXA, Nationale Schuld (Transactiebasis)",IXA,2020,Nationale Schuld (Transactiebasis),Financiering staatsschuld,34922300.0,-34972.0,U
+2,1531405,1531405.0,1831405.0,1531405,"IXA, Nationale Schuld (Transactiebasis)",IXA,2020,Nationale Schuld (Transactiebasis),Kasbeheer,1949853.0,-118448.0,U
+1,2944639,3236302.0,3379399.0,2926639,"IXB, Financiën",IXB,2020,Financiën,Belastingen,3365829.0,13570.0,U
+10,175432,460837.0,0.0,175432,"IXB, Financiën",IXB,2020,Financiën,Nog onverdeeld,0.0,0.0,U
+2,26608,37902.0,37646.0,26608,"IXB, Financiën",IXB,2020,Financiën,Financiele Markten,54106.0,-16460.0,U
+21,266049,275485.0,286951.0,266049,"IXB, Financiën",IXB,2020,Financiën,Centraal Apparaat,282488.0,4463.0,U
+3,442176,1447676.0,1460241.0,442176,"IXB, Financiën",IXB,2020,Financiën,Financ. act. Publiek-Private sector,407619.0,1052622.0,U
+4,103694,367260.0,219509.0,103694,"IXB, Financiën",IXB,2020,Financiën,Internationale Fin. Betrekkingen,215673.0,3836.0,U
+5,77244,1617488.0,464687.0,1547244,"IXB, Financiën",IXB,2020,Financiën,Exportkrediet- en investeringsverzekering,218600.0,246087.0,U
+6,3426667,3430553.0,3607230.0,3426667,"IXB, Financiën",IXB,2020,Financiën,BTW-Compensatiefonds,3564608.0,42622.0,U
+9,440852,430765.0,436856.0,440852,"IXB, Financiën",IXB,2020,Financiën,Douane,425114.0,11742.0,U
+1,195247,212889.0,200083.0,195247,"X, Defensie",X,2020,Defensie,Inzet,153751.0,46332.0,U
+10,1635828,1538595.0,1528338.0,1635828,"X, Defensie",X,2020,Defensie,Apparaat kerndepartement,1517171.0,11167.0,U
+11,9895,16012.0,12185.0,9895,"X, Defensie",X,2020,Defensie,Geheim,10891.0,1294.0,U
+12,83575,291386.0,0.0,83575,"X, Defensie",X,2020,Defensie,Nog onverdeeld,0.0,0.0,U
+2,925904,947105.0,988101.0,925904,"X, Defensie",X,2020,Defensie,Koninklijke Marine,985977.0,2124.0,U
+3,1520832,1539354.0,1573295.0,1520832,"X, Defensie",X,2020,Defensie,Koninklijke Landmacht,1594098.0,-20803.0,U
+4,847316,867894.0,920454.0,847316,"X, Defensie",X,2020,Defensie,Koninklijke Luchtmacht,927222.0,-6768.0,U
+5,436668,464060.0,483066.0,436668,"X, Defensie",X,2020,Defensie,Koninklijke Marechaussee,482825.0,241.0,U
+6,2864661,3021820.0,2953824.0,2864661,"X, Defensie",X,2020,Defensie,Investeringen ,2716440.0,237384.0,U
+7,1020608,1055904.0,1107381.0,1020608,"X, Defensie",X,2020,Defensie,Defensie Materieel Organisatie,1120073.0,-12692.0,U
+8,1335147,1375318.0,1538017.0,1335147,"X, Defensie",X,2020,Defensie,Defensie Ondersteuningscommando,1531401.0,6616.0,U
+9,159397,161336.0,155300.0,159397,"X, Defensie",X,2020,Defensie,Algemeen,150596.0,4704.0,U
+11,53480,60134.0,57140.0,53480,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Integraal waterbeleid,49982.0,7158.0,U
+13,30784,34011.0,34393.0,30784,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Bodem en ondergrond,35188.0,-795.0,U
+14,85836,171327.0,199071.0,86836,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Wegen en verkeersveiligheid,190983.0,8088.0,U
+16,28508,1523530.0,1019338.0,28508,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Openbaar vervoer en spoor,1000175.0,19163.0,U
+17,24443,26506.0,34679.0,25304,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Luchtvaart,33366.0,1313.0,U
+18,39881,44794.0,82540.0,39881,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Scheepvaart en havens,81021.0,1519.0,U
+19,44374,59491.0,66315.0,43374,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Uitvoering Milieubeleid en Internationaal,68125.0,-1810.0,U
+20,26045,30725.0,34520.0,26045,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Lucht en geluid,34056.0,464.0,U
+21,89644,89329.0,54365.0,89644,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Duurzaamheid,46998.0,7367.0,U
+22,34204,42944.0,36887.0,34204,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Omgevingsveiligheid en milieurisico's,33891.0,2996.0,U
+23,57643,57483.0,59639.0,57643,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,"Meteorologie, seismologie en aardobservatie",57346.0,2293.0,U
+24,123234,126113.0,131205.0,123234,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Handhaving en toezicht,131881.0,-676.0,U
+25,920515,953451.0,953451.0,920515,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Bijdrage BDU,953451.0,0.0,U
+26,6979233,6343121.0,6367424.0,6979233,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Bijdrage investeringsfondsen,6343743.0,23681.0,U
+97,60451,80253.0,85239.0,60451,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Algemeen departement,64508.0,20731.0,U
+98,312445,349470.0,350328.0,312445,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Apparaatsuitgaven Kerndepartement,335910.0,14418.0,U
+99,861,137967.0,4476.0,0,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,Nog onverdeeld,0.0,4476.0,U
+1,215326,224356.0,234563.0,215326,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Goed functionerende economie en markten,230938.0,3625.0,U
+2,1075493,4836544.0,3754703.0,4059493,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Bedrijvenbeleid: innovatie en ondernemerschap voor duurzame ,3578266.0,176437.0,U
+3,184452,711730.0,647737.0,284452,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Toekomstfonds,440276.0,207461.0,U
+4,3671790,3760130.0,3688082.0,3771790,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Een doelmatige en duurzame energievoorziening,3674944.0,13138.0,U
+40,294229,294838.0,306509.0,281785,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Apparaat,294990.0,11519.0,U
+41,0,53626.0,0.0,0,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Nog onverdeeld ,0.0,0.0,U
+5,264781,362255.0,837796.0,166077,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,Een veilig Groningen met perspectief,717746.0,120050.0,U
+11,937381,1767914.0,1255531.0,950081,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2020,"Landbouw, Natuur en Voedselkwaliteit","Concurrerende, duurzame, veilige agro-, visserij- en voedsel",1086870.0,168661.0,U
+12,132901,201866.0,532285.0,132901,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2020,"Landbouw, Natuur en Voedselkwaliteit",Natuur en biodiversiteit,539409.0,-7124.0,U
+50,126761,149899.0,157612.0,126761,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2020,"Landbouw, Natuur en Voedselkwaliteit",Apparaat,149717.0,7895.0,U
+51,209052,146484.0,0.0,209052,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2020,"Landbouw, Natuur en Voedselkwaliteit",Nog onverdeeld,0.0,0.0,U
+1,890667,25449509.0,14028883.0,10427167,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Arbeidsmarkt,14014042.0,14841.0,U
+10,6550142,6653213.0,6575456.0,6550142,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Tegemoetkoming ouders,6553288.0,22168.0,U
+11,499637,540539.0,594882.0,499637,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Uitvoeringskosten,589977.0,4905.0,U
+12,16901655,20174440.0,20162841.0,16901655,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Rijksbijdragen,20162857.0,-16.0,U
+13,252368,215270.0,182704.0,252868,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Integratie en maatschappelijke samenhang,181996.0,708.0,U
+2,7002798,12457787.0,10957676.0,10802798,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,"Bijstand, Participatiewet en Toeslagenwet",10478338.0,479338.0,U
+3,3878,3688.0,3696.0,3878,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Arbeidsongeschiktheid,690.0,3006.0,U
+4,3386123,3359282.0,3430375.0,3386123,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Jonggehandicapten,3430369.0,6.0,U
+5,116911,125941.0,137154.0,116911,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Werkloosheid,131300.0,5854.0,U
+6,11981,10601.0,13766.0,24981,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Ziekte en zwangerschap,13350.0,416.0,U
+7,3461212,3864396.0,3862356.0,3636212,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Kinderopvang,3912442.0,-50086.0,U
+8,25100,25317.0,25632.0,25100,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Oudedagsvoorziening,24903.0,729.0,U
+9,1227,1316.0,1332.0,1227,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Nabestaanden,1172.0,160.0,U
+96,372070,399106.0,401919.0,372070,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Apparaat,387486.0,14433.0,U
+98,32758,30274.0,24933.0,32758,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Algemeen,20195.0,4738.0,U
+99,188573,762051.0,1815.0,636573,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,Nog te verdelen,0.0,1815.0,U
+1,1039958,2814859.0,2687698.0,1039858,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Volksgezondheid,2508610.0,179088.0,U
+10,340989,419025.0,458896.0,340989,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Apparaatsuitgaven,448761.0,10135.0,U
+11,19369,19011.0,0.0,7869,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Nominaal en Onvoorzien,0.0,0.0,U
+2,3124356,4987370.0,4962960.0,3117206,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Curatieve zorg,4372943.0,590017.0,U
+3,7259805,7294454.0,10096010.0,7259805,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Langdurige zorg en ondersteuning,10062532.0,33478.0,U
+4,1072559,2427124.0,3148710.0,1079709,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Zorgbreed beleid,3051899.0,96811.0,U
+5,95773,165437.0,141756.0,107273,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Jeugd,136507.0,5249.0,U
+6,436166,450429.0,448859.0,373966,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Sport en bewegen,433872.0,14987.0,U
+7,254599,249602.0,248395.0,254599,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Oorlogsgetroffenen en Herinnering Tweede Wereldoorlog,246889.0,1506.0,U
+8,5238449,5278049.0,5408949.0,5238449,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Tegemoetkoming specifieke kosten,5866368.0,-457419.0,U
+9,26572,90543.0,84613.0,26572,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",Algemeen,121442.0,-36829.0,U
+1,540518,529713.0,541009.0,540518,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame economische ontwikkeling,handel en investeringen",569149.0,-28140.0,U
+2,753477,733279.0,742629.0,753477,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,"Duurzame ontwikkeling, voedselzekerheid, water en klimaat",749997.0,-7368.0,U
+3,764679,751499.0,747788.0,764679,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,Sociale vooruitgang,747424.0,364.0,U
+4,767260,787280.0,821063.0,767260,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,"Vrede, veiligheid en duurzame ontwikkeling",837332.0,-16269.0,U
+5,253152,189855.0,296442.0,253152,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,Multilaterale samenwerking en overige inzet,282519.0,13923.0,U
+1,31826405,33151951.0,33582549.0,31901410,"B, Gemeentefonds",B,2020,Gemeentefonds,Gemeentefonds,33436400.0,146149.0,U
+1,2480413,2556850.0,2602960.0,2480413,"C, Provinciefonds",C,2020,Provinciefonds,Provinciefonds,2602954.0,6.0,U
+12,2762695,2580732.0,2856543.0,2762695,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,Hoofdwegennet,2791219.0,65324.0,U
+13,2078808,1831732.0,2093344.0,2078808,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,Spoorwegen,2048323.0,45021.0,U
+14,181250,147191.0,92369.0,181250,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,"Regionaal, lokale infra",87247.0,5122.0,U
+15,994399,1027258.0,1049203.0,994399,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,Hoofdvaarwegennet,1042935.0,6268.0,U
+17,451893,314157.0,391447.0,451893,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,Megaprojecten Verkeer en Vervoer,401044.0,-9597.0,U
+18,2287,45008.0,2200.0,2287,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,Overige uitgaven en ontvangsten,680.0,1520.0,U
+20,74622,156078.0,0.0,74622,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,"Verkenningen, reserveringen en investeringsruimte",0.0,0.0,U
+1,36357,72194.0,114462.0,36357,"F, Diergezondheidsfonds",F,2020,Diergezondheidsfonds,Bewaking en bestrijding van dierziekten,93698.0,20764.0,U
+1,41875,48833.0,55882.0,41875,"H, BES-fonds",H,2020,BES-fonds,BES-fonds,51304.0,4578.0,U
+1,462448,449834.0,470341.0,462448,"J, Deltafonds",J,2020,Deltafonds,Investeren in waterveiligheid,451429.0,18912.0,U
+2,27520,27679.0,25681.0,27520,"J, Deltafonds",J,2020,Deltafonds,Investeren in zoetwatervoorziening,15802.0,9879.0,U
+3,133253,150416.0,145607.0,133253,"J, Deltafonds",J,2020,Deltafonds,"Beheer, Onderhoud en vervanging",143892.0,1715.0,U
+4,13043,20290.0,72727.0,13043,"J, Deltafonds",J,2020,Deltafonds,Experimenteren cf. art. III Deltawet,74384.0,-1657.0,U
+5,341207,328027.0,342213.0,341207,"J, Deltafonds",J,2020,Deltafonds,Netwerkgebonden kosten en overige uitgaven,341349.0,864.0,U
+7,127512,79839.0,63757.0,127512,"J, Deltafonds",J,2020,Deltafonds,Investeren in Waterkwaliteit,52556.0,11201.0,U
+-,5878321,6139394.0,5695597.0,5878321,"A, Infrastructuurfonds",A,2017,Infrastructuurfonds,TOTAAL,5636082.0,59515.0,U
+-,27143169,27821956.0,28008814.0,27193169,"B, Gemeentefonds",B,2017,Gemeentefonds,TOTAAL,27906247.0,102567.0,U
+-,2199585,2285224.0,2569564.0,2199585,"C, Provinciefonds",C,2017,Provinciefonds,TOTAAL,2569563.0,1.0,U
+-,32550,44246.0,44072.0,32550,"F, Diergezondheidsfonds",F,2017,Diergezondheidsfonds,TOTAAL,57997.0,-13925.0,U
+-,32650,41534.0,41552.0,32650,"H, BES-fonds",H,2017,BES-fonds,TOTAAL,40985.0,567.0,U
+-,41421,42145.0,42184.0,41421,"I, De Koning",I,2017,De Koning,TOTAAL,42037.0,147.0,U
+-,144180,149985.0,148585.0,144180,"IIA, Staten-Generaal",IIA,2017,Staten-Generaal,TOTAAL,150826.0,-2241.0,U
+-,115016,120161.0,114923.0,115016,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2017,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",TOTAAL,113074.0,1849.0,U
+-,63471,63549.0,63012.0,63471,"III, Algemene Zaken",III,2017,Algemene Zaken,TOTAAL,61570.0,1442.0,U
+-,291862,305668.0,426540.0,291862,"IV, Koninkrijksrelaties",IV,2017,Koninkrijksrelaties,TOTAAL,359001.0,67539.0,U
+-,48443684,56394779.0,55901079.0,48443684,"IXA, Nationale Schuld (Transactiebasis)",IXA,2017,Nationale Schuld (Transactiebasis),TOTAAL,55827409.0,73670.0,U
+-,6568021,6676017.0,6797557.0,6568021,"IXB, Financiën",IXB,2017,Financiën,TOTAAL,6724381.0,73176.0,U
+-,904656,967193.0,977683.0,904656,"J, Deltafonds",J,2017,Deltafonds,TOTAAL,950324.0,27359.0,U
+-,8879536,8827051.0,8388296.0,8882036,"V, Buitenlandse Zaken",V,2017,Buitenlandse Zaken,TOTAAL,8363833.0,24463.0,U
+-,12580755,13161564.0,13104631.0,12650261,"VI, Veiligheid en Justitie",VI,2017,Veiligheid en Justitie,TOTAAL,13053113.0,51518.0,U
+-,742246,889967.0,892583.0,742246,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2017,Binnenlandse Zaken en Koninkrijksrelaties,TOTAAL,874660.0,17923.0,U
+-,37162537,38181541.0,38092032.0,37187537,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2017,"Onderwijs, Cultuur en Wetenschap",TOTAAL,38053289.0,38743.0,U
+-,8686242,8959024.0,8701835.0,8694242,"X, Defensie",X,2017,Defensie,TOTAAL,8538885.0,162950.0,U
+-,7994424,7871768.0,7301809.0,7994424,"XII, Infrastructuur en Milieu",XII,2017,Infrastructuur en Milieu,TOTAAL,7244986.0,56823.0,U
+-,4943574,5188162.0,5223648.0,4943574,"XIII, Economische Zaken",XIII,2017,Economische Zaken,TOTAAL,5067388.0,156260.0,U
+-,33601940,32060665.0,32010926.0,33601940,"XV, Sociale Zaken en Werkgelegenheid",XV,2017,Sociale Zaken en Werkgelegenheid,TOTAAL,31816567.0,194359.0,U
+-,14371198,14713555.0,14710428.0,14338198,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2017,"Volksgezondheid, Welzijn en Sport",TOTAAL,14992798.0,-282370.0,U
+-,2246057,2755763.0,2830570.0,2246057,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2017,Buitenlandse Handel en Ontwikkelingssamenwerking,TOTAAL,2821716.0,8854.0,U
+-,4312154,4441318.0,4470663.0,4312154,"XVIII, Wonen & Rijksdienst",XVIII,2017,Wonen & Rijksdienst,TOTAAL,4272173.0,198490.0,U
+-,6243177,6837687.0,5861621.0,6241305,"A, Infrastructuurfonds",A,2018,Infrastructuurfonds,TOTAAL,5809564.0,52057.0,U
+-,28281870,29159942.0,29382480.0,28282670,"B, Gemeentefonds",B,2018,Gemeentefonds,TOTAAL,29083134.0,299346.0,U
+-,2187740,2312576.0,2454729.0,2187740,"C, Provinciefonds",C,2018,Provinciefonds,TOTAAL,2454311.0,418.0,U
+-,34507,53903.0,54904.0,34507,"F, Diergezondheidsfonds",F,2018,Diergezondheidsfonds,TOTAAL,50980.0,3924.0,U
+-,41386,41386.0,42079.0,41386,"H, BES-fonds",H,2018,BES-fonds,TOTAAL,39047.0,3032.0,U
+-,42284,43087.0,43086.0,42284,"I, De Koning",I,2018,De Koning,TOTAAL,42813.0,273.0,U
+-,143898,148668.0,151743.0,143898,"IIA, Staten-Generaal",IIA,2018,Staten-Generaal,TOTAAL,153855.0,-2112.0,U
+-,113363,130786.0,127169.0,113363,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2018,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",TOTAAL,124482.0,2687.0,U
+-,63233,68199.0,66383.0,66233,"III, Algemene Zaken",III,2018,Algemene Zaken,TOTAAL,64473.0,1910.0,U
+-,293757,468999.0,656787.0,246086,"IV, Koninkrijksrelaties",IV,2018,Koninkrijksrelaties,TOTAAL,625079.0,31708.0,U
+-,48098587,46641703.0,47732645.0,48177587,"IXA, Nationale Schuld (Transactiebasis)",IXA,2018,Nationale Schuld (Transactiebasis),TOTAAL,48781992.0,-1049347.0,U
+-,7117510,7166982.0,7520550.0,7117510,"IXB, Financiën",IXB,2018,Financiën,TOTAAL,7736490.0,-215940.0,U
+-,1119328,1115016.0,1106715.0,1090818,"J, Deltafonds",J,2018,Deltafonds,TOTAAL,1083686.0,23029.0,U
+-,9534415,9687549.0,9239036.0,9538097,"V, Buitenlandse Zaken",V,2018,Buitenlandse Zaken,TOTAAL,9174041.0,64995.0,U
+-,12080537,12534720.0,12846295.0,12218217,"VI, Justitie en Veiligheid",VI,2018,Justitie en Veiligheid,TOTAAL,12814046.0,32249.0,U
+-,758775,5775306.0,6134580.0,5455381,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2018,Binnenlandse Zaken en Koninkrijksrelaties,TOTAAL,5951401.0,183179.0,U
+-,38869982,41746099.0,42481082.0,40285779,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2018,"Onderwijs, Cultuur en Wetenschap",TOTAAL,42326880.0,154202.0,U
+-,9203953,10701015.0,9500330.0,9450261,"X, Defensie",X,2018,Defensie,TOTAAL,9416880.0,83450.0,U
+-,8430659,9038858.0,8215755.0,8287069,"XII, Infrastructuur en Waterstaat",XII,2018,Infrastructuur en Waterstaat,TOTAAL,8198827.0,16928.0,U
+-,5254455,4979723.0,5565637.0,4438331,"XIII, Economische Zaken en Klimaat",XIII,2018,Economische Zaken en Klimaat,TOTAAL,5355127.0,210510.0,U
+-,32090393,34570683.0,34477548.0,32002648,"XV, Sociale Zaken en Werkgelegenheid",XV,2018,Sociale Zaken en Werkgelegenheid,TOTAAL,34412240.0,65308.0,U
+-,15230678,15249761.0,14727991.0,15261447,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2018,"Volksgezondheid, Welzijn en Sport",TOTAAL,15374412.0,-646421.0,U
+-,2466303,3023442.0,3031768.0,2700199,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2018,Buitenlandse Handel en Ontwikkelingssamenwerking,TOTAAL,3071130.0,-39362.0,U
+-,4525689,0.0,0.0,0,"XVIII, Wonen & Rijksdienst",XVIII,2018,Wonen & Rijksdienst,TOTAAL,0.0,0.0,U
+-,7368034,7411432.0,5797485.0,7368034,"A, Infrastructuurfonds",A,2019,Infrastructuurfonds,TOTAAL,5760760.0,36725.0,U
+-,30147959,31159692.0,31385527.0,30147959,"B, Gemeentefonds",B,2019,Gemeentefonds,TOTAAL,31297982.0,87545.0,U
+-,2407659,2419388.0,2499141.0,2407659,"C, Provinciefonds",C,2019,Provinciefonds,TOTAAL,2467056.0,32085.0,U
+-,34585,57702.0,60373.0,34585,"F, Diergezondheidsfonds",F,2019,Diergezondheidsfonds,TOTAAL,63156.0,-2783.0,U
+-,38279,42805.0,42805.0,38279,"H, BES-fonds",H,2019,BES-fonds,TOTAAL,44316.0,-1511.0,U
+-,43252,44161.0,44161.0,43252,"I, De Koning",I,2019,De Koning,TOTAAL,43900.0,261.0,U
+-,145530,178842.0,176936.0,145530,"IIA, Staten-Generaal",IIA,2019,Staten-Generaal,TOTAAL,173466.0,3470.0,U
+-,121353,131734.0,134542.0,121353,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2019,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",TOTAAL,134038.0,504.0,U
+-,67346,69649.0,68247.0,67346,"III, Algemene Zaken",III,2019,Algemene Zaken,TOTAAL,66433.0,1814.0,U
+-,108756,199359.0,233285.0,108756,"IV, Koninkrijksrelaties",IV,2019,Koninkrijksrelaties,TOTAAL,196440.0,36845.0,U
+-,37186983,36908075.0,39418841.0,37186983,"IXA, Nationale Schuld (Transactiebasis)",IXA,2019,Nationale Schuld (Transactiebasis),TOTAAL,42022190.0,-2603349.0,U
+-,7534228,8652905.0,9586411.0,7534228,"IXB, Financiën",IXB,2019,Financiën,TOTAAL,9434462.0,151949.0,U
+-,1042886,1063617.0,1112187.0,1042886,"J, Deltafonds",J,2019,Deltafonds,TOTAAL,1075768.0,36419.0,U
+-,9976656,9949155.0,9873584.0,9976656,"V, Buitenlandse Zaken",V,2019,Buitenlandse Zaken,TOTAAL,10552429.0,-678845.0,U
+-,12738059,13653103.0,13848829.0,12899909,"VI, Justitie en Veiligheid",VI,2019,Justitie en Veiligheid,TOTAAL,13662272.0,186557.0,U
+-,5481506,5683667.0,5690562.0,5560406,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2019,Binnenlandse Zaken en Koninkrijksrelaties,TOTAAL,5616794.0,73768.0,U
+-,41984208,43047066.0,43221329.0,42024208,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2019,"Onderwijs, Cultuur en Wetenschap",TOTAAL,43075430.0,145899.0,U
+-,10477053,10881836.0,10915716.0,10477053,"X, Defensie",X,2019,Defensie,TOTAAL,10719463.0,196253.0,U
+-,9552760,9628349.0,8063103.0,9618660,"XII, Infrastructuur en Waterstaat",XII,2019,Infrastructuur en Waterstaat,TOTAAL,8004956.0,58147.0,U
+-,4486362,4910029.0,5541447.0,4609162,"XIII, Economische Zaken en Klimaat",XIII,2019,Economische Zaken en Klimaat,TOTAAL,5337066.0,204381.0,U
+-,882341,1052628.0,1549034.0,914741,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2019,"Landbouw, Natuur en Voedselkwaliteit",TOTAAL,1534184.0,14850.0,U
+-,36135849,38967331.0,39146517.0,36135849,"XV, Sociale Zaken en Werkgelegenheid",XV,2019,Sociale Zaken en Werkgelegenheid,TOTAAL,39075594.0,70923.0,U
+-,16413793,17447572.0,17489716.0,16471358,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2019,"Volksgezondheid, Welzijn en Sport",TOTAAL,18014003.0,-524287.0,U
+-,3096124,3002848.0,3029908.0,3096124,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2019,Buitenlandse Handel en Ontwikkelingssamenwerking,TOTAAL,3046803.0,-16895.0,U
+-,6545954,6102156.0,6485106.0,6545954,"A, Infrastructuurfonds",A,2020,Infrastructuurfonds,TOTAAL,6371448.0,113658.0,U
+-,31826405,33151951.0,33582549.0,31901410,"B, Gemeentefonds",B,2020,Gemeentefonds,TOTAAL,33436400.0,146149.0,U
+-,2480413,2556850.0,2602960.0,2480413,"C, Provinciefonds",C,2020,Provinciefonds,TOTAAL,2602954.0,6.0,U
+-,36357,72194.0,114462.0,36357,"F, Diergezondheidsfonds",F,2020,Diergezondheidsfonds,TOTAAL,93698.0,20764.0,U
+-,41875,48833.0,55882.0,41875,"H, BES-fonds",H,2020,BES-fonds,TOTAAL,51304.0,4578.0,U
+-,44362,45444.0,45364.0,44362,"I, De Koning",I,2020,De Koning,TOTAAL,45467.0,-103.0,U
+-,162135,191765.0,186648.0,172135,"IIA, Staten-Generaal",IIA,2020,Staten-Generaal,TOTAAL,185602.0,1046.0,U
+-,133782,148360.0,147312.0,133782,"IIB, Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",IIB,2020,"Overige Hoge Colleges van Staat, Kabinetten en de Kiesraad",TOTAAL,143106.0,4206.0,U
+-,70323,76654.0,74480.0,70323,"III, Algemene Zaken",III,2020,Algemene Zaken,TOTAAL,75196.0,-716.0,U
+-,83279,767188.0,883649.0,218279,"IV, Koninkrijksrelaties",IV,2020,Koninkrijksrelaties,TOTAAL,851965.0,31684.0,U
+-,36701905,36485405.0,36718733.0,36701905,"IXA, Nationale Schuld (Transactiebasis)",IXA,2020,Nationale Schuld (Transactiebasis),TOTAAL,36872153.0,-153420.0,U
+-,7903361,11304268.0,9892519.0,9355361,"IXB, Financiën",IXB,2020,Financiën,TOTAAL,8534037.0,1358482.0,U
+-,1104983,1056085.0,1120326.0,1104983,"J, Deltafonds",J,2020,Deltafonds,TOTAAL,1079412.0,40914.0,U
+-,10351409,10570707.0,11318960.0,10358509,"V, Buitenlandse Zaken",V,2020,Buitenlandse Zaken,TOTAAL,11150636.0,168324.0,U
+-,13376219,14407005.0,14442350.0,13428819,"VI, Justitie en Veiligheid",VI,2020,Justitie en Veiligheid,TOTAAL,14382228.0,60122.0,U
+-,6015824,6757607.0,6989488.0,6195972,"VII, Binnenlandse Zaken en Koninkrijksrelaties",VII,2020,Binnenlandse Zaken en Koninkrijksrelaties,TOTAAL,6961305.0,28183.0,U
+-,42717817,44729657.0,44509620.0,43005112,"VIII, Onderwijs, Cultuur en Wetenschap",VIII,2020,"Onderwijs, Cultuur en Wetenschap",TOTAAL,44461515.0,48105.0,U
+-,11035078,11491673.0,11460044.0,11035078,"X, Defensie",X,2020,Defensie,TOTAAL,11190445.0,269599.0,U
+-,8911581,10130649.0,9571010.0,8911581,"XII, Infrastructuur en Waterstaat",XII,2020,Infrastructuur en Waterstaat,TOTAAL,9460624.0,110386.0,U
+-,5706071,10243479.0,9469390.0,8778923,"XIII, Economische Zaken en Klimaat",XIII,2020,Economische Zaken en Klimaat,TOTAAL,8937160.0,532230.0,U
+-,1406095,2266163.0,1945428.0,1418795,"XIV, Landbouw, Natuur en Voedselkwaliteit",XIV,2020,"Landbouw, Natuur en Voedselkwaliteit",TOTAAL,1775996.0,169432.0,U
+-,39697100,74072730.0,60405420.0,53670100,"XV, Sociale Zaken en Werkgelegenheid",XV,2020,Sociale Zaken en Werkgelegenheid,TOTAAL,59902405.0,503015.0,U
+-,18908595,24195903.0,27686846.0,18846295,"XVI, Volksgezondheid, Welzijn en Sport",XVI,2020,"Volksgezondheid, Welzijn en Sport",TOTAAL,27249823.0,437023.0,U
+-,3079086,2991626.0,3148931.0,3079086,"XVII, Buitenlandse Handel en Ontwikkelingssamenwerking",XVII,2020,Buitenlandse Handel en Ontwikkelingssamenwerking,TOTAAL,3186421.0,-37490.0,U

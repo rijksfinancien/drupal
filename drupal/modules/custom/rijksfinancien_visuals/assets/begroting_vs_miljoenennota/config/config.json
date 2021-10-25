@@ -1,0 +1,104 @@
+{
+  "api_endpoint": "/json/chart/begroting_vs_miljoenennota",
+  "jaren": [2019, 2020],
+  "hoofdstukken_niet_meenemen": [
+    "60 accres gemeentefonds", "61 accres provinciefonds", "80 prijsbijstelling",
+    "81 arbeidsvoorwaarden", "83 koppeling uitkeringen", "86 algemeen",
+    "999 restpost overig", "overig", "999 null", "999 overig", "60 null", "61 null", "80 null", "81 null", "83 null", "86 null", "999"
+  ],
+  "toelichtingen": {
+    "Premie" :[
+      "De premiegefinancierde posten bevatten de middelen die betaald zijn door",
+      "premies te innen bij werknemers en werkgevers voor de volks- en werknemers-",
+      "verzekeringen. Hierbij gaat het bijvoorbeeld om premies in het kader van de",
+      "Werkloosheidswet. De bestemming voor deze middelen liggen al vast, door",
+      "wet- en regelgeving. Feitelijk zijn de premies een opgebouwd recht van burgers.",
+      "Ze vormen tegelijk een substantieel deel van de financiën van het Rijk,",
+      "daarom zijn ze in deze visual opgenomen."
+    ],
+    "Netto uitgave": [
+      "De Miljoenennotaposter gaat uit van een netto-uitgavenbegrip;",
+      "dat wil zeggen, de (bruto)uitgaven verminderd met de zogenaamde",
+      "niet-belastingontvangsten. Dit zijn ontvangsten die tot de uitgavenkant",
+      "van de begroting worden gerekend en daar met een minteken terugkomen.",
+      "Hieronder vallen boete-opbrengsten, leges en teruggevorderde toeslagen."
+    ],
+    "80 Prijsbijstelling": [
+      "Op de aanvullende post Arbeidsvoorwaarden worden middelen gereserveerd",
+      "die nodig zijn om de loongevoelige uitgaven op de Rijksbegroting, Sociale",
+      "Zekerheid en Zorg op het uitgavenpeil van het desbetreffende jaar te brengen.",
+      "De oploop in de cijfers ontstaat doordat jaarlijks een structurele reservering",
+      "wordt opgenomen om de begrotingsuitgaven (zoals deze op de afzonderlijke",
+      "begrotingen zijn opgenomen) van constante naar lopende prijzen te brengen."
+    ],
+    "Buitenlandse Zaken / HGIS": [
+      "De Homogene Groep Internationale Samenwerking (HGIS) is een budgettaire",
+      "constructie binnen de rijksbegroting, waarbij de uitgaven van de",
+      "verschillende ministeries op het gebied van het buitenlandbeleid worden",
+      "gebundeld. Dit illustreert de onderlinge samenhang van deze middelen en",
+      "bevordert de samenwerking en de afstemming tussen de betrokken ministeries.",
+      "In de visuele samenvatting worden al deze middelen gegroepeerd onder de",
+      "uitgavenpost «Buitenlandse Zaken/Internationale Samenwerking», omdat het",
+      "Ministerie van Buitenlandse Zaken deze middelen coördineert.",
+      "In de begrotingssystematiek worden deze middelen echter toegewezen aan",
+      "verschillende begrotingshoofdstukken, zoals die van het Ministerie van",
+      "Justitie en Veiligheid en het Ministerie van Defensie."
+    ],
+    "Overig":[
+      "De post overig bestaat uit kastranscorrecties, correcties voor onderlinge",
+      "betalingen, het EMU-saldo van de decentrale overheden en uitgaven die wel",
+      "saldorelevant zijn, maar niet onder één van de plafonds vallen.",
+      "Kastranscorrecties corrigeren voor het feit dat de meeste begrotingen zijn",
+      "opgesteld op basis van een kasdefinitie, terwijl het EMU-saldo wordt berekend",
+      "op basis van een transactiedefinitie. Daarnaast dient gecorrigeerd te worden",
+      "voor betalingen binnen de collectieve sector, zoals tussen ministeries,",
+      "die geen invloed hebben op de totale uitgaven.",
+      "Voorbeelden van uitgaven die wel saldorelevant zijn, maar niet onder een",
+      "plafond vallen zijn de zorgtoeslaguitgaven (vallen binnen het inkomstenkader),",
+      "crisisgerelateerde winst van DNB, opbrengst van de ODE heffing en de",
+      "zorgbemiddelingskosten."
+    ]
+  },
+  "afkortingen": [
+    {
+      "long": "Overige Hoge Colleges van Staat en Kabinetten van de Gouverneurs",
+      "short": "OHCSKG"
+    },
+    {
+      "long": "Binnenlandse Zaken en Koninkrijksrelaties",
+      "short": "BZK"
+    },
+    {
+      "long": "Onderwijs, Cultuur en Wetenschap",
+      "short": "OCW"
+    },
+    {
+      "long": "Infrastructuur en Waterstaat",
+      "short": "I&W"
+    },
+    {
+      "long": "Economische Zaken en Klimaat",
+      "short": "EZK"
+    },
+    {
+      "long": "Landbouw, Natuur en Voedselkwaliteit",
+      "short": "LNV"
+    },
+    {
+      "long": "Sociale Zaken en Werkgelegenheid",
+      "short": "SZW"
+    },
+    {
+      "long": "Volksgezondheid, Welzijn en Sport",
+      "short": "VWS"
+    },
+    {
+      "long": "Buitenlandse Handel & Ontwikkelingssamenwerking",
+      "short": "BHOS"
+    },
+    {
+      "long": "Buitenlandse Handel en Ontwikkelingssamenwerking",
+      "short": "BHOS"
+    }
+  ]
+}

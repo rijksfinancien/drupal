@@ -1,0 +1,12 @@
+services:
+  minfin_search.param_converter:
+    class: Drupal\minfin_search\ParamConverter\ParamConverterMinfinSearch
+    tags:
+      - { name: paramconverter }
+
+  minfin_search.breadcrumb:
+    class: Drupal\minfin_search\BreadcrumbBuilder
+    arguments:
+      - '@string_translation'
+    tags:
+      - { name: breadcrumb_builder, priority: 9999 }

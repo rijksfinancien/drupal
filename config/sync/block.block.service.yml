@@ -1,0 +1,25 @@
+uuid: 9c030fe6-f147-4707-90a6-7fa8bded23ec
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.service
+  module:
+    - system
+  theme:
+    - indicia_theme
+id: service
+theme: indicia_theme
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:service'
+settings:
+  id: 'system_menu_block:service'
+  label: Service
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

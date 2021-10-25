@@ -1,0 +1,39 @@
+select2:
+  version: 4.0.13
+  css:
+    theme:
+      /libraries/select2/dist/css/select2.min.css: { }
+  js:
+    /libraries/select2/dist/js/select2.min.js: { }
+
+chosen:
+  version: 3.1.3
+  css:
+    theme:
+      /libraries/chosen-js/chosen.min.css: {}
+  js:
+    /libraries/chosen-js/chosen.jquery.min.js: {}
+
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      /libraries/slick-carousel/slick/slick.css: {}
+  js:
+    /libraries/slick-carousel/slick/slick.js: {}
+
+global:
+  version: BUILD
+  css:
+    component:
+      dist/css/indicia.css: {}
+  js:
+    dist/js/indicia.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+    - indicia_theme/chosen
+    - indicia_theme/slick
+    - indicia_theme/select2

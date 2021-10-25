@@ -1,0 +1,37 @@
+diff --git a/src/EasyBreadcrumbBuilder.php b/src/EasyBreadcrumbBuilder.php
+index afaf6ee..5fe788c 100644
+--- a/src/EasyBreadcrumbBuilder.php
++++ b/src/EasyBreadcrumbBuilder.php
+@@ -491,20 +491,19 @@ class EasyBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+                 }
+               }
+             }
+-            else {
+-              $title = $this->normalizeText($this->getTitleString($route_request, $route_match, $replacedTitles));
+-              if ($this->config->get(EasyBreadcrumbConstants::TRUNCATOR_MODE)) {
+-                $title = $this->truncator($title);
+-              }
+-              if (empty($title)) {
+-                unset($title);
+-              }
++            
++            $title = $this->normalizeText($this->getTitleString($route_request, $route_match, $replacedTitles));
++            if ($this->config->get(EasyBreadcrumbConstants::TRUNCATOR_MODE)) {
++              $title = $this->truncator($title);
++            }
++            if (empty($title)) {
++              unset($title);
++            }
+ 
+-              // If the title is to be replaced...
+-              if (!empty($title) && array_key_exists($title, $replacedTitles)) {
+-                // Replaces the title.
+-                $title = $replacedTitles[(string) $title];
+-              }
++            // If the title is to be replaced...
++            if (!empty($title) && array_key_exists($title, $replacedTitles)) {
++              // Replaces the title.
++              $title = $replacedTitles[(string) $title];
+             }
+           }
+           if (!isset($title)) {

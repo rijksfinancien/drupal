@@ -1,0 +1,37 @@
+<div id="r23_container" class="container">
+  <div id="r23_title">Wijzigingen van Rutte II naar Rutte III</div>
+  <div id="r23_subtitle">inclusief wijzigingen ontwerpbegroting 2017 -> 2018</div>
+  <div id="r23_legend">
+    <img src="/modules/custom/rijksfinancien_visuals/assets/rutteii_vs_rutte_iii/img/isNewArticle.svg">Nieuw
+    <img src="/modules/custom/rijksfinancien_visuals/assets/rutteii_vs_rutte_iii/img/isDeletedArticle.svg">Verwijderd
+    <img src="/modules/custom/rijksfinancien_visuals/assets/rutteii_vs_rutte_iii/img/nameChangedArticle.svg">Naam/nr gewijzigd
+  </div> <!-- legend -->
+  <div id="r23_graph"></div>
+  <div id="r23_footer">
+    <div class="btn-toolbar" role="toolbar">
+      <label class="buttonLabel" for="filterButtons">Toon</label>
+      <div id="filterButtons" class="btn-group btn-group-toggle" data-toggle="buttons" >
+        <label class="btn btn-light active">
+          <input type="radio" name="options" id="Alles" autocomplete="off" checked onchange="onFilterChange('all')"> Alles
+        </label>
+        <label class="btn btn-light">
+          <input type="radio" name="options" id="nameChangesCheck" autocomplete="off" onchange="onFilterChange('name')"> Naam- en nummerwijzigingen
+        </label>
+        <label class="btn btn-light">
+          <input type="radio" name="options" id="newCheck" autocomplete="off" onchange="onFilterChange('new')"> Nieuw
+        </label>
+        <label class="btn btn-light">
+          <input type="radio" name="options" id="deletedCheck" autocomplete="off" onchange="onFilterChange('deleted')"> Verwijderd
+        </label>
+        <label class="btn btn-light">
+          <input type="radio" name="options" id="budgetChangesCheck" autocomplete="off" onchange="onFilterChange('budget')"> Budgetverschuivingen
+        </label>
+      </div>
+      <div id="articleButtons">
+        <label class="buttonLabel">Artikelen</label>
+        <button id="showArticlesButton" type="button" class="btn btn-light">Toon alle</button>
+        <button id="hideArticlesButton" type="button" class="btn btn-light">Verberg alle</button>
+      </div>
+    </div>
+  </div>
+</div>

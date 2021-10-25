@@ -1,0 +1,14 @@
+uuid: badc21d6-f68d-4aa9-82d1-55c9f42a29d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default
+label: 'Content type title as url'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

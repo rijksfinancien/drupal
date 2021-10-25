@@ -1,0 +1,24 @@
+{# Based on from drupal/modules/contrib/paragraphs/templates/paragraph.html.twig #}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="teaser-block">
+      {% if content['url'][0]['#url'] %}
+        <a href="{{ content['url'][0]['#url'].toString }}">
+          {{ content['field_title'] }}
+          <span class="icon icon-arrow-down"></span>
+        </a>
+      {% else %}
+        {{ content['field_title'] }}
+      {% endif %}
+    </div>
+    {% block content %}
+      {{ content|without(['field_title', 'url']) }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,62 @@
+route_callbacks:
+  - '\Drupal\minfin_general\Routing\YearRoutes::routes'
+
+minfin_general.archive:
+  path: '/archief/{from}/{till}/{hoofdstukMinfinId}'
+  defaults:
+    _controller: '\Drupal\minfin_general\Controller\ArchiveController::content'
+    _title_callback: '\Drupal\minfin_general\Controller\ArchiveController::title'
+    from: NULL
+    till: NULL
+    hoofdstukMinfinId: NULL
+  requirements:
+    _permission: 'access content'
+    from: \d{4}$
+    till: \d{4}$
+
+minfin_general.chapter:
+  path: '/hoofdstuk/{hoofdstukMinfinId}/{year}'
+  defaults:
+    _controller: '\Drupal\minfin_general\Controller\ChapterController::content'
+    _title_callback: '\Drupal\minfin_general\Controller\ChapterController::title'
+    year: NULL
+  requirements:
+    _permission: 'access content'
+
+minfin_general.banner_settings_form:
+  path: '/admin/config/indicia/banner'
+  defaults:
+    _form: '\Drupal\minfin_general\Form\BannerSettingsForm'
+    _title: 'Banner settings'
+  requirements:
+    _permission: 'administer minfin banner'
+  options:
+    _admin_route: TRUE
+
+minfin_general.chapter_page_settings_form:
+  path: '/admin/minfin/chapter/chapter_page'
+  defaults:
+    _form: '\Drupal\minfin_general\Form\ChapterPageSettingsForm'
+    _title: 'Chapter page settings'
+  requirements:
+    _permission: 'administer minfin chapter_page'
+  options:
+    _admin_route: TRUE
+
+minfin_general.open_data.block_form:
+  path: '/admin/minfin/open-data/blok'
+  defaults:
+    _form: '\Drupal\minfin_general\Form\OpenDataForm'
+    _title: 'Open data settings'
+  requirements:
+    _permission: 'administer minfin opendata'
+  options:
+    _admin_route: TRUE
+
+minfin_general.imce:
+  path: '/admin/minfin/imce'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceAdminBrowserController::page'
+    _title: 'IMCE File Browser'
+  requirements:
+    _permission: 'access imce browser'

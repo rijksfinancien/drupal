@@ -1,0 +1,5 @@
+minfin reindex kamerstuk:
+  title: 'Re-index kamerstuk'
+
+minfin delete kamerstuk:
+  title: 'Delete multiple kamerstukken'

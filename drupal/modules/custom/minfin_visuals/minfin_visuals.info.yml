@@ -1,0 +1,9 @@
+name: Minfin - visuals
+description: Provides the visuals for minfin
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:block
+  - minfin:minfin

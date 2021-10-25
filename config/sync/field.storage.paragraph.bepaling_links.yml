@@ -1,0 +1,19 @@
+uuid: 092c2d38-bd1a-4842-94b9-b2fb4b1b4a1f
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.bepaling_links
+field_name: bepaling_links
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="158.17412"
+   height="54.679173"
+   viewBox="0 0 158.17412 54.679173"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="donut-teaser-sml.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Donut-teaser-sml</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2081"
+     id="namedview16"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="16.799606"
+     inkscape:cx="66.259515"
+     inkscape:cy="3.1791741"
+     inkscape:window-x="3840"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <title
+     id="title2">Donut-teaser-sml</title>
+  <g
+     id="Uitwerking"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(-0.41280243)">
+    <g
+       id="Extra-afbeeldingen"
+       transform="translate(-348,-90)">
+      <g
+         id="Donut-teaser-sml"
+         transform="matrix(-1,0,0,1,507,90)">
+        <g
+           transform="matrix(-1,0,0,1,159,0)"
+           id="Combined-Shape">
+          <path
+             d="M 80.164369,0.00255726 C 116.04767,0.27888141 146.60622,22.921593 158.58692,54.677608 l -50.02088,3.95e-4 C 101.21464,47.511802 91.223309,43.040948 80.188652,42.862038 v 0 L 80.164,42.861557 Z"
+             id="path4"
+             inkscape:connector-curvature="0"
+             style="fill:#01689b" />
+          <path
+             d="M 79.894364,9.0083477e-4 80.288303,0.00360074 80.223716,42.862621 c -0.240747,-0.0041 -0.481991,-0.0062 -0.723716,-0.0062 -11.307887,0 -21.5631,4.507037 -29.067243,11.822715 L 0.41280243,54.678329 C 12.467191,22.726129 43.329609,0 79.5,0 c 0.26305,0 0.52582,0.00120198 0.788303,0.00360074 z"
+             id="path6"
+             inkscape:connector-curvature="0"
+             style="fill:#cccccc" />
+          <path
+             d=""
+             id="path8"
+             inkscape:connector-curvature="0"
+             style="fill:#e5f0f9" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

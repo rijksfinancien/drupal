@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Donut icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M24,6 C33.9411255,6 42,14.0588745 42,24 C42,33.9411255 33.9411255,42 24,42 C14.0588745,42 6,33.9411255 6,24 C6,14.0588745 14.0588745,6 24,6 Z M24,15 C19.0294373,15 15,19.0294373 15,24 C15,28.9705627 19.0294373,33 24,33 C28.9705627,33 33,28.9705627 33,24 C33,19.0294373 28.9705627,15 24,15 Z" id="path-1"></path>
+    </defs>
+    <g id="Uitwerking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-1986.000000, -391.000000)">
+            <g id="Donut-icon" transform="translate(1986.000000, 391.000000)">
+                <g transform="translate(24.000000, 24.000000) rotate(-90.000000) translate(-24.000000, -24.000000) ">
+                    <circle id="Oval-Copy-2" fill="#CCE0F1" cx="24" cy="24" r="24"></circle>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Combined-Shape"></g>
+                    <polygon id="Rectangle" fill="#01689B" mask="url(#mask-2)" points="25.5 26 46 26 37.0770919 42 14.5881394 44.0399439"></polygon>
+                    <polygon id="Rectangle-Copy" fill="#01689B" mask="url(#mask-2)" points="25.5 22 46 22 46 5.52738466 24.0753902 2.45004303"></polygon>
+                    <polygon id="Rectangle-Copy-2" fill="#01689B" mask="url(#mask-2)" points="21.5 22 3.05401594 22 11.0619319 5.52738466 20.0753902 2.45004303"></polygon>
+                    <polygon id="Rectangle-Copy-3" fill="#01689B" mask="url(#mask-2)" points="21.5 26 3.37766976 26.3470301 5.07631546 36.432478 10.019353 42"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

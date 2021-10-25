@@ -1,0 +1,21 @@
+uuid: 2327320d-6914-41fb-bab9-0f89847e8d3d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.description
+    - node.type.begrip
+  module:
+    - text
+id: node.begrip.description
+field_name: description
+entity_type: node
+bundle: begrip
+label: Omschrijving
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

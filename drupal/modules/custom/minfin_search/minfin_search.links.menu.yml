@@ -1,0 +1,5 @@
+minfin_search.configuration:
+  title: 'Search configuration'
+  description: 'Configure the search settings.'
+  parent: minfin.services
+  route_name: minfin_search.configuration

@@ -1,0 +1,26 @@
+.toggle-seperated-list {
+  .toggle-hidden-list {
+    display: inline-block;
+    cursor: pointer;
+    color: $c-primary-400;
+  }
+
+  .hidden-list {
+    display: none;
+  }
+
+  &:not(.active) .limited-list {
+    margin-right: 4px;
+  }
+
+  &.active {
+    .limited-list {
+      margin-right: 0;
+    }
+
+    .hidden-list {
+      display: inline;
+      margin-right: 4px;
+    }
+  }
+}

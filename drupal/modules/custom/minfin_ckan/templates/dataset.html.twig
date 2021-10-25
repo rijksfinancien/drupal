@@ -1,0 +1,87 @@
+{% macro datasetstable(datasets, show_link) %}
+  <table>
+    <thead>
+    <tr>
+      <th>{{ 'Description'|t }}</th>
+      <th>{{ 'Download' }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for dataset in datasets %}
+      {% if show_link %}
+        <tr>
+          <td><label>{{ dataset.title }}</label><a href="http://data.overheid.nl/dataset/{{ dataset.name }}" itemprop="hasPart">{{ 'Check information for this dataset at @link'|t({ '@link': 'data.overheid.nl' }) }}</a></td>
+          <td></td>
+        </tr>
+      {% endif %}
+      {% for resource in dataset.resources %}
+        <tr>
+          <td>{{ resource.name }}</td>
+          <td><a href="{{ resource.url }}" itemprop="hasPart">{{ ckan_get_file_format_name(resource.format) }}</a></td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
+
+<div class="container" itemscope itemtype="http://schema.org/Dataset">
+  <span class="metadata" itemprop="name">{{ activeDataset.title }}</span>
+  <strong>{{ 'Description dataset'|t }}</strong>
+  <p itemprop="description">{{ activeDataset.notes|striptags|nl2br }}</p>
+  <table>
+    <tbody>
+    <tr>
+      <th>{{ 'Owner'|t }}</th>
+      <td itemprop="author" itemtype="http://schema.org/Organistation">{{ ckan_get_data_owner_name(activeDataset.authority) }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'License'|t }}</th>
+      <td itemprop="license">{{ ckan_get_license_name(activeDataset.licenseId) }}</td>
+    </tr>
+    <tr>
+      <th> {{ 'Updated'|t }}</th>
+      <td itemprop="dateModified">{{ ckan_format_date(activeDataset.metadataModified) }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'Status'|t }}</th>
+      <td>{{ ckan_get_status_name(activeDataset.datasetStatus) }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'Language'|t }}</th>
+      <td itemprop="inLanguage">{% for language in activeDataset.language %}
+          {{ ckan_get_language_name(language) }}
+        {% endfor %}</td>
+    </tr>
+    <tr>
+      <th>{{ 'Metadata language'|t }}</th>
+      <td>{{ ckan_get_language_name(activeDataset.metadataLanguage) }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <nav id="year" class="tabs">
+    <ul>
+      {% for tab, dataset in datasets.tabs %}
+        <li class="year">
+          <a href="#table-{{ tab }}" data-year="{{ tab }}" {% if loop.first %} class="is-active" {% endif %}>
+            {{ tab }}
+          </a>
+        </li>
+      {% endfor %}
+      <li class="year">
+        <a href="#table-all" data-year="all">Alle</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="year-tables">
+    {% for tab, datasets in datasets.tabs %}
+      <div class="year-table" id="table-{{ tab }}">
+        {{ _self.datasetstable(datasets, true) }}
+      </div>
+    {% endfor %}
+    <div class="year-table" id="table-all">
+      {{ _self.datasetstable(datasets.all, datasets.tabs ? false : true) }}
+    </div>
+  </div>
+</div>

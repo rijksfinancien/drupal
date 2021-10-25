@@ -1,0 +1,33 @@
+minfin_budgettaire_tabellen.buget:
+  path: '/begroting/{vuo}/{jaar}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}'
+  defaults:
+    _controller: '\Drupal\minfin_budgettaire_tabellen\Controller\TableController::renderTable'
+    _title_callback: '\Drupal\minfin_budgettaire_tabellen\Controller\TableController::getTitle'
+    fase: OWB
+    jaar: NULL
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+  options:
+    parameters:
+      vuo:
+        type: 'minfin-vuo'
+  requirements:
+    _permission: 'access content'
+
+minfin_budgettaire_tabellen.annual_report:
+  path: '/jaarverslag/{vuo}/{jaar}/{hoofdstukMinfinId}/{artikelMinfinId}/{sub1}'
+  defaults:
+    _controller: '\Drupal\minfin_budgettaire_tabellen\Controller\TableController::renderTable'
+    _title_callback: '\Drupal\minfin_budgettaire_tabellen\Controller\TableController::getTitle'
+    fase: JV
+    jaar: NULL
+    hoofdstukMinfinId: NULL
+    artikelMinfinId: NULL
+    sub1: NULL
+  options:
+    parameters:
+      vuo:
+        type: 'minfin-vuo'
+  requirements:
+    _permission: 'access content'

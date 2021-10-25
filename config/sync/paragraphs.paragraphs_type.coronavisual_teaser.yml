@@ -1,0 +1,10 @@
+uuid: 180fe5b1-53c5-452e-8537-7c7e3f8187db
+langcode: nl
+status: true
+dependencies: {  }
+id: coronavisual_teaser
+label: 'Coronavisual teaser'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

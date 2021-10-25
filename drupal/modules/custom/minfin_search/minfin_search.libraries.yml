@@ -1,0 +1,7 @@
+search_sorting_filter:
+  version: 1.0.0
+  js:
+    js/search_sorting_filter.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

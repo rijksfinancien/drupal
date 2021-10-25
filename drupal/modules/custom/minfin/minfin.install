@@ -1,0 +1,3947 @@
+<?php
+
+/**
+ * @file
+ * Minfin.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_install().
+ */
+function minfin_install() {
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('public://open-data', 0755);
+  $fileSystem->mkdir('public://kamerstuk', 0755);
+  $fileSystem->mkdir('public://kamerstuk_pdf', 0755);
+  $fileSystem->mkdir('public://kamerstuk/missing-image', 0755);
+  $fileSystem->mkdir('public://kamerstuk/dao', 0755);
+  $fileSystem->mkdir('private://import', 0755);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function minfin_schema() {
+  $schema = [];
+
+  // Globale tabellen.
+  $schema['mf_hoofdstuk'] = [
+    'fields' => [
+      'hoofdstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'hoofdstuk_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'naam' => ['naam'],
+    ],
+  ];
+
+  $schema['mf_artikel'] = [
+    'fields' => [
+      'artikel_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'omschrijving' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'artikel_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'naam' => ['naam'],
+    ],
+  ];
+
+  // Budgettaire tabellen.
+  $schema['mf_b_tabel'] = [
+    'fields' => [
+      'btabel_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'btabel_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'vuo' => [
+        'type' => 'varchar',
+        'length' => 1,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'beleidsartikel' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'not null' => FALSE,
+        'unsigned' => TRUE,
+      ],
+      'bedrag_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_vastgestelde_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire1' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire2' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_jaarverslag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'btabel_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_id' => ['hoofdstuk_id'],
+      'artikel_id' => ['artikel_id'],
+      'artikelonderdeel_id' => ['artikelonderdeel_id'],
+      'instrument_of_uitsplitsing_apparaat_id' => ['instrument_of_uitsplitsing_apparaat_id'],
+      'regeling_detailniveau_id' => ['regeling_detailniveau_id'],
+    ],
+  ];
+
+  $schema['mf_artikelonderdeel'] = [
+    'fields' => [
+      'artikelonderdeel_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'artikelonderdeel_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'artikelonderdeel_minfin_id' => ['artikelonderdeel_minfin_id'],
+      'naam' => ['naam'],
+    ],
+  ];
+
+  $schema['mf_instrument_of_uitsplitsing_apparaat'] = [
+    'fields' => [
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'instrument_of_uitsplitsing_apparaat_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'instrument_of_uitsplitsing_apparaat_minfin_id' => ['instrument_of_uitsplitsing_apparaat_minfin_id'],
+      'naam' => ['naam'],
+    ],
+  ];
+
+  $schema['mf_regeling_detailniveau'] = [
+    'fields' => [
+      'regeling_detailniveau_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'regeling_detailniveau_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'regeling_detailniveau_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'regeling_detailniveau_minfin_id' => ['regeling_detailniveau_minfin_id'],
+      'naam' => ['naam'],
+    ],
+  ];
+
+  $schema['mf_hoofdstuk_heeft_minister'] = [
+    'fields' => [
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'minister_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'jaar',
+      'fase',
+      'hoofdstuk_id',
+      'minister_id',
+    ],
+  ];
+
+  $schema['mf_minister'] = [
+    'fields' => [
+      'minister_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'minister_id',
+    ],
+  ];
+
+  // Budgettaire tabellen: Volgen door de jaren heen.
+  $schema['mf_voorgaand_hoofdstuk'] = [
+    'fields' => [
+      'voorgaand_hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_hoofdstuk_id',
+      'hoofdstuk_id',
+    ],
+  ];
+
+  $schema['mf_voorgaand_artikel'] = [
+    'fields' => [
+      'voorgaand_artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_artikel_id',
+      'artikel_id',
+    ],
+  ];
+
+  $schema['mf_voorgaand_artikelonderdeel'] = [
+    'fields' => [
+      'voorgaand_artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_artikelonderdeel_id',
+      'artikelonderdeel_id',
+    ],
+  ];
+
+  $schema['mf_voorgaand_instrument_of_uitsplitsing_apparaat'] = [
+    'fields' => [
+      'voorgaand_instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_instrument_of_uitsplitsing_apparaat_id',
+      'instrument_of_uitsplitsing_apparaat_id',
+    ],
+  ];
+
+  $schema['mf_voorgaand_regeling_detailniveau'] = [
+    'fields' => [
+      'voorgaand_jaar' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'voorgaand_fase' => [
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => FALSE,
+      ],
+      'voorgaand_regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => FALSE,
+      ],
+      'regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_regeling_detailniveau_id',
+      'regeling_detailniveau_id',
+    ],
+    'index' => [
+      'voorgaand_jaar' => ['voorgaand_jaar'],
+      'voorgaand_fase' => ['voorgaand_fase'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+    ],
+  ];
+
+  // Kamerstukken.
+  $schema['mf_kamerstuk'] = [
+    'fields' => [
+      'kamerstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'import_fase' => [
+        'type' => 'varchar',
+        'length' => 256,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'empty_record' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'anchor_data' => ['jaar', 'fase', 'anchor'],
+    ],
+  ];
+
+  $schema['mf_kamerstuk_bijlage'] = [
+    'fields' => [
+      'kamerstuk_bijlage_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'import_fase' => [
+        'type' => 'varchar',
+        'length' => 256,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'empty_record' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_bijlage_id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'anchor_data' => ['jaar', 'fase', 'anchor'],
+    ],
+  ];
+
+  $schema['mf_kamerstuk_files'] = [
+    'fields' => [
+      'kamerstuk_file_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'bijlage' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 0,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'fid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_file_id',
+    ],
+    'indexes' => [
+      'kamerstuk_file' => ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id'],
+    ],
+  ];
+
+  $schema['mf_kamerstuk_dossier'] = [
+    'fields' => [
+      'kamerstuk_dossier_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'dossier_number' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_dossier_id',
+    ],
+    'indexes' => [
+      'kamerstuk' => ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id'],
+    ],
+  ];
+
+  $schema['mf_kamerstuk_isb_title'] = [
+    'fields' => [
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'date' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'jaar',
+      'fase',
+      'hoofdstuk_minfin_id',
+    ],
+  ];
+
+  $schema['mf_voetstuk'] = [
+    'fields' => [
+      'voetstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'minfin_voetstuk_id' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'voetstuk_id',
+    ],
+    'indexes' => [
+      'minfin_voetstuk_id' => ['minfin_voetstuk_id'],
+    ],
+  ];
+
+  // Beleidsevaluaties.
+  $schema['mf_beleidsevaluatie'] = [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'titel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'departement' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'artikel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'status' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'not null' => FALSE,
+      ],
+      'opleverdatum' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'sea' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'toelichting' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'onafhankelijke_deskundige' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'hoofdrapport' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'aankondiging' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'kabinetsreactie_aanbiedingsbrief' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'open_data' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+    ],
+    'indexes' => [
+      'departement' => ['departement'],
+      'opleverdatum' => ['opleverdatum'],
+      'status' => ['status'],
+      'titel' => ['titel'],
+      'type' => ['type'],
+    ],
+  ];
+
+  $schema['mf_beleidsevaluatie_hoofdstuk'] = [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'hoofdstuk_id',
+    ],
+  ];
+
+  $schema['mf_beleidsevaluatie_artikel'] = [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'artikel_id',
+    ],
+  ];
+
+  $schema['mf_beleidsevaluatie_thema'] = [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'beleidsevaluatie_thema_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'beleidsevaluatie_thema_id',
+    ],
+  ];
+
+  $schema['mf_beleidsevaluatie_bijlage'] = [
+    'fields' => [
+      'beleidsevaluatie_bijlage_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'beleidsevaluatie_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'bijlage' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_bijlage_id',
+    ],
+    'indexes' => [
+      'beleidsevaluatie_id' => ['beleidsevaluatie_id'],
+    ],
+  ];
+
+  // Corona visuals.
+  $schema['mf_corona_emu'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'value1' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'value2' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'value3' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+    ],
+  ];
+
+  $schema['mf_corona_visuals_data'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1_id' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau2' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'datum' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+      'bedrag' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'datum' => ['datum'],
+      'niveau1_id' => ['niveau1_id'],
+    ],
+  ];
+
+  $schema['mf_corona_visuals_uitleg'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1_id' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau2' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'toelichting' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'uitleg' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 512,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'niveau' => ['niveau1_id', 'niveau2'],
+    ],
+  ];
+
+  $schema['mf_corona_visuals'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'position' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'label' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'bedrag' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+    ],
+  ];
+
+  // Other tables.
+  $schema['mf_artikel_link'] = [
+    'fields' => [
+      'link_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+      ],
+      'description' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'category' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'link_id',
+    ],
+    'indexes' => [
+      'artikel' => ['hoofdstuk_minfin_id', 'artikel_minfin_id'],
+      'category' => ['category'],
+    ],
+  ];
+
+  $schema['mf_fiscale_regeling'] = [
+    'fields' => [
+      'fiscale_regeling_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'bedrag_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_premie' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_fiscaal' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'fiscale_regeling_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+    ],
+  ];
+
+  $schema['mf_subsidie'] = [
+    'fields' => [
+      'subsidie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => FALSE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => FALSE,
+        'unsigned' => FALSE,
+      ],
+      'beleid' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'regeling' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'ontvanger' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'bedrag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'subsidie_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+    ],
+  ];
+
+  $schema['mf_verzelfstandiging'] = [
+    'fields' => [
+      'verzelfstandiging_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'ministerie' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => FALSE,
+      ],
+      'organisatie' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'link_jaarverslag' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+      ],
+      'fte' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'bedrag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'verzelfstandiging_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'type' => ['type'],
+      'organisatie' => ['organisatie'],
+    ],
+  ];
+
+  $schema['mf_verzelfstandiging_uitleg'] = [
+    'fields' => [
+      'verzelfstandiging_uitleg_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'afkorting' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => FALSE,
+      ],
+      'ministerie' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'website' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'resource_identifier' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'fte' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'beschrijving' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'taken_en_bevoegdheden' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'evaluaties' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'rapport' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'rapport_titel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'verzelfstandiging_uitleg_id',
+    ],
+    'indexes' => [
+      'naam' => ['naam'],
+      'type' => ['type'],
+      'ministerie' => ['ministerie'],
+    ],
+  ];
+
+  $schema['mf_begrotingsstaat'] = [
+    'fields' => [
+      'begrotingsstaat_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'vuo' => [
+        'type' => 'varchar',
+        'length' => 1,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'bedrag_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_vastgestelde_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire1' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire2' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_jaarverslag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'begrotingsstaat_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_id' => ['hoofdstuk_id'],
+      'artikel_id' => ['artikel_id'],
+    ],
+  ];
+
+  $schema['mf_financiele_instrumenten'] = [
+    'fields' => [
+      'serial' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'instrument' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'regeling' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'ontvanger' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'bedrag' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'serial',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'instrument' => ['instrument'],
+      'regeling' => ['regeling'],
+      'ontvanger' => ['ontvanger'],
+    ],
+  ];
+
+  $schema['mf_uitzonderingen'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'geen_subhoofdstukken' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+    ],
+  ];
+
+  $schema['mf_log'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'sub_type' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'year' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'rows_imported' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'rows_skipped' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'state' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'fid' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+    ],
+  ];
+
+  $schema['mf_log_message'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'mf_log_id' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'severity' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'line' => [
+        'type' => 'int',
+        'length' => 'normal',
+        'unsigned' => TRUE,
+      ],
+      'message' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+      ],
+      'variables' => [
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'mf_log_id' => ['mf_log_id'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Add the mf_artikel_link table.
+ */
+function minfin_update_8001() {
+  $spec = [
+    'fields' => [
+      'link_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+      ],
+      'description' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'category' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'link_id',
+    ],
+    'indexes' => [
+      'artikel' => ['hoofdstuk_minfin_id', 'artikel_minfin_id'],
+      'category' => ['category'],
+    ],
+  ];
+
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('mf_artikel_link', $spec);
+}
+
+/**
+ * Add the mf_voetstuk table.
+ */
+function minfin_update_8002() {
+  $spec = [
+    'fields' => [
+      'voetstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'minfin_voetstuk_id' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'voetstuk_id',
+    ],
+    'indexes' => [
+      'minfin_voetstuk_id' => ['minfin_voetstuk_id'],
+    ],
+  ];
+
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('mf_voetstuk', $spec);
+}
+
+/**
+ * Update the indexes on mf_kamerstuk.
+ */
+function minfin_update_8003() {
+  $schema = Database::getConnection()->schema();
+  $spec = [
+    'fields' => [
+      'kamerstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_id',
+    ],
+    'indexes' => [
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+    ],
+  ];
+
+  $schema->dropIndex('mf_kamerstuk', 'level_1');
+  $schema->dropIndex('mf_kamerstuk', 'level_2');
+  $schema->addIndex('mf_kamerstuk', 'anchor', ['anchor'], $spec);
+  $schema->addIndex('mf_kamerstuk', 'jaar', ['jaar'], $spec);
+  $schema->addIndex('mf_kamerstuk', 'fase', ['fase'], $spec);
+}
+
+/**
+ * Update the indexes on mf_kamerstuk.
+ */
+function minfin_update_8004() {
+  $schema = Database::getConnection()->schema();
+  $spec = [
+    'fields' => [
+      'kamerstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'anchor_data' => ['jaar', 'fase', 'anchor'],
+    ],
+  ];
+
+  $schema->addIndex('mf_kamerstuk', 'anchor_data', ['jaar', 'fase', 'anchor'], $spec);
+}
+
+/**
+ * Update database to allow regeling detailniveau to be empty.
+ */
+function minfin_update_8005() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => FALSE,
+  ];
+  $schema->changeField('mf_b_tabel', 'regeling_detailniveau_id', 'regeling_detailniveau_id', $spec);
+}
+
+/**
+ * Update database to add import fase field to kamerstukken.
+ */
+function minfin_update_8006() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'varchar',
+    'length' => 256,
+  ];
+  $schema->addField('mf_kamerstuk', 'import_fase', $spec);
+}
+
+/**
+ * Increase the table size for phase.
+ */
+function minfin_update_8010() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'varchar',
+    'length' => 5,
+    'not null' => TRUE,
+  ];
+  $schema->changeField('mf_hoofdstuk_heeft_minister', 'fase', 'fase', $spec);
+}
+
+/**
+ * Remove 'mf_cbs' table, as its now part of mf_article_links table.
+ */
+function minfin_update_8012() {
+  $schema = Database::getConnection()->schema();
+  if ($schema->tableExists('mf_cbs')) {
+    $schema->dropTable('mf_cbs');
+  }
+}
+
+/**
+ * Updated databases for b-tabel data.
+ */
+function minfin_update_8013() {
+  $database = Database::getConnection();
+  $schema = $database->schema();
+
+  $database->delete('mf_regeling_detailniveau')->execute();
+  $database->delete('mf_instrument_of_uitsplitsing_apparaat')->execute();
+  $database->delete('mf_artikelonderdeel')->execute();
+  $database->delete('mf_b_tabel')->execute();
+
+  $spec = [
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ];
+  $schema->addField('mf_artikelonderdeel', 'artikel_id', $spec);
+  $schema->addField('mf_instrument_of_uitsplitsing_apparaat', 'artikelonderdeel_id', $spec);
+  $schema->addField('mf_regeling_detailniveau', 'instrument_of_uitsplitsing_apparaat_id', $spec);
+}
+
+/**
+ * Add db tables to follow data throughout the years.
+ */
+function minfin_update_8014() {
+  $schema = Database::getConnection()->schema();
+  if ($schema->tableExists('mf_voorgaand_hoofdstuk')) {
+    $schema->dropTable('mf_voorgaand_hoofdstuk');
+  }
+  if ($schema->tableExists('mf_voorgaand_artikel')) {
+    $schema->dropTable('mf_voorgaand_artikel');
+  }
+
+  $schema->createTable('mf_voorgaand_hoofdstuk', [
+    'fields' => [
+      'voorgaand_hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_hoofdstuk_id',
+      'hoofdstuk_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_voorgaand_artikel', [
+    'fields' => [
+      'voorgaand_artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_artikel_id',
+      'artikel_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_voorgaand_artikelonderdeel', [
+    'fields' => [
+      'voorgaand_artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_artikelonderdeel_id',
+      'artikelonderdeel_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_voorgaand_instrument_of_uitsplitsing_apparaat', [
+    'fields' => [
+      'voorgaand_instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_instrument_of_uitsplitsing_apparaat_id',
+      'instrument_of_uitsplitsing_apparaat_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_voorgaand_regeling_detailniveau', [
+    'fields' => [
+      'voorgaand_regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_regeling_detailniveau_id',
+      'regeling_detailniveau_id',
+    ],
+  ]);
+}
+
+/**
+ * Add db tables to sava the pdf version for kamerstukken.
+ */
+function minfin_update_8015() {
+  $schema = Database::getConnection()->schema();
+  if (!$schema->tableExists('mf_kamerstuk_files')) {
+    $schema->createTable('mf_kamerstuk_files', [
+      'fields' => [
+        'kamerstuk_file_id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'type' => [
+          'type' => 'varchar',
+          'length' => 256,
+          'not null' => TRUE,
+        ],
+        'jaar' => [
+          'type' => 'int',
+          'size' => 'small',
+          'not null' => TRUE,
+        ],
+        'fase' => [
+          'type' => 'varchar',
+          'length' => 5,
+          'not null' => TRUE,
+        ],
+        'hoofdstuk_minfin_id' => [
+          'type' => 'varchar',
+          'length' => 16,
+        ],
+        'fid' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+      ],
+      'primary key' => [
+        'kamerstuk_file_id',
+      ],
+      'indexes' => [
+        'kamerstuk_file' => ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id'],
+      ],
+    ]);
+  }
+}
+
+/**
+ * Add db table for the kamerstuk_bijlagen.
+ */
+function minfin_update_8016() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_kamerstuk', 'empty_record', [
+    'type' => 'int',
+    'length' => 'tiny',
+    'unsigned' => TRUE,
+    'default' => 0,
+  ]);
+
+  if (!$schema->tableExists('mf_kamerstuk_bijlage')) {
+    $schema->createTable('mf_kamerstuk_bijlage', [
+      'fields' => [
+        'kamerstuk_bijlage_id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'type' => [
+          'type' => 'varchar',
+          'length' => 256,
+          'not null' => TRUE,
+        ],
+        'jaar' => [
+          'type' => 'int',
+          'size' => 'small',
+          'not null' => TRUE,
+        ],
+        'fase' => [
+          'type' => 'varchar',
+          'length' => 5,
+          'not null' => TRUE,
+        ],
+        'import_fase' => [
+          'type' => 'varchar',
+          'length' => 256,
+        ],
+        'naam' => [
+          'type' => 'varchar',
+          'length' => 256,
+          'not null' => TRUE,
+        ],
+        'hoofdstuk_minfin_id' => [
+          'type' => 'varchar',
+          'length' => 16,
+        ],
+        'artikel_minfin_id' => [
+          'type' => 'int',
+          'length' => 'small',
+          'unsigned' => TRUE,
+        ],
+        'level_1' => [
+          'type' => 'varchar',
+          'length' => 16,
+        ],
+        'level_2' => [
+          'type' => 'varchar',
+          'length' => 16,
+        ],
+        'level_3' => [
+          'type' => 'varchar',
+          'length' => 16,
+        ],
+        'anchor' => [
+          'type' => 'varchar',
+          'length' => 16,
+          'not null' => TRUE,
+        ],
+        'empty_record' => [
+          'type' => 'int',
+          'length' => 'tiny',
+          'unsigned' => TRUE,
+          'default' => 0,
+        ],
+        'html' => [
+          'type' => 'text',
+          'size' => 'big',
+        ],
+      ],
+      'primary key' => [
+        'kamerstuk_bijlage_id',
+      ],
+      'indexes' => [
+        'jaar' => ['jaar'],
+        'fase' => ['fase'],
+        'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+        'artikel_minfin_id' => ['artikel_minfin_id'],
+        'anchor' => ['anchor'],
+        'anchor_data' => ['jaar', 'fase', 'anchor'],
+      ],
+    ]);
+  }
+}
+
+/**
+ * Correctly set the new "empty_record" field in the mf_kamerstuk table.
+ */
+function minfin_update_8017() {
+  Database::getConnection()->update('mf_kamerstuk')
+    ->fields(['empty_record' => 1])
+    ->isNull('html')
+    ->execute();
+}
+
+/**
+ * Updated the minfin_voetstuk_id field size.
+ */
+function minfin_update_8018() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'varchar',
+    'length' => 128,
+    'not null' => TRUE,
+  ];
+  $schema->changeField('mf_voetstuk', 'minfin_voetstuk_id', 'minfin_voetstuk_id', $spec);
+}
+
+/**
+ * Create additional folders to store kamerstuk images.
+ */
+function minfin_update_8019() {
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('public://kamerstuk/missing-image', 0755);
+  $fileSystem->mkdir('public://kamerstuk/dao', 0755);
+}
+
+/**
+ * Updated the mf_voorgaand_regeling_detailniveau table.
+ */
+function minfin_update_8020() {
+  $database = Database::getConnection();
+  $schema = $database->schema();
+
+  $database->delete('mf_voorgaand_regeling_detailniveau')
+    ->execute();
+
+  $schema->addField('mf_voorgaand_regeling_detailniveau', 'voorgaand_jaar', [
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ]);
+  $schema->addField('mf_voorgaand_regeling_detailniveau', 'jaar', [
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ]);
+  $schema->addField('mf_voorgaand_regeling_detailniveau', 'voorgaand_fase', [
+    'type' => 'varchar',
+    'length' => 4,
+    'not null' => FALSE,
+  ]);
+  $schema->addField('mf_voorgaand_regeling_detailniveau', 'fase', [
+    'type' => 'varchar',
+    'length' => 4,
+    'not null' => FALSE,
+  ]);
+}
+
+/**
+ * Add the mf_financiele_instrumenten table.
+ */
+function minfin_update_8022() {
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('mf_financiele_instrumenten', [
+    'fields' => [
+      'serial' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'instrument' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'regeling' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'ontvanger' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'bedrag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'serial',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'instrument' => ['instrument'],
+      'regeling' => ['regeling'],
+      'ontvanger' => ['ontvanger'],
+    ],
+  ]);
+}
+
+/**
+ * Updated the mf_financiele_instrumenten name field size.
+ */
+function minfin_update_8023() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'varchar',
+    'length' => 512,
+    'not null' => TRUE,
+  ];
+  $schema->changeField('mf_kamerstuk', 'naam', 'naam', $spec);
+}
+
+/**
+ * Trying to fix the file permission.
+ */
+function minfin_update_8024() {
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->chmod('public://open-data', 0755);
+  $fileSystem->chmod('public://kamerstuk', 0755);
+  $fileSystem->chmod('public://kamerstuk/missing-image', 0755);
+  $fileSystem->chmod('public://kamerstuk/dao', 0755);
+}
+
+/**
+ * Updated the db tables for the beleidsevaluaties.
+ */
+function minfin_update_8026() {
+  $schema = Database::getConnection()->schema();
+
+  $dropTables = [
+    'mf_beleidsevaluatie',
+    'mf_beleidsevaluaties_bijlage',
+    'mf_beleidsevaluatie_bijlage',
+    'mf_beleidsevaluatie_hoofdstuk',
+    'mf_beleidsevaluatie_artikel',
+    'mf_beleidsevaluatie_thema',
+  ];
+  foreach ($dropTables as $table) {
+    if ($schema->tableExists($table)) {
+      $schema->dropTable($table);
+    }
+  }
+
+  $schema->createTable('mf_beleidsevaluatie', [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'titel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'departement' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'artikel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'status' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'not null' => FALSE,
+      ],
+      'opleverdatum' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'sea' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'toelichting' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'onafhankelijke_deskundige' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'hoofdrapport' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'aankondiging' => [
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+      ],
+      'kabinetsreactie_aanbiedingsbrief' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'open_data' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+    ],
+    'indexes' => [
+      'departement' => ['departement'],
+      'opleverdatum' => ['opleverdatum'],
+      'status' => ['status'],
+      'titel' => ['titel'],
+      'type' => ['type'],
+    ],
+  ]);
+
+  $schema->createTable('mf_beleidsevaluatie_hoofdstuk', [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'hoofdstuk_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_beleidsevaluatie_artikel', [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'artikel_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_beleidsevaluatie_thema', [
+    'fields' => [
+      'beleidsevaluatie_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'beleidsevaluatie_thema_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_id',
+      'beleidsevaluatie_thema_id',
+    ],
+  ]);
+
+  $schema->createTable('mf_beleidsevaluatie_bijlage', [
+    'fields' => [
+      'beleidsevaluatie_bijlage_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'beleidsevaluatie_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'bijlage' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'beleidsevaluatie_bijlage_id',
+    ],
+    'indexes' => [
+      'beleidsevaluatie_id' => ['beleidsevaluatie_id'],
+    ],
+  ]);
+}
+
+/**
+ * Added additional indexes on mf_voorgaand_regeling_detailniveau.
+ */
+function minfin_update_8028() {
+  $schema = Database::getConnection()->schema();
+  $spec = [
+    'fields' => [
+      'voorgaand_jaar' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'voorgaand_fase' => [
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => FALSE,
+      ],
+      'voorgaand_regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => FALSE,
+      ],
+      'regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 56,
+        'default' => '',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'voorgaand_regeling_detailniveau_id',
+      'regeling_detailniveau_id',
+    ],
+    'index' => [
+      'voorgaand_jaar' => ['voorgaand_jaar'],
+      'voorgaand_fase' => ['voorgaand_fase'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+    ],
+  ];
+
+  $schema->addIndex('mf_voorgaand_regeling_detailniveau', 'voorgaand_jaar', ['voorgaand_jaar'], $spec);
+  $schema->addIndex('mf_voorgaand_regeling_detailniveau', 'voorgaand_fase', ['voorgaand_fase'], $spec);
+  $schema->addIndex('mf_voorgaand_regeling_detailniveau', 'jaar', ['jaar'], $spec);
+  $schema->addIndex('mf_voorgaand_regeling_detailniveau', 'fase', ['fase'], $spec);
+}
+
+/**
+ * Create the kamerstuk_pdf folder.
+ */
+function minfin_update_8029() {
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('public://kamerstuk_pdf', 0755);
+  $fileSystem->chmod('public://kamerstuk_pdf', 0755);
+}
+
+/**
+ * Updated the mf_financiele_instrumenten bedrag field.
+ */
+function minfin_update_8031() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'numeric',
+    'unsigned' => FALSE,
+    'precision' => 16,
+    'scale' => 3,
+    'not null' => FALSE,
+  ];
+  $schema->changeField('mf_financiele_instrumenten', 'bedrag', 'bedrag', $spec);
+}
+
+/**
+ * Update database to add hoofdstuk_alternatief_id en b_tabel fields.
+ */
+function minfin_update_8032() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_kamerstuk', 'hoofdstuk_alternatief_id', [
+    'type' => 'varchar',
+    'length' => 16,
+  ]);
+
+  $schema->addField('mf_kamerstuk', 'b_tabel', [
+    'type' => 'int',
+    'length' => 'small',
+    'unsigned' => TRUE,
+  ]);
+
+  $schema->addField('mf_kamerstuk_bijlage', 'hoofdstuk_alternatief_id', [
+    'type' => 'varchar',
+    'length' => 16,
+  ]);
+
+  $schema->addField('mf_kamerstuk_bijlage', 'b_tabel', [
+    'type' => 'int',
+    'length' => 'small',
+    'unsigned' => TRUE,
+  ]);
+}
+
+/**
+ * Add uitzonderingen table.
+ */
+function minfin_update_8033() {
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('mf_uitzonderingen', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+    ],
+  ]);
+}
+
+/**
+ * Updated the kamerstuk name db field.
+ */
+function minfin_update_8034() {
+  $schema = Database::getConnection()->schema();
+
+  $spec = [
+    'type' => 'text',
+    'size' => 'normal',
+  ];
+  $schema->changeField('mf_kamerstuk', 'naam', 'naam', $spec);
+  $schema->changeField('mf_kamerstuk_bijlage', 'naam', 'naam', $spec);
+}
+
+/**
+ * Updated Corona visual tables.
+ */
+function minfin_update_8036() {
+  $schema = Database::getConnection()->schema();
+
+  if ($schema->tableExists('mf_corona_emu')) {
+    $schema->dropTable('mf_corona_emu');
+  }
+  if ($schema->tableExists('mf_corona_maatregelen_uitleg')) {
+    $schema->dropTable('mf_corona_maatregelen_uitleg');
+  }
+  if ($schema->tableExists('mf_corona_visuals')) {
+    $schema->dropTable('mf_corona_visuals');
+  }
+
+  $schema->createTable('mf_corona_emu', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'value1' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'value2' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'value3' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+    ],
+  ]);
+
+  $schema->createTable('mf_corona_maatregelen_uitleg', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1_id' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau2' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'toelichting' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'uitleg' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 512,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'niveau' => ['niveau1_id', 'niveau2'],
+    ],
+  ]);
+
+  $schema->createTable('mf_corona_visuals', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'position' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'label' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'bedrag' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+    ],
+  ]);
+}
+
+/**
+ * Update database to add geen_subhoofdstukken field.
+ */
+function minfin_update_8037() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_uitzonderingen', 'geen_subhoofdstukken', [
+    'type' => 'int',
+    'length' => 'tiny',
+    'unsigned' => TRUE,
+    'default' => 0,
+  ]);
+}
+
+/**
+ * Updated corona visual table.
+ */
+function minfin_update_8038() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->renameTable('mf_corona_maatregelen_uitleg', 'mf_corona_visuals_uitleg');
+  if ($schema->tableExists('mf_corona_maatregelen')) {
+    $schema->dropTable('mf_corona_maatregelen');
+  }
+
+  $schema->createTable('mf_corona_visuals_data', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1_id' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau1' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'niveau2' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'datum' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+      'bedrag' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'datum' => ['datum'],
+      'niveau1_id' => ['niveau1_id'],
+    ],
+  ]);
+}
+
+/**
+ * Update b_tabel to add vastgesltede_begroting field.
+ */
+function minfin_update_8039() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_b_tabel', 'bedrag_vastgestelde_begroting', [
+    'type' => 'int',
+    'size' => 'big',
+    'not null' => FALSE,
+  ]);
+}
+
+/**
+ * Added appendix to mf_kaerstuk_files table.
+ */
+function minfin_update_8040() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_kamerstuk_files', 'bijlage', [
+    'type' => 'int',
+    'size' => 'tiny',
+    'default' => 0,
+    'not null' => TRUE,
+  ]);
+}
+
+/**
+ * Updated mf_uitzonderingen table.
+ */
+function minfin_update_8041() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->addField('mf_uitzonderingen', 'type', [
+    'type' => 'varchar',
+    'length' => 256,
+    'default' => 'memorie_van_toelichting',
+    'not null' => TRUE,
+  ]);
+
+  $schema->addIndex('mf_kamerstuk', 'type', ['type'], [
+    'fields' => [
+      'kamerstuk_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'import_fase' => [
+        'type' => 'varchar',
+        'length' => 256,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'empty_record' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'anchor_data' => ['jaar', 'fase', 'anchor'],
+    ],
+  ]);
+  $schema->addIndex('mf_kamerstuk_bijlage', 'type', ['type'], [
+    'fields' => [
+      'kamerstuk_bijlage_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'import_fase' => [
+        'type' => 'varchar',
+        'length' => 256,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'anchor' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'empty_record' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+      'html' => [
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_bijlage_id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+      'artikel_minfin_id' => ['artikel_minfin_id'],
+      'anchor' => ['anchor'],
+      'anchor_data' => ['jaar', 'fase', 'anchor'],
+    ],
+  ]);
+  $schema->addIndex('mf_uitzonderingen', 'type', ['type'], [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_1' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_2' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'level_3' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'hoofdstuk_alternatief_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'artikel_minfin_id' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'b_tabel' => [
+        'type' => 'int',
+        'length' => 'small',
+        'unsigned' => TRUE,
+      ],
+      'geen_subhoofdstukken' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+    'indexes' => [
+      'type' => ['type'],
+      'jaar' => ['jaar'],
+      'fase' => ['fase'],
+      'hoofdstuk_minfin_id' => ['hoofdstuk_minfin_id'],
+    ],
+  ]);
+}
+
+/**
+ * Created new import log tables.
+ */
+function minfin_update_8042() {
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('private://import', 0755);
+
+  $schema = Database::getConnection()->schema();
+  if (!$schema->tableExists('mf_log')) {
+    $schema->createTable('mf_log', [
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'created' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'type' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ],
+        'name' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'year' => [
+          'type' => 'int',
+          'length' => 'small',
+          'unsigned' => TRUE,
+        ],
+        'phase' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'rows_imported' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'rows_skipped' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'state' => [
+          'type' => 'int',
+          'length' => 'tiny',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'fid' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'uid' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+      ],
+      'primary key' => [
+        'id',
+      ],
+      'indexes' => [
+        'type' => ['type'],
+      ],
+    ]);
+  }
+
+  if (!$schema->tableExists('mf_log_message')) {
+    $schema->createTable('mf_log_message', [
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'mf_log_id' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'severity' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'line' => [
+          'type' => 'int',
+          'length' => 'normal',
+          'unsigned' => TRUE,
+        ],
+        'message_value' => [
+          'type' => 'text',
+          'not null' => TRUE,
+        ],
+        'message_format' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+      ],
+      'primary key' => [
+        'id',
+      ],
+      'indexes' => [
+        'mf_log_id' => ['mf_log_id'],
+      ],
+    ]);
+  }
+}
+
+/**
+ * Cleanup unused data.
+ */
+function minfin_update_8043() {
+  $connection = Database::getConnection();
+  $schema = $connection->schema();
+  $fileStorage = \Drupal::entityTypeManager()->getStorage('file');
+
+  if ($schema->tableExists('mf_open_data')) {
+    $result = $connection->select('mf_open_data', 'od')
+      ->fields('od', ['fid'])
+      ->execute();
+    while ($record = $result->fetchAssoc()) {
+      if ($file = $fileStorage->load($record['fid'])) {
+        $fileStorage->delete([$file]);
+      }
+    }
+
+    $schema->dropTable('mf_open_data');
+  }
+
+  $connection->delete('mf_import_log')
+    ->execute();
+
+  $connection->delete('mf_import_error')
+    ->execute();
+
+  $connection->delete('import_log__import_errors')
+    ->execute();
+}
+
+/**
+ * Updated mf_log_message table.
+ */
+function minfin_update_8045() {
+  $connection = Database::getConnection();
+  $schema = $connection->schema();
+
+  $schema->addField('mf_log_message', 'variables', [
+    'type' => 'blob',
+    'not null' => FALSE,
+    'size' => 'big',
+  ]);
+
+  $connection->update('mf_log_message')
+    ->fields(['variables' => serialize([])])
+    ->execute();
+
+  $schema->changeField('mf_log_message', 'variables', 'variables', [
+    'type' => 'blob',
+    'not null' => TRUE,
+    'size' => 'big',
+  ]);
+
+  $schema->changeField('mf_log_message', 'message_value', 'message', [
+    'type' => 'text',
+    'not null' => TRUE,
+    'size' => 'big',
+  ]);
+
+  $schema->dropField('mf_log_message', 'message_format');
+}
+
+/**
+ * Added rename table for ISB kamerstukken.
+ */
+function minfin_update_8046() {
+  $schema = Database::getConnection()->schema();
+
+  if ($schema->tableExists('mf_kamerstuk_isb_title')) {
+    $schema->dropTable('mf_kamerstuk_isb_title');
+  }
+  $schema->createTable('mf_kamerstuk_isb_title', [
+    'fields' => [
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'text',
+        'size' => 'normal',
+      ],
+      'date' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'jaar',
+      'fase',
+      'hoofdstuk_minfin_id',
+    ],
+  ]);
+}
+
+/**
+ * Updated mf_log_message table.
+ */
+function minfin_update_8048() {
+  $schema = Database::getConnection()->schema();
+
+  $schema->changeField('mf_log', 'phase', 'sub_type', [
+    'type' => 'varchar',
+    'length' => 255,
+  ]);
+}
+
+/**
+ * Create mf_kamerstuk_dossier table.
+ */
+function minfin_update_8049() {
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('mf_kamerstuk_dossier', [
+    'fields' => [
+      'kamerstuk_dossier_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ],
+      'fase' => [
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 16,
+      ],
+      'dossier_number' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'kamerstuk_dossier_id',
+    ],
+    'indexes' => [
+      'kamerstuk' => ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id'],
+    ],
+  ]);
+}
+
+/**
+ * Migrate dossier data.
+ */
+function minfin_update_8050(&$sandbox) {
+  $connection = Database::getConnection();
+  $dossierStorage = Drupal::entityTypeManager()->getStorage('mf_dossier');
+
+  if (!isset($sandbox['total'])) {
+    $query = $connection->select('mf_kamerstuk', 'k');
+    $query->distinct(TRUE);
+    $query->fields('k', ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id']);
+    $total = $query->countQuery()->execute()->fetchField();
+
+    $sandbox['total'] = (int) $total;
+    $sandbox['progress'] = 0;
+  }
+
+  $query = $connection->select('mf_kamerstuk', 'k');
+  $query->distinct(TRUE);
+  $query->fields('k', ['type', 'jaar', 'fase', 'hoofdstuk_minfin_id']);
+  $query->range($sandbox['current'], $sandbox['current'] + 50);
+  $result = $query->execute();
+  while ($record = $result->fetchAssoc()) {
+    $entities = $dossierStorage->loadByProperties([
+      'year' => $record['jaar'],
+      'phase' => $record['fase'],
+    ]);
+    if ($dossier = reset($entities)) {
+      $connection->merge('mf_kamerstuk_dossier')
+        ->keys([
+          'type' => $record['type'],
+          'jaar' => $record['jaar'],
+          'fase' => $record['fase'],
+          'hoofdstuk_minfin_id' => $record['hoofdstuk_minfin_id'],
+        ])
+        ->fields([
+          'dossier_number' => $dossier->getCode(),
+        ])
+        ->execute();
+    }
+  }
+
+  $sandbox['progress'] += 50;
+  $sandbox['#finished'] = $sandbox['progress'] >= $sandbox['total'] ? TRUE : $sandbox['progress'] / $sandbox['total'];
+}
+
+/**
+ * Remove old Dossier data.
+ */
+function minfin_update_8051() {
+  $dossierStorage = Drupal::entityTypeManager()->getStorage('mf_dossier');
+  $dossiers = $dossierStorage->loadMultiple();
+  $dossierStorage->delete($dossiers);
+}
+
+/**
+ * Added mf_verzelfstandiging_uitleg table.
+ */
+function minfin_update_8052() {
+  $schema = Database::getConnection()->schema();
+
+  if ($schema->tableExists('mf_verzelfstandiging')) {
+    $schema->dropTable('mf_verzelfstandiging');
+  }
+  $schema->createTable('mf_verzelfstandiging', [
+    'fields' => [
+      'verzelfstandiging_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'ministerie' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => FALSE,
+      ],
+      'organisatie' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'link_jaarverslag' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+      ],
+      'fte' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'bedrag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'verzelfstandiging_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'type' => ['type'],
+      'organisatie' => ['organisatie'],
+    ],
+  ]);
+
+  $schema->createTable('mf_verzelfstandiging_uitleg', [
+    'fields' => [
+      'verzelfstandiging_uitleg_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'naam' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+      ],
+      'afkorting' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'not null' => FALSE,
+      ],
+      'ministerie' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+      'website' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'resource_identifier' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'fte' => [
+        'type' => 'numeric',
+        'unsigned' => FALSE,
+        'precision' => 16,
+        'scale' => 3,
+        'not null' => FALSE,
+      ],
+      'beschrijving' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'taken_en_bevoegdheden' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'evaluaties' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'rapport' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => FALSE,
+      ],
+      'rapport_titel' => [
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => [
+      'verzelfstandiging_uitleg_id',
+    ],
+    'indexes' => [
+      'naam' => ['naam'],
+      'type' => ['type'],
+      'ministerie' => ['ministerie'],
+    ],
+  ]);
+}

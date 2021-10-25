@@ -1,0 +1,12 @@
+name: Minfin
+description: Provides the data & import for minfin
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:options
+  - minfin_solr:minfin_solr
+
+interface translation project: minfin
+interface translation server pattern: modules/custom/minfin/translations/minfin.%language.po

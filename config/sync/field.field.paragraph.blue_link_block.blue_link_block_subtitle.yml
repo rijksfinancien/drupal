@@ -1,0 +1,19 @@
+uuid: 3095a55b-baa1-40ef-8d2a-dcf664111b94
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.blue_link_block_subtitle
+    - paragraphs.paragraphs_type.blue_link_block
+id: paragraph.blue_link_block.blue_link_block_subtitle
+field_name: blue_link_block_subtitle
+entity_type: paragraph
+bundle: blue_link_block
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

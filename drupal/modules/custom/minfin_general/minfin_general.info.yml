@@ -1,0 +1,12 @@
+name: Minfin - General
+description: Provides general functionality for minfin
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin
+  - imce:imce
+
+interface translation project: minfin_general
+interface translation server pattern: modules/custom/minfin_general/translations/minfin_general.%language.po

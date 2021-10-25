@@ -1,0 +1,9 @@
+<div class="limit-width">
+  <div class="minfin-notes">
+    {% for note in notes %}
+      <div class="minfin-note">
+        {{ note | raw }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

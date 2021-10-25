@@ -1,0 +1,21 @@
+uuid: 7371f94a-2524-44fb-a43a-861d2b5c35be
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.blue_link_block_subtitle
+field_name: blue_link_block_subtitle
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

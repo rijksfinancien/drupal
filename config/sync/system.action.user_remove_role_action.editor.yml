@@ -1,0 +1,14 @@
+uuid: aea05033-2871-4271-a7f9-aba685a130dd
+langcode: nl
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+id: user_remove_role_action.editor
+label: 'De rol Redacteur verwijderen van de geselecteerde gebruikers(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor

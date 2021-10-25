@@ -1,0 +1,23 @@
+uuid: 60fc74d6-3ad7-4437-8384-64dcd3ede57d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.limit_width
+    - node.type.page
+id: node.page.limit_width
+field_name: limit_width
+entity_type: node
+bundle: page
+label: 'Limit width'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

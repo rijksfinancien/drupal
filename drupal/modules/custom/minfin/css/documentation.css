@@ -1,0 +1,22 @@
+#drupal-off-canvas .minfin-import-documentation details[open] > summary {
+  background: #111;
+}
+
+#drupal-off-canvas .minfin-import-documentation details {
+  border-bottom: 1px solid #666;
+  background: #333;
+}
+
+#drupal-off-canvas .minfin-import-documentation details .remarks {
+  margin: 20px 0 0 20px;
+  font-size: 12px;
+}
+
+#drupal-off-canvas .minfin-import-documentation table {
+  margin-bottom: 10px;
+}
+
+#drupal-off-canvas .minfin-import-documentation td,
+#drupal-off-canvas .minfin-import-documentation th {
+  border: 1px solid #777;
+}

@@ -1,0 +1,28 @@
+@include print() {
+  @page {
+    margin: 1.5cm 0;
+  }
+  header {
+    margin: 10px 0;
+  }
+  .container {
+    padding: 0;
+  }
+  #mainMenu {
+    padding: 0 5px;
+  }
+  .layout-container,
+  .menu-bar {
+    display: block !important;
+  }
+  #logo,
+  .searchToggle,
+  .navbarToggler,
+  #block-minfinvisualblock,
+  #block-minfinbudgetblock,
+  #footer,
+  .page-actions,
+  .table-header {
+    display: none !important;
+  }
+}

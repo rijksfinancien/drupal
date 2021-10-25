@@ -1,0 +1,28 @@
+.next-prev-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px auto;
+  list-style: none;
+
+  a {
+    font-size: 18px;
+    text-decoration: none;
+
+    &::after, &::before {
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    &:hover {
+      text-decoration: underline;
+
+      &::after, &::before {
+        text-decoration: none;
+      }
+    }
+  }
+
+  span {
+    color: $c-gray-400;
+  }
+}

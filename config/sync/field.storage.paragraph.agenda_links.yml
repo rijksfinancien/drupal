@@ -1,0 +1,19 @@
+uuid: d372e8de-696c-46ab-8f58-7a71805e1525
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.agenda_links
+field_name: agenda_links
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

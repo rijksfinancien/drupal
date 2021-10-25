@@ -1,0 +1,11 @@
+minfin.kamerstuk.reindex:
+  title: 'Herindexeren kamerstukken'
+  description: 'Herindexeren kamerstukken.'
+  parent: minfin.services
+  route_name: minfin.kamerstuk.reindex
+
+minfin.kamerstuk.delete:
+  title: 'Delete kamerstukken'
+  description: 'Delete kamerstukken.'
+  parent: minfin.services
+  route_name: minfin.kamerstuk.delete

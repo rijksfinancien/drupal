@@ -1,0 +1,25 @@
+uuid: 59314010-adf9-4346-815e-9fcc325b9ee6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.over-deze-site
+  module:
+    - system
+  theme:
+    - indicia_theme
+id: overdezesite
+theme: indicia_theme
+region: footer
+weight: -5
+provider: null
+plugin: 'system_menu_block:over-deze-site'
+settings:
+  id: 'system_menu_block:over-deze-site'
+  label: 'Over deze site'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

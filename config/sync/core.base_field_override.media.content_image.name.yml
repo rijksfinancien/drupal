@@ -1,0 +1,20 @@
+uuid: 15cc962c-5025-403b-8157-3fb65bb40130
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.content_image
+id: media.content_image.name
+field_name: name
+entity_type: media
+bundle: content_image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

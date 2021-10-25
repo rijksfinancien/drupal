@@ -1,0 +1,11 @@
+name: Minfin - CKAN
+description: Provides a CKAN integration for the open data page
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin
+
+interface translation project: minfin_ckan
+interface translation server pattern: modules/custom/minfin_ckan/translations/minfin_ckan.%language.po

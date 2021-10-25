@@ -1,0 +1,27 @@
+uuid: 639f4e8a-0269-4b40-b1d6-680f4a0266e6
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_general
+    - system
+  theme:
+    - indicia_theme
+id: minfinbudgetblock_2
+theme: indicia_theme
+region: content
+weight: -7
+provider: null
+plugin: general_budget_block
+settings:
+  id: general_budget_block
+  label: 'Budget block with select'
+  provider: minfin_general
+  label_display: '0'
+  select_next_to_year: 1
+visibility:
+  request_path:
+    id: request_path
+    pages: "/memorie-van-toelichting/*\r\n/jaarverslag/*\r\n/miljoenennota/*\r\n/financieel-jaarverslag/*\r\n/voorjaarsnota/*\r\n/najaarsnota/*\r\n/belastingplan-memorie-van-toelichting/*\r\n/belastingplan-voorstel-van-wet/*\r\n/belastingplan-staatsblad/*\r\n/hoofdstuk/*\r\n/all\r\n/all/*\r\n/archief\r\n/archief/*\r\n/voorstel-van-wet/*\r\n/incidentele-suppletoire-begrotingen/*\r\n/incidentele-suppletoire-begrotingen-voorstel-van-wet/*"
+    negate: false
+    context_mapping: {  }

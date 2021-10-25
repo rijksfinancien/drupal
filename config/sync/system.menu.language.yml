@@ -1,0 +1,8 @@
+uuid: 06cbb18d-1628-4ed4-8f94-26d1aee48cea
+langcode: nl
+status: true
+dependencies: {  }
+id: language
+label: Language
+description: ''
+locked: false

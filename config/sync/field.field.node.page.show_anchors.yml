@@ -1,0 +1,23 @@
+uuid: 4d435f70-a19c-49cb-8883-9c33274cbd87
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.show_anchors
+    - node.type.page
+id: node.page.show_anchors
+field_name: show_anchors
+entity_type: node
+bundle: page
+label: 'Voeg inhoudsopgaven toe'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

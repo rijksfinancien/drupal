@@ -1,0 +1,50 @@
+uuid: caeb78b6-e416-490e-9f81-125862e6c3f4
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.row.column
+    - field.field.paragraph.row.row_colour
+    - field.field.paragraph.row.row_title
+    - paragraphs.paragraphs_type.row
+  module:
+    - paragraphs
+id: paragraph.row.default
+targetEntityType: paragraph
+bundle: row
+mode: default
+content:
+  column:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: column
+    third_party_settings: {  }
+    region: content
+  row_colour:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  row_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

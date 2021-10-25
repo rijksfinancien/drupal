@@ -1,0 +1,10 @@
+paths:
+  -
+    path: 'user*'
+  -
+    path: 'indicia/status*'
+state: '0'
+login_path: /user/login
+_core:
+  default_config_hash: 6rbQs_beM9P0JvYf48cMQijz08usI3oxzNuLQvTxp74
+langcode: nl

@@ -1,0 +1,7 @@
+minfin_solr.solr.configuration:
+  path: '/admin/minfin/services/solr'
+  defaults:
+    _form: '\Drupal\minfin_solr\Form\SolrConfigForm'
+    _title: 'Solr configuration'
+  requirements:
+    _permission: 'administer minfin search'

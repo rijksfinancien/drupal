@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming for minfin corona visuals.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function minfin_corona_visuals_theme($existing, $type, $theme, $path) {
+  return [
+    'corona_visual_staats_schuld_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_as_inkomsten_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_as_uitgaven_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_as_uitsplitsing_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_noodmaatregelen_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_emu_saldo_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_uitstel_betaling_belasting_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_leningen_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_fiscale_maatregelen_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_uitgaven_plafonds_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_uitgaven_plafonds_onder_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_corona_garanties_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_corona_tijdlijn_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_corona_tijdlijn_onder_block' => [
+      'variables' => [],
+    ],
+    'corona_visual_corona_begroting_vs_realisatie_block' => [
+      'variables' => [],
+    ],
+  ];
+}

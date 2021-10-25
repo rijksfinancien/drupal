@@ -1,0 +1,20 @@
+uuid: 14a3ad70-a1c1-4534-8ab8-3d2c4822101c
+langcode: nl
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.link_lists
+field_name: link_lists
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

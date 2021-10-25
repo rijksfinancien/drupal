@@ -1,0 +1,74 @@
+.minfin-toc {
+  margin-bottom: 60px;
+
+  ul {
+    padding: 0 0 0 15px;
+    list-style: none;
+
+    &.appendix {
+      > li:first-child a {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: $c-black;
+
+        &:hover {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  > ul {
+    padding: 0;
+
+    & + ul {
+      padding-top: 30px;
+    }
+  }
+
+  a {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      width: calc(100% + 5px);
+      padding-left: 5px;
+      text-decoration: underline;
+    }
+  }
+}
+
+#budget-table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    width: calc(100% / 3 - 30px);
+    margin: 15px;
+    text-align: center;
+  }
+}
+
+#budget-tables {
+  margin-bottom: 60px;
+
+  > a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+
+    &::before {
+      font-family: 'minfin-icons' !important;
+      margin-right: 5px;
+      content: "\e939";
+      vertical-align: -2px;
+    }
+  }
+}

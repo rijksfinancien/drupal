@@ -1,0 +1,21 @@
+{% if pagination %}
+  <div class="pagination">
+    <div class="pagination__index">
+      <ul>
+        {% for page in pagination %}
+          {% if page.type == 'link' %}
+            {% if page.disabled %}
+              <li><a href="#" aria-disabled="true">{{ page.label }}</a></li>
+            {% elseif page.active %}
+              <li class="active">{{ page.label }}</li>
+            {% else %}
+              <li><a href="{{ page.url }}">{{ page.label }}</a></li>
+            {% endif %}
+          {% else %}
+            <li>...</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

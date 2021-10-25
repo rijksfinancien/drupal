@@ -1,0 +1,28 @@
+uuid: ba788abe-9469-44f2-90ba-b10ba02c41ec
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.image
+    - media.type.content_image
+    - paragraphs.paragraphs_type.linkblock
+id: paragraph.linkblock.image
+field_name: image
+entity_type: paragraph
+bundle: linkblock
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      content_image: content_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

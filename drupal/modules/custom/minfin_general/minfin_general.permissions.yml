@@ -1,0 +1,11 @@
+administer minfin banner:
+  title: 'Administer minfin Banner'
+
+administer minfin opendata:
+  title: 'Administer minfin Opendata'
+
+administer minfin chapter_page:
+  title: 'Administer minfin Chapter page'
+
+access imce browser:
+  title: 'Access imce browser'

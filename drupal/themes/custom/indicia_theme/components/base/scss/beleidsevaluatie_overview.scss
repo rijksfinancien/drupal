@@ -1,0 +1,96 @@
+.route-minfin-beleidsevaluatiesbeleidsonderzoeken {
+  .block-page-title-block {
+    margin-bottom: 32px;
+  }
+}
+
+.beleidsevaluatie-overview {
+  .minfin-related {
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    .content a {
+      font-size: 16px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .filters-wrapper {
+    padding: 16px 16px 0;
+    @include breakpoint($tablet) {
+      padding: 32px 32px 16px;
+    }
+    background-color: $c-primary-200;
+
+    h3 {
+      font-weight: 300;
+    }
+  }
+
+  .minfin-beleidsevaluaties-overview-filter-form {
+    margin: 0 -8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    > * {
+      flex-basis: 0;
+      flex-grow: 1;
+      min-width: 160px;
+
+    }
+
+    label {
+      margin-bottom: 4px;
+    }
+
+    .form-item {
+      display: inline-block;
+      margin: 0 8px 16px;
+    }
+
+    input, select {
+      font-family: $ff-primary;
+      width: 100%;
+      min-height: 40px;
+      color: $c-black;
+      border: 1px solid transparent;
+      margin-bottom: 0;
+
+      &:focus, &:active {
+        outline: none;
+        border-color: $c-primary-400;
+      }
+
+      &.form-autocomplete {
+        background-image: none;
+      }
+    }
+
+    #edit-reset {
+      flex-grow: 0;
+      margin: 0 8px 16px;
+      color: white;
+      display: block;
+      width: 100px;
+      min-width: 100px;
+    }
+
+    #edit-submit {
+      display: none;
+    }
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-bottom: 1px solid $c-primary-400;
+  }
+
+  table td {
+    vertical-align: top;
+  }
+}

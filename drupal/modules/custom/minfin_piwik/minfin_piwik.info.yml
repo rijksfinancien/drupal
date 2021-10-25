@@ -1,0 +1,7 @@
+name: Minfin - Piwik
+description: Module for all minfin piwik related functionality
+package: minfin
+
+type: module
+core_version_requirement: ^8 || ^9
+configure: minfin_piwik.piwik.settings

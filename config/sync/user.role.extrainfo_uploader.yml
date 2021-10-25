@@ -1,0 +1,13 @@
+uuid: db158d1a-9bce-4aa8-a2a6-af6a109a6a4e
+langcode: nl
+status: true
+dependencies: {  }
+id: extrainfo_uploader
+label: 'Extrainfo uploader'
+weight: 4
+is_admin: null
+permissions:
+  - 'access imce browser'
+  - 'access toolbar'
+  - 'view minfin settings'
+  - 'view the administration theme'

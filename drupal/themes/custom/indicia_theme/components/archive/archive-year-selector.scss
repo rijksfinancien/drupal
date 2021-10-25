@@ -1,0 +1,60 @@
+.minfin-general-archive-selector-form {
+  padding: 20px 0;
+
+  .selector-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: ($year-slider-row-item-width + $year-slider-row-item-gutter) * $year-slider-row-items - 5px;
+    margin: 0;
+    padding: 4px 15px;
+    border: 2px solid $c-primary-400;
+
+    @include breakpoint($tablet) {
+      width: ($year-slider-row-item-width + $year-slider-row-item-gutter) * ($year-slider-row-items * $year-slider-rows) - 4px;
+      margin: 0 auto;
+    }
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+      margin-bottom: 0;
+
+      @include breakpoint($tablet) {
+        margin-right: 16px;
+      }
+
+      label {
+        margin-right: 8px;
+        margin-bottom: 0;
+        text-transform: lowercase;
+
+        @include breakpoint($tablet) {
+          margin-right: 16px;
+        }
+      }
+
+      input {
+        max-width: 75px;
+        margin-bottom: 0;
+        text-align: left;
+        border-color: $c-gray-400;
+        border-radius: 6px;
+      }
+
+      &.form-item-till {
+        label {
+          font-weight: normal;
+        }
+      }
+    }
+
+    .form-submit {
+      padding: 0;
+      text-transform: lowercase;
+      color: $c-primary-400;
+      background: none;
+    }
+  }
+}

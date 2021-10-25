@@ -1,0 +1,27 @@
+uuid: 5d00ff78-5863-4a5f-b010-1dddb2f3fec8
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_general
+    - system
+  theme:
+    - indicia_theme
+id: minfinbudgetblock
+theme: indicia_theme
+region: header
+weight: -4
+provider: null
+plugin: general_budget_block
+settings:
+  id: general_budget_block
+  label: 'Budget block without select'
+  provider: minfin_general
+  label_display: '0'
+  select_next_to_year: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/20*0\r\n/20*9\r\n/20*8\r\n/20*7\r\n/20*6\r\n/20*5\r\n/20*4\r\n/20*3\r\n/20*2\r\n/20*1"
+    negate: false
+    context_mapping: {  }

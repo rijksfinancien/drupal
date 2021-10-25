@@ -1,0 +1,56 @@
+.full-width-container {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 95vw;
+}
+
+.container, .breadcrumb {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 350px + $gutter;
+
+  @include breakpoint($tablet) {
+    max-width: 720px + $gutter;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: 1005px + $gutter;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: 1148px + $gutter;
+  }
+
+  & .container {
+    padding: 0;
+  }
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 1 0 auto;
+    padding-bottom: 60px;
+
+    .path-frontpage & {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.block-general-visual-block {
+  min-height: 80px;
+}
+
+#page-404, #page-403, #page-user {
+  margin-bottom: 80px;
+}

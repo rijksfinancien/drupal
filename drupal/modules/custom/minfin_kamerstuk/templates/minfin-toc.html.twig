@@ -1,0 +1,38 @@
+{% macro recursiveToc(item) %}
+  <li {% if item.value.url %}itemscope itemtype="http://schema.org/Report" itemid="{{ url('<front>') }}{{ item.value.url }}"{% endif %}>{{ item.value }}</li>
+  {% for child in item.children %}
+    <ul>
+      {{ _self.recursiveToc(child) }}
+    </ul>
+  {% endfor %}
+{% endmacro %}
+
+<div class="reader-actions">
+  <div class="font-size">
+    <span class="action-font-bigger icon-font-plus icon-background"></span>
+    <span class="action-font-smaller icon-font-min icon-background"></span>
+  </div>
+  <div class="page-colors">
+    <span class="action-page-color-normal icon-font icon-background"></span>
+    <span class="action-page-color-sepia icon-font icon-background"></span>
+    <span class="action-page-color-dark  icon-font icon-background"></span>
+  </div>
+  <div class="action-close-reader icon-cross icon-background"></div>
+</div>
+<div id="reader-page" class="container">
+  <div class="minfin-toc" itemscope itemtype="http://schema.org/Collection" itemid="{{ url('<current>') }}">
+    <ul>
+      {% for item in items %}
+        {{ _self.recursiveToc(item) }}
+      {% endfor %}
+    </ul>
+
+  {% if appendix %}
+    <ul class="appendix">
+      {% for item in appendix %}
+        {{ _self.recursiveToc(item) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+</div>

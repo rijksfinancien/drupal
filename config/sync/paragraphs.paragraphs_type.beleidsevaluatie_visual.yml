@@ -1,0 +1,10 @@
+uuid: fdcf62b6-8313-46f0-b11b-ceb52ccb7c87
+langcode: nl
+status: true
+dependencies: {  }
+id: beleidsevaluatie_visual
+label: 'Beleidsevaluatie visual'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,14 @@
+uuid: da1ddeec-c252-4e5a-9505-80216b55fb02
+langcode: nl
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+  module:
+    - user
+id: user_add_role_action.administrator
+label: 'De rol Administrator toewijzen aan de geselecteerde gebruiker(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: administrator

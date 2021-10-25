@@ -1,0 +1,29 @@
+uuid: c2501b40-4941-4a87-90aa-d9d925bb9c41
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.begrip.description
+    - node.type.begrip
+  module:
+    - text
+    - user
+id: node.begrip.default
+targetEntityType: node
+bundle: begrip
+mode: default
+content:
+  description:
+    weight: 101
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

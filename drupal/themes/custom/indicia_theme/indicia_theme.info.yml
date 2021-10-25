@@ -1,0 +1,17 @@
+name: Indicia
+type: theme
+description: The theme provided and maintained by Indicia.
+base theme: classy
+core_version_requirement: ^8 || ^9
+version: 1.2.0
+libraries:
+  - indicia_theme/global
+libraries-override:
+  classy/base: false
+
+regions:
+  menubar: Menubar
+  header: Header
+  content: Content
+  content_below: 'Below content'
+  footer: Footer

@@ -1,0 +1,35 @@
+uuid: 3e1aca2c-4198-45af-931f-4eb07aa755e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.content
+    - field.field.node.page.limit_width
+    - field.field.node.page.show_anchors
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  limit_width: true
+  show_anchors: true

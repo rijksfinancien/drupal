@@ -1,0 +1,16 @@
+<div class="open-data">
+  <div class="container">
+    <div class="content">
+      <h3>{{ title }}</h3>
+      <div class="open-data-columns">
+        {% for column in columns %}
+          <div class="open-data-column">
+            <h5><a href="{{ column.url }}">{{ column.title }}</a></h5>
+            <p>{{ column.description }}</p>
+            <a href="{{ column.url }}"><img src="{{ file_url(column.image.source) }}" alt="{{ column.title }}"></a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

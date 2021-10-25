@@ -1,0 +1,26 @@
+uuid: 1a9dbde9-8a54-425a-89d8-27fb3e3098b0
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_general
+    - system
+  theme:
+    - indicia_theme
+id: minfinvisualblock
+theme: indicia_theme
+region: header
+weight: -5
+provider: null
+plugin: general_visual_block
+settings:
+  id: general_visual_block
+  label: 'Minfin visual block'
+  provider: minfin_general
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/20*0\r\n/20*9\r\n/20*8\r\n/20*7\r\n/20*6\r\n/20*5\r\n/20*4\r\n/20*3\r\n/20*2\r\n/20*1"
+    negate: false
+    context_mapping: {  }

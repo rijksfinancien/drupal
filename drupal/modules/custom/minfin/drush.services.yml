@@ -1,0 +1,7 @@
+services:
+  minfin.command:
+    class: Drupal\minfin\Commands\ImportCommands
+    arguments:
+      - '@database'
+    tags:
+      -  { name: drush.command }

@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Functions to support base indicia theme.
+ */
+
+/**
+ * Implements hook_preprocess_page__base().
+ */
+function indicia_theme_preprocess_page__base(&$variables) {
+  $variables['site_name'] = Drupal::config('system.site')->get('name');
+}
+
+/**
+ * Implements hook_preprocess_html__base().
+ */
+function indicia_theme_preprocess_html__base(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  foreach (explode('.', $route_name) as $path) {
+    $variables['attributes']['class'][] = 'path-' . $path;
+  }
+
+  /** @var \Drupal\node\Entity\Node $node */
+  if (($node = \Drupal::request()->attributes->get('node')) && $node->hasField('limit_width') && ($limit = $node->get('limit_width')) && $limit = $limit->getString()) {
+    $variables['attributes']['class'][] = 'path-limit-width';
+  }
+
+}

@@ -1,0 +1,21 @@
+uuid: b0c120c9-e928-483e-be6e-6e7faa028c74
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.row_colour
+    - paragraphs.paragraphs_type.row
+  module:
+    - options
+id: paragraph.row.row_colour
+field_name: row_colour
+entity_type: paragraph
+bundle: row
+label: 'Row colour'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

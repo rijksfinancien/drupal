@@ -1,0 +1,22 @@
+uuid: d2416171-f39f-4898-947c-d7bb3485a938
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.status
+field_name: status
+entity_type: node
+bundle: page
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

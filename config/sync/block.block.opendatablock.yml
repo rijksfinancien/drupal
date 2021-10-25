@@ -1,0 +1,26 @@
+uuid: 9aa66241-bc26-4f78-8d43-af380e71bd9d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_general
+    - system
+  theme:
+    - indicia_theme
+id: opendatablock
+theme: indicia_theme
+region: content_below
+weight: -6
+provider: null
+plugin: general_open_data_block
+settings:
+  id: general_open_data_block
+  label: 'Open Data Block'
+  provider: minfin_general
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /open-data
+    negate: false
+    context_mapping: {  }

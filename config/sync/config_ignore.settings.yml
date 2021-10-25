@@ -1,0 +1,15 @@
+ignored_config_entities:
+  - minfin_corona_visuals.last_update
+  - 'system.site:page.front'
+  - minfin.chapter_sorting
+  - minfin.kamerstuk.text
+  - minfin_ckan.request.settings
+  - minfin_general.banner.settings
+  - minfin_general.open_data.settings
+  - minfin_general.chapter_page.settings
+  - minfin_search.settings
+  - minfin_solr.solr.settings
+  - minfin_piwik.settings
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
+langcode: nl

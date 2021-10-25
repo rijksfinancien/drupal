@@ -1,0 +1,23 @@
+uuid: a7d6c243-b7f9-4916-995a-dd94b0522ecd
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.url
+    - paragraphs.paragraphs_type.linkblock
+  module:
+    - link
+id: paragraph.linkblock.url
+field_name: url
+entity_type: paragraph
+bundle: linkblock
+label: Url
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

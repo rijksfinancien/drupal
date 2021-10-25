@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Functions to support indicia theme.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function indicia_theme_preprocess_paragraph__paragraphs(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->hasField('row_colour')) {
+    $color = $paragraph->get('row_colour')->getString();
+    if ($color) {
+      $variables['attributes']['class'] = ['colored', $color];
+    }
+  }
+
+  // Preparing links for the beleids evaluatie.
+  foreach (indicia_theme_get_beleidsevaluatie_fields() as $field) {
+    if ($paragraph->hasField($field) && $links = $paragraph->get($field)->getValue()) {
+      foreach ($links as $link) {
+        $variables['#attached']['drupalSettings']['beleids_evaluatie'][$field][] = [
+          'name' => $link['title'],
+          'link' => Url::fromUri($link['uri'])->toString(),
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Returns the beleidsevaluatie fields.
+ *
+ * @return string[]
+ *   The fields.
+ */
+function indicia_theme_get_beleidsevaluatie_fields(): array {
+  return [
+    'agenda_links',
+    'bepaling_links',
+    'terugkoppeling_links',
+    'uitvoering_links',
+    'voorbereiding_links',
+  ];
+}

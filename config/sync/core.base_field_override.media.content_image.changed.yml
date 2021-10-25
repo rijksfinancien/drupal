@@ -1,0 +1,18 @@
+uuid: 264d5c4d-1867-4d84-a3b5-877c12fe5fde
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.content_image
+id: media.content_image.changed
+field_name: changed
+entity_type: media
+bundle: content_image
+label: Gewijzigd
+description: 'Tijdstip waarop het media-item het laatst bewerkt is.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

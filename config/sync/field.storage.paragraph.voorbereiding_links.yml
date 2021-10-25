@@ -1,0 +1,19 @@
+uuid: 114c8eca-3e11-4fc3-b44b-9f866d436bc7
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.voorbereiding_links
+field_name: voorbereiding_links
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

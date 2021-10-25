@@ -1,0 +1,330 @@
+.block-minfin-search.block-minfin-advanced-search-block {
+  width: 100%;
+  max-width: 100%;
+
+  .navbar-open & {
+    display: none;
+  }
+
+  .navbar-fixed & {
+    position: fixed;
+    z-index: 900;
+    top: 72px;
+  }
+
+  form {
+    background-color: $c-primary-200;
+
+    #edit-row1 {
+      @include breakpoint($tablet) {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+    }
+
+    input:not([type="radio"]), select {
+      width: auto;
+      height: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-radius: 8px;
+      background-color: #FFFFFF;
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+
+    input.button {
+      font-size: 21px;
+      font-weight: bold;
+      background-color: $c-primary-600;
+    }
+
+    .advanced-search-container {
+      overflow: hidden;
+
+      .advanced-search-inner-wrapper {
+        margin: -100%;
+        transition: all 0.5s;
+        transform: translateY(-100%);
+      }
+
+      .form-item {
+        margin-bottom: 0;
+      }
+
+      label {
+        margin-bottom: 0;
+      }
+
+      .search-row {
+        overflow: hidden;
+
+        > div.form-item {
+          float: left;
+          margin-bottom: $half-gutter;
+          padding: 0;
+
+          select {
+            min-height: 40px;
+          }
+
+          &.form-item-submit-wrapper {
+            clear: left;
+          }
+
+          &.form-item-year {
+            width: 32%;
+            margin-right: 5%;
+          }
+
+          &.form-item-document-type {
+            width: 63%
+          }
+
+          @include breakpoint($tablet) {
+            margin-bottom: 0;
+            padding: $half-gutter;
+
+            &.form-item-search-term {
+              width: 30%;
+            }
+
+            &.form-item-year {
+              width: 15%;
+              margin-right: 0;
+            }
+
+            &.form-item-document-type {
+              width: 35%;
+            }
+
+            &.form-item-submit-wrapper {
+              clear: none;
+              width: 20%;
+            }
+          }
+
+          @include breakpoint($laptop) {
+            margin-bottom: 0;
+            padding: $half-gutter;
+
+            &.form-item-search-term {
+              width: 45%;
+            }
+
+            &.form-item-year {
+              width: 15%;
+            }
+
+            &.form-item-document-type {
+              width: 25%
+            }
+
+            &.form-item-submit-wrapper {
+              width: 15%;
+            }
+          }
+
+          > input,
+          > select {
+            width: 100%;
+          }
+        }
+
+        #edit-type--wrapper {
+          padding: 0;
+
+          @include breakpoint($tablet) {
+            padding: $half-gutter;
+          }
+
+          legend {
+            float: left;
+            margin-right: $half-gutter;
+          }
+
+          .form-radios {
+            .form-item {
+              float: left;
+              margin-right: $gutter;
+
+              label {
+                font-weight: normal;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    .advanced-search-container .advanced-search-inner-wrapper {
+      margin: 0%;
+      padding: $half-gutter 0;
+      transform: translateY(0%);
+
+      @include breakpoint($tablet) {
+        padding: $half-gutter;
+      }
+
+      @include breakpoint($laptop) {
+        padding: $gutter;
+      }
+    }
+  }
+
+  .search-suggestions-wrapper {
+    position: absolute;
+    z-index: 3;
+    top: -190px;
+    display: none;
+    padding: $gutter/2 $gutter/4;
+    border: 1px solid #B4B4B4;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+
+    @media all and (min-width: $tablet-breakpoint) and (max-width: $laptop-breakpoint - 1) {
+      top: -60px;
+      left: 45px;
+      width: calc(100% - 90px) !important; // Overwrite javascript width.
+    }
+
+    @include breakpoint($laptop) {
+      top: -90px;
+      left: 60px;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    .suggestion {
+      padding: $gutter/2;
+      border-bottom: 1px solid #B4B4B4;
+
+      .link-wrapper {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        color: $c-primary-400;
+
+        span {
+          font-size: 12px;
+          margin-right: 12px;
+        }
+
+        a {
+          font-size: 18px;
+          text-decoration: none;
+          color: $c-primary-400;
+        }
+      }
+    }
+  }
+
+  select.search-badge {
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+  }
+}
+
+.search-badges {
+  display: flex;
+
+  .form-item {
+    margin-bottom: 0px;
+
+    &:nth-child(2) .search-badge.chosen-badge {
+      max-width: 65px;
+    }
+  }
+
+  select.search-badge {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .search-badge {
+    min-width: 70px;
+    margin-right: $gutter/8;
+    border: 2px solid #FFB612;
+    border-radius: 8px;
+    background-color: #FFE9B7;
+
+    &.chosen-disabled {
+      min-width: 65px;
+      padding: 0 8px;
+      opacity: 1 !important;
+      color: $c-gray-800;
+      border-color: $c-gray-400;
+      background: white;
+
+      span {
+        margin: 0;
+      }
+
+      div {
+        display: none;
+      }
+    }
+  }
+
+  .chosen-container-single .chosen-single, .chosen-container-active.chosen-with-drop .chosen-single {
+    border: none;
+    background: none;
+  }
+
+  .chosen-search {
+    display: none;
+  }
+
+  .chosen-container-single .chosen-drop {
+    overflow: hidden;
+    width: auto;
+    margin-top: 2px;
+    padding: 8px 0;
+    border: 1px solid #000000;
+    border-radius: 8px;
+  }
+
+  .chosen-container .chosen-results li.active-result {
+    font-size: 16px;
+    display: flex;
+    margin-left: 18px;
+    padding: 0 6px;
+    color: $c-primary-350;
+    white-space: nowrap;
+
+    &:before {
+      font-size: 24px;
+      display: inline;
+      content: '';
+    }
+  }
+
+  .chosen-container .chosen-results {
+    overflow: hidden;
+    padding-right: 12px;
+  }
+
+  .chosen-container .chosen-results li.active-result {
+    &.result-selected,
+    &.highlighted {
+      margin-left: 0;
+      color: #000000;
+      background: none !important;
+
+      &:before {
+        content: '\2713';
+      }
+    }
+  }
+
+
+}

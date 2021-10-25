@@ -1,0 +1,10 @@
+uuid: 05a30d5b-7ca9-4030-91a3-a5747230d0d6
+langcode: nl
+status: true
+dependencies: {  }
+id: linklist
+label: Linklist
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: 5cbffadd-7462-4ffc-99a4-d89496674de3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.url
+    - paragraphs.paragraphs_type.teaser_block
+  module:
+    - link
+id: paragraph.teaser_block.url
+field_name: url
+entity_type: paragraph
+bundle: teaser_block
+label: Url
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

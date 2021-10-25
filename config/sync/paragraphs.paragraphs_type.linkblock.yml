@@ -1,0 +1,10 @@
+uuid: f910e35e-63fd-4dca-a611-d12e3788abc5
+langcode: nl
+status: true
+dependencies: {  }
+id: linkblock
+label: Linkblock
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

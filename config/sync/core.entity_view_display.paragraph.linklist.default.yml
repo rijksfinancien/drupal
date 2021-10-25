@@ -1,0 +1,36 @@
+uuid: a2e09e3a-833f-4027-b826-c3a94f65ae8b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.linklist.link
+    - field.field.paragraph.linklist.link_list_title
+    - paragraphs.paragraphs_type.linklist
+  module:
+    - link
+id: paragraph.linklist.default
+targetEntityType: paragraph
+bundle: linklist
+mode: default
+content:
+  link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  link_list_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,14 @@
+uuid: b1bc65b7-0f71-47a3-a982-1a268275299d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - user.role.extrainfo_uploader
+  module:
+    - user
+id: user_add_role_action.extrainfo_uploader
+label: 'De rol Extrainfo uploader toewijzen aan de geselecteerde gebruiker(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: extrainfo_uploader

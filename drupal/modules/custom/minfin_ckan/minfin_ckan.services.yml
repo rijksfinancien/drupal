@@ -1,0 +1,17 @@
+services:
+  minfin_ckan.request:
+    class: Drupal\minfin_ckan\CkanRequest
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@logger.factory'
+
+  ckan.twig_extension:
+    class: Drupal\minfin_ckan\CkanTwigExtension
+    arguments:
+      - '@cache.default'
+      - '@http_client'
+      - '@date.formatter'
+      - '@logger.factory'
+    tags:
+      - { name: twig.extension }

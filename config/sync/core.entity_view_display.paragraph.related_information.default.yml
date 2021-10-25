@@ -1,0 +1,24 @@
+uuid: 6310acd8-5000-4a47-8fec-ba1b0ef605f2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_information.link_lists
+    - paragraphs.paragraphs_type.related_information
+  module:
+    - entity_reference_revisions
+id: paragraph.related_information.default
+targetEntityType: paragraph
+bundle: related_information
+mode: default
+content:
+  link_lists:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

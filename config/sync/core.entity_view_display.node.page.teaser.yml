@@ -1,0 +1,27 @@
+uuid: 74ae8f94-4255-4a3a-8a38-48d5ce1f5ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.content
+    - field.field.node.page.limit_width
+    - field.field.node.page.show_anchors
+    - node.type.page
+  module:
+    - user
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content: true
+  langcode: true
+  limit_width: true
+  show_anchors: true

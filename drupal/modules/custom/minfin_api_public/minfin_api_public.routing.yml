@@ -1,0 +1,34 @@
+minfin_api_public.swagger:
+  path: '/swagger.json'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\SwaggerController::swagger'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.budgettaire_tabellen:
+  path: '/open-data/api/json/budgettaire_tabellen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\BudgettaireTabellenApiController::json'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.csv.budgettaire_tabellen:
+  path: '/open-data/api/csv/budgettaire_tabellen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\BudgettaireTabellenApiController::csv'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.financiele_instrumenten:
+  path: '/open-data/api/json/financiele_instrumenten'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::json'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.financiele_instrumenten.instrumenten:
+  path: '/open-data/api/json/financiele_instrumenten/instruments'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonInstruments'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,35 @@
+services:
+  minfin.param_converter.vuo:
+    class: Drupal\minfin\ParamConverter\ParamConverterVuo
+    tags:
+      - { name: paramconverter }
+
+  minfin.minfin:
+    class: Drupal\minfin\MinfinService
+    arguments:
+      - '@database'
+      - '@current_route_match'
+      - '@config.factory'
+      - '@entity_type.manager'
+
+  minfin.naming:
+    class: Drupal\minfin\MinfinNamingService
+    arguments:
+      - '@database'
+
+  minfin.solr_kamerstuk:
+    class: Drupal\minfin\SolrKamerstukClient
+    arguments:
+      - '@minfin_solr.solr_client'
+      - '@minfin.naming'
+
+  minfin.solr_wie_ontvingen:
+    class: Drupal\minfin\SolrWieOntvingenClient
+    arguments:
+      - '@minfin_solr.solr_client'
+
+  minfin.source_file:
+    class: Drupal\minfin\MinfinSourceFileService
+    arguments:
+      - '@database'
+      - '@entity_type.manager'

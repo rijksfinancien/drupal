@@ -1,0 +1,451 @@
+#minfin-be-container {
+    min-width: 300px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 750px;
+    margin: 0 auto;
+    animation-name: fadein;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#minfin-be-container div.circle {
+    position: absolute;
+    width: 25%;
+    max-width: 174px;
+    z-index: 1;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#minfin-be-container div.circle h4 {
+    width: 100%;
+    color: black;
+    font-family: "RO Sans", Calibri, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+@media only screen and (max-width: 468px) {
+    #minfin-be-container div.circle h4 {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0 0 5px 0;
+    }
+}
+
+#minfin-be-container svg.oval {
+    position: relative;
+    width: 100%;
+}
+
+#minfin-be-container .title-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#minfin-be-container .title-container .title {
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+#minfin-be-container .title-container .title .title-cell {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    font-family: "rijksoverheid-serif", serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+#minfin-be-container .title-container .title .title-cell div {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#minfin-be-container .title-container .title .title-cell div span {
+    display: block;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+@media only screen and (max-width: 640px) {
+
+    #minfin-be-container .title-container .title .title-cell div i {
+        font-size: 16px;
+        line-height: 18px;
+        padding-left: 20px;
+    }
+
+    #minfin-be-container .title-container .title .title-cell div i span {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    #minfin-be-container  {
+        margin-top: 130px;
+    }
+
+    #minfin-be-container .title-container {
+        position: relative;
+    }
+
+    #minfin-be-container .title-container .title {
+        margin-top: -130px;
+    }
+
+    #minfin-be-container .title-container .title .title-cell div {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        font-family: "RO Sans", Calibri, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    #minfin-be-container .title-container .title .title-cell div span {
+        display: inline;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+/* POPUP */
+
+#visual_be_popup {
+    position: absolute;
+    max-width: 380px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    line-height: 24px;
+    transition: none;
+    z-index: 1000;
+}
+
+#visual_be_popup .chart_popup {
+    padding: 12px;
+}
+
+#visual_be_popup .chart_popup .data_name {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#visual_be_popup .close_popup {
+    display: none;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 2px -1px 2px rgba(0, 0, 0, 0.2);
+    right: 0;
+    margin-right: -16px;
+    margin-top: -28px;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#visual_be_popup .close_popup:before,
+#visual_be_popup .close_popup:after {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 16px;
+    transform-origin: 1.5px 8px;
+    transform: rotate(45deg);
+    -webkit-transform-origin: 1.5px 8px;
+    -webkit-transform: rotate(45deg);
+    margin-left: 15px;
+    margin-top: 8px;
+    position: absolute;
+    background-color: #333333;
+}
+
+#visual_be_popup .close_popup:after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+#visual_be_popup_info {
+    position: relative;
+    display: none;
+}
+
+#visual_be_popup_info .minfin_link {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none !important;
+    color: #01689B;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 12px 10px;
+    background-color: #F2F7FC;
+}
+
+#visual_be_popup_info .minfin_link:before {
+    font-family: 'minfin-icons' !important;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -1px;
+    margin-right: 10px;
+    content: "\e938";
+}
+
+#visual_be_popup_info div.minfin_nolink {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none !important;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 12px 10px;
+    background-color: #F2F7FC;
+}
+
+#visual_be_popup_info .minfin_link:first-of-type {
+    padding-top: 10px;
+}
+
+/* AGENDERING */
+
+#minfin-be-container div.circle.minfin-be-agenda {
+    left: 41%;
+    top: -11%;
+}
+
+#minfin-be-container div.circle.minfin-be-agenda #icon-agenda {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#minfin-be-container div.circle.minfin-be-agenda svg.circle {
+    animation-name: spin-agenda;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(45deg);
+}
+
+#minfin-be-container div.circle.minfin-be-agenda .colour {
+    fill: #00679D;
+}
+
+@keyframes spin-agenda {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+}
+
+/* VOORBEREIDING */
+
+#minfin-be-container div.circle.minfin-be-voorbereiding {
+    left: 66%;
+    top: 26%;
+}
+
+#minfin-be-container div.circle.minfin-be-voorbereiding #icon-voorbereiding {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#minfin-be-container div.circle.minfin-be-voorbereiding svg.circle {
+    animation-name: spin-voorbereiding;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(115deg);
+}
+
+@keyframes spin-voorbereiding {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(115deg);
+    }
+}
+
+#minfin-be-container div.circle.minfin-be-voorbereiding .colour {
+    fill: #E37000;
+}
+
+/* BEPALING */
+
+#minfin-be-container div.circle.minfin-be-bepaling {
+    left: 50%;
+    top: 70%;
+}
+
+#minfin-be-container div.circle.minfin-be-bepaling h4 {
+    position: absolute;
+    left: 105%;
+    top: 30%;
+    text-align: left;
+}
+
+#minfin-be-container div.circle.minfin-be-bepaling #icon-bepaling {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#minfin-be-container div.circle.minfin-be-bepaling svg.circle {
+    animation-name: spin-bepaling;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(185deg);
+}
+
+@keyframes spin-bepaling {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(185deg);
+    }
+}
+
+#minfin-be-container div.circle.minfin-be-bepaling .colour {
+    fill: #A1B8B9;
+}
+
+/* UITVOERING */
+
+#minfin-be-container div.circle.minfin-be-uitvoering {
+    left: 22%;
+    top: 66%;
+}
+
+#minfin-be-container div.circle.minfin-be-uitvoering h4 {
+    position: absolute;
+    left: -100%;
+    top: 20%;
+    text-align: right;
+}
+
+#minfin-be-container div.circle.minfin-be-uitvoering #icon-uitvoering {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#minfin-be-container div.circle.minfin-be-uitvoering svg.circle {
+    animation-name: spin-uitvoering;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(255deg);
+}
+
+@keyframes spin-uitvoering {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(255deg);
+    }
+}
+
+#minfin-be-container div.circle.minfin-be-uitvoering .colour {
+    fill: #8DCAE9;
+}
+
+/* TERUGKOPPELING */
+
+#minfin-be-container div.circle.minfin-be-terugkoppeling {
+    left: 12%;
+    top: 14%;
+}
+
+#minfin-be-container div.circle.minfin-be-terugkoppeling #icon-terugkoppeling {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#minfin-be-container div.circle.minfin-be-terugkoppeling svg.circle {
+    animation-name: spin-terugkoppeling;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(325deg);
+}
+
+@keyframes spin-terugkoppeling {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(325deg);
+    }
+}
+
+#minfin-be-container div.circle.minfin-be-terugkoppeling .colour {
+    fill: #78C315;
+}
+
+@media only screen and (max-width: 600px) {
+    #minfin-be-container div.circle.minfin-be-terugkoppeling h4 {
+        margin-left: -30%;
+    }
+}

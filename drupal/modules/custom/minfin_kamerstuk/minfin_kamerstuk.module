@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Implements the module hooks.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function minfin_kamerstuk_theme($existing, $type, $theme, $path) {
+  return [
+    'functional-table' => [
+      'variables' => [
+        'table' => [],
+      ],
+    ],
+    'kamerstuk' => [
+      'variables' => [
+        'html' => '',
+        'title' => '',
+        'keywords' => '',
+        'page_title' => '',
+      ],
+    ],
+    'kamerstuk_navigatie' => [
+      'variables' => [
+        'next' => NULL,
+        'toc' => NULL,
+        'prev' => NULL,
+      ],
+    ],
+    'minfin_chapter_list' => [
+      'variables' => [
+        'items' => [],
+        'prefix_text' => NULL,
+        'suffix_text' => NULL,
+      ],
+    ],
+    'minfin_chapter_list_isb' => [
+      'variables' => [
+        'items' => [],
+        'prefix_text' => NULL,
+        'suffix_text' => NULL,
+      ],
+    ],
+    'minfin_notes' => [
+      'variables' => [
+        'notes' => [],
+      ],
+    ],
+    'minfin_related' => [
+      'variables' => [
+        'pdfs' => [],
+        'appendixes' => [],
+        'dossiers' => [],
+        'information' => [],
+        'beleidsevaluatie_link' => NULL,
+        'performance_information_links' => [],
+        'policy_review_links' => [],
+        'cbs_links' => [],
+        'visual' => NULL,
+      ],
+    ],
+    'minfin_related_anchor' => [
+      'variables' => [
+        'budget_table_id' => 0,
+        'information' => [],
+        'beleidsevaluatie_link' => NULL,
+        'performance_information_links' => [],
+        'policy_review_links' => [],
+        'cbs_links' => [],
+        'visual' => NULL,
+      ],
+    ],
+    'minfin_toc' => [
+      'variables' => [
+        'items' => [],
+        'appendix' => [],
+      ],
+    ],
+    'table-header' => [],
+  ];
+}

@@ -1,0 +1,24 @@
+minfin_general.banner_settings:
+  title: 'Banner settings'
+  route_name: minfin_general.banner_settings_form
+  menu_name: admin
+  parent: system.admin_content
+  weight: 10
+
+minfin_general.chapter_page_settings_form:
+  title: 'Chapter page settings'
+  description: 'Configurate some settings for the chapter page.'
+  parent: minfin.chapter.settings
+  route_name: minfin_general.chapter_page_settings_form
+
+minfin_general.open_data.block_form:
+  title: 'Open data page'
+  description: 'Adds content to the Open data page.'
+  parent: minfin.settings
+  route_name: minfin_general.open_data.block_form
+
+minfin_general.imce:
+  title: 'IMCE File Browser'
+  description: 'Opens a page with the IMCE File Browser.'
+  parent: minfin.settings
+  route_name: minfin_general.imce

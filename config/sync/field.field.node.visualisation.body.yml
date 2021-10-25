@@ -1,0 +1,23 @@
+uuid: 4da3c333-2349-4129-a599-0cbdc758081e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.visualisation
+  module:
+    - text
+id: node.visualisation.body
+field_name: body
+entity_type: node
+bundle: visualisation
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

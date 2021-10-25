@@ -1,0 +1,26 @@
+.visual-block {
+  margin-bottom: 28px;
+
+  @media all and (max-width: $tablet-breakpoint) {
+    margin-left: 0;
+    margin-right: 0;
+
+    h2 {
+      padding-left: 0;
+    }
+  }
+
+  .container {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  .visual-container:not(.container) {
+    @include breakpoint($tablet) {
+      margin: 0 -18px;
+    }
+  }
+}

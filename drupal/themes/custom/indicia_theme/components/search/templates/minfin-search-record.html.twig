@@ -1,0 +1,14 @@
+<div class="search-result" id="{{ id }}">
+  <h3>{{ link }}</h3>
+  <div class="search-badges">
+    {{ badges }}
+  </div>
+  <div>{{ summary }}</div>
+  {% if quickLinks %}
+    <div class="quick-links">
+      {% for quickLink in quickLinks %}
+        {{ quickLink }}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

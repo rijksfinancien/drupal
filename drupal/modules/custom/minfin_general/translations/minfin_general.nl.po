@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+msgid "archive"
+msgstr "archief"
+
+msgid "Archive"
+msgstr "Archief"
+
+msgid "Archive @year"
+msgstr "Archief @year"
+
+msgid "Archive @min till @max"
+msgstr "Archief @min t/m @max"
+
+msgid "Parts for this period are not available"
+msgstr "Onderdelen zijn voor deze periode niet beschikbaar"
+
+msgid "Part is not available for this period"
+msgstr "Onderdeel is voor deze periode niet beschikbaar"
+
+msgid "Year or period"
+msgstr "Jaar of periode"
+
+msgctxt "abbreviation"
+msgid "To"
+msgstr "t/m"

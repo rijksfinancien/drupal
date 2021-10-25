@@ -1,0 +1,130 @@
+.year-selector.slick-slider {
+  position: relative;
+  display: block;
+  width: ($year-slider-row-item-width + $year-slider-row-item-gutter) * $year-slider-row-items;
+  margin: 16px (-$year-slider-row-item-gutter / 2);
+  padding: 0;
+
+  @include breakpoint($tablet) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .slide-action {
+    font-size: 11px;
+    line-height: $year-slider-row-item-height;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $year-slider-row-item-width;
+    height: $year-slider-row-item-height;
+    margin: 0 ($year-slider-row-item-gutter / 2);
+    padding: 0;
+
+    &:hover, &:active, &:focus {
+      background: $c-black;
+    }
+  }
+
+  .prefix-slide-actions,
+  .suffix-slide-actions {
+    position: absolute;
+    z-index: 100;
+    width: auto;
+    background: $c-primary-200;
+
+    @include breakpoint($tablet) {
+      position: relative;
+      width: auto;
+      background: none;
+    }
+  }
+
+  .prefix-slide-actions {
+    top: 0;
+    left: 0;
+  }
+
+  .suffix-slide-actions {
+    right: 0;
+    bottom: 0;
+  }
+
+  .slick-list {
+    @include breakpoint($tablet) {
+      width: ($year-slider-row-item-width + $year-slider-row-item-gutter) * $year-slider-row-item-slides * $year-slider-rows;
+    }
+  }
+
+  .slick-slide {
+    // The two rows for mobile.
+    > div {
+      display: flex;
+
+      &:first-child {
+        width: calc(100% / #{$year-slider-row-items} * #{$year-slider-row-item-slides});
+        margin-left: calc(100% / #{$year-slider-row-items} * #{$year-slider-row-item-actions});
+
+        @include breakpoint($tablet) {
+          margin-left: 0;
+        }
+      }
+
+      &:last-child {
+        width: calc(100% / #{$year-slider-row-items} * #{$year-slider-row-item-slides});
+        margin-right: calc(100% / #{$year-slider-row-items} * #{$year-slider-row-item-actions});
+
+        @include breakpoint($tablet) {
+          margin-right: 0;
+        }
+
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  li {
+    // Overwrite slick variable width.
+    width: $year-slider-row-item-width !important;
+    height: $year-slider-row-item-height;
+    margin: 0 ($year-slider-row-item-gutter / 2) $year-slider-row-item-gutter;
+
+    @include breakpoint($tablet) {
+      margin-bottom: 0;
+    }
+
+    a {
+      line-height: $year-slider-row-item-height;
+      display: block;
+      width: $year-slider-row-item-width;
+      height: $year-slider-row-item-height;
+      margin: 0;
+      text-align: center;
+      border: 1px solid $c-primary-400;
+      background: $c-white;
+
+      &:before {
+        display: none;
+      }
+
+      &:hover, &:active, &:focus, &.active {
+        color: $c-white;
+        background: $c-primary-400;
+      }
+    }
+
+    .missing-year {
+      display: block;
+      width: $year-slider-row-item-width;
+      height: $year-slider-row-item-height;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      border: 1px solid $c-primary-400;
+    }
+  }
+}

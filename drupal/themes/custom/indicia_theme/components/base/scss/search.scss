@@ -1,0 +1,44 @@
+.minfin-search {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-left: auto;
+
+  .search-toggle {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transform: translateY(24px);
+    float: right;
+    .icon-search{
+      display: inline;
+      font-size: 20px;
+      padding: 10px;
+      color: #fff;
+
+      &:hover{
+        background-color: #000;
+      }
+    }
+    .icon-cross{
+      display: none;
+      font-size:  12px;
+      font-weight: bold;
+      background-color: #fff;
+      padding: 10px;
+      &:hover{
+        color: #fff;
+        background-color: #000;
+      }
+    }
+    &.active {
+      .icon-search{
+        display: none;
+      }
+      .icon-cross{
+        display: inline;
+      }
+    }
+  }
+}
+

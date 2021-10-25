@@ -1,0 +1,19 @@
+minfin_piwik.settings:
+  title: 'Piwik settings'
+  parent: minfin.settings
+  route_name: minfin_piwik.piwik
+  description: 'Manage piwik settings.'
+
+minfin_piwik.piwik.settings:
+  title: 'Piwik settings'
+  parent: minfin_piwik.settings
+  route_name: minfin_piwik.piwik.settings
+  description: 'Manage piwik settings.'
+  weight: 1
+
+minfin_piwik.piwik.datalayer:
+  title: 'Piwik DataLayer'
+  parent: minfin_piwik.settings
+  route_name: minfin_piwik.piwik.datalayer
+  description: 'Manage piwik DataLayer settings.'
+  weight: 2

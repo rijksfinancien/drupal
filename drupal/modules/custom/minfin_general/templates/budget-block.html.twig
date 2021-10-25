@@ -1,0 +1,21 @@
+<div class="header-budget-block">
+  <div class="container">
+    <div>
+      <div class="budget-block-header">
+        <ul id="budget-menu" class="menu">
+          {% for year, link in tabs %}
+            <li class="tab-{{ year }}{% if year == active_tab %} active{% endif %}">
+              {{ link }}
+            </li>
+          {% endfor %}
+        </ul>
+        {% if select_next_to_year %}
+          {{ chapter_select }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="tabs-content-container">
+      {{ content }}
+    </div>
+  </div>
+</div>

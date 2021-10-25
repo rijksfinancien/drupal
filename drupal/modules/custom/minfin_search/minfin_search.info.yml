@@ -1,0 +1,14 @@
+name: Minfin - search
+description: Module handeling the search requests
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin
+  - minfin_general:minfin_general
+  - minfin_solr:minfin_solr
+  - minfin_visuals:minfin_visuals
+
+interface translation project: minfin_search
+interface translation server pattern: modules/custom/minfin_search/translations/minfin_search.%language.po

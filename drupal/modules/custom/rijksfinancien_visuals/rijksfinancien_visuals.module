@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains rijksfinancien_visuals.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function rijksfinancien_visuals_theme() {
+  return [
+    'rijksfinancien_visual' => [
+      'template' => 'rijksfinancien_visual',
+      'render element' => 'children',
+    ],
+    'rijksfinancien_visual_begroting_vs_realisatie' => [
+      'template' => 'rijksfinancien_visual_begroting_vs_realisatie',
+      'render element' => 'children',
+    ],
+    'rijksfinancien_visual_rutteii_vs_rutte_iii' => [
+      'template' => 'rijksfinancien_visual_rutteii_vs_rutte_iii',
+      'render element' => 'children',
+    ],
+    'rijksfinancien_visual_verzelfstandigingen' => [
+      'template' => 'rijksfinancien_visual_verzelfstandigingen',
+      'render element' => 'children',
+    ],
+    'rijksfinancien_begroting_premie_fiscaal' => [
+      'template' => 'rijksfinancien_begroting_premie_fiscaal',
+    ],
+  ];
+}

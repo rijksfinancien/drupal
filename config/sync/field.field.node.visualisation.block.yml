@@ -1,0 +1,40 @@
+uuid: 8b6cc99e-dbff-4f1b-b826-e2decad65e38
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.block
+    - node.type.visualisation
+  module:
+    - block_field
+id: node.visualisation.block
+field_name: block
+entity_type: node
+bundle: visualisation
+label: Block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: categories
+  selection_settings:
+    categories:
+      'Minfin - rijksfinancien visuals': 'Minfin - rijksfinancien visuals'
+      'MINFIN corona visuals': 'MINFIN corona visuals'
+      'MINFIN visuals': 'MINFIN visuals'
+      Blok: '0'
+      'Chaos Tools': '0'
+      core: '0'
+      Devel: '0'
+      'Devel PHP': '0'
+      Formulieren: '0'
+      'Menu''s': '0'
+      'Minfin - General': '0'
+      'Minfin - Public API': '0'
+      'MINFIN beleidsevaluatie': '0'
+      'MINFIN search': '0'
+      Systeem: '0'
+      System: '0'
+field_type: block_field

@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming for minfin search.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function minfin_search_theme($existing, $type, $theme, $path) {
+  return [
+    'minfin_pagination' => [
+      'variables' => [
+        'pagination' => [],
+      ],
+    ],
+    'minfin_facets' => [
+      'variables' => [
+        'facets' => [],
+      ],
+    ],
+    'minfin_search' => [
+      'variables' => [
+        'title' => t('Searchresults'),
+        'rows' => [],
+        'pagination' => NULL,
+        'sorting' => NULL,
+        'facets' => NULL,
+      ],
+    ],
+    'minfin_search_record' => [
+      'variables' => [
+        'summary' => NULL,
+        'id' => NULL,
+        'link' => NULL,
+        'badges' => [],
+        'quickLinks' => [],
+      ],
+    ],
+    'minfin_search_suggester' => [
+      'variables' => [
+        'suggestions' => [],
+      ],
+    ],
+    'minfin_search_suggestion' => [
+      'variables' => [
+        'header' => NULL,
+        'id' => NULL,
+        'link' => NULL,
+        'badges' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function minfin_search_config_ignore_settings_alter(array &$settings) {
+  $settings[] = 'minfin_search.settings';
+}

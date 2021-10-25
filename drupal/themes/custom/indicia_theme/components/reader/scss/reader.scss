@@ -1,0 +1,210 @@
+#reader-page {
+  margin-bottom: 60px;
+
+  div .table-container {
+    margin-bottom: 30px;
+
+    &.widen {
+      @include breakpoint($laptop) {
+        width: 1178px;
+        margin-left: -211px;
+        max-width: calc(100vw - 60px);
+      }
+    }
+  }
+
+  h4 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: .6em;
+    border-bottom: 1px solid $c-primary-300;
+  }
+
+  .margetekst {
+    margin-bottom: 5px;
+    padding-right: 90px;
+    font-style: italic;
+  }
+
+  .verplaatst {
+    padding-left: 10px;
+  }
+
+  .alineagroep {
+    margin-bottom: 20px;
+  }
+
+  + .next-prev-navigation {
+    flex-wrap: wrap;
+
+    &:before {
+      display: block;
+      width: 100%;
+      height: 1px;
+      content: '';
+      background-color: $c-primary-400;
+      margin-bottom: 15px;
+    }
+  }
+
+  .page-actions {
+    margin-bottom: 20px;
+  }
+
+  .ondertekening {
+    .functie {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .naam {
+      display: block;
+      font-style: italic;
+    }
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .left, .char {
+    text-align: left;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+  .top {
+    vertical-align: top;
+  }
+
+  .middle {
+    vertical-align: middle;
+  }
+
+  .bottom {
+    vertical-align: bottom;
+  }
+
+}
+
+.reader-actions {
+  display: none;
+}
+
+.reader-mode {
+  background: $c-gray-200;
+
+  .minfin-related,
+  .block-general-budget-block {
+    display: none;
+  }
+
+  &.reader-mode-dark {
+    background: black;
+
+    #reader-page {
+      background: $c-gray-900;
+
+      * {
+        color: white;
+      }
+
+      [class^="icon-"], [class*=" icon-"] {
+        background: $c-secondary-400;
+
+        &:hover, &:focus, &:active {
+          background: $c-secondary-600;
+        }
+      }
+
+      a {
+        color: $c-secondary-400;
+      }
+
+      .table-title {
+        background: $c-secondary-400;
+      }
+
+      thead {
+        background: $c-secondary-300;
+      }
+
+      tr:hover {
+        background: $c-gray-800;
+      }
+    }
+
+    .responsive-wrapper::after {
+      background: radial-gradient(ellipse at 100%, rgba(200, 200, 200, .3), rgba(200, 200, 200, 0) 70%);
+    }
+  }
+
+  &.reader-mode-sepia {
+    background: $c-gray-300;
+
+    #reader-page {
+      background: $c-brown-200;
+    }
+  }
+
+  header, footer {
+    display: none;
+  }
+
+  .page-actions {
+    display: none;
+  }
+
+  .reader-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px auto;
+    padding: 0;
+    user-select: none;
+  }
+
+  #reader-page {
+    padding: 40px 15px;
+    background: white;
+  }
+
+  .action-widen {
+    display: none;
+  }
+}
+
+.action-page-color-normal {
+  color: black;
+  background: white;
+}
+
+.action-page-color-sepia {
+  color: black;
+  background: $c-brown-200;
+}
+
+.action-page-color-dark {
+  color: white;
+  background: black;
+}
+
+.action-page-color-normal,
+.action-page-color-sepia,
+.action-page-color-dark {
+  margin: 0 2px;
+
+  &.active {
+    border: 2px solid transparent;
+  }
+
+  &.active {
+    border: 2px solid $c-primary-400;
+  }
+}

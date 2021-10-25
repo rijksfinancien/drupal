@@ -1,0 +1,14 @@
+uuid: 71a47c05-9470-4959-98a0-ad6f70149511
+name: 'Ministerie van Financiën - Rijksoverheid'
+mail: drupal@indicia.nl
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: nl
+default_langcode: nl
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

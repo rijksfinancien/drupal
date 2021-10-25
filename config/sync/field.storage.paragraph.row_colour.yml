@@ -1,0 +1,27 @@
+uuid: 84bc98a8-a00e-4b50-aae3-7ec1b21805fc
+langcode: nl
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.row_colour
+field_name: row_colour
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: gray
+      label: Gray
+    -
+      value: blue
+      label: Blue
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

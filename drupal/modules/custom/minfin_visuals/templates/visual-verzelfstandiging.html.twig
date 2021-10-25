@@ -1,0 +1,212 @@
+<div class="visual-verzelfstandigingen-block visual-block">
+  <div class="container">
+      <!-- layout -->
+      <div id="container-links">
+          <div id="chart_canvas_navigation_top" class="chart_navigation chart_navigation_top">
+              <div id="navigation_top_select">
+                  <select id="select_sort" class="center">
+                      <option>-</option>
+                  </select>
+                  <div id="slider_vrzs" class="slider_container">
+
+                  </div>
+              </div>
+          </div>
+          <div id="container">
+              <div id="chart_canvas"></div>
+          </div>
+          <div id="chart_canvas_navigation" class="chart_navigation">
+              <div id="navigation_select">
+                  <select id="select_ministry" class="center">
+                      <option>-</option>
+                  </select>
+                  <select id="select_type" class="center">
+                      <option>-</option>
+                  </select>
+                  <select id="select_year" class="center">
+                      <option>-</option>
+                  </select>
+              </div>
+              <div id="navigation_links"></div>
+          </div>
+      </div>
+      <div id="container-rechts">
+          <div id="chart_canvas_legend"></div>
+      </div>
+  </div>
+
+  <div class="container visual-container">
+      <div id="container-full" class="visual-column">
+          <div id="chart_canvas_1_navigation_top" class="chart_navigation chart_navigation_top">
+              <div id="navigation_top_select">
+                  <select id="select_sort" class="center">
+                      <option>-</option>
+                  </select>
+              </div>
+          </div>
+          <div id="container">
+              <div id="chart_canvas_1"></div>
+          </div>
+
+          <div id="chart_canvas_1_navigation" class="chart_navigation">
+              <div id="navigation_select">
+                  <div class="manual_selector" id="selector_vzst">
+                      <div class="choice"></div>
+                      <div class="selector"></div>
+                  </div>
+              </div>
+
+          <div id="card_container">
+          </div>
+
+              <div id="navigation_links"></div>
+          </div>
+      </div>
+  </div>
+
+  <!-- legend header template -->
+    <script type="text/template" id="chart_legend_header_template_vzst">
+    {% verbatim %}
+        <div class="chart_legend_header">
+            <div class="legend_title">{{legend_title}}</div>
+            <div class="legend_total">{{legend_total}}</div>
+        </div>
+    {% endverbatim %}
+    </script>
+
+  <!-- legend template -->
+    <script type="text/template" id="chart_legend_template_vzst">
+    {% verbatim %}
+        <div id="{{title}}" class="chart_legend_item">
+        	<div class="chart_legend_item_header">
+                <div class="chart_legend_item_color"></div>
+                <div class="chart_legend_item_amount">{{value}}</div>
+                <div class="chart_legend_item_title">{{title}}</div>
+            </div>
+            <div class="chart_legend_sub_data">
+                <div class="chart_legend_post_data">
+                    <a class="" href="{{link}}">Vergelijk {{type}}</a>
+                    <a class="chart_legend_hide {{website_class}}" href="{{website}}">{{website}}</a>
+                    <div class="chart_legend_card">
+                        <b>{{type}}</b>
+                        <br /><small>{{ministerie}}</small>
+                        <div class="chart_legend_card_block">
+                            Omzet<div class="alignright"><b>€ {{eur_omzet}}</b></div>
+                        <br />Fte<div class="alignright"><b>{{num_fte}}</b></div>
+                        </div>
+                        <div class="chart_legend_card_block">
+                            {{beschrijving}}
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_legend_data" id="{{title}}_data"></div>
+            </div>
+        </div>
+    {% endverbatim %}
+    </script>
+
+  <!-- sub data inside legend list -->
+    <script type="text/template" id="chart_legend_data_template_vzst">
+    {% verbatim %}
+        <div>
+            <div id="subtitle_{{title}}" class="chart_legend_data_item">
+                <div class="chart_legend_data_item_amount">{{amount}}</div>
+                <div class="chart_legend_data_item_title">{{title}}</div>
+            </div>
+            <div id="subtitle_info_{{title}}" class="chart_legend_data_item_info">
+                    <a class="minfin_link show" href="{{link}}">Vergelijk {{type}}</a>
+                    <a class="minfin_link chart_legend_hide {{website_class}}" href="{{website}}">{{website}}</a>
+                <div class="chart_legend_card">
+                        <b>{{type}}</b>
+                        <br /><small>{{ministerie}}</small>
+                        <div class="chart_legend_card_block">
+                            Omzet<div class="alignright"><b>€ {{eur_omzet}}</b></div>
+                        <br />Fte<div class="alignright"><b>{{num_fte}}</b></div>
+                        </div>
+                        <div class="chart_legend_card_block">
+                            {{beschrijving}}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    {% endverbatim %}
+    </script>
+
+  <!-- popup -->
+  <script type="text/template" id="chart_popup_template_vzst">
+    {% verbatim %}
+      <div id="chart_popup">
+          <div class="card">
+              <div class="chart_popup">
+                  <a class="close_popup"><div class="cross"></div></a>
+                  <div class="arrow_popup"></div>
+                  <div class="chart_legend_card">
+                      <b>{{title}}</b><div class="alignright"><b>{{type}}</b></div>
+                      <br /><small>{{ministerie}}</small>
+                      <div class="chart_legend_card_block">
+                          Omzet<div class="alignright"><b>€ {{eur_omzet}}</b></div>
+                      <br />Fte<div class="alignright"><b>{{num_fte}}</b></div>
+                      </div>
+                      <div class="chart_legend_card_block">
+                          {{beschrijving}}
+                      </div>
+                  </div>
+              </div>
+              <div id="chart_popup_info" class="chart_popup_info">
+                  <a class="minfin_link show" href="{{link}}">Vergelijk {{type}}</a>
+                  <a class="minfin_link {{website_class}}" href="{{website}}">{{website}}</a>
+                  <div id="chart_popup_data" class="chart_legend_popup_data"></div>
+              </div>
+              <div class="chart_popup_no_card">
+                  <div class="">
+                      <b>Totaal overig<b><div class="alignright"><b>{{amount}}</b></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    {% endverbatim %}
+  </script>
+  <script type="text/template" id="chart_popup_template_vzst_vergelijk">
+    {% verbatim %}
+      <div id="chart_popup">
+          <div class="chart_popup">
+              <a class="close_popup"><div class="cross"></div></a>
+              <div class="arrow_popup"></div>
+              <div class="data_category">
+                  <div class="data_value">{{value}}</div>
+                  {{title}}
+              </div>
+          </div>
+          <div id="chart_popup_info">
+              <a class="minfin_link export" href="javascript:print()">Download of print selectie</a>
+              <div id="chart_popup_data" class="chart_legend_popup_data"></div>
+          </div>
+      </div>
+    {% endverbatim %}
+  </script>
+
+  <!-- card -->
+  <script type="text/template" id="chart_card_template_vzst_vergelijk">
+    {% verbatim %}
+      <div class="card" value="{{title}}">
+          <div class="card_title">
+              <div class="color" style="background-color: lightgrey;"></div>
+              <a class="{{website_class}}" href="{{website}}">{{title}}</a>
+              <span class="{{website_class}}">{{title}}</span>
+          </div>
+          <div class="alignright"><b>{{type}}</b></div>
+          <br /><small>{{ministerie}}</small>
+          <div class="info" style="display: none">
+              Omzet<div class="alignright"><b>€ {{num_omzet}}</b></div>
+              <br />Fte<div class="alignright"><b>{{num_fte}}</b></div>
+          </div>
+          <div class="info">
+              {{beschrijving}}
+          </div>
+      </div>
+    {% endverbatim %}
+  </script>
+
+  <script type="text/template" id="chart_initializer" name="verzelfstandigingen">
+  </script>
+</div>

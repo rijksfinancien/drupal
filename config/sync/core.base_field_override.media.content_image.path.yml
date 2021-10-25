@@ -1,0 +1,20 @@
+uuid: da0b8e7e-917d-4151-8c34-9f3c4a4b4487
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.content_image
+  module:
+    - path
+id: media.content_image.path
+field_name: path
+entity_type: media
+bundle: content_image
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

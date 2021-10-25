@@ -1,0 +1,56 @@
+{# Based on drupal/core/themes/classy/templates/layout/page.html.twig #}
+<div class="layout-container">
+  <header>
+    <div class="container center">
+      <a href="{{ path('<front>') }}" id="logo" itemprop="publisher" itemscope="" itemtype="http://schema.org/GovernmentOrganization">
+        <img src="/themes/custom/indicia_theme/files/logo-rijksoverheid.svg" alt="Logo Rijksoverheid">
+        <span itemprop="name">Ministerie van Financiën</span>
+      </a>
+    </div>
+    <div class="menu-bar-wrapper">
+      <div class="menu-bar">
+        <div class="container flex">
+          {{ page.menubar }}
+          <div id="minfin-search" class="minfin-search">
+            <div class="search-toggle" title="{{ 'Toggle the searchbar'|t }}">
+              <div class="icon-search" tabindex="0"></div>
+              <div class="icon-cross"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="submenu">
+      <div class="container"></div>
+    </div>
+    {{ page.header }}
+  </header>
+  <main id="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="layout-content">
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+
+      {% if page.content_below %}
+        {{ page.content_below }}
+      {% endif %}
+    </div>{# /.layout-content #}
+  </main>
+  <section id="modal">
+    <div class="modal">
+      <div class="close"><span class="icon-close-fullscreen"></span></div>
+      <div id="modal-content"></div>
+    </div>
+  </section>
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="min-text">
+        Ministerie van Financiën
+      </div>
+      {% if page.footer %}
+        {{ page.footer }}
+      {% endif %}
+    </div>
+  </footer>
+</div>{# /.layout-container #}

@@ -1,0 +1,23 @@
+uuid: b59f254a-5512-49df-99f5-399e117c1c04
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.voorbereiding_links
+    - paragraphs.paragraphs_type.beleidsevaluatie_visual
+  module:
+    - link
+id: paragraph.beleidsevaluatie_visual.voorbereiding_links
+field_name: voorbereiding_links
+entity_type: paragraph
+bundle: beleidsevaluatie_visual
+label: Voorbereiding
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

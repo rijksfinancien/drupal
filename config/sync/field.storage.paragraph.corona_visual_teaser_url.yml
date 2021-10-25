@@ -1,0 +1,19 @@
+uuid: 096d7257-a05b-4614-a12f-2261efd5c2f5
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.corona_visual_teaser_url
+field_name: corona_visual_teaser_url
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

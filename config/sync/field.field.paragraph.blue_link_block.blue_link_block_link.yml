@@ -1,0 +1,23 @@
+uuid: 4553c334-5556-4322-8e09-3bcca8967020
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.blue_link_block_link
+    - paragraphs.paragraphs_type.blue_link_block
+  module:
+    - link
+id: paragraph.blue_link_block.blue_link_block_link
+field_name: blue_link_block_link
+entity_type: paragraph
+bundle: blue_link_block
+label: Link
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

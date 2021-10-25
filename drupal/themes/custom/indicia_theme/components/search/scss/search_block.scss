@@ -1,0 +1,26 @@
+.block-minfin-search.block-minfin-search-block {
+  width: 100%;
+  max-width: 100%;
+  background-color: $c-primary-200;
+
+  form {
+    input:not([type="radio"]), select {
+      width: auto;
+      height: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-radius: 8px;
+      background-color: #FFFFFF;
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+
+    input.button {
+      font-size: 21px;
+      font-weight: bold;
+      background-color: $c-primary-600;
+    }
+  }
+}

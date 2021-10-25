@@ -1,0 +1,26 @@
+uuid: 9f2be5d7-a862-40eb-942a-826b60a38c17
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_api_public
+    - system
+  theme:
+    - indicia_theme
+id: documentationblock
+theme: indicia_theme
+region: content_below
+weight: 0
+provider: null
+plugin: api_documentation_block
+settings:
+  id: api_documentation_block
+  label: 'Documentation Block'
+  provider: minfin_api_public
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /open-data/api-documentatie
+    negate: false
+    context_mapping: {  }

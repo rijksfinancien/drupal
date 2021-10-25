@@ -1,0 +1,8 @@
+name: Minfin - Beleidsevaluaties
+description: Generates the overviews for 'beleidsevaluaties'.
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - minfin:minfin

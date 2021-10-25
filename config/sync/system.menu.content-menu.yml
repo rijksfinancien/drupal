@@ -1,0 +1,8 @@
+uuid: 51b05464-cc6e-4d6f-b6d9-fdca24160a84
+langcode: nl
+status: true
+dependencies: {  }
+id: content-menu
+label: 'Content menu'
+description: ''
+locked: false

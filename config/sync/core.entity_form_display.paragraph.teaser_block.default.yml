@@ -1,0 +1,75 @@
+uuid: 0f659c2d-06d3-4d80-a5a5-9388efe43b09
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser_block.field_linklist
+    - field.field.paragraph.teaser_block.field_text
+    - field.field.paragraph.teaser_block.field_title
+    - field.field.paragraph.teaser_block.url
+    - paragraphs.paragraphs_type.teaser_block
+  module:
+    - link
+    - paragraphs
+id: paragraph.teaser_block.default
+targetEntityType: paragraph
+bundle: teaser_block
+mode: default
+content:
+  field_linklist:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: linklist
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_text:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: text
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  url:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

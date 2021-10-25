@@ -1,0 +1,39 @@
+amchart:
+  version: 4.8.0
+  js:
+    /modules/custom/minfin_visuals/libraries/amcharts4/core.js: {}
+    /modules/custom/minfin_visuals/libraries/amcharts4/charts.js: {}
+    /modules/custom/minfin_visuals/libraries/amcharts4/themes/animated.js: {}
+    /modules/custom/minfin_visuals/libraries/amcharts4/themes/material.js: {}
+    /modules/custom/minfin_visuals/libraries/amcharts4/lang/nl_NL.js: {}
+  dependencies:
+    - core/jquery
+
+papaparse:
+  version: 5.0.2
+  js:
+    /modules/custom/minfin_visuals/libraries/papaparse.min.js: {}
+
+visuals_download:
+  version: 1.1.1
+  js:
+    /modules/custom/minfin_visuals/js/visual_download.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+
+visuals:
+  version: 1.1.2
+  js:
+    /modules/custom/minfin_visuals/js/visuals.js: {}
+  css:
+    component:
+      /modules/custom/minfin_visuals/css/visual.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - minfin_visuals/papaparse
+    - minfin_visuals/amchart
+    - minfin_visuals/visuals_download

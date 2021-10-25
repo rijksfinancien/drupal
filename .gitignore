@@ -1,0 +1,89 @@
+# Ignore every file and directory, so we can specify precisely which files and directories need to be included.
+*
+
+# Descend into directories.
+!*/
+
+# Include gitignore file.
+!/.gitignore
+
+# Include project readme file.
+!/README.md
+
+# Include GitLab CI file.
+!/.gitlab-ci.yml
+
+# Include PHPCS file.
+!/phpcs.xml
+
+# Include Drupal config directories.
+!/config/**
+/config/*/.htaccess
+
+# Include composer files.
+!/composer.json
+
+# Ignore Composer owned directories to avoid git submodules.
+/vendor
+/libraries
+/drupal/core
+/drupal/modules/contrib
+/drupal/themes/contrib
+/drush/Commands/contrib
+
+# Include custom Drupal modules, patches, themes and translations.
+!/drupal/modules/custom/**
+!/drupal/themes/custom/**
+!/patches/*
+!/translations/*
+
+# Ignore theme files.
+/drupal/themes/custom/**/css
+
+# Include SOLR configuration.
+!/solr/**
+
+# Include SAML configuration and metadata.
+!/saml/**
+/saml/environment.*.php
+
+# Make sure to always ignore the following files and directories.
+*.orig
+bower_components
+node_modules
+yarn.lock
+.DS_Store
+*.swp
+*.swo
+
+# Include the Indicia related modules for external use.
+!/drupal/modules/indicia/indicia_suite
+!/drupal/profiles/indicia/**
+
+# Config ignore.
+config/sync/minfin_corona_visuals.last_update.yml
+config/sync/minfin.chapter_sorting.yml
+config/sync/minfin.kamerstuk.text.yml
+config/sync/minfin_ckan.request.settings.yml
+config/sync/minfin_general.banner.settings.yml
+config/sync/minfin_general.open_data.settings.yml
+config/sync/minfin_search.settings.yml
+config/sync/minfin_general.chapter_page.settings.yml
+config/sync/minfin_solr.solr.settings.yml
+config/sync/minfin_piwik.settings.yml
+
+# Add maintenance page.
+!drupal/maintenance.html
+
+# Old visual brondata.
+!/drupal/bestanden/**
+!/drupal/bmh/**
+
+# Specific settings we don't want on github.
+/config/development/*
+/config/test/*
+/config/acceptance/*
+/config/production/*
+/config/sync/config_split.config_split.*
+phpcs.xml
+.gitlab-ci.yml

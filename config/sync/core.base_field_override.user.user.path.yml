@@ -1,0 +1,19 @@
+uuid: 211e3998-b054-48d1-859a-e1a748eb7430
+langcode: nl
+status: true
+dependencies:
+  module:
+    - path
+    - user
+id: user.user.path
+field_name: path
+entity_type: user
+bundle: user
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

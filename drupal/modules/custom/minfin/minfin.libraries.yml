@@ -1,0 +1,19 @@
+toolbar:
+  version: 1.0.0
+  css:
+    theme:
+      css/toolbar.icons.theme.css: {}
+  dependencies:
+    - 'toolbar/toolbar'
+
+chapter_names_form:
+  version: 1.0.0
+  css:
+    theme:
+      css/chapterNamesForm.css: {}
+
+documentation:
+  version: 1.0.0
+  css:
+    theme:
+      css/documentation.css: {}

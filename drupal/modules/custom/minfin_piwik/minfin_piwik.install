@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Install file for minfin piwik.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function minfin_piwik_schema() {
+  $schema = [];
+
+  $schema['minfin_piwik_datalayer'] = [
+    'fields' => [
+      'route' => [
+        'type' => 'varchar',
+        'length' => 200,
+        'not null' => TRUE,
+      ],
+      'handler' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'default' => 'default',
+        'not null' => TRUE,
+      ],
+      'page_type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'route',
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Add the piwik dataLayer table.
+ */
+function minfin_piwik_update_8001() {
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  if ($schema->tableExists('minfin_piwik_datalayer')) {
+    $schema->dropTable('minfin_piwik_datalayer');
+  }
+
+  $schema->createTable('minfin_piwik_datalayer', [
+    'fields' => [
+      'route' => [
+        'type' => 'varchar',
+        'length' => 200,
+        'not null' => TRUE,
+      ],
+      'handler' => [
+        'type' => 'varchar',
+        'length' => 16,
+        'default' => 'default',
+        'not null' => TRUE,
+      ],
+      'page_type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'route',
+    ],
+  ]);
+
+  // @todo remove me once deployed to production.
+  $database->insert('minfin_piwik_datalayer')
+    ->fields(['route', 'handler', 'page_type'])
+    ->values(['ckan.home', 'default', 'home'])
+    ->values(['minfin_search.search', 'search', 'search'])
+    ->values(['minfin_search.search.*', 'search', 'search'])
+    ->values(['entity.node.canonical', 'default', 'content'])
+    ->execute();
+}

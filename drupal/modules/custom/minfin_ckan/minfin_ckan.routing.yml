@@ -1,0 +1,23 @@
+minfin_ckan.open_data:
+  path: '/open-data'
+  defaults:
+    _controller: '\Drupal\minfin_ckan\Controller\OpenDataController::content'
+    _title: 'Open data'
+  requirements:
+    _permission: 'access content'
+
+minfin_ckan.open_data.dataset:
+  path: '/open-data/{title}'
+  defaults:
+    _controller: '\Drupal\minfin_ckan\Controller\DatasetController::content'
+    _title_callback: '\Drupal\minfin_ckan\Controller\DatasetController::title'
+  requirements:
+    _permission: 'access content'
+
+minfin_ckan.request_settings:
+  path: '/admin/minfin/services/ckan-request-settings'
+  defaults:
+    _form: '\Drupal\minfin_ckan\Form\CkanRequestSettingsForm'
+    _title: 'CKAN request settings'
+  requirements:
+    _permission: 'administer minfin_ckan settings'

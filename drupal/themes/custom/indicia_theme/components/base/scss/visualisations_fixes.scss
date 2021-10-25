@@ -1,0 +1,25 @@
+.block-rijksfinancien-visualisaties {
+  .row {
+    margin-bottom: 0;
+  }
+
+  a::after {
+    display: none;
+  }
+
+  .btn {
+    border-radius: 3px;
+    background: $c-primary-400;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+
+    .active {
+      background: $c-primary-600;
+    }
+
+    &:hover, &:focus, &:active {
+      background: $c-primary-600;
+    }
+  }
+}

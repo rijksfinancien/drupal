@@ -1,0 +1,75 @@
+{
+  "api_endpoint": "/json/old/financiele_instrumenten",
+  "years": [2020],
+  "colors": {
+    "Onderwijs, Cultuur en Wetenschap": {
+      "color":"#76d2b6"
+    },
+    "Sociale Zaken en Werkgelegenheid": {
+      "color":"#ca005d"
+    },
+    "Gemeentefonds": {
+      "color":"#d52b1e"
+    },
+    "Volksgezondheid, Welzijn en Sport": {
+      "color":"#e17000"
+    },
+    "Veiligheid en Justitie": {
+      "color":"#8fcae7"
+    },
+    "Buitenlandse Zaken": {
+      "color":"#39870c"
+    },
+    "Defensie": {
+      "color":"#42145f"
+    },
+    "Infrastructuur en Milieu": {
+      "color":"#f9e11e"
+    },
+    "IX": {
+      "color":"#007bc7"
+    },
+    "Infrastructuurfonds": {
+      "color":"#f9e11e"
+    },
+    "Economische Zaken": {
+      "color":"#f092cd"
+    },
+    "Wonen en Rijksdienst": {
+      "color":"#275937"
+    },
+    "Buitenlandse Handel & Ontwikkelingssamenwerking": {
+      "color":"#01689b"
+    },
+    "Deltafonds": {
+      "color":"#f9e11e"
+    },
+    "Provinciefonds": {
+      "color":"#d52b1e"
+    },
+    "Binnenlandse Zaken en Koninkrijksrelaties": {
+      "color":"#d52b1e"
+    },
+    "Koninkrijksrelaties": {
+      "color":"#d52b1e"
+    },
+    "De Staten Generaal": {
+      "color":"#d52b1e"
+    },
+    "Overige Hoge Colleges van Staat": {
+      "color":"#d52b1e"
+    },
+    "Algemene Zaken": {
+      "color":"#ffb612"
+    },
+    "BES-fonds": {
+      "color":"#d52b1e"
+    },
+    "Diergezondheidsfonds": {
+      "color":"#d52b1e"
+    },
+    "De Koning": {
+      "color":"#ffb612"
+    }
+  }
+}

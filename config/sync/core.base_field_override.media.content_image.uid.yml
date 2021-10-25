@@ -1,0 +1,20 @@
+uuid: 70bc0588-b236-4178-813c-8e8935e9e844
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.content_image
+id: media.content_image.uid
+field_name: uid
+entity_type: media
+bundle: content_image
+label: 'Geschreven door'
+description: 'Gebruikers-ID van de auteur.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

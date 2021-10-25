@@ -1,0 +1,12 @@
+abs_urls: false
+admin_theme: false
+roles_profiles:
+  editor:
+    public: admin
+  administrator:
+    public: admin
+  extrainfo_uploader:
+    public: extrainfo
+_core:
+  default_config_hash: 4FhrEwOM9yJ8neEoN77sxroTRBUXqRwap0KSJtFnYJs
+langcode: nl

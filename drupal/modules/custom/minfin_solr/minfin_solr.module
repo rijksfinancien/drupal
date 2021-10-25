@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming for minfin solr.
+ */
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function minfin_solr_config_ignore_settings_alter(array &$settings) {
+  $settings[] = 'minfin_solr.solr.settings';
+}

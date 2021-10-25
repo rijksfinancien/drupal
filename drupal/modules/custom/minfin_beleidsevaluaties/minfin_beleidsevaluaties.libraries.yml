@@ -1,0 +1,6 @@
+beleidsevaluatie_visual_block:
+  css:
+    theme:
+      css/beleids_visual.css: {}
+  js:
+    js/beleids_visual.js: {}

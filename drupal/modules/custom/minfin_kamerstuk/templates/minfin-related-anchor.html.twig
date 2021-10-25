@@ -1,0 +1,71 @@
+<div class="limit-width">
+  <div class="minfin-related">
+    <div class="header"><span class="toggle-icon">-</span><span class="text">{{ 'Related information'|t }}</span></div>
+    <div class="slider">
+      <div class="content">
+        <div class="left">
+          <div class="action action-reader-mode"><span class="icon-reader"></span> {{ 'Reader mode'|t }}</div>
+          <div class="action action-open-table" data-table-id="{{ budget_table_id }}"><span class="icon-fullscreen"></span> {{ 'Budget table'|t }}</div>
+
+          {% if policy_review_links %}
+            <div class="policy-review">
+              <strong>{{ 'Policy review'|t }}</strong>
+              <ul>
+                {% for article in policy_review_links %}
+                  <li>{{ article }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if cbs_links %}
+            <div class="cbs_links">
+              <strong>{{ 'Performance information'|t }}</strong>
+              <ul>
+                {% for article in cbs_links %}
+                  <li>{{ article }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {# We only show performance information links if we don't have cbs links. #}
+          {% elseif performance_information_links %}
+            <div class="performance-information">
+              <strong>{{ 'Performance information'|t }}</strong>
+              <ul>
+                {% for article in performance_information_links %}
+                  <li>{{ article }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+        <div class="right">
+          {% if information %}
+            <div class="information">
+              <strong>{{ 'More information'|t }}</strong>
+              <ul>
+                {% for article in information %}
+                  <li>{{ article }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if beleidsevaluatie_link %}
+            <strong>{{ 'Beleidsevaluaties'|t }}</strong>
+            <ul>
+              <li>{{ beleidsevaluatie_link }}</li>
+            </ul>
+          {% endif %}
+
+          {% if visual %}
+            <div class="visual">
+              <strong>{{ 'Related visual'|t }}</strong>
+              {{ visual }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

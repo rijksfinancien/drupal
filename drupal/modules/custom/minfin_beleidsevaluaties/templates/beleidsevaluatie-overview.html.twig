@@ -1,0 +1,29 @@
+<div{{ attributes.addClass('beleidsevaluatie-overview') }}>
+  <div class="limit-width">
+    <p class="intro-text">{{ 'Annually ministrations perform hundreds of investigations to evaluate their policies. You can consult the most important studies through the table below. This concerns, among other things, so-called interdepartmental policy surveys and policy terminals.'|t }}</p>
+    <div class="minfin-related">
+      <div class="header"><span class="toggle-icon">-</span><span class="text">{{ 'Related information'|t }}</span></div>
+      <div class="slider">
+        <div class="content">
+          <ul>
+            <li><a href="/beleidsevaluatie/evaluatiestelsel">{{ 'Evaluation system'|t }}</a></li>
+            <li><a href="{{ path('minfin_beleidsevaluaties.beleidsonderzoeken', {'type': 'Beleidsdoorlichting'}) }}">{{ 'Policy lighting'|t }}</a></li>
+            <li><a href="{{ path('minfin_beleidsevaluaties.beleidsonderzoeken', {'type': 'IBO'}) }}">{{ 'Interdepartmental Policy Reviews (IBOs)'|t }}</a></li>
+            <li><a href="https://www.toolboxbeleidsevaluaties.nl/" target="_blank">{{ 'Toolbox Policy evaluations'|t }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h2>{{ 'Instruments policy evaluation'|t }}:</h2>
+  </div>
+  <div class="full-width-container">
+    <div class="filters-wrapper">
+      <h3>{{ 'Filter onderzoeken'|t }}:</h3>
+      {{ filters }}
+    </div>
+    <div class="table-wrapper">
+      {{ table }}
+    </div>
+    {{ pager }}
+  </div>
+</div>

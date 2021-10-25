@@ -1,0 +1,92 @@
+uuid: 6cf66b9a-21df-4e29-8707-ff13e1f72127
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.item
+    - paragraphs.paragraphs_type.beleidsevaluatie_visual
+    - paragraphs.paragraphs_type.blue_link_block
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.column_title
+    - paragraphs.paragraphs_type.coronavisual_teaser
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.intro_text
+    - paragraphs.paragraphs_type.linkblock
+    - paragraphs.paragraphs_type.linklist
+    - paragraphs.paragraphs_type.related_information
+    - paragraphs.paragraphs_type.teaser_block
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.visual_block
+  module:
+    - entity_reference_revisions
+id: paragraph.column.item
+field_name: item
+entity_type: paragraph
+bundle: column
+label: Item
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+      linklist: linklist
+      text: text
+      blue_link_block: blue_link_block
+      column_title: column_title
+      linkblock: linkblock
+      beleidsevaluatie_visual: beleidsevaluatie_visual
+      intro_text: intro_text
+      teaser_block: teaser_block
+      coronavisual_teaser: coronavisual_teaser
+      related_information: related_information
+      visual_block: visual_block
+    target_bundles_drag_drop:
+      beleidsevaluatie_visual:
+        enabled: true
+        weight: 13
+      blue_link_block:
+        enabled: true
+        weight: 9
+      column:
+        weight: 5
+        enabled: false
+      column_title:
+        enabled: true
+        weight: 9
+      coronavisual_teaser:
+        enabled: true
+        weight: 18
+      image:
+        enabled: true
+        weight: 6
+      intro_text:
+        enabled: true
+        weight: 15
+      linkblock:
+        enabled: true
+        weight: 9
+      linklist:
+        enabled: true
+        weight: 6
+      related_information:
+        enabled: true
+        weight: 19
+      row:
+        weight: 7
+        enabled: false
+      teaser_block:
+        enabled: true
+        weight: 17
+      text:
+        enabled: true
+        weight: 8
+      visual_block:
+        enabled: true
+        weight: 28
+field_type: entity_reference_revisions

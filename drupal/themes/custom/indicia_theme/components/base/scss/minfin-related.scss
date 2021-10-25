@@ -1,0 +1,115 @@
+@import './components/_globals/_mixins';
+
+.minfin-related {
+  margin: 15px 0;
+
+  .header {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid $c-primary-400;
+
+    .text {
+      font-size: 18px;
+      font-weight: bold;
+      transition: .5s;
+      color: $c-primary-400;
+    }
+
+    &:hover, &:focus, &:active {
+      .text {
+        color: $c-primary-600;
+      }
+
+      .toggle-icon {
+        background: $c-primary-600;
+      }
+    }
+  }
+
+  .slider {
+    display: none;
+
+    @include breakpoint($laptop) {
+      display: block;
+    }
+  }
+
+  .content {
+    font-size: 18px;
+    padding: 15px 20px;
+    border: 1px solid $c-gray-400;
+    border-top: 0;
+
+    @include breakpoint($tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left, .right {
+      @include breakpoint($tablet) {
+        width: 50%;
+      }
+    }
+
+    ul {
+      margin: 0 0 12px 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        font-size: 18px;
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 2px;
+
+        &::before {
+          font-family: 'minfin-icons' !important;
+          font-size: 12px;
+          margin-right: 10px;
+          content: "\e938";
+          vertical-align: 1px;
+          color: $c-primary-400;
+        }
+      }
+    }
+
+    a {
+      font-size: 18px;
+      display: flex;
+      text-decoration: none;
+
+      &:hover, &:active, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .action {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: .5s;
+    color: $c-primary-400;
+
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: 12px;
+      margin-right: 5px;
+      padding: 8px;
+      border-radius: 50%;
+      background: $c-primary-200;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $c-primary-600;
+    }
+  }
+
+  .pdf_downloads a {
+    &::after {
+      @extend .icon;
+      display: block !important;
+      content: '\e911';
+      font-size: 16px;
+      margin-left: 6px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+name: Indicia profile
+description: Indicia Drupal installation profile.
+type: profile
+core_version_requirement: ^8 || ^9
+version: 2.13.0
+
+dependencies:
+  - drupal:system (>= 8.8.0)
+
+distribution:
+  name: Indicia

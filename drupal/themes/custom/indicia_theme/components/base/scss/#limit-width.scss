@@ -1,0 +1,147 @@
+// @todo Rework this.
+.path-chapter,
+.path-minfin_budgettaire_tabellen,
+.path-node-page,
+.path-dataset,
+.path-limit-width,
+.path-all,
+.path-table_of_contents,
+.path-memorie_van_toelichting.path-overview,
+.path-voorstel_van_wet.path-overview,
+.path-jaarverslag.path-overview {
+  .region-content,
+  .region-content-below {
+    .container {
+      max-width: $mobile-container-width;
+      margin: 0 auto;
+
+      @include breakpoint($tablet) {
+        max-width: $tablet-container-width;
+      }
+
+      @include breakpoint($laptop) {
+        max-width: $laptop-container-width;
+      }
+
+      @include breakpoint($desktop) {
+        max-width: $desktop-container-width;
+      }
+    }
+  }
+}
+
+body:not(.path-frontpage):not(.path-year) .header-budget-block .container {
+  max-width: $mobile-container-width;
+  margin: 0 auto;
+
+  @include breakpoint($tablet) {
+    max-width: $tablet-container-width;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: $laptop-container-width;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: $desktop-container-width;
+  }
+}
+
+body:not(.page-node-type-page):not(.page-node-type-visualisation):not(.route-minfin-beleidsevaluatiesbeleidsonderzoek):not(.route-minfin-beleidsevaluatiesbeleidsonderzoeken) .breadcrumb,
+body.page-node-type-page.path-limit-width .breadcrumb,
+.limit-width,
+.reader-actions,
+.block-minfin-api,
+#reader-page,
+.route-minfinfinancieel-jaarverslagappendix .block-page-title-block .container,
+.route-minfinisb-memorie-van-toelichtingoverview .block-page-title-block .container,
+.route-minfin-beleidsevaluatiesbeleidsonderzoek .page-title-wrapper,
+.route-minfin-beleidsevaluatiesbeleidsonderzoeken .page-title-wrapper,
+.route-minfinmiljoenennotaappendix .block-page-title-block .container,
+.route-minfinisb-memorie-van-toelichtinganchor .block-page-title-block .container {
+  max-width: $mobile-container-width;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include breakpoint($tablet) {
+    max-width: $tablet-container-width;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: $laptop-container-width;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: $desktop-container-width;
+  }
+}
+
+
+h2.limit-width {
+  max-width: $mobile-container-width;
+  margin-right: auto;
+  margin-left: auto;
+  //padding: 0;
+
+  @include breakpoint($tablet) {
+    max-width: $tablet-container-width;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: $laptop-container-width;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: $desktop-container-width;
+  }
+}
+
+.path-visuals .breadcrumb,
+.path-minfin_search .breadcrumb {
+  max-width: 350px + $gutter;
+
+  @include breakpoint($tablet) {
+    max-width: 720px + $gutter;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: 1005px + $gutter;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: 1148px + $gutter;
+  }
+}
+
+body.path-archief {
+  .region-content,
+  .region-content-below,
+  .header-budget-block {
+    .container {
+      max-width: $mobile-container-width;
+      margin: 0 auto;
+
+      @include breakpoint($tablet) {
+        max-width: $tablet-container-width;
+      }
+
+      @include breakpoint($laptop) {
+        max-width: $laptop-container-width + 250 !important;
+      }
+
+      @include breakpoint($desktop) {
+        max-width: $desktop-container-width + 150 !important;
+      }
+    }
+  }
+
+  .breadcrumb {
+    @include breakpoint($laptop) {
+      max-width: $laptop-container-width + 250 !important;
+    }
+
+    @include breakpoint($desktop) {
+      max-width: $desktop-container-width + 150 !important;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.ui-widget.ui-widget-content {
+  border: 1px solid $c-primary-400;
+  border-radius: 0;
+  background-color: $c-primary-200;
+
+  .ui-state-active {
+    margin: 0;
+  }
+
+  li {
+    font-size: 16px;
+    padding: 6px 10px;
+    color: $c-black;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    &:hover {
+      color: $c-black;
+      border-top-color: $c-primary-400;
+      border-bottom-color: $c-primary-400;
+      background: $c-primary-300;
+    }
+
+    .ui-state-active {
+      color: inherit;
+      border: 0;
+      background: none;
+    }
+  }
+
+  a {
+    padding: 0;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,29 @@
+uuid: 6117c947-ed53-4520-98da-b18391d1e734
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_information.link_lists
+    - paragraphs.paragraphs_type.related_information
+  module:
+    - paragraphs
+id: paragraph.related_information.default
+targetEntityType: paragraph
+bundle: related_information
+mode: default
+content:
+  link_lists:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: linklist
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

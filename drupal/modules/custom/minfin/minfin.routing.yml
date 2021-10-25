@@ -1,0 +1,268 @@
+minfin.settings:
+  path: '/admin/minfin'
+  defaults:
+    _title: 'Minfin'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'view minfin settings'
+
+minfin.services:
+  path: '/admin/minfin/services'
+  defaults:
+    _title: 'Minfin services'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer minfin services+minfin delete kamerstuk'
+
+minfin.chapter.settings:
+  path: '/admin/minfin/chapter'
+  defaults:
+    _title: 'Chapter settings'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer minfin settings'
+
+minfin.chapter.sorting_form:
+  path: '/admin/minfin/chapter/sorting'
+  defaults:
+    _form: '\Drupal\minfin\Form\ChapterSortingForm'
+    _title: 'Chapter sorting'
+  requirements:
+    _permission: 'administer minfin settings'
+  options:
+    _admin_route: TRUE
+
+minfin.kamerstuk.text_form:
+  path: '/admin/minfin/kamerstuk_text'
+  defaults:
+    _form: '\Drupal\minfin\Form\KamerstukkenTextForm'
+    _title: 'Kamerstuk teksten'
+  requirements:
+    _permission: 'administer minfin settings'
+  options:
+    _admin_route: TRUE
+
+minfin.kamerstuk_isb_title:
+  path: '/admin/minfin/kamerstuk_isb_title'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\KamerstukIsbTitleController::buildPage'
+    _title: 'Kamerstuk ISB titles'
+  requirements:
+    _permission: 'administer minfin importer'
+  options:
+    _admin_route: TRUE
+
+minfin.kamerstuk_isb_title.create:
+  path: '/admin/minfin/kamerstuk_isb_title/create'
+  defaults:
+    _form: '\Drupal\minfin\Form\KamerstukIsbTitleForm'
+    _title: 'Kamerstuk ISB title'
+  requirements:
+    _permission: 'administer minfin importer'
+  options:
+    _admin_route: TRUE
+
+minfin.kamerstuk_isb_title.delete:
+  path: '/admin/minfin/kamerstuk_isb_title/delete/{jaar}/{fase}/{hoofdstukMinfinId}'
+  defaults:
+    _form: '\Drupal\minfin\Form\KamerstukIsbTitleDeleteForm'
+    _title: 'Delete Kamerstuk ISB title'
+  requirements:
+    _permission: 'administer minfin importer'
+  options:
+    _admin_route: TRUE
+
+minfin.chapter.names_form:
+  path: '/admin/minfin/chapter/names'
+  defaults:
+    _form: '\Drupal\minfin\Form\ChapterNamesForm'
+    _title: 'Chapter names'
+  requirements:
+    _permission: 'administer minfin settings'
+
+# Importer routes.
+
+minfin.import:
+  path: '/admin/minfin/import'
+  defaults:
+    _title: 'Minfin imports'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.documentation:
+  path: '/admin/minfin/import/documentation/{type}'
+  defaults:
+    _title: 'Documentation'
+    _controller: '\Drupal\minfin\Controller\ImportDocumentation::buildPage'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer:
+  path: '/admin/minfin/import/importer'
+  defaults:
+    _title: 'Import functions'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.kamerstuk:
+  path: '/admin/minfin/import/importer/kamerstuk'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportKamerstukForm'
+    _title: 'Kamerstuk importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.kamerstuk_pdf:
+  path: '/admin/minfin/import/importer/kamerstuk_pdf'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportKamerstukPdfForm'
+    _title: 'Kamerstuk (pdf) importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.kamerstuk_uitzonderingen:
+  path: '/admin/minfin/import/importer/kamerstuk_uitzonderingen'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportKamerstukUitzonderingenForm'
+    _title: 'Uitzonderingen importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.corona_visual:
+  path: '/admin/minfin/import/importer/corona-visual'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportCoronaVisualForm'
+    _title: 'Corona visual importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.budgettaire_tabellen:
+  path: '/admin/minfin/import/importer/budgettaire-tabellen'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportBudgettaireTabellenForm'
+    _title: 'Budgettaire tabellen importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.budgettaire_tabellen_history:
+  path: '/admin/minfin/import/importer/budgettaire-tabellen-history'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportBudgettaireTabellenHistoryForm'
+    _title: 'Budgettaire tabellen (before-became table) importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.begrotingsstaten:
+  path: '/admin/minfin/import/importer/begrotingsstaten'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportBegrotingsstatenForm'
+    _title: 'Begrotingsstaten importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.beleidsevaluaties:
+  path: '/admin/minfin/import/importer/beleidsevaluaties'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportBeleidsevaluatiesForm'
+    _title: 'Beleidsevaluaties importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.financiele_instrumenten:
+  path: '/admin/minfin/import/importer/financiele_instrumenten'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportFinancieleInstrumentenForm'
+    _title: 'Financiele instrumenten importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.fiscale_regelingen:
+  path: '/admin/minfin/import/importer/fiscale-regelingen'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportFiscaleRegelingenForm'
+    _title: 'Fiscale regelingen importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.subsidies:
+  path: '/admin/minfin/import/importer/subsidies'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportSubsidiesForm'
+    _title: 'Subsidies importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.verzelfstandigingen:
+  path: '/admin/minfin/import/importer/verzelfstandigingen'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportVerzelfstandigingenForm'
+    _title: 'Verzelfstandigingen importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.importer.artikel_links:
+  path: '/admin/minfin/import/importer/artikel_links'
+  defaults:
+    _form: '\Drupal\minfin\Form\Import\ImportArtikelLinksForm'
+    _title: 'Artikel links importer'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.import_log:
+  path: '/admin/minfin/import/logs'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\ImportLogController::buildPage'
+    _title: 'Import log'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.import_log.messages:
+  path: '/admin/minfin/import/logs/{logId}/messages'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\ImportLogMessageController::buildPage'
+    _title: 'Import log messages'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.import_log.delete:
+  path: '/admin/minfin/import/logs/{logId}/delete'
+  defaults:
+    _form: '\Drupal\minfin\Form\ImportLogDeleteForm'
+    _title: 'Delete log entry'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.uitzonderingen:
+  path: '/admin/minfin/import/uitzonderingen'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\ImportUitzonderingenController::buildPage'
+    _title: 'Kamerstuk exceptions'
+  requirements:
+    _permission: 'administer minfin importer'
+
+minfin.mf_dossier.collection:
+  path: '/admin/dossiers'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\DossierController::buildPage'
+    _title: 'Dossiers'
+  requirements:
+    _permission: 'view mf_dossier entity'
+
+minfin.mf_dossier.edit:
+  path: '/admin/dossiers/{dossierId}/edit'
+  defaults:
+    _form: '\Drupal\minfin\Form\DossierEditForm'
+    _title: 'Edit dossier'
+  requirements:
+    _permission: 'edit mf_dossier entity'
+
+# This is a tmp link.
+minfin.sync.financiele_instrumenten:
+  path: '/admin/minfin/sync_financiele_instrumenten'
+  defaults:
+    _controller: '\Drupal\minfin\Controller\SyncFinancieleInstrumenten::buildPage'
+    _title: 'Sync Financiele Instrumenten'
+  requirements:
+    _role: 'administrator'

@@ -1,0 +1,30 @@
+<div class="reader-actions">
+  <div class="font-size">
+    <span class="action-font-bigger icon-font-plus icon-background"></span>
+    <span class="action-font-smaller icon-font-min icon-background"></span>
+  </div>
+  <div class="page-colors">
+    <span class="action-page-color-normal icon-font icon-background"></span>
+    <span class="action-page-color-sepia icon-font icon-background"></span>
+    <span class="action-page-color-dark  icon-font icon-background"></span>
+  </div>
+  <div class="action-close-reader icon-cross icon-background"></div>
+</div>
+<div id="reader-page" class="container" itemscope itemtype="http://schema.org/Report" itemid="{{ url('<current>') }}">
+  <div class="page-actions">
+    <span class="action action-reader-mode icon-reader" title="{{ 'Enable reader mode'|t }}"></span>
+    <a class="action"
+       href="mailto:mail@example.com?subject={{ 'Shared page:'|t }} {{ page_title }}&body={{ 'I found this article interesting for you:'|t }} {{ url('<current>') }}"
+       title="{{ 'Email this page'|t }}">
+      <span class="icon-mail"></span></a>
+    <button class="action icon-print" onclick="window.print()" tabindex="0"><span class="visually-hidden">{{ 'Print this page'|t }}</span></button>
+  </div>
+  <div class="metadata" itemprop="name">{{ title }}</div>
+  <div class="metadata" itemprop="keywords">{{ keywords }}</div>
+  <div class="metadata" itemprop="description">{{ html | striptags | slice(0,300) }}</div>
+  <span class="metadata" itemscope="" itemtype="http://schema.org/GovernmentOrganization" itemprop="author"><span
+      itemprop="name">Ministerie van Financiën</span></span>
+  <div class="reader-content" itemprop="articleBody">
+    {{ html | raw }}
+  </div>
+</div>

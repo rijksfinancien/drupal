@@ -1,0 +1,7 @@
+services:
+  minfin_general.breadcrumb:
+    class: Drupal\minfin_general\BreadcrumbBuilder
+    arguments:
+      - '@string_translation'
+    tags:
+      - { name: breadcrumb_builder, priority: 9999 }

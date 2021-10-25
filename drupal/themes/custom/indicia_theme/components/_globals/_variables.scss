@@ -1,0 +1,75 @@
+@import "breakpoints";
+
+$c-primary-100: #F2F7FA;
+$c-primary-200: #E5F0F9;
+$c-primary-250: #B2D7EE;
+$c-primary-300: #CCE0F1;
+$c-primary-350: #007fcd;
+$c-primary-375: #007BC7;
+$c-primary-400: #01689B;
+$c-primary-600: #154273;
+
+$c-secondary-400: #E17000;
+$c-secondary-100: lighten($c-secondary-400, 47%); //TODO: set color
+$c-secondary-200: lighten($c-secondary-400, 41%); //TODO: set color
+$c-secondary-300: lighten($c-secondary-400, 20%); //TODO: set color
+$c-secondary-450: darken($c-secondary-400, 8%); //TODO: set color
+$c-secondary-500: darken($c-secondary-400, 10%); //TODO: set color
+$c-secondary-600: darken($c-secondary-400, 15%); //TODO: set color
+
+$c-gray-200: #F3F3F3;
+$c-gray-300: #e6e6e6;
+$c-gray-400: #CCCCCC; //TODO: set color
+$c-gray-450: #9EA1A3; //TODO: set color
+$c-gray-700: #999999; //TODO: set color
+$c-gray-750: #6B6B6B; //TODO: set color
+$c-gray-800: #535353; //TODO: set color
+$c-gray-900: #231F20;
+
+$c-black: #000000;
+$c-white: #FFFFFF;
+
+$c-red-400: #D52B1E;
+$c-red-200: #F2BFBB;
+$c-red-100: lighten(#f2bfbb, 14%);
+
+$c-green-400: #39870C;
+$c-green-100: lighten(#C3DBB6, 10%);
+
+$c-brown-200: #F6F2EA;
+
+$c-status: $c-green-400;
+$c-status-background: $c-green-100;
+
+$c-warning: $c-secondary-400;
+$c-warning-background: $c-secondary-100;
+
+$c-error: $c-red-400;
+$c-error-background: $c-red-100;
+
+$ff-primary: 'rijksoverheid', Verdana, Arial, sans-serif;
+$ff-secondary: 'rijksoverheid-serif', Verdana, Arial, sans-serif;
+
+$border-radius: 3px;
+$fs-base: 16px;
+
+$gutter: 30px;
+$half-gutter: $gutter/2;
+
+$header-margin: 60px;
+
+// Layout
+$mobile-container-width: 350px + $gutter;
+$tablet-container-width: 720px + $gutter;
+$laptop-container-width: 655px + $gutter;
+$desktop-container-width: 755px + $gutter;
+
+// Archive year slider
+$year-slider-rows: 2;
+$year-slider-row-item-actions: 2;
+$year-slider-row-item-slides: 5;
+$year-slider-row-items: $year-slider-row-item-actions + $year-slider-row-item-slides;
+$year-slider-row-item-width: 45px;
+$year-slider-row-item-height: 45px;
+$year-slider-row-item-gutter: 6px;
+

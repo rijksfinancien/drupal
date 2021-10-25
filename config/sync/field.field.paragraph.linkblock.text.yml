@@ -1,0 +1,21 @@
+uuid: ec68ee9a-a624-4744-8f10-30e94c061a02
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.text
+    - paragraphs.paragraphs_type.linkblock
+  module:
+    - text
+id: paragraph.linkblock.text
+field_name: text
+entity_type: paragraph
+bundle: linkblock
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

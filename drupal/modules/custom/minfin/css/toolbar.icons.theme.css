@@ -1,0 +1,12 @@
+/**
+ * Main menu icons.
+ */
+.toolbar-icon-minfin-settings:before {
+  background-image: url('../images/pencil.svg');
+}
+
+.toolbar-icon-minfin-settings:hover:before,
+.toolbar-icon-minfin-settings:active:before,
+.toolbar-icon-minfin-settings.is-active:before {
+  background-image: url('../images/pencil_active.svg');
+}

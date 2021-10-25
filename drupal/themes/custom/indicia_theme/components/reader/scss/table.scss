@@ -1,0 +1,123 @@
+.table-header {
+  margin-bottom: 10px;
+  user-select: none;
+  text-align: right;
+
+  & > span {
+    margin-left: 5px;
+  }
+
+  .action-popup {
+    cursor: pointer;
+  }
+
+  .action-widen {
+    display: none;
+    cursor: pointer;
+    @include breakpoint($tablet) {
+      display: inline-block;
+    }
+  }
+}
+
+table {
+  font-size: 14px;
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-top: 1px solid $c-primary-400;
+
+  .table-title {
+    font-weight: bold;
+    padding: 5px 15px;
+    text-align: left;
+    background: $c-primary-200;
+  }
+
+  thead {
+    background: $c-gray-200;
+
+    th, td {
+      border-right: 2px solid white;
+      border-bottom: 1px solid $c-primary-400;
+    }
+  }
+
+  tr {
+    &:hover, &:focus, &:active {
+      background: $c-primary-200;
+    }
+
+    td, th {
+      line-height: 17px;
+      padding: 5px;
+      text-align: left;
+      border: 0;
+      border-right: 2px solid white;
+      border-bottom: 1px solid $c-primary-300;
+    }
+
+    &:first-child {
+      td, th {
+        border-top: 0;
+      }
+    }
+  }
+
+  tbody tr {
+    &:last-child {
+      td, th {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .halfvet {
+    font-weight: bold;
+  }
+
+
+  @include breakpoint($tablet) {
+    font-size: 16px;
+    tr {
+      td, th {
+        padding: 11px 10px;
+      }
+    }
+  }
+}
+
+.tabelnoten {
+  margin-bottom: 30px;
+
+  sup, p {
+    display: inline;
+  }
+
+  .nootnum {
+    position: static;
+  }
+}
+
+.nootnum {
+  position: relative;
+  top: -3px;
+  padding: 2px 5px;
+  text-decoration: none;
+  color: $c-secondary-400;
+}
+
+.minfin-note {
+  sup {
+    top: 0;
+
+    .nootnum {
+      font-size: 1.2rem;
+      top: 0;
+    }
+  }
+
+  p {
+    display: inline;
+  }
+}

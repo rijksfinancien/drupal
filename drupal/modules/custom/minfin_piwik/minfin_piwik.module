@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Module file for minfin piwik.
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function minfin_piwik_preprocess_html(&$variables) {
+  $config = \Drupal::configFactory()->get('minfin_piwik.settings');
+
+  $variables['piwik']['header'] = $config->get('header');
+  $variables['piwik']['body'] = $config->get('body');
+
+  if ($config->get('dataLayerEnabled') && ($values = \Drupal::service('minfin_piwik.datalayer')->getValues())) {
+    $variables['piwik']['dataLayer'] = json_encode($values);
+  }
+}

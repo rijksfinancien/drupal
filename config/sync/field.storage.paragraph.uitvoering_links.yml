@@ -1,0 +1,19 @@
+uuid: 497893d2-b4de-49a4-922e-bdede3e0c23d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.uitvoering_links
+field_name: uitvoering_links
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

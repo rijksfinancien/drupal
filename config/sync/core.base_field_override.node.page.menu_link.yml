@@ -1,0 +1,20 @@
+uuid: dc27b3d1-a7b5-4a4f-8fb9-33b5bbadb5df
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.menu_link
+field_name: menu_link
+entity_type: node
+bundle: page
+label: Menulink
+description: 'Berekende menulink van de node (alleen beschikbaar tijdens het opslaan).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

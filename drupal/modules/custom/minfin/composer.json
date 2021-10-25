@@ -1,0 +1,12 @@
+{
+  "name": "drupal/minfin",
+  "type": "drupal-module",
+  "description": "Minfin Drush 8 commands.",
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    }
+  }
+}

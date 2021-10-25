@@ -1,0 +1,21 @@
+uuid: 89f3d395-9470-406e-8f06-5fb75d374add
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_title.column_title
+    - paragraphs.paragraphs_type.column_title
+id: paragraph.column_title.default
+targetEntityType: paragraph
+bundle: column_title
+mode: default
+content:
+  column_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

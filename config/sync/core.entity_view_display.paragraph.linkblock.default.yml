@@ -1,0 +1,56 @@
+uuid: 68f7c3c4-0ff8-4c6a-89f9-76eca5ad14c9
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.linkblock.image
+    - field.field.paragraph.linkblock.text
+    - field.field.paragraph.linkblock.title
+    - field.field.paragraph.linkblock.url
+    - image.style.linklist_image
+    - paragraphs.paragraphs_type.linkblock
+  module:
+    - link
+    - media
+    - text
+id: paragraph.linkblock.default
+targetEntityType: paragraph
+bundle: linkblock
+mode: default
+content:
+  image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: linklist_image
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  title:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  url:
+    type: link
+    weight: 3
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden: {  }

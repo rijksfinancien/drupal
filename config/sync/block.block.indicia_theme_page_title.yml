@@ -1,0 +1,27 @@
+uuid: 35602c2e-a887-41f7-b97a-0859ab700baf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - indicia_theme
+_core:
+  default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
+id: indicia_theme_page_title
+theme: indicia_theme
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/open-data\r\n/search\r\n/search/*\r\n/memorie-van-toelichting/*/*/*/onderdeel/*\r\n/voorstel-van-wet/*/*/*\r\n/jaarverslag/*/*/onderdeel/*\r\n/voorstel-van-wet/*/*/*/onderdeel/*\r\n/miljoenennota/*/*\r\n!/miljoenennota/*/bijlage\r\n/financieel-jaarverslag/*/*\r\n!/financieel-jaarverslag/*/bijlage\r\n/voorjaarsnota/*/*\r\n!/voorjaarsnota/*/bijlage\r\n/najaarsnota/*/*\r\n!/najaarsnota/*/bijlage\r\n/belastingplan-memorie-van-toelichting/*/*\r\n!/belastingplan-memorie-van-toelichting/*/bijlage\r\n/belastingplan-voorstel-van-wet/*/*\r\n!/belastingplan-voorstel-van-wet/*/bijlage\r\n/belastingplan-staatsblad/*/*\r\n!/belastingplan-staatsblad/*/bijlage\r\n/incidentele-suppletoire-begrotingen-voorstel-van-wet/*/*/*\r\n/incidentele-suppletoire-begrotingen/*/*/*/*/*"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,16 @@
+{% for group, values in facets %}
+  <div class="facet active">
+    <h4 class="facet-heading">
+      {{ group }}
+      <button class="facet-toggle" type="button" aria-label="{{ 'Toggle'|t }} {{ group|lower|trim }}"></button>
+    </h4>
+    <div class="list-facet">
+      {% for facet in values %}
+        <div>
+          {{ facet.link }}
+          {% if facet.count %}<span>{{ facet.count }}</span>{% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="corona-visual-corona-tijdlijn-onder-block visual-block">
+    <div class="container visual-container">
+      <!-- layout -->
+      <div id="container-full" class="visual-column">
+        <div id="container">
+          <div id="chart_canvas_1"></div>
+        </div>
+
+        <div id="chart_canvas_1_navigation" class="chart_navigation">
+          <div id="navigation_select">
+            <div class="manual_selector">
+              <div class="choice"></div>
+              <div class="selector"></div>
+            </div>
+          </div>
+          <div id="navigation_links"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- legend header template -->
+  <script type="text/template" id="chart_legend_header_template">
+    {% verbatim %}
+    <div class="chart_legend_header">
+      <div class="legend_title">{{legend_title}}</div>
+      <div class="legend_total">{{legend_total}}</div>
+    </div>
+    {% endverbatim %}
+  </script>
+
+  <!-- legend template -->
+  <script type="text/template" id="chart_legend_template">
+    {% verbatim %}
+    <div id="{{title}}" class="chart_legend_item">
+      <div class="chart_legend_item_header">
+        <div class="chart_legend_item_color"></div>
+        <div class="chart_legend_item_amount">{{value}}</div>
+        <div class="chart_legend_item_title">{{title}}</div>
+      </div>
+      <div class="chart_legend_sub_data">
+        <div class="chart_legend_post_data">
+          <a class="minfin_link" minfin-link="{{link}}">Door naar {{title}}</a>
+          <!-- <a class="minfin_link export" href="javascript:print()">Download of print selectie</a> -->
+        </div>
+        <div class="chart_legend_data" id="{{title}}_data"></div>
+      </div>
+    </div>
+    {% endverbatim %}
+  </script>
+
+  <!-- sub data inside legend list -->
+  <script type="text/template" id="chart_legend_data_template">
+    {% verbatim %}
+    <div id="subtitle_{{title}}" class="chart_legend_data_item">
+      <div class="chart_legend_data_item_amount">{{amount}}</div>
+      <div class="chart_legend_data_item_title">{{title}}</div>
+    </div>
+    {% endverbatim %}
+  </script>
+
+  <!-- popup -->
+  <script type="text/template" id="chart_popup_template">
+    {% verbatim %}
+    <div id="chart_popup">
+      <div class="chart_popup">
+        <a class="close_popup"><div class="cross"></div></a>
+        <div class="arrow_popup"></div>
+        <div class="data_category">
+          <div class="data_value">{{value}}</div>
+          {{title}}
+        </div>
+      </div>
+      <div id="chart_popup_info">
+        <a class="minfin_link export" href="javascript:print()">Download of print selectie</a>
+        <div id="chart_popup_data" class="chart_legend_popup_data"></div>
+      </div>
+    </div>
+    {% endverbatim %}
+  </script>
+  <script type="text/template" id="chart_initializer" name="tijdlijn-vergelijk"></script>
+</div>

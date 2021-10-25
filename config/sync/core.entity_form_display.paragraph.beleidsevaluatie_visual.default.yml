@@ -1,0 +1,61 @@
+uuid: 9023137e-9965-4cc7-a429-60bfad9d506e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.beleidsevaluatie_visual.agenda_links
+    - field.field.paragraph.beleidsevaluatie_visual.bepaling_links
+    - field.field.paragraph.beleidsevaluatie_visual.terugkoppeling_links
+    - field.field.paragraph.beleidsevaluatie_visual.uitvoering_links
+    - field.field.paragraph.beleidsevaluatie_visual.voorbereiding_links
+    - paragraphs.paragraphs_type.beleidsevaluatie_visual
+  module:
+    - link
+id: paragraph.beleidsevaluatie_visual.default
+targetEntityType: paragraph
+bundle: beleidsevaluatie_visual
+mode: default
+content:
+  agenda_links:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  bepaling_links:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  terugkoppeling_links:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  uitvoering_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  voorbereiding_links:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

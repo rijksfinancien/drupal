@@ -1,0 +1,11 @@
+<div class="limit-width">
+  {{ prefix_text }}
+  <ul class="minfin-chapter-list">
+    {% for icon, link in items %}
+      <li>
+        <a href="{{ link.url }}"><span>{{ icon }}</span>{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {{ suffix_text }}
+</div>

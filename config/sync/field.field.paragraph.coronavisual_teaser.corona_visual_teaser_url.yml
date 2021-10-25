@@ -1,0 +1,23 @@
+uuid: 93a80ad4-1a41-485f-9c01-cee21af34bac
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.corona_visual_teaser_url
+    - paragraphs.paragraphs_type.coronavisual_teaser
+  module:
+    - link
+id: paragraph.coronavisual_teaser.corona_visual_teaser_url
+field_name: corona_visual_teaser_url
+entity_type: paragraph
+bundle: coronavisual_teaser
+label: Link
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

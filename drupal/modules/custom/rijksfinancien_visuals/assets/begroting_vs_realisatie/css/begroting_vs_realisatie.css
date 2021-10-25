@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Rijk;
+  src: url('RO-SansWebText-Regular.woff'), url('RO-SansWebText-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: Rijk-bold;
+  src: url('RO-SansWebText-Bold.woff'), url('RO-SansWebText-Bold.woff') format('woff');
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Rijk", sans-serif;
+}
+
+#beg-real {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#beg-real_header {
+  width: 100%;
+  padding: 10px;
+}
+
+#beg-real_title {
+  font-size: 24pt;
+}
+
+#beg-real_backButton {
+  font-size: 13pt;
+  cursor: pointer;
+}
+
+#beg-real_charts {
+  overflow-y: auto;
+}
+
+#beg-real .chartBlock {
+  padding: 10px;
+  margin: 15px;
+  display: inline-block;
+}
+
+#beg-real .chartTitle {
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+#beg-real .chartHeader {
+  margin-bottom: 10px;
+}
+
+#beg-real .detailButton {
+  font-size: 11pt;
+}
+
+#beg-real .barChart {
+  display: inline-block;
+}
+
+#beg-real .chartDescription {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+#beg-real .detailedChart {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+#beg-real .valueLabel {
+  font-size: 11pt;
+  text-anchor: middle;
+}
+
+#beg-real .yearLabel {
+  font-size: 11pt;
+  text-anchor: middle;
+}
+
+#beg-real .zeroLine {
+  stroke: #000000;
+  stroke-width: 2px;
+}
+
+#beg-real .yearBlock {
+  fill: #f3f3f3;
+  stroke: none;
+}
+
+#beg-real .begrotingBar {
+  stroke: none;
+  fill: #c6b8cf;
+}
+
+#beg-real .barLabel {
+  font-size: 8pt;
+  text-anchor: middle;
+}
+
+#beg-real .realisatieLine {
+  stroke: #000000;
+  stroke-width: 2px;
+  stroke-dasharray: 3;
+}
+
+#beg-real .realisatieLabel {
+  fill: #535353;
+  font-size: 10pt;
+}
+
+#beg-real .axis .tick text {
+  font-size: 10pt;
+}

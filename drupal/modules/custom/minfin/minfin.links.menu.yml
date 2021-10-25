@@ -1,0 +1,152 @@
+minfin.settings:
+  title: 'Minfin'
+  description: 'Manage Minfin settings.'
+  parent: system.admin
+  route_name: minfin.settings
+  weight: 100
+
+minfin.services:
+  title: 'Minfin services'
+  description: 'Manage the Minfin services.'
+  parent: minfin.settings
+  route_name: minfin.services
+  weight: 50
+
+minfin.chapter.settings:
+  title: 'Chapter settings'
+  description: 'Manage the chapter data.'
+  parent: minfin.settings
+  route_name: minfin.chapter.settings
+
+minfin.chapter.sorting_form:
+  title: 'Chapter sorting'
+  description: 'Provides an list to sort the chapters in the right way.'
+  parent: minfin.chapter.settings
+  route_name: minfin.chapter.sorting_form
+
+minfin.chapter.names_form:
+  title: 'Chapter names'
+  description: 'Manage the chapter names.'
+  parent: minfin.chapter.settings
+  route_name: minfin.chapter.names_form
+
+minfin.kamerstuk.text_form:
+  title: 'Kamerstuk teksten'
+  description: 'Manage the text for the kamerstukken.'
+  parent: minfin.settings
+  route_name: minfin.kamerstuk.text_form
+
+minfin.kamerstuk_isb_title:
+  title: 'Kamerstuk ISB titles'
+  description: 'Provides an overview containing the kamerstuk ISB titles.'
+  parent: minfin.settings
+  route_name: minfin.kamerstuk_isb_title
+
+minfin.mf_dossier.collection:
+  title: 'Dossiers'
+  description: 'Provides an overview containing the dossiers.'
+  parent: minfin.settings
+  route_name: minfin.mf_dossier.collection
+
+minfin.import:
+  title: 'Minfin imports'
+  description: 'Import functionality for Minfin.'
+  parent: minfin.settings
+  route_name: minfin.import
+
+minfin.importer:
+  title: 'Import functions'
+  description: 'List of all the import forms for Minfin.'
+  parent: minfin.import
+  route_name: minfin.importer
+  weight: 0
+
+minfin.import_log:
+  title: 'Import logs'
+  description: 'Provides an overview containing the logs of all executed imports.'
+  parent: minfin.import
+  route_name: minfin.import_log
+
+minfin.uitzonderingen:
+  title: 'Kamerstuk exceptions'
+  description: 'Provides an overview containing all kamerstuk exceptions.'
+  parent: minfin.import
+  route_name: minfin.uitzonderingen
+
+minfin.importer.kamerstuk:
+  title: 'Kamerstuk importer'
+  description: 'Provides a form to import the kamerstukken.'
+  parent: minfin.importer
+  route_name: minfin.importer.kamerstuk
+
+minfin.importer.kamerstuk_pdf:
+  title: 'Kamerstuk (pdf) importer'
+  description: "Provides a form to import the pdf's for kamerstukken."
+  parent: minfin.importer
+  route_name: minfin.importer.kamerstuk_pdf
+
+minfin.importer.kamerstuk_uitzonderingen:
+  title: 'Uitzonderingen importer'
+  description: 'Provides a form to import the uitzonderingen.'
+  parent: minfin.importer
+  route_name: minfin.importer.kamerstuk_uitzonderingen
+
+minfin.importer.corona_visual:
+  title: 'Corona visual importer'
+  description: 'Provides a form to import the corona visuals.'
+  parent: minfin.importer
+  route_name: minfin.importer.corona_visual
+
+minfin.importer.budgettaire_tabellen:
+  title: 'Budgettaire tabellen importer'
+  description: 'Provides a form to import the budgettaire tabellen.<br />Visuals: <em>Visuele begroting</em>'
+  parent: minfin.importer
+  route_name: minfin.importer.budgettaire_tabellen
+
+minfin.importer.budgettaire_tabellen_history:
+  title: 'Budgettaire tabellen (before-became table) importer'
+  description: 'Provides a form to import the budgettaire tabellen (before-became table).<br />Visuals: <em>Visuele begroting (vergelijking door de jaren)</em>'
+  parent: minfin.importer
+  route_name: minfin.importer.budgettaire_tabellen_history
+
+minfin.importer.begrotingsstaten:
+  title: 'Begrotingsstaten importer'
+  description: 'Provides a form to import the begrotingsstaten.'
+  parent: minfin.importer
+  route_name: minfin.importer.begrotingsstaten
+
+minfin.importer.beleidsevaluaties:
+  title: 'Beleidsevaluaties importer'
+  description: 'Provides a form to import the beleidsevaluaties.'
+  parent: minfin.importer
+  route_name: minfin.importer.beleidsevaluaties
+
+minfin.importer.financiele_instrumenten:
+  title: 'Financiele instrumenten importer'
+  description: 'Provides a form to import the financiele instrumenten.<br />Visuals: <em>Wie ontvingen</em>'
+  parent: minfin.importer
+  route_name: minfin.importer.financiele_instrumenten
+
+minfin.importer.fiscale_regelingen:
+  title: 'Fiscale regelingen importer'
+  description: 'Provides a form to import the fiscale regelingen.<br />Visuals: <em>Premies en Fiscaal</em>'
+  parent: minfin.importer
+  route_name: minfin.importer.fiscale_regelingen
+
+minfin.importer.subsidies:
+  title: 'Subsidies importer'
+  description: 'Provides a form to import the subsidies.'
+  parent: minfin.importer
+  route_name: minfin.importer.subsidies
+
+minfin.importer.verzelfstandigingen:
+  title: 'Verzelfstandigingen importer'
+  description: 'Provides a form to import the verzelfstandigingen.<br />Visuals: <em>Verzelfstandigingen</em>'
+  parent: minfin.importer
+  route_name: minfin.importer.verzelfstandigingen
+
+minfin.importer.artikel_links:
+  title: 'Artikel links importer'
+  description: 'Provides a form to import the artikel related links. Including performance information, policy review and cbs links.'
+  parent: minfin.importer
+  route_name: minfin.importer.artikel_links

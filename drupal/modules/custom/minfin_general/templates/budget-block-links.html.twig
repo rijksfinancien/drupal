@@ -1,0 +1,17 @@
+<div class="begrotings-fase"><span class="toggle-icon">+</span><span class="text">{{ 'Show budget fases' |t }}</span></div>
+<div class="panel tab-content">
+  <div class="flex">
+    {% for col,col_links in links %}
+      <div class="collumn">
+        <nav aria-labelledby="budget-block-{{ col|clean_id }}">
+          <h3 id="budget-block-{{ col|clean_id }}">{{ col }}</h3>
+          <ul>
+            {% for link in col_links %}
+              <li>{{ link }}</li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{% if content.url.0 %}
+<a href="{{ content.url[0]['#url'] }}" class="linkblock">
+  {% else %}
+  <div class="linkblock">
+    {% endif %}
+    <div class="text">
+      <h3>{{ content.title.0 }}</h3>
+      {{ content.text }}
+    </div>
+    {{ content.image }}
+    {% if not content.url.0 %}
+  </div>
+  {% else %}
+</a>
+{% endif %}

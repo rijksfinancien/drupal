@@ -1,0 +1,10 @@
+{# Based on drupal/core/themes/classy/templates/misc/status-messages.html.twig #}
+<div id="messages" data-drupal-messages>
+  {% for type, messages in message_list %}
+    {% for message in messages %}
+      <div class="messages messages--{{ type }}">
+        <div class="container">{{ message }}</div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>

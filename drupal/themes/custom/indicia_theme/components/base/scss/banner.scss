@@ -1,0 +1,77 @@
+.block-banner {
+  position: relative;
+}
+
+.minfin-banner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 14vw;
+  min-height: 250px;
+  margin-bottom: -60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include breakpoint($laptop) {
+    display: block;
+  }
+}
+
+.banner-content {
+  position: relative;
+  top: 50px;
+  padding: 20px;
+  color: $c-gray-900;
+  background-color: $c-primary-200;
+
+  @include breakpoint($tablet) {
+    width: 90%;
+  }
+
+  .form-item {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($tablet) {
+    width: 50%;
+    margin: 0;
+    padding: $gutter;
+  }
+
+  @include breakpoint($laptop) {
+    width: 40vw;
+  }
+
+  @include breakpoint($desktop) {
+    width: 30vw;
+  }
+
+  .banner-title {
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .banner-body {
+    position: relative;
+    z-index: 2;
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px #5a5a5a;
+    }
+  }
+}
+
+.menu-bar-wrapper {
+  position: relative;
+
+  .container {
+    position: static;
+  }
+}

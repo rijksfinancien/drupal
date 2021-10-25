@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Meerjaren hover icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Uitwerking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-2046.000000, -473.000000)">
+            <g id="Meerjaren-hover-icon" transform="translate(2046.000000, 473.000000)">
+                <g transform="translate(24.000000, 24.000000) rotate(-90.000000) translate(-24.000000, -24.000000) ">
+                    <circle id="Oval-Copy-2" fill="#01689B" cx="24" cy="24" r="24"></circle>
+                    <path d="M28.3333333,29.7953795 L28.3333333,35.7953795 L13,35.7953795 L13,29.7953795 L28.3333333,29.7953795 Z M31,21.3168317 L31,27.3168317 L13,27.3168317 L13,21.3168317 L31,21.3168317 Z M36,13 L36,19 L13,19 L13,13 L36,13 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

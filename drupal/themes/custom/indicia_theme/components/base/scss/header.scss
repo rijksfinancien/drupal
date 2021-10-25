@@ -1,0 +1,102 @@
+@keyframes slideTop {
+  100% {
+    top: 0;
+  }
+}
+
+header {
+  margin-bottom: 0;
+
+  @include breakpoint($tablet) {
+    margin-bottom: 16px;
+  }
+
+  @include breakpoint($laptop) {
+    margin-bottom: 30px;
+  }
+
+  #logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: -1px auto 10px;
+    transition: .5s;
+    text-decoration: none;
+
+    @include breakpoint($tablet) {
+      margin-bottom: 23px;
+    }
+
+    @include breakpoint($laptop) {
+      margin-bottom: 25px;
+    }
+
+    img {
+      display: block;
+      width: 40px;
+      height: 50px;
+
+      @include breakpoint($tablet) {
+        width: 45px;
+        height: 67px;
+      }
+
+      @include breakpoint($laptop) {
+        width: 50px;
+        height: 75px;
+      }
+    }
+
+    span {
+      font-family: $ff-secondary;
+      position: absolute;
+      left: 60px;
+      display: none;
+      margin-top: 10px;
+      white-space: nowrap;
+      color: black;
+
+      @include breakpoint($tablet) {
+        display: block;
+      }
+
+      @include breakpoint($laptop) {
+        left: 65px;
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      opacity: .9;
+    }
+  }
+
+  .region-header {
+    flex-grow: 1;
+  }
+
+  .region-menubar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 72px;
+    padding: 16px 0;
+
+    @include breakpoint($laptop) {
+      padding: 0;
+    }
+  }
+
+  .menu-bar {
+    transition: none;
+    background: $c-primary-400;
+  }
+
+  .menu-bar.fixed {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    animation: slideTop .2s normal linear forwards;
+  }
+}
+

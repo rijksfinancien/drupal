@@ -1,0 +1,10 @@
+{# Based on from drupal/modules/contrib/paragraphs/templates/paragraph.html.twig #}
+{% block paragraph %}
+  <div {{ attributes.addClass('row') }}>
+    <div class="container">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock paragraph %}

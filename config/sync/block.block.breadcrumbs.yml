@@ -1,0 +1,25 @@
+uuid: e43ef4f8-2d52-48c6-bbcd-ad500ecd510c
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - indicia_theme
+id: breadcrumbs
+theme: indicia_theme
+region: content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/open-data\r\n/2025\r\n/2024\r\n/2023\r\n/2022\r\n/2021\r\n/2020\r\n/2019\r\n/2018\r\n"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,27 @@
+minfin_beleidsevaluaties.beleidsonderzoeken:
+  path: '/beleidsevaluatie/onderzoek'
+  defaults:
+    _title: 'Ingepland en uitgevoerd onderzoek'
+    _controller: '\Drupal\minfin_beleidsevaluaties\Controller\BeleidsevaluatiesOverviewController::view'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+minfin_beleidsevaluaties.beleidsonderzoek:
+  path: '/beleidsevaluatie/onderzoek/{beleidsevaluatieId}'
+  defaults:
+    _title_callback: '\Drupal\minfin_beleidsevaluaties\Controller\BeleidsevaluatieController::title'
+    _controller: '\Drupal\minfin_beleidsevaluaties\Controller\BeleidsevaluatieController::content'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+minfin_beleidsevaluaties.autocomplete.title:
+  path: '/autocomplete/beleidsevaluaties/title'
+  defaults:
+    _controller: '\Drupal\minfin_beleidsevaluaties\Controller\TitleAutoCompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'

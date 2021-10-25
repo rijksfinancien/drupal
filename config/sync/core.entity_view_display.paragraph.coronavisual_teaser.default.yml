@@ -1,0 +1,55 @@
+uuid: a8725425-2303-47a8-8083-96f7fa4af746
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.coronavisual_teaser.corona_visual_teaser_text
+    - field.field.paragraph.coronavisual_teaser.corona_visual_teaser_title
+    - field.field.paragraph.coronavisual_teaser.corona_visual_teaser_url
+    - field.field.paragraph.coronavisual_teaser.visual
+    - paragraphs.paragraphs_type.coronavisual_teaser
+  module:
+    - image
+    - link
+id: paragraph.coronavisual_teaser.default
+targetEntityType: paragraph
+bundle: coronavisual_teaser
+mode: default
+content:
+  corona_visual_teaser_text:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  corona_visual_teaser_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  corona_visual_teaser_url:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  visual:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+hidden: {  }
