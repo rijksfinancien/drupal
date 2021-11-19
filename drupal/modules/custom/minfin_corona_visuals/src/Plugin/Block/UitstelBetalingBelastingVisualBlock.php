@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\minfin_corona_visuals\Plugin\Block;
 
+use Drupal\minfin_visuals\Plugin\Block\VisualBaseBlock;
+
 /**
  * Provides a 'UitstelBetalingBelastingVisualBlock' Block.
  *
@@ -13,7 +15,7 @@ namespace Drupal\minfin_corona_visuals\Plugin\Block;
  *   category = @Translation("MINFIN corona visuals"),
  * )
  */
-class UitstelBetalingBelastingVisualBlock extends CoronaVisualBaseBlock {
+class UitstelBetalingBelastingVisualBlock extends VisualBaseBlock {
 
   /**
    * Builds the uitstel van betaling voor belastingen visual.

@@ -17,7 +17,7 @@
     list-style: none;
     border-bottom: 1px solid $c-primary-400;
 
-    @include breakpoint($tablet) {
+    @include breakpoint($laptop) {
       display: flex;
 
       li + li {
@@ -46,7 +46,7 @@
 }
 
 // Mobile breadcrumbs.
-.region-header .block-system-breadcrumb-block {
+.mobile-breadcrumb .block-system-breadcrumb-block {
   background-color: $c-primary-300;
 
   .breadcrumb {
@@ -54,13 +54,9 @@
     margin-top: 0;
     margin-bottom: 0;
     background-color: $c-primary-300;
-    padding-top: 12px;
-    padding-bottom: 12px;
-
-    @include breakpoint($tablet) {
-      padding-left: 0;
-      padding-right: 0;
-    }
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
 
     ol {
       border-bottom: 0;
@@ -83,7 +79,7 @@
     }
   }
 
-  // Hide mobile breadcrumbs on mobile.
+  // Hide mobile breadcrumbs on front-page.
   .path-frontpage & {
     display: none;
   }

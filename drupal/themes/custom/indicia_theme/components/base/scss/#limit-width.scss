@@ -47,8 +47,8 @@ body:not(.path-frontpage):not(.path-year) .header-budget-block .container {
   }
 }
 
-body:not(.page-node-type-page):not(.page-node-type-visualisation):not(.route-minfin-beleidsevaluatiesbeleidsonderzoek):not(.route-minfin-beleidsevaluatiesbeleidsonderzoeken) .breadcrumb,
-body.page-node-type-page.path-limit-width .breadcrumb,
+body:not(.page-node-type-page):not(.page-node-type-visualisation):not(.route-minfin-beleidsevaluatiesbeleidsonderzoek):not(.route-minfin-beleidsevaluatiesbeleidsonderzoeken) .region-content .breadcrumb,
+body.page-node-type-page.path-limit-width .region-content .breadcrumb,
 .limit-width,
 .reader-actions,
 .block-minfin-api,

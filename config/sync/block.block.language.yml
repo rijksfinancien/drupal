@@ -1,6 +1,6 @@
 uuid: 558edac3-3dee-43b4-a6f8-31312392062e
 langcode: nl
-status: true
+status: false
 dependencies:
   config:
     - system.menu.language

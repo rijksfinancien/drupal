@@ -1,0 +1,5 @@
+name: Minfin - translate
+description: Add a googletranslate function
+package: minfin
+type: module
+core_version_requirement: ^8 || ^9

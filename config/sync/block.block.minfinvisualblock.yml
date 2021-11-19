@@ -10,7 +10,7 @@ dependencies:
 id: minfinvisualblock
 theme: indicia_theme
 region: header
-weight: -5
+weight: -7
 provider: null
 plugin: general_visual_block
 settings:

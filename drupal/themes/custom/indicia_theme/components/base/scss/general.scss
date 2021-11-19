@@ -128,6 +128,40 @@
     &.mail-action {
       margin-left: 8px;
     }
+
+    &.downloads {
+      position: relative;
+
+      .downloads-menu {
+        background: $c-white;
+        position: absolute;
+        z-index: 1;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        text-align: left;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        a {
+          display: block;
+          line-height: 30px;
+          padding: 0 12px;
+          text-decoration: none;
+
+          // Don't show the external link icon for downloads.
+          &:after {
+            display: none;
+          }
+
+          &:hover {
+            background: $c-primary-100;
+          }
+        }
+      }
+    }
   }
 
   button {

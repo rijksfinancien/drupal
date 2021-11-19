@@ -1,0 +1,11 @@
+gtranslate:
+  version: 1.0.0
+  js:
+    https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit: { type: external, minified: true }
+    js/gtranslate.js: {}
+  css:
+    component:
+      css/gtranslate.css: { }
+  dependencies:
+    - core/drupal
+    - core/jquery

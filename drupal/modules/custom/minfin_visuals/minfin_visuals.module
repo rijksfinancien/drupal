@@ -16,5 +16,11 @@ function minfin_visuals_theme($existing, $type, $theme, $path) {
     'visual_verzelfstandiging' => [
       'variables' => [],
     ],
+    'visual_wie_ontvingen' => [
+      'variables' => [],
+    ],
+    'visual_wie_ontvingen_start' => [
+      'variables' => [],
+    ],
   ];
 }

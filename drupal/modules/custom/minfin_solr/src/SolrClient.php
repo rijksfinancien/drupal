@@ -180,8 +180,8 @@ class SolrClient implements SolrClientInterface {
   /**
    * {@inheritdoc}
    */
-  public function update(array $data) {
-    return $this->postRequest('update', 'update?commit=true', [
+  public function update(array $data, bool $commit = TRUE) {
+    return $this->postRequest('update', 'update' . ($commit ? '?commit=true' : ''), [
       'body' => '[' . $this->json::encode($data) . ']',
     ]);
   }
@@ -316,9 +316,6 @@ class SolrClient implements SolrClientInterface {
     catch (\Exception $e) {
       $message = $e->getMessage();
       $this->errors = [$message];
-      if ($msg = $e->getResponse()->getBody()->getContents()) {
-        $message = $msg;
-      }
       $this->logger->error('Error: ' . $message);
     }
 

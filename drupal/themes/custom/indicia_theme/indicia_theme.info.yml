@@ -11,6 +11,7 @@ libraries-override:
 
 regions:
   menubar: Menubar
+  mobile_breadcrumb: Mobile breadcrumb
   header: Header
   content: Content
   content_below: 'Below content'

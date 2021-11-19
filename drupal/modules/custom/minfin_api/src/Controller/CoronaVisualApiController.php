@@ -191,6 +191,7 @@ class CoronaVisualApiController extends BaseApiController {
       $query->addExpression('SUM(bt.bedrag_jaarverslag)', 'bedrag_jaarverslag');
       $query->condition('bt.jaar', $jaar, '=');
       $query->condition('bt.vuo', 'U', '=');
+      $query->condition('bt.show', 1, '=');
       $query->condition('a.hoofdstuk_minfin_id', $hoofdstukMinfinId, '=');
       $query->groupBy('a.naam');
       if ($result = $query->execute()) {
@@ -218,6 +219,7 @@ class CoronaVisualApiController extends BaseApiController {
       $query->addExpression('SUM(bt.bedrag_jaarverslag)', 'bedrag_jaarverslag');
       $query->condition('bt.jaar', $jaar, '=');
       $query->condition('bt.vuo', 'U', '=');
+      $query->condition('bt.show', 1, '=');
       $query->groupBy('h.naam');
       $query->groupBy('a.naam');
       $query->groupBy('h.hoofdstuk_minfin_id');

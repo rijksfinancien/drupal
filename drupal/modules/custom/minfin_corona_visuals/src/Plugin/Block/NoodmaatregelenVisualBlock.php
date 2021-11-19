@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\minfin_corona_visuals\Plugin\Block;
 
+use Drupal\minfin_visuals\Plugin\Block\VisualBaseBlock;
+
 /**
  * Provides a 'NoodmaatregelenVisualBlock' Block.
  *
@@ -13,7 +15,7 @@ namespace Drupal\minfin_corona_visuals\Plugin\Block;
  *   category = @Translation("MINFIN corona visuals"),
  * )
  */
-class NoodmaatregelenVisualBlock extends CoronaVisualBaseBlock {
+class NoodmaatregelenVisualBlock extends VisualBaseBlock {
 
   /**
    * Builds the noodmaatregelen visual.

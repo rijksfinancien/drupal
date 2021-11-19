@@ -1,0 +1,20 @@
+uuid: 9b55f765-4522-47ff-bf72-59cb58392810
+langcode: nl
+status: true
+dependencies:
+  module:
+    - minfin_translate
+  theme:
+    - indicia_theme
+id: gtranslate
+theme: indicia_theme
+region: footer
+weight: 0
+provider: null
+plugin: minfin_translate_gtranslate_block
+settings:
+  id: minfin_translate_gtranslate_block
+  label: Taalkeuze
+  provider: minfin_translate
+  label_display: visible
+visibility: {  }

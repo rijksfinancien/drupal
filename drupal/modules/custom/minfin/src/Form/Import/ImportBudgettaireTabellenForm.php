@@ -277,10 +277,10 @@ class ImportBudgettaireTabellenForm extends ImportBaseForm {
           $column = 'AC';
         }
         $bedrag = $this->fixCurrencyValues($line['bedrag'], $lineNr, $column);
-        $this->insertBTabel($line['index'], $phase, $hoofdstukId, $artikelId, $artikelonderdeelId, $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, $bedrag, $jaar, $line['vuo']);
+        $this->insertBTabel($line['index'], $phase, $hoofdstukId, $artikelId, $artikelonderdeelId, $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, $bedrag, $jaar, $line['vuo'], !empty($line['regeling_detailniveau_naam']));
         if ($phase === 'O1' && isset($line['bedrag2'])) {
           $bedrag2 = $this->fixCurrencyValues($line['bedrag2'], $lineNr, 'X');
-          $this->insertBTabel($line['index'], 'VB', $hoofdstukId, $artikelId, $artikelonderdeelId, $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, $bedrag2, $jaar, $line['vuo']);
+          $this->insertBTabel($line['index'], 'VB', $hoofdstukId, $artikelId, $artikelonderdeelId, $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, $bedrag2, $jaar, $line['vuo'], !empty($line['regeling_detailniveau_naam']));
         }
         $this->rowsImported++;
       }
@@ -518,41 +518,40 @@ class ImportBudgettaireTabellenForm extends ImportBaseForm {
     $query = $this->connection->select('mf_regeling_detailniveau');
     $query->addExpression('MAX(regeling_detailniveau_id)');
     $minfinId = $query->execute()->fetchField() + 1;
+    $naam = !empty($naam) ? $naam : '';
 
-    if (!empty($naam)) {
-      $transaction = $this->connection->startTransaction();
-      try {
-        $this->connection->merge('mf_regeling_detailniveau')
-          ->keys([
-            'regeling_detailniveau_minfin_id' => $minfinId,
-            'instrument_of_uitsplitsing_apparaat_id' => $instrumentOfUitsplitsingApparaatId,
-            'jaar' => $jaar,
-          ])
-          ->fields([
-            'naam' => $naam,
-          ])
-          ->execute();
+    $transaction = $this->connection->startTransaction();
+    try {
+      $this->connection->merge('mf_regeling_detailniveau')
+        ->keys([
+          'regeling_detailniveau_minfin_id' => $minfinId,
+          'instrument_of_uitsplitsing_apparaat_id' => $instrumentOfUitsplitsingApparaatId,
+          'jaar' => $jaar,
+        ])
+        ->fields([
+          'naam' => $naam,
+        ])
+        ->execute();
 
-        $id = $this->connection->select('mf_regeling_detailniveau')
-          ->fields(NULL, ['regeling_detailniveau_id'])
-          ->condition('regeling_detailniveau_minfin_id', $minfinId, '=')
-          ->condition('instrument_of_uitsplitsing_apparaat_id', $instrumentOfUitsplitsingApparaatId, '=')
-          ->condition('jaar', $jaar, '=')
-          ->execute()
-          ->fetchField();
-        if ($id) {
-          return $id;
-        }
+      $id = $this->connection->select('mf_regeling_detailniveau')
+        ->fields(NULL, ['regeling_detailniveau_id'])
+        ->condition('regeling_detailniveau_minfin_id', $minfinId, '=')
+        ->condition('instrument_of_uitsplitsing_apparaat_id', $instrumentOfUitsplitsingApparaatId, '=')
+        ->condition('jaar', $jaar, '=')
+        ->execute()
+        ->fetchField();
+      if ($id) {
+        return $id;
       }
-      catch (\Exception $e) {
-        $transaction->rollBack();
-        if (strpos($e->getMessage(), 'Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction') !== FALSE) {
-          sleep(1);
-          return $this->insertRegelingDetailniveau($instrumentOfUitsplitsingApparaatId, $naam, $jaar);
-        }
-        else {
-          $this->logger('minfin import')->error($e->getMessage());
-        }
+    }
+    catch (\Exception $e) {
+      $transaction->rollBack();
+      if (strpos($e->getMessage(), 'Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction') !== FALSE) {
+        sleep(1);
+        return $this->insertRegelingDetailniveau($instrumentOfUitsplitsingApparaatId, $naam, $jaar);
+      }
+      else {
+        $this->logger('minfin import')->error($e->getMessage());
       }
     }
     return NULL;
@@ -581,8 +580,10 @@ class ImportBudgettaireTabellenForm extends ImportBaseForm {
    *   Year.
    * @param string $vuo
    *   VUO.
+   * @param bool $show
+   *   Indicates if we need to show or hide the record in API's.
    */
-  protected function insertBTabel(string $minfinId, string $fase, int $hoofdstukId, string $artikelId, string $artikelonderdeelId, string $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, int $bedrag, int $jaar, string $vuo): void {
+  protected function insertBTabel(string $minfinId, string $fase, int $hoofdstukId, string $artikelId, string $artikelonderdeelId, string $instrumentOfUitsplitsingApparaatId, $regelingDetailniveauId, int $bedrag, int $jaar, string $vuo, bool $show = TRUE): void {
     $transaction = $this->connection->startTransaction();
     try {
       $fields = [
@@ -593,6 +594,7 @@ class ImportBudgettaireTabellenForm extends ImportBaseForm {
         'artikel_id' => $artikelId,
         'artikelonderdeel_id' => $artikelonderdeelId,
         'instrument_of_uitsplitsing_apparaat_id' => $instrumentOfUitsplitsingApparaatId,
+        'show' => (int) $show,
       ];
       if ($regelingDetailniveauId) {
         $fields['regeling_detailniveau_id'] = $regelingDetailniveauId;

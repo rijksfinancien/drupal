@@ -37,7 +37,9 @@
         "drupal/config_split": "^1.7.0",
         "drupal/core-composer-scaffold": "~9.2.0",
         "drupal/core-recommended": "~9.2.0",
+        "drupal/csp": "^1.15.0",
         "drupal/easy_breadcrumb": "^2.0.1",
+        "drupal/file_upload_secure_validator": "^1.4.0",
         "drupal/imce": "^2.4.0",
         "drupal/paragraphs": "^1.12.0",
         "drupal/pathauto": "^1.8.0",
@@ -157,6 +159,9 @@
             },
             "drupal/easy_breadcrumb": {
                 "Fixed upcasting of non entities": "patches/easy_breadcrumb.patch"
+            },
+            "drupal/file_upload_secure_validator": {
+                "Add administer permission": "https://www.drupal.org/files/issues/2021-04-14/add_administer_permission-3206190-2.patch"
             }
         }
     }

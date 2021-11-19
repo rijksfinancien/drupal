@@ -146,6 +146,15 @@ class ImportFinancieleInstrumentenForm extends ImportBaseForm {
         }
       }
 
+      // Delete the current queue and add a new item to start the SOLR sync.
+      $queue = $this->queueFactory->get('financiele_instrumenten_sync_queue', TRUE);
+      // @todo find out how we can delete the queue for a single year only.
+      $queue->deleteQueue();
+      $queue->createItem([
+        'function' => 'syncSolr',
+        'year' => $jaar,
+      ]);
+
       return TRUE;
     }
 

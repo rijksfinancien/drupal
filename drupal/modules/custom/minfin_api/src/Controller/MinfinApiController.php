@@ -97,6 +97,7 @@ class MinfinApiController extends BaseApiController {
     $query->addExpression('SUM(bedrag_suppletoire1)', 'suppletoire1');
     $query->addExpression('SUM(bedrag_suppletoire2)', 'suppletoire2');
     $query->addExpression('SUM(bedrag_jaarverslag)', 'jaarverslag');
+    $query->condition('bt.show', 1, '=');
     $query->groupBy('jaar');
     $result = $query->execute();
     while ($record = $result->fetchAssoc()) {

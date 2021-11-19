@@ -9,7 +9,7 @@ dependencies:
 id: minfinadvancedsearchblock
 theme: indicia_theme
 region: header
-weight: -6
+weight: -8
 provider: null
 plugin: minfin_advanced_search_block
 settings:

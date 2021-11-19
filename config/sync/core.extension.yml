@@ -13,6 +13,8 @@ module:
   config_split: 0
   config_translation: 0
   contextual: 0
+  csp: 0
+  csp_extras: 0
   ctools: 0
   dblog: 0
   dynamic_page_cache: 0
@@ -21,6 +23,7 @@ module:
   entity_reference_revisions: 0
   field: 0
   file: 0
+  file_upload_secure_validator: 0
   filter: 0
   image: 0
   imce: 0
@@ -43,6 +46,7 @@ module:
   minfin_piwik: 0
   minfin_search: 0
   minfin_solr: 0
+  minfin_translate: 0
   minfin_visuals: 0
   node: 0
   options: 0

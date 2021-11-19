@@ -19,16 +19,86 @@ minfin_api_public.csv.budgettaire_tabellen:
   requirements:
     _permission: 'access content'
 
-minfin_api_public.financiele_instrumenten:
+minfin_api_public.financiele_instrumenten_old:
   path: '/open-data/api/json/financiele_instrumenten'
   defaults:
-    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::json'
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenOldApiController::json'
   requirements:
     _permission: 'access content'
 
-minfin_api_public.financiele_instrumenten.instrumenten:
+minfin_api_public.financiele_instrumenten_old.instrumenten:
   path: '/open-data/api/json/financiele_instrumenten/instruments'
   defaults:
-    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonInstruments'
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenOldApiController::jsonInstruments'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten:
+  path: '/open-data/api/json/v2/financiele_instrumenten'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::json'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten.available_years:
+  path: '/open-data/api/json/v2/financiele_instrumenten/available_years'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::getAvailableYears'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten.artikelen:
+  path: '/open-data/api/json/v2/financiele_instrumenten/artikelen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonArtikelen'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.csv.financiele_instrumenten.artikelen:
+  path: '/open-data/api/csv/v2/financiele_instrumenten/artikelen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::csvArtikelen'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten.hoofdstukken:
+  path: '/open-data/api/json/v2/financiele_instrumenten/hoofdstukken'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonHoofdstukken'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.csv.financiele_instrumenten.hoofdstukken:
+  path: '/open-data/api/csv/v2/financiele_instrumenten/hoofdstukken'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::csvHoofdstukken'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten.ontvangers:
+  path: '/open-data/api/json/v2/financiele_instrumenten/ontvangers'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonOntvangers'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.csv.financiele_instrumenten.ontvangers:
+  path: '/open-data/api/csv/v2/financiele_instrumenten/ontvangers'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::csvOntvangers'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.json.financiele_instrumenten.regelingen:
+  path: '/open-data/api/json/v2/financiele_instrumenten/regelingen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::jsonRegelingen'
+  requirements:
+    _permission: 'access content'
+
+minfin_api_public.csv.financiele_instrumenten.regelingen:
+  path: '/open-data/api/csv/v2/financiele_instrumenten/regelingen'
+  defaults:
+    _controller: '\Drupal\minfin_api_public\Controller\FinancieleInstrumentenApiController::csvRegelingen'
   requirements:
     _permission: 'access content'

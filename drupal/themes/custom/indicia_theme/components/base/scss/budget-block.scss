@@ -1,7 +1,7 @@
 .header-budget-block {
   margin-top: 60px;
-  background-color: $c-primary-200;
   border-bottom: 1px solid $c-primary-400;
+  background-color: $c-primary-200;
 
   @include breakpoint($laptop) {
     border-bottom: 0;
@@ -15,10 +15,14 @@
     .budget-block-header {
       position: absolute;
       top: -40px;
-      display: flex;
-      justify-content: space-between;
+      display: block;
       width: calc(100% - 30px);
       padding: 0;
+
+      @include breakpoint($mobile) {
+        display: flex;
+        justify-content: space-between;
+      }
 
       form {
         .form-type-select {

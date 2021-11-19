@@ -257,12 +257,3 @@ minfin.mf_dossier.edit:
     _title: 'Edit dossier'
   requirements:
     _permission: 'edit mf_dossier entity'
-
-# This is a tmp link.
-minfin.sync.financiele_instrumenten:
-  path: '/admin/minfin/sync_financiele_instrumenten'
-  defaults:
-    _controller: '\Drupal\minfin\Controller\SyncFinancieleInstrumenten::buildPage'
-    _title: 'Sync Financiele Instrumenten'
-  requirements:
-    _role: 'administrator'

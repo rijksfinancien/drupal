@@ -583,13 +583,18 @@ abstract class KamerstukController extends ControllerBase {
    */
   protected function getTableOfContentsDossiers(string $type, int $year, string $phase, ?string $hoofdstukMinfinId = NULL): array {
     $dossiers = [];
-    $code = $this->connection->select('mf_kamerstuk_dossier', 'kd')
-      ->fields('kd', ['dossier_number'])
-      ->condition('type', $type, '=')
-      ->condition('jaar', $year, '=')
-      ->condition('fase', $phase, '=')
-      ->condition('hoofdstuk_minfin_id', $hoofdstukMinfinId, '=')
-      ->execute()->fetchField();
+    $query = $this->connection->select('mf_kamerstuk_dossier', 'kd');
+    $query->fields('kd', ['dossier_number']);
+    $query->condition('type', $type, '=');
+    $query->condition('jaar', $year, '=');
+    $query->condition('fase', $phase, '=');
+    if ($hoofdstukMinfinId) {
+      $query->condition('hoofdstuk_minfin_id', $hoofdstukMinfinId, '=');
+    }
+    else {
+      $query->isNull('hoofdstuk_minfin_id');
+    }
+    $code = $query->execute()->fetchField();
 
     if ($code) {
       if ($hoofdstukMinfinId && substr($phase, 0, 3) !== 'ISB') {

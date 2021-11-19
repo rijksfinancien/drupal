@@ -137,6 +137,7 @@ class BudgettaireTabellenApiController extends BasePublicApiController {
       if ($ministerName = $this->request->query->get('minister')) {
         $query->condition('m.naam', '%' . $this->connection->escapeLike($ministerName) . '%', 'LIKE');
       }
+      $query->condition('bt.show', 1, '=');
 
       $result = $query->execute();
       while ($record = $result->fetchAssoc()) {

@@ -60,11 +60,13 @@ interface SolrClientInterface {
    *
    * @param array $data
    *   The data.
+   * @param bool $commit
+   *   Add the commit string to the reqeust.
    *
    * @return mixed|false
    *   The response.
    */
-  public function update(array $data);
+  public function update(array $data, bool $commit = TRUE);
 
   /**
    * Delete the Solr index.

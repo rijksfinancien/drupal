@@ -85,7 +85,7 @@
             </div>
             <div class="chart_legend_sub_data">
                 <div class="chart_legend_post_data">
-                    <a class="" href="{{link}}">Vergelijk {{type}}</a>
+                    <a class="minfin_link" minfin-link="{{link}}">Vergelijk {{type}}</a>
                     <a class="chart_legend_hide {{website_class}}" href="{{website}}">{{website}}</a>
                     <div class="chart_legend_card">
                         <b>{{type}}</b>
@@ -114,7 +114,7 @@
                 <div class="chart_legend_data_item_title">{{title}}</div>
             </div>
             <div id="subtitle_info_{{title}}" class="chart_legend_data_item_info">
-                    <a class="minfin_link show" href="{{link}}">Vergelijk {{type}}</a>
+                    <a class="minfin_link show" minfin-link="{{link}}">Vergelijk {{type}}</a>
                     <a class="minfin_link chart_legend_hide {{website_class}}" href="{{website}}">{{website}}</a>
                 <div class="chart_legend_card">
                         <b>{{type}}</b>
@@ -153,7 +153,7 @@
                   </div>
               </div>
               <div id="chart_popup_info" class="chart_popup_info">
-                  <a class="minfin_link show" href="{{link}}">Vergelijk {{type}}</a>
+                  <a class="minfin_link show" minfin-link="{{link}}">Vergelijk {{type}}</a>
                   <a class="minfin_link {{website_class}}" href="{{website}}">{{website}}</a>
                   <div id="chart_popup_data" class="chart_legend_popup_data"></div>
               </div>
@@ -196,7 +196,7 @@
           </div>
           <div class="alignright"><b>{{type}}</b></div>
           <br /><small>{{ministerie}}</small>
-          <div class="info" style="display: none">
+          <div class="info">
               Omzet<div class="alignright"><b>€ {{num_omzet}}</b></div>
               <br />Fte<div class="alignright"><b>{{num_fte}}</b></div>
           </div>
@@ -209,4 +209,5 @@
 
   <script type="text/template" id="chart_initializer" name="verzelfstandigingen">
   </script>
-</div>
+
+  </div>

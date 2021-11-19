@@ -56,6 +56,14 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *     type = "string",
    *   ),
    *   @SWG\Parameter(
+   *     name = "sort",
+   *     description = "The sorting to use.",
+   *     in = "query",
+   *     required = false,
+   *     type = "string",
+   *     enum={"amount desc", "amount asc", "name desc", "name asc", "score desc", "score asc"},
+   *   ),
+   *   @SWG\Parameter(
    *     name = "min",
    *     description = "The minimum amount.",
    *     in = "query",
@@ -65,6 +73,13 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *   @SWG\Parameter(
    *     name = "max",
    *     description = "The maximum amount.",
+   *     in = "query",
+   *     required = false,
+   *     type = "integer",
+   *   ),
+   *   @SWG\Parameter(
+   *     name = "limit",
+   *     description = "The amount or records to return, defaults to 25. Max is also 25",
    *     in = "query",
    *     required = false,
    *     type = "integer",
@@ -83,15 +98,6 @@ class FinancieleInstrumentenApiController extends BaseApiController {
     $years = $this->getYears();
     $year = (int) ($queryParams['jaar'] ?? max($years));
 
-    $search = $queryParams['search'] ?? NULL;
-    $min = ((int) $queryParams['min']) ?: '*';
-    $max = ((int) $queryParams['max']) ?: '*';
-
-    $type = (isset($queryParams['type']) ? 'ontvanger' : NULL);
-    if (isset($queryParams['type']) && in_array($queryParams['type'], $allowedValues)) {
-      $type = $queryParams['type'];
-    }
-
     $referrer = NULL;
     if (isset($queryParams['referrer']) && in_array($queryParams['referrer'], $allowedValues)) {
       $referrer = $queryParams['referrer'];
@@ -106,30 +112,75 @@ class FinancieleInstrumentenApiController extends BaseApiController {
       return $this->jsonResponse([]);
     }
 
+    $limit = isset($queryParams['limit']) ? (int) $queryParams['limit'] : $this::LIMIT;
+    if ($limit > $this::LIMIT) {
+      $limit = $this::LIMIT;
+    }
+
+    $search = $queryParams['search'] ?? NULL;
+    $sort = $this->getSortValue($queryParams);
+
+    $min = isset($queryParams['min']) ? (int) $queryParams['min'] : '*';
+    $max = isset($queryParams['max']) ? (int) $queryParams['max'] : '*';
+
+    $type = ($referrer !== 'ontvanger' ? 'ontvanger' : 'regeling');
+    if (isset($queryParams['type']) && in_array($queryParams['type'], $allowedValues)) {
+      $type = $queryParams['type'];
+    }
+
+    // Get base data.
     $facets = [
       'year' => [$year],
-      'type' => [$type],
-      'grouped_by' => $referrerId,
+      'type' => [$referrer],
+      'grouped_by' => [$referrerId],
       'grouped_by_type' => [$referrer],
-      'amount' => ['[' . $min . ' TO ' . $max . ']'],
     ];
-
     $this->solrClient->setCore('wie_ontvingen');
-    $result = $this->solrClient->search(1, $this::LIMIT, $search, 'amount desc', 'all', $facets);
+    $result = $this->solrClient->search(1, 1, NULL, $sort, 'all', $facets)['rows'][0];
 
     $data = [
       'type' => $type,
       'referrer' => $referrer,
       'referrer_id' => $referrerId,
-      'jaar' => $year,
-      'total_results' => $result['numFound'],
+      'year' => $year,
+      'title' => $result['name'],
+      'total' => $result['amount'],
+      'max' => 0,
+      'min' => 0,
+      'total_results' => 0,
+      'records_show' => $limit,
       'result' => [],
     ];
+
+    // Get min & max.
+    // @todo check if we can do this without additional SOLR calls.
+    $facets = [
+      'year' => [$year],
+      'type' => [$type],
+      'grouped_by' => [$referrerId],
+      'grouped_by_type' => [$referrer],
+    ];
+    $this->solrClient->setCore('wie_ontvingen');
+    $data['max'] = $this->solrClient->search(1, 1, $search, 'amount desc', 'all', $facets)['rows'][0]['amount'] ?? 0;
+    $data['min'] = $this->solrClient->search(1, 1, $search, 'amount asc', 'all', $facets)['rows'][0]['amount'] ?? 0;
+
+    // Get the records.
+    $facets = [
+      'year' => [$year],
+      'type' => [$type],
+      'grouped_by' => [$referrerId],
+      'grouped_by_type' => [$referrer],
+      'amount' => ['[' . $min . ' TO ' . $max . ']'],
+    ];
+    $this->solrClient->setCore('wie_ontvingen');
+    $result = $this->solrClient->search(1, $limit, $search, 'amount desc', 'all', $facets);
+
+    $data['total_results'] = $result['numFound'];
     foreach ($result['rows'] ?? [] as $values) {
       $data['result'][] = [
-        'id' => $values['grouped_by'],
-        'titel' => $values['name'],
-        'bedrag' => $values['amount'],
+        'id' => $values['name'],
+        'title' => $values['name'],
+        'amount' => $values['amount'],
       ];
     }
 
@@ -156,6 +207,14 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *     in = "query",
    *     required = false,
    *     type = "string",
+   *   ),
+   *   @SWG\Parameter(
+   *     name = "sort",
+   *     description = "The sorting to use.",
+   *     in = "query",
+   *     required = false,
+   *     type = "string",
+   *     enum={"amount desc", "amount asc", "name desc", "name asc", "score desc", "score asc"},
    *   ),
    *   @SWG\Parameter(
    *     name = "min",
@@ -199,6 +258,14 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *     type = "string",
    *   ),
    *   @SWG\Parameter(
+   *     name = "sort",
+   *     description = "The sorting to use.",
+   *     in = "query",
+   *     required = false,
+   *     type = "string",
+   *     enum={"amount desc", "amount asc", "name desc", "name asc", "score desc", "score asc"},
+   *   ),
+   *   @SWG\Parameter(
    *     name = "min",
    *     description = "The minimum amount.",
    *     in = "query",
@@ -238,6 +305,14 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *     in = "query",
    *     required = false,
    *     type = "string",
+   *   ),
+   *   @SWG\Parameter(
+   *     name = "sort",
+   *     description = "The sorting to use.",
+   *     in = "query",
+   *     required = false,
+   *     type = "string",
+   *     enum={"amount desc", "amount asc", "name desc", "name asc", "score desc", "score asc"},
    *   ),
    *   @SWG\Parameter(
    *     name = "min",
@@ -281,6 +356,14 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    *     type = "string",
    *   ),
    *   @SWG\Parameter(
+   *     name = "sort",
+   *     description = "The sorting to use.",
+   *     in = "query",
+   *     required = false,
+   *     type = "string",
+   *     enum={"amount desc", "amount asc", "name desc", "name asc", "score desc", "score asc"},
+   *   ),
+   *   @SWG\Parameter(
    *     name = "min",
    *     description = "The minimum amount.",
    *     in = "query",
@@ -301,6 +384,19 @@ class FinancieleInstrumentenApiController extends BaseApiController {
   }
 
   /**
+   * @SWG\Get(
+   *   path = "/json/financiele_instrumenten/available_years",
+   *   summary = "Get the available years for the 'Wie ontvingen' chart.",
+   *   description = "Get the available years for the 'Wie ontvingen' chart.",
+   *   operationId = "WieOntvingenAvailableYears",
+   *   tags = { "Financiele instrumenten" },
+   * )
+   */
+  public function getAvailableYears(): JsonResponse {
+    return $this->jsonResponse($this->getYears());
+  }
+
+  /**
    * Get a list of items.
    *
    * @param string $type
@@ -309,24 +405,27 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    * @return array
    *   The requested items.
    */
-  private function getItems(string $type): array {
+  protected function getItems(string $type): array {
     $queryParams = $this->request->query->all();
-    $years = $this->getYears();
-    $year = (int) ($queryParams['jaar'] ?? max($years));
+    $year = isset($queryParams['jaar']) ? (int) $queryParams['jaar'] : NULL;
 
     $search = $queryParams['search'] ?? NULL;
-    $min = ((int) $queryParams['min']) ?: '*';
-    $max = ((int) $queryParams['max']) ?: '*';
+    $sort = $this->getSortValue($queryParams);
+
+    $min = isset($queryParams['min']) ? (int) $queryParams['min'] : '*';
+    $max = isset($queryParams['max']) ? (int) $queryParams['max'] : '*';
 
     $facets = [
-      'year' => [$year],
       'type' => [$type],
       'grouped_by_type' => [$type],
       'amount' => ['[' . $min . ' TO ' . $max . ']'],
     ];
+    if ($year) {
+      $facets['year'] = [$year];
+    }
 
     $this->solrClient->setCore('wie_ontvingen');
-    $result = $this->solrClient->search(1, $this::LIMIT, $search, 'amount desc', 'all', $facets);
+    $result = $this->solrClient->search(1, $this::LIMIT, $search, $sort, 'all', $facets);
 
     $data = [
       'jaar' => $year,
@@ -334,12 +433,17 @@ class FinancieleInstrumentenApiController extends BaseApiController {
       'total_results' => $result['numFound'],
       'result' => [],
     ];
-    foreach ($result['rows'] ?? [] as $values) {
-      $data['result'][] = [
-        'id' => $values['grouped_by'],
-        'titel' => $values['name'],
-        'bedrag' => $values['amount'],
+    foreach ($result['rows'] ?? [] as $row) {
+      $values = [
+        'id' => $row['grouped_by'],
+        'titel' => $row['name'],
+        'bedrag' => $row['amount'],
       ];
+      if (!$year) {
+        $values['jaar'] = $row['year'];
+      }
+
+      $data['result'][] = $values;
     }
 
     return $data;
@@ -351,12 +455,40 @@ class FinancieleInstrumentenApiController extends BaseApiController {
    * @return array
    *   The years.
    */
-  private function getYears(): array {
+  protected function getYears(): array {
     $query = $this->connection->select('mf_financiele_instrumenten', 'fi');
     $query->distinct();
     $query->fields('fi', ['jaar']);
     $query->orderBy('fi.jaar', 'ASC');
     return $query->execute()->fetchAllKeyed(0, 0);
+  }
+
+  /**
+   * Get the sort value from the query params array.
+   *
+   * @param array $queryParams
+   *   Array containing all active query params.
+   *
+   * @return string
+   *   The sort value.
+   */
+  protected function getSortValue(array &$queryParams): string {
+    if (isset($queryParams['sort'])) {
+      $sort = trim($queryParams['sort']);
+      unset($queryParams['sort']);
+
+      $safeValue = TRUE;
+      foreach (explode(',', $sort) as $v) {
+        if (substr($v, -5) !== ' desc' && substr($v, -4) !== ' asc') {
+          $safeValue = FALSE;
+        }
+      }
+
+      if ($safeValue) {
+        return $sort;
+      }
+    }
+    return 'amount desc';
   }
 
 }

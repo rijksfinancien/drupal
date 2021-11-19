@@ -1,21 +1,27 @@
+$mobile-breakpoint: 468px;
 $tablet-breakpoint: 768px;
 $laptop-breakpoint: 1024px;
 $desktop-breakpoint: 1200px;
 
+$mobile: 'mobile';
 $tablet: 'tablet';
 $laptop: 'laptop';
 $desktop: 'desktop';
 
 @mixin breakpoint($breakpoint) {
-  @if $breakpoint == "tablet" {
+  @if $breakpoint == $mobile {
+    @media (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == $tablet {
     @media (min-width: $tablet-breakpoint) {
       @content;
     }
-  } @else if $breakpoint == "laptop" {
+  } @else if $breakpoint == $laptop {
     @media (min-width: $laptop-breakpoint) {
       @content;
     }
-  } @else if $breakpoint == "desktop" {
+  } @else if $breakpoint == $desktop {
     @media (min-width: $desktop-breakpoint) {
       @content;
     }

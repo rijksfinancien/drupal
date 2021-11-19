@@ -20,18 +20,23 @@ interface SolrWieOntvingenClientInterface {
    *
    * @param array $data
    *   The data.
+   * @param bool $commit
+   *   Add the commit string to the reqeust.
    *
    * @return mixed|false
    *   The response.
    */
-  public function update(array $data);
+  public function update(array $data, bool $commit = FALSE);
 
   /**
    * Delete all indexes from the Solr index.
    *
+   * @param int $year
+   *   The year.
+   *
    * @return mixed|false
    *   The response.
    */
-  public function deleteAll();
+  public function deleteAll(int $year);
 
 }

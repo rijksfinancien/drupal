@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+msgid "Download files"
+msgstr "Download bestanden"
+
+msgid "Source file"
+msgstr "Bronbestand"
+
+msgid "Download source file"
+msgstr "Download bronbestand"
+
+msgid "API"
+msgstr "API"
+
+msgid "Download API data"
+msgstr "Download API gegevens"

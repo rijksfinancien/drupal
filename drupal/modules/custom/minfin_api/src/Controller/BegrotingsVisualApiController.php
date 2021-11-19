@@ -102,6 +102,7 @@ class BegrotingsVisualApiController extends BaseApiController {
     $query = $this->connection->select('mf_b_tabel', 'bt');
     $this->addAmmountToQuery($query, $fase);
     $query->condition('jaar', $jaar, '=');
+    $query->condition('bt.show', 1, '=');
     $query->groupBy('jaar');
     if (!$query->execute()->fetchField()) {
       return $this->jsonResponse([], 404);
@@ -302,6 +303,7 @@ class BegrotingsVisualApiController extends BaseApiController {
     $query->leftJoin('mf_regeling_detailniveau', 'rd', 'rd.regeling_detailniveau_id = bt.regeling_detailniveau_id');
     $query->condition('bt.jaar', $jaar, '=');
     $query->condition('bt.vuo', $vuo, '=');
+    $query->condition('bt.show', 1, '=');
     $query->addField('bt', 'jaar', 'jaar');
     $query->addField('h', 'hoofdstuk_minfin_id', 'begrotingshoofdstuk');
     $query->addField('h', 'naam', 'hoofdstuk_naam');
@@ -640,6 +642,7 @@ class BegrotingsVisualApiController extends BaseApiController {
     $this->addAmmountToQuery($query, $fase);
     $query->condition('bt.jaar', $jaar, '=');
     $query->condition('bt.vuo', $vuo, '=');
+    $query->condition('bt.show', 1, '=');
     $query->condition('h.hoofdstuk_minfin_id', $hoofdstukMinfinId, '=');
     $query->condition('a.artikel_minfin_id', $artikelMinfinId, '=');
     $query->condition('ao.artikelonderdeel_minfin_id', $sub1);
@@ -827,6 +830,7 @@ class BegrotingsVisualApiController extends BaseApiController {
     $query->condition('bt.vuo', $vuo, '=');
     $query->condition('bt.jaar', $jaar, '=');
     if (isset($regelingDetailniveauMinfinId)) {
+      $query->condition('bt.show', 1, '=');
       $query->join('mf_regeling_detailniveau', 'rd', 'rd.regeling_detailniveau_id = bt.regeling_detailniveau_id');
       $query->condition('rd.regeling_detailniveau_minfin_id', $regelingDetailniveauMinfinId, '=');
     }

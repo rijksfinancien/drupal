@@ -7,8 +7,8 @@
     &.widen {
       @include breakpoint($laptop) {
         width: 1178px;
-        margin-left: -211px;
         max-width: calc(100vw - 60px);
+        margin-left: -211px;
       }
     }
   }
@@ -21,9 +21,9 @@
   }
 
   .margetekst {
+    font-style: italic;
     margin-bottom: 5px;
     padding-right: 90px;
-    font-style: italic;
   }
 
   .verplaatst {
@@ -41,13 +41,15 @@
       display: block;
       width: 100%;
       height: 1px;
+      margin-bottom: 15px;
       content: '';
       background-color: $c-primary-400;
-      margin-bottom: 15px;
     }
   }
 
   .page-actions {
+    justify-content: flex-end;
+    margin-top: 16px;
     margin-bottom: 20px;
   }
 
@@ -58,8 +60,8 @@
     }
 
     .naam {
-      display: block;
       font-style: italic;
+      display: block;
     }
   }
 

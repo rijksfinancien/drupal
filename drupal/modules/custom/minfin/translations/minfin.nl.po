@@ -344,3 +344,6 @@ msgstr "volledige URL"
 msgctxt "minfin import"
 msgid "specific values (see explanation)"
 msgstr "specifieke waardes (zie uitleg)"
+
+msgid "Browse related information"
+msgstr "Bladeren in gerelateerde informatie"

@@ -1,0 +1,20 @@
+uuid: 60ffc29c-93cf-4725-97f5-e9dc89d6e846
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - indicia_theme
+id: breadcrumbs_mobile
+theme: indicia_theme
+region: mobile_breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

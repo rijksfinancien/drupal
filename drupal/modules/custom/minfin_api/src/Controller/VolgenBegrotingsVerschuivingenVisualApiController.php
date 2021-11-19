@@ -19,6 +19,7 @@ class VolgenBegrotingsVerschuivingenVisualApiController extends BegrotingsVisual
     $query = $this->connection->select('mf_b_tabel', 'bt');
     $this->addAmmountToQuery($query, $fase);
     $query->condition('jaar', $jaar, '=');
+    $query->condition('bt.show', 1, '=');
     $query->groupBy('jaar');
     if (!$query->execute()->fetchField()) {
       return $this->jsonResponse([], 404);
@@ -304,6 +305,7 @@ class VolgenBegrotingsVerschuivingenVisualApiController extends BegrotingsVisual
     $this->addAmmountToQuery($query, $fase);
     $query->condition('bt.jaar', $jaar, '=');
     $query->condition('bt.vuo', $vuo, '=');
+    $query->condition('bt.show', 1, '=');
     $query->condition('h.hoofdstuk_minfin_id', $hoofdstukMinfinId, '=');
     $query->condition('a.artikel_minfin_id', $artikelMinfinId, '=');
     $query->condition('ao.artikelonderdeel_minfin_id', $sub1);
@@ -364,7 +366,9 @@ class VolgenBegrotingsVerschuivingenVisualApiController extends BegrotingsVisual
     $query->condition('trace.voorgaand_fase', $fase, '=');
     $query->condition('bt.jaar', $huidigJaar, '=');
     $query->condition('bt.vuo', $vuo, '=');
+    $query->condition('bt.show', 1, '=');
     $query->condition('vbt.vuo', $vuo, '=');
+    $query->condition('vbt.show', 1, '=');
     $query->condition('h.hoofdstuk_minfin_id', $hoofdstukMinfinId, '=');
     $query->condition('a.artikel_minfin_id', $artikelMinfinId, '=');
     $query->condition('ao.artikelonderdeel_minfin_id', $sub1, '=');

@@ -12,7 +12,7 @@ dependencies:
 id: contentmenu
 theme: indicia_theme
 region: header
-weight: -2
+weight: -4
 provider: null
 plugin: 'system_menu_block:content-menu'
 settings:

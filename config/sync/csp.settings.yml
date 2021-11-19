@@ -1,0 +1,33 @@
+_core:
+  default_config_hash: o4-eDkmTmVdUICtL1VxWD3S9Ze8kNq_lHj6DskF8U8o
+langcode: nl
+report-only:
+  enable: true
+  directives:
+    default-src:
+      base: self
+    font-src:
+      sources:
+        - 'https://themes.googleusercontent.com'
+      base: self
+    img-src:
+      sources:
+        - 'data:'
+      base: self
+  reporting:
+    plugin: none
+enforce:
+  enable: false
+  directives:
+    default-src:
+      base: self
+    font-src:
+      sources:
+        - 'https://themes.googleusercontent.com'
+      base: self
+    img-src:
+      sources:
+        - 'data:'
+      base: self
+  reporting:
+    plugin: none

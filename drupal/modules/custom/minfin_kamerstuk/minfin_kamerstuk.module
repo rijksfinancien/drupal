@@ -5,6 +5,10 @@
  * Implements the module hooks.
  */
 
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Link;
+
 /**
  * Implements hook_theme().
  */
@@ -81,4 +85,42 @@ function minfin_kamerstuk_theme($existing, $type, $theme, $path) {
     ],
     'table-header' => [],
   ];
+}
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function minfin_kamerstuk_system_breadcrumb_alter(Breadcrumb &$breadcrumb) {
+  $routeMatch = \Drupal::routeMatch();
+
+  $routeName = $routeMatch->getRouteName();
+  $routes = [
+    'minfin.isb_memorie_van_toelichting.',
+    'minfin.memorie_van_toelichting.',
+    'minfin.jaarverslag.',
+    'minfin.miljoenennota.',
+    'minfin.financieel_jaarverslag.',
+    'minfin.voorjaarsnota.',
+    'minfin.najaarsnota.',
+    'minfin.belastingplan_memorie_van_toelichting.',
+    'minfin.belastingplan_voorstel_van_wet.',
+    'minfin.belastingplan_staatsblad.',
+  ];
+  do {
+    $addYear = (strpos($routeName, array_shift($routes)) === 0);
+  } while (!$addYear && $routes);
+
+  if ($addYear) {
+    $year = $routeMatch->getParameter('year');
+    $links = $breadcrumb->getlinks();
+    $cacheability = CacheableMetadata::createFromObject($breadcrumb);
+
+    $breadcrumb = new Breadcrumb();
+    $breadcrumb->addLink(array_shift($links));
+    $breadcrumb->addLink(Link::createFromRoute($year, 'minfin_general.year.' . $year));
+    foreach ($links as $link) {
+      $breadcrumb->addLink($link);
+    }
+    $breadcrumb->addCacheableDependency($cacheability);
+  }
 }

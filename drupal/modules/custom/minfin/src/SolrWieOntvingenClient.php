@@ -37,15 +37,15 @@ class SolrWieOntvingenClient implements SolrWieOntvingenClientInterface {
   /**
    * {@inheritdoc}
    */
-  public function update(array $data) {
-    return $this->solrClient->update($data);
+  public function update(array $data, bool $commit = FALSE) {
+    return $this->solrClient->update($data, $commit);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function deleteAll() {
-    $this->solrClient->deleteQuery(['query' => '*:*']);
+  public function deleteAll(int $year) {
+    $this->solrClient->deleteQuery(['query' => 'year:' . $year]);
   }
 
 }

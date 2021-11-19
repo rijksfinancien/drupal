@@ -60,6 +60,13 @@ minfin_api.financiele_instrumenten.regelingen:
   requirements:
     _permission: 'access content'
 
+minfin_api.financiele_instrumenten.available_years:
+  path: '/json/financiele_instrumenten/available_years'
+  defaults:
+    _controller: '\Drupal\minfin_api\Controller\FinancieleInstrumentenApiController::getAvailableYears'
+  requirements:
+    _permission: 'access content'
+
 minfin_api.financiele_instrumenten.old:
   path: '/json/old/financiele_instrumenten'
   defaults:

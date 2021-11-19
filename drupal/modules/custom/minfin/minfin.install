@@ -182,6 +182,13 @@ function minfin_schema() {
         'size' => 'big',
         'not null' => FALSE,
       ],
+      'show' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'default' => 1,
+        'not null' => FALSE,
+        'unsigned' => TRUE,
+      ],
     ],
     'primary key' => [
       'btabel_id',
@@ -193,6 +200,7 @@ function minfin_schema() {
       'artikelonderdeel_id' => ['artikelonderdeel_id'],
       'instrument_of_uitsplitsing_apparaat_id' => ['instrument_of_uitsplitsing_apparaat_id'],
       'regeling_detailniveau_id' => ['regeling_detailniveau_id'],
+      'show' => ['show'],
     ],
   ];
 
@@ -3942,6 +3950,122 @@ function minfin_update_8052() {
       'naam' => ['naam'],
       'type' => ['type'],
       'ministerie' => ['ministerie'],
+    ],
+  ]);
+}
+
+/**
+ * Updated mf_b_tabel table.
+ */
+function minfin_update_8053() {
+  $connection = Database::getConnection();
+  $schema = $connection->schema();
+
+  $schema->addField('mf_b_tabel', 'show', [
+    'type' => 'int',
+    'length' => 'tiny',
+    'default' => 1,
+    'not null' => FALSE,
+    'unsigned' => TRUE,
+  ]);
+
+  $schema->addIndex('mf_b_tabel', 'show', ['show'], [
+    'fields' => [
+      'btabel_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'btabel_minfin_id' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'jaar' => [
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'vuo' => [
+        'type' => 'varchar',
+        'length' => 1,
+        'not null' => TRUE,
+      ],
+      'hoofdstuk_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'artikelonderdeel_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'instrument_of_uitsplitsing_apparaat_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'regeling_detailniveau_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'beleidsartikel' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'not null' => FALSE,
+        'unsigned' => TRUE,
+      ],
+      'bedrag_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_vastgestelde_begroting' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire1' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_suppletoire2' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'bedrag_jaarverslag' => [
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'show' => [
+        'type' => 'int',
+        'length' => 'tiny',
+        'default' => 1,
+        'not null' => FALSE,
+        'unsigned' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'btabel_id',
+    ],
+    'indexes' => [
+      'jaar' => ['jaar'],
+      'hoofdstuk_id' => ['hoofdstuk_id'],
+      'artikel_id' => ['artikel_id'],
+      'artikelonderdeel_id' => ['artikelonderdeel_id'],
+      'instrument_of_uitsplitsing_apparaat_id' => ['instrument_of_uitsplitsing_apparaat_id'],
+      'regeling_detailniveau_id' => ['regeling_detailniveau_id'],
+      'show' => ['show'],
     ],
   ]);
 }

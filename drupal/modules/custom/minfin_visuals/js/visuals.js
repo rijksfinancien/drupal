@@ -411,6 +411,8 @@
                     case 'sankey':
                         // create sankey diagram
                         charts[chartId] = container.createChild(am4charts.SankeyDiagram);
+                        container.width = am4core.percent(100);
+                        container.height = am4core.percent(100);
                         chart = charts[chartId];
                         chart.domId = id;
                         chart.local = typeof (options.local) != 'undefined' ? options.local : false;
@@ -432,7 +434,15 @@
                                 window.scrollTo(0, anchor);
                             }
                             // remove spinner
-                            document.querySelector('#' + charts[chartId].domId).classList.remove('spin')
+                            document.querySelector('#' + charts[chartId].domId).classList.remove('spin');
+                            // prepare sliderbox
+                            if (minfin_data[chartId].options['slider']) {
+
+                                // set chartId in corresponding slider
+                                minfin_data[chartId].options['slider'].obj.set({
+                                    chartId: chartId
+                                });
+                            }
                             // remove tabindex
                             removeTabIndex();
                             resize_graph(200);
@@ -467,20 +477,48 @@
                         // labels
                         nodeTemplate.nameLabel.height = undefined;
                         nodeTemplate.nameLabel.label.hideOversized = true;
-                        nodeTemplate.nameLabel.label.width = 200;
-                        nodeTemplate.nameLabel.label.truncate = true;
+                        nodeTemplate.nameLabel.label.width = 300;
+                        nodeTemplate.nameLabel.label.truncate = false;
                         nodeTemplate.nameLabel.label.wrap = true;
                         nodeTemplate.nameLabel.locationX = 1;
                         nodeTemplate.nameLabel.label.fill = am4core.color("#000");
                         nodeTemplate.nameLabel.label.fontWeight = "regular";
+
+                        //nodeTemplate.nameLabel.label.align = 'right';
+
+                        //nodeTemplate.nameLabel.horizontalCenter = "right";
+                        //nodeTemplate.nameLabel.label.horizontalCenter = "right";
+                        nodeTemplate.nameLabel.label.textAlign = "end";
+                        nodeTemplate.nameLabel.width = undefined;
+
+
+                        nodeTemplate.nameLabel.label.properties.align = 'right';
+
                         // set label left or right according to level
                         nodeTemplate.nameLabel.adapter.add("locationX", function (location, target) {
-                            switch (target.parent.level) {
-                                case 0:
-                                    return 1;
-                                    break;
-                                default:
-                                    return -1;
+                            if (typeof (minfin_data[chartId].options.targetfrom) == 'undefined') {
+                                switch (target.parent.level) {
+                                    case 0:
+                                        return minfin_data[chartId].options ? 1 : parseInt(290 / -15);
+                                        break;
+                                    default:
+                                        return minfin_data[chartId].options ? parseInt(290 / -15) : 1;
+                                }
+                            } else {
+                                return minfin_data[chartId].options.targetfrom ? 1 : parseInt(290 / -15);
+                            }
+                        });
+                        nodeTemplate.nameLabel.label.adapter.add("textAlign", function (location, target) {
+                            if (typeof (minfin_data[chartId].options.targetfrom) == 'undefined') {
+                                switch (target.parent._parent.properties.level) {
+                                    case 0:
+                                        return minfin_data[chartId].options ? "start" : "end";
+                                        break;
+                                    default:
+                                        return minfin_data[chartId].options ? "end" : "start";
+                                }
+                            } else {
+                                return minfin_data[chartId].options.targetfrom ? "start" : "end";
                             }
                         });
 
@@ -592,7 +630,6 @@
                             label.x = am4core.percent(50);
                             label.y = -35;
                             label.id = "sankey_label_divider";
-                            console.log(label)
                         }
 
                         // qwerty
@@ -1901,7 +1938,7 @@
                     if (minfin_api.map[m] == phase) {
                         // TODO titel nog aanpassen
                         if (minfin_data[chart].meta.autoyear) {
-                            minfin_data[chart].data[index].data_phase = m.charAt(0).toUpperCase() + m.substring(1);
+                            minfin_data[chart].data[index].data_phase = cap(m);
                         } else {
                             minfin_data[chart].data[index].data_phase = minfin_data[chart].meta.title;
                         }
@@ -2098,9 +2135,10 @@
                                             //console.log(link[l].getAttribute('minfin-link'))
                                             if (link[l].getAttribute('minfin-link').indexOf('execute:') == 0) {
                                                 link[l].addEventListener('click', function (e) {
-                                                    var parts = this.getAttribute('minfin-link').replace(/execute:/, '').split(',');
+                                                    var parts = this.getAttribute('minfin-link').replace(/execute:/, '').split('|');
                                                     var func = parts[0];
                                                     parts.shift();
+                                                    parts.push(chart);
                                                     executeFunctionByName(func, window, parts);
                                                 });
                                             } else if (link[l].getAttribute('minfin-link').indexOf('ext:') == 0) {
@@ -2222,7 +2260,7 @@
                                             var link = node.querySelectorAll(".chart_legend_data_item_info .minfin_link");
                                             for (let l = 0; l < link.length; l++) {
                                                 link[l].addEventListener('click', function (e) {
-                                                    var parts = this.getAttribute('minfin-link').replace(/execute:/, '').split(',');
+                                                    var parts = this.getAttribute('minfin-link').replace(/execute:/, '').split('|');
                                                     var func = parts[0];
                                                     parts.shift();
                                                     executeFunctionByName(func, window, parts);
@@ -2262,7 +2300,6 @@
                     }
                     if (typeof (minfin_data[chart].meta['legend']) == 'object') {
                         for (var l in minfin_data[chart].meta['legend']) {
-
                             //TODO other than value / divider -> determined by type for example
                             var divider = typeof (minfin_data[chart].options.divider) != 'undefined' ? minfin_data[chart].options.divider : 1;
                             var data = minfin_data[chart].meta['legend'][l];
@@ -2270,8 +2307,7 @@
                             var legendtitle = typeof (minfin_data[chart].meta['legend'][l]['title']) != 'undefined' ? minfin_data[chart].meta['legend'][l]['title'] : false;
                             var legendtype = typeof (minfin_data[chart].meta['legend'][l]['type']) != 'undefined' ? minfin_data[chart].meta['legend'][l]['type'] : false;
                             if (legendtitle && legendtype) {
-                                temp = document.getElementById("chart_legend_template").innerHTML;
-
+                                temp = document.getElementById("chart_legend_template" + templateId).innerHTML;
                                 var legendkey = typeof (minfin_data[chart].meta['legend'][l]['key']) != 'undefined' ? minfin_data[chart].meta['legend'][l]['key'] : false;
                                 if (legendkey) {
                                     var sum = typeof (minfin_data[chart].meta['legend'][l]['sum']) != 'undefined' ? minfin_data[chart].meta['legend'][l]['sum'] : 'average';
@@ -2329,6 +2365,19 @@
                                     colorObj.style.borderColor = 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')';
                                     colorObj.setAttribute('maincol', 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')');
                                     colorObj.classList.add("dash");
+                                } else if (legendtype == 'other') {
+                                    node.classList.add('navigation');
+                                    node.classList.add('center');
+                                    node.addEventListener('click', (function (e) {
+                                        if (typeof (e['link']) != 'undefind' && e['link'].indexOf('execute:') == 0) {
+                                            var parts = e['link'].replace(/execute:/, '').split('|');
+                                            var func = parts[0];
+                                            parts.shift();
+                                            parts.push(chart);
+                                            console.log(minfin_data[chart].meta, minfin_data[chart].options, parts)
+                                            executeFunctionByName(func, window, parts);
+                                        }
+                                    }).bind(null, data));
                                 }
                             }
                         }
@@ -2824,6 +2873,14 @@
                                         } else {
                                             link[l].style.display = 'none';
                                         }
+                                    } else if (link[l].getAttribute('minfin-link').indexOf('execute:') == 0) {
+                                        link[l].addEventListener('click', function (e) {
+                                            var parts = this.getAttribute('minfin-link').replace(/execute:/, '').split('|');
+                                            var func = parts[0];
+                                            parts.shift();
+                                            parts.push(chart);
+                                            executeFunctionByName(func, window, parts);
+                                        });
                                     } else {
                                         link[l].setAttribute('minfin-year', minfin_data[chart].data[index].data_year);
                                         link[l].addEventListener('click', function (e) {
@@ -3005,7 +3062,6 @@
                     var target = document.getElementById(charts[domid].domId);
                     var box = target.getBoundingClientRect();
                     if (item._className == 'SankeyLink') {
-                        console.log('topAnim', $('#' + charts[domid].domId).offset().top + 40 + item._bbox.y + (item._bbox.height / 2))
                         var topAnim = $('#' + charts[domid].domId).offset().top + 68 + item._bbox.y + (item._bbox.height / 2);
                         var square = item._bbox;
                         var dotY = square.y + square.height * 0.85;
@@ -3449,7 +3505,7 @@
                         var bb = document.getElementById(chart.id).getBoundingClientRect();
                         var p = document.getElementById(chart.id).parentElement;
                         if (bb.height > newh) newh = bb.height;
-                        p.style.minHeight = newh + 'px';
+                        //p.style.minHeight = newh + 'px';
 
                         var chartId = parseInt(document.getElementById(charts[c].domId).getAttribute('chartId'));
                         var bbox = chart.getBoundingClientRect();
@@ -4021,8 +4077,11 @@
 
                     if (tmp_data) {
                         var years = [];
+                        var currentdefault = false;
+                        var lastyear = false;
                         for (var u in tmp_data) {
-                            years.push(u);
+                            years.push(parseInt(u));
+                            lastyear = u;
                         }
 
                         // get years first?
@@ -4030,10 +4089,19 @@
                             for (var y in options['select']) {
                                 if (options['select'][y]['type'] == 'year') {
                                     options['select'][y]['options'] = years;
+                                    currentdefault = typeof (options['select'][y]['query']) != 'undefined' ? options['select'][y]['query'] : false;
+                                    if (currentdefault && options.api && options.api.query && options.api.query[currentdefault]) {
+                                        if (years.indexOf(parseInt(options.api.query[currentdefault])) == -1) {
+                                            //options.api.query[currentdefault] = lastyear;
+
+                                            options['select'][y]['options'].push(options.api.query[currentdefault]);
+                                            options['select'][y]['options'].sort();
+                                        }
+                                    }
                                 }
                             }
                         }
-                        console.warn("Available_year parsed successfully from API:", tmp_data);
+                        //console.warn("Available_year parsed successfully from API:", tmp_data);
                         readAPIFile(callback, options);
                     } else {
                         //console.warn(responsetype + " parse from "+apiPath+" failed");
@@ -4134,14 +4202,33 @@
                 if (typeof (options['select']) != 'undefined') {
                     for (var y in options['select']) {
                         if (options['select'][y]['type'] == 'year' && typeof (options['select'][y]['api']) != 'undefined' && options['select'][y]['api']) {
-                            apiurl = apiurl + '/available_years/' + options['select'][y]['api'];
+                            if(options['select'][y]['api'].indexOf('/') == 0) {
+                                apiurl = apiurl + options['select'][y]['api'];
+                            } else {
+                                apiurl = apiurl + '/available_years/' + options['select'][y]['api'];
+                            }
                             getyearsfirst = y;
                             options['select'][y]['api'] = false;
                         }
                     }
                 }
+                if(getyearsfirst == -1 && typeof (options['api']) != 'undefined' && typeof (options['api']['path']) == 'string') {
+                    apiurl = options['api']['path'];
+                }
+
                 if (getyearsfirst == -1 && ((typeof (options['api']) != 'undefined' || typeof (options['api']['url']) != 'undefined') && (typeof (options['api']['usepath']) == 'undefined' || options['api']['usepath']))) {
-                    apiurl += getApiPath();
+                    // if ther's a path, use it instead of the trigger path
+                    if(typeof (options['api']) != 'undefined' && typeof (options['api']['path']) == 'string' && typeof (options['api']['trigger']) == 'string') {
+                        var tpath = [];
+                        for (var p in minfin_api.path) {
+                            if(p != options['api']['trigger']) {
+                                tpath.push(minfin_api.path[p]);
+                            }
+                        }
+                        apiurl += '/' + tpath.join('/');
+                    } else {
+                        apiurl += getApiPath();
+                    }
                 }
 
                 if (typeof (options) == 'undefined') options = {};
@@ -4172,7 +4259,7 @@
                             responsetype = "JSON";
                             try {
                                 tmp_data = JSON.parse(tmp_data);
-                                
+
                                 // exception
                                 if (options.exception == 'uitgavenplafonds2') {
                                     console.warn("Uitgavenplafonds2 exception");
@@ -4190,7 +4277,7 @@
                                         }
                                     }
                                 }
-                                
+
                                 tmp_data['data'] = tmp_data;
                             } catch (err) {
                                 console.warn("JSON parser failed");
@@ -4412,7 +4499,7 @@
                                                 if (this.datatype == 'rijksfinancien_single' && this.target) {
                                                     for (let m in minfin_api.map) {
                                                         if (minfin_api.map[m] == barTitle) {
-                                                            barTitle = m.charAt(0).toUpperCase() + m.substring(1);
+                                                            barTitle = cap(m);
                                                             break;
                                                         }
                                                     }
@@ -6033,14 +6120,14 @@
             });
 
             /*
-            // excecute function from template
+            // execute function from template
             */
             function executeFunctionByName(functionName, localContext) {
 
                 var args = Array.prototype.slice.call(arguments, 2);
 
                 if (args.length) {
-                    if (args.length == 1 && args[0].length) {
+                    if (args.length == 1 && (args[0].length || Object.keys(args[0]).length)) {
                         args = args[0];
                     }
                 }
@@ -6052,11 +6139,27 @@
                 } else if (functionName == 'handling_verzelfstandigingen_vergelijk') {
                     return handling_verzelfstandigingen_vergelijk(args[0], args[1]);
                 } else if (functionName == 'change_vzst_vergelijk') {
-                    return change_vzst_vergelijk(args[0], args[1], args[2])
+                    return change_vzst_vergelijk(args[0], args[1], args[2]);
                 } else if (functionName == 'change_slider_vrzs') {
-                    return change_slider_vrzs(args[0])
+                    return change_slider_vrzs(args);
                 } else if (functionName == 'set_manual_bars') {
-                    return set_manual_bars(args[0], args[1], args[2])
+                    return set_manual_bars(args[0], args[1], args[2]);
+                } else if (functionName == 'handling_wie_ontv') {
+                  return handling_wie_ontv(args[0], args[1]);
+                } else if (functionName == 'handling_wie_ontv_start') {
+                    return handling_wie_ontv_start(args[0], args[1]);
+                } else if (functionName == 'change_slider_wie_ontv') {
+                    return change_slider_wie_ontv(args);
+                } else if (functionName == 'wie_ontvingen') {
+                  return wie_ontvingen(args);
+                } else if (functionName == 'wie_ontvingen_start') {
+                  return wie_ontvingen_start(args);
+                } else if (functionName == 'set_min_wie_ontv') {
+                    return set_min_wie_ontv(args);
+                } else if (functionName == 'reload_wie_ontv') {
+                    return reload_wie_ontv(args);
+                } else if (functionName == 'wie_ontv_year') {
+                    return wie_ontv_year(args);
                 } else { // does not work within drupal :-(
                     var namespaces = functionName.split(".");
                     var func = namespaces.pop();
@@ -6073,10 +6176,21 @@
 
             // handle keydown
             function handleKeyDown(e) {
-                curKeyDown = e.keyCode;
-                if (e.keyCode == 13) {
-                    document.activeElement.click();
+              curKeyDown = e.keyCode;
+              if (e.keyCode === 13) {
+                let isPageAction = hasSomeParentTheClass(document.activeElement, 'page-actions');
+                if(!isPageAction) {
+                  document.activeElement.click();
                 }
+              }
+            }
+
+            // returns true if the element or one of its parents has the class classname
+            function hasSomeParentTheClass(element, classname) {
+              if(element.className) {
+                if (element.className.split(' ').indexOf(classname)>=0) return true;
+              }
+              return element.parentNode && hasSomeParentTheClass(element.parentNode, classname);
             }
 
             // handle keyup
@@ -6347,7 +6461,7 @@
                 // add 'other' color
                 // query
                 if (colorindex > -1) {
-                    var tc = 0;
+                    var tc = colorset[0] == '#01689B' ? 1 : 0;
                     while (colorset.length < colorindex + 1) {
                         colorset.push(colorset[tc]);
                         tc++;
@@ -6475,7 +6589,12 @@
                                     for (var i in o) {
                                         var selected = o[i] == d ? ' selected' : ''
                                         var tekst = options.select[os].query == 'ministerie' && ministerie_abbreviation[o[i].toUpperCase()] ? ministerie_abbreviation[o[i].toUpperCase()] + ' (' + o[i] + ')' : o[i];
-                                        optionsY += '<option value="' + o[i] + '"' + selected + '>' + tekst + '</option>';
+                                        var exclude = false;
+                                        if (options.select[os]['exclude'] && options.api && options.api.query && options.api.query[options.select[os]['exclude']] && o[i] == options.api.query[options.select[os]['exclude']]) {
+                                            //
+                                        } else {
+                                            optionsY += '<option value="' + o[i] + '"' + selected + '>' + tekst + '</option>';
+                                        }
                                     }
                                     obj.html(optionsY);
                                     if (options.select[os].size) {
@@ -6493,43 +6612,47 @@
                                             options.multiplier = options.select[os]['multiplier'][options.api.query[options.select[os]['query']]];
                                         }
                                         obj.addClass('hasevent');
-                                        obj.bind('change', function () {
+                                        obj.bind('change', { os: os, options: options }, function (e) {
                                             var nav = $(this).closest('.chart_navigation');
                                             if (nav) {
                                                 var query = $(this).attr('query');
                                                 var chartId = nav.attr('chartId');
-                                                // set new query
-                                                minfin_data[chartId].options.api.query[query] = $(this).val();
-                                                // change title, currency & multiplier
-                                                var opt = minfin_data[chartId].options;
-                                                if (opt && opt.select) {
-                                                    for (var os in opt.select) {
-                                                        if (opt.select[os].query && opt.select[os].query == query && opt.select[os].currency) {
-                                                            minfin_data[chartId].options.currency = opt.select[os].currency[$(this).val()];
-                                                        }
-                                                        // reset title & multiplier
-                                                        if (opt.select[os].query && opt.select[os].query == query && opt.select[os].title) {
-                                                            minfin_data[chartId].options.title = opt.select[os].title[$(this).val()];
-                                                        }
-                                                        if (opt.select[os].query && opt.select[os].query == query && opt.select[os].multiplier) {
-                                                            minfin_data[chartId].options.multiplier = opt.select[os].multiplier[$(this).val()];
-                                                        }
-                                                        // reset slider
-                                                        if (options.slider && options.slider.reset && typeof (options.slider.reset[opt.select[os].query]) != 'undefined' && typeof (options.api.query[opt.select[os].query]) != 'undefined') {
-                                                            if (!options.slider.reset[opt.select[os].query]) {
-                                                                //options.slider.reload[opt.select[os].query] = options.api.query[opt.select[os].query];
+                                                if (typeof (nav.attr('chartId')) != 'undefined' ) {
+                                                    // set new query
+                                                    minfin_data[chartId].options.api.query[query] = $(this).val();
+                                                    // change title, currency & multiplier
+                                                    var opt = minfin_data[chartId].options;
+                                                    if (opt && opt.select) {
+                                                        for (var os in opt.select) {
+                                                            if (opt.select[os].query && opt.select[os].query == query && opt.select[os].currency) {
+                                                                minfin_data[chartId].options.currency = opt.select[os].currency[$(this).val()];
                                                             }
-                                                            if (options.slider.reset[opt.select[os].query] != options.api.query[opt.select[os].query]) {
-                                                                options.slider.reset[opt.select[os].query] = options.api.query[opt.select[os].query];
-                                                                if (options.api.query['min']) options.api.query['min'] = false;
-                                                                if (options.api.query['max']) options.api.query['max'] = 1000000000000000;
+                                                            // reset title & multiplier
+                                                            if (opt.select[os].query && opt.select[os].query == query && opt.select[os].title) {
+                                                                minfin_data[chartId].options.title = opt.select[os].title[$(this).val()];
                                                             }
+                                                            if (opt.select[os].query && opt.select[os].query == query && opt.select[os].multiplier) {
+                                                                minfin_data[chartId].options.multiplier = opt.select[os].multiplier[$(this).val()];
+                                                            }
+                                                            // reset slider
+                                                            if (options.slider && options.slider.reset && typeof (options.slider.reset[opt.select[os].query]) != 'undefined' && typeof (options.api.query[opt.select[os].query]) != 'undefined') {
+                                                                if (!options.slider.reset[opt.select[os].query]) {
+                                                                    //options.slider.reload[opt.select[os].query] = options.api.query[opt.select[os].query];
+                                                                }
+                                                                if (options.slider.reset[opt.select[os].query] != options.api.query[opt.select[os].query]) {
+                                                                    options.slider.reset[opt.select[os].query] = options.api.query[opt.select[os].query];
+                                                                    if (options.api.query['min']) options.api.query['min'] = false;
+                                                                    if (options.api.query['max']) options.api.query['max'] = 1000000000000000;
+                                                                }
 
+                                                            }
                                                         }
                                                     }
+                                                    // reload
+                                                    reloadnow(nav.attr('chartId'));
+                                                } else if (e.data.options && typeof (e.data.options.select[e.data.os]['script']) != 'undefined') {
+                                                    executeFunctionByName(e.data.options.select[e.data.os]['script'], window, $(this).val(), e.data.options);
                                                 }
-                                                // reload
-                                                reloadnow(nav.attr('chartId'));
                                             } else {
                                                 console.warn('chartId missing in chart_navigation');
                                             }
@@ -6556,7 +6679,6 @@
                                     if (document.querySelector('#' + options.target + '_navigation')) {
                                         document.querySelector('#' + options.target + '_navigation').style.display = 'block';
                                     }
-                                    //console.log(t, o, d, obj)
                                 }
                             } else if (options.select[os] && options.select[os].type && options.select[os].type == 'year' && available_years.length > 1) {
                     // general year select
@@ -6606,6 +6728,7 @@
                         step: options.slider.step ? options.slider.step : 1,
                         round: options.slider.round ? options.slider.round : true,
                         currency: options.slider.currency ? options.slider.currency : '',
+                        divider: options.divider ? options.divider : 1,
                     }, options.slider.script);
                 }
 
@@ -6973,7 +7096,7 @@
                         }
 
                         var title = ''; //minfin_api.map['nl'][minfin_api.path['vuo']] ? minfin_api.map['nl'][minfin_api.path['vuo']] : '';
-                        title = title.charAt(0).toUpperCase() + title.slice(1)
+                        title = cap(title);
                         title += ' ' + tmp_data[0][csv_structure[0]];
                         //title += ' per ' + tmp_data[0]['Status'];
 
@@ -7265,6 +7388,9 @@
             /*
             // Additional scripts
             */
+            function cap(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
             function set_manual_bars(chartId, action, key) {
 
                 // add click event to close menu
@@ -7549,6 +7675,7 @@
                 this.style = 'currency';
                 this.currency = 'EUR';
                 this.decimals = 0;
+                this.divider = 1;
 
                 this.init = function (target_id, options, func) { //type, min, max, step, start, end, value) {
                     if (typeof (target_id) == 'string') {
@@ -7628,6 +7755,7 @@
                     if (typeof (options) == 'object') {
                         for (var o in options) {
                             switch (o) {
+                                case 'divider':
                                 case 'type':
                                 case 'step':
                                 case 'style':
@@ -7789,8 +7917,10 @@
                 }
                 // scale slider
                 this.draw = function () {
-                    this.min.val = (Math.round((this.min.val - this.min.abs) / this.step) * this.step) + this.min.abs;
-                    this.max.val = (Math.round((this.max.val - this.min.abs) / this.step) * this.step) + this.min.abs;
+                    if (this.step) {
+                        this.min.val = (Math.round((this.min.val - this.min.abs) / this.step) * this.step) + this.min.abs;
+                        this.max.val = (Math.round((this.max.val - this.min.abs) / this.step) * this.step) + this.min.abs;
+                    }
                     var left = parseInt((this.min.val - this.min.abs) / (this.max.abs - this.min.abs) * 100);
                     var length = parseInt((this.max.val - this.min.abs) / (this.max.abs - this.min.abs) * 100 - left);
                     $(this.target + ' .slider_bar').css('left', left + '%');
@@ -7804,11 +7934,11 @@
                     }
                     // set values
                     if (this.type == 'double') {
-                        var txt = format_number(this.min.val, {
+                        var txt = format_number(Math.round(this.min.val / this.divider), {
                             style: this.style,
                             currency: this.currency,
                             decimals: this.decimals
-                        }) + ' - ' + format_number(this.max.val, {
+                        }) + ' - ' + format_number(Math.round(this.max.val / this.divider), {
                             style: this.style,
                             currency: this.currency,
                             decimals: this.decimals
@@ -7816,19 +7946,27 @@
                     } else if (this.type == 'single') {
                         var st = $(this.target + ' .slider_dot.min').css('display') == 'block' ? this.max.val : this.min.val;
                         var nd = $(this.target + ' .slider_dot.min').css('display') == 'block' ? this.min.val : this.max.val;
-                        var txt = format_number(nd - st, {
+                        var txt = format_number(Math.round((nd - st) / this.divider), {
                             style: this.style,
                             currency: this.currency,
                             decimals: this.decimals
                         })
                     } else if (this.type == 'simple') {
-                        var txt = format_number($(this.target + ' .slider_dot.min').css('display') == 'block' ? this.min.val : this.max.val, {
+                        var txt = format_number($(this.target + ' .slider_dot.min').css('display') == 'block' ? Math.round(this.min.val / this.divider) : Math.round(this.max.val / this.divider), {
                             style: this.style,
                             currency: this.currency,
                             decimals: this.decimals
                         })
                     }
-                    $(this.target + ' .slider_values').html(txt);
+                    if (this.min.val == this.max.val) {
+                        $(this.target + ' .slider_values').html(format_number(Math.round(this.min.val / this.divider), {
+                            style: this.style,
+                            currency: this.currency,
+                            decimals: this.decimals
+                        }));
+                    } else {
+                        $(this.target + ' .slider_values').html(txt);
+                    }
                     this.setAbs();
                 }
                 this.execute = function (pass) {
@@ -7869,6 +8007,7 @@
                         from: 10,
                         title: 'Overig'
                     },
+                    align: 'left', // needs documentation (alignment of navigation items)
                     currency: '',
                     back_title: "",
                     backlink: false,
@@ -7878,7 +8017,7 @@
                     divider: 1,
                     graph: 'pie',
                     legend: true,
-                    legend_limit: 430,
+                    legend_limit: true,
                     loader: true,
                     local: true,
                     multiplier: false,
@@ -8002,6 +8141,13 @@
                 var max = 0;
                 var index = 0;
 
+                // set default year
+                if (!options.api.query.jaar) {
+                    for (var j in tmp_data.jaar) {
+                        options.api.query.jaar = j;
+                    }
+                }
+
                 // leave out zero data
                 var td = [];
                 for (var r in tmp_data.result) {
@@ -8037,7 +8183,7 @@
                                 beschrijving: tmp_data.result[r]['info']['beschrijving'] ? tmp_data.result[r]['info']['beschrijving'] : '',
                                 website: tmp_data.result[r]['info']['website'],
                                 website_class: tmp_data.result[r]['info']['website'] && tmp_data.result[r]['info']['website'] != '' ? 'show' : '',
-                                link: "execute:set_manual_bars,chart_canvas_1,add,"+tmp_data.result[r]['titel']
+                                link: "execute:set_manual_bars|chart_canvas_1|add|"+tmp_data.result[r]['titel']
                         };
                         data.push(d);
                     } else {
@@ -8053,7 +8199,7 @@
                                 beschrijving: tmp_data.result[r]['info']['beschrijving'] ? tmp_data.result[r]['info']['beschrijving'] : '',
                                 website: tmp_data.result[r]['info']['website'],
                                 website_class: tmp_data.result[r]['info']['website'] && tmp_data.result[r]['info']['website'] != '' ? 'show' : '',
-                                link: "execute:set_manual_bars,chart_canvas_1,add," + tmp_data.result[r]['titel']
+                                link: "execute:set_manual_bars|chart_canvas_1|add|" + tmp_data.result[r]['titel']
                             };
                             children.push(d);
                             other += val;
@@ -8221,14 +8367,16 @@
                 readAPIFile(handle_json_data, {
                     anchor: 'wie-ontvingen-start-title',
                     api: {
-                        default: ['ontvangers'],
+                        default: [],
                         structure: ["identifier"],
-                        trigger: 'financiele_instrumenten',
+                        trigger: 'wie-ontvingen',
                         url: '/json',
+                        path: '/json/financiele_instrumenten', // for use without 'trigger' in api path need documentation
                         reload: true,
                         type: 'json',
                         query: {
-                            jaar: 2020
+                            jaar: '',
+                            search: ''
                         },
                         handling: 'handling_wie_ontv_start',
                         usepath: true
@@ -8237,37 +8385,65 @@
                         from: 10,
                         title: 'Overig'
                     },
+                    select: [
+                        {
+                            query: 'jaar',
+                            api: '/financiele_instrumenten/available_years',
+                            type: 'year',
+                            size: 0.25,
+                            options: [],
+                            script: 'wie_ontv_year'
+                        }
+                    ],
                     searchbox: { // needs documentation
                         id: 'selector_wie_ontv',
+                        size: 0.5,
                         max: 20,
                         cut: 35,  // needs documentation
                         placeholder: 'Zoek...',
                         no_results: 'Er zijn geen resultaten gevonden...',
-                        max_results: 'Er zijn nog [x] resultaten. Gebruik zonodig een nauwkeurigere zoekstring...',
+                        no_good_results: 'Niet gevonden wat je zocht? Gebruik zonodig een verbeterde zoekstring...',
+                        max_results: 'Er zijn nog [x] resultaten. Gebruik zonodig een verbeterde zoekstring...',
                         script: 'search_wie_ontv'
                     },
-                    align: 'left', // needs documentation (alignment of navigation items)
+                    graph: 'none',
+                    align: 'left',
+                    target: 'chart_canvas_wie_ontv_strt', // needed for select
                     script_template_id: 'wie_ontv_search',
                     charset: 'ISO-8859-1'
                 });
+            }
+            function wie_ontv_year(e) {
+                e[1].api.query['jaar'] = e[0];
+                readAPIFile(handle_json_data, e[1], false, true);
             }
             // wie ontvingen
             // handle api data for search page
             function handling_wie_ontv_start(tmp_data, options) {
                 var data = [];
+                var aantal = 0;
+                var mx = 0;
                 for (var d in tmp_data) {
-                    if (d != 'data') {
-                        data.push({
-                            identifier: d,
-                            title: tmp_data[d],
-                            value: 100
-                        });
+                    if (d == 'result') {
+                        for (var dd in tmp_data[d]) {
+                            aantal++;
+                            mx = tmp_data[d][dd]['bedrag'];
+                            data.push({
+                                identifier: tmp_data[d][dd]['id'],
+                                title: tmp_data[d][dd]['titel'],
+                                value: mx
+                            });
+                        }
                     }
                 }
                 $('#chart_canvas_wie_ontv_strt_navigation').css('display', 'block');
                 $('#navigation_select').css('display', 'block');
                 $('#selector_wie_ontv.manual_selector').css('padding', 0);
                 $('#selector_wie_ontv').css('display', 'block').css('border', 0);
+
+                $('.searchheader_left').html(cap(minfin_api.path.identifier) + ' (' + tmp_data['total_results'] + ')');
+                $('.searchheader_right').html('total');
+
                 var obj = $('#selector_wie_ontv input');
                 obj.attr('placeholder', options.searchbox.placeholder);
                 if (obj.attr('hasevents') != 'ready') {
@@ -8277,36 +8453,70 @@
                         }
                     });
                     obj.bind('blur', { options: options }, function (e) {
-                        if (e.data.options.api.query['zoek'] != $(this).val()) {
-                            e.data.options.api.query['zoek'] = $(this).val();
+                        if (e.data.options.api.query['search'] != $(this).val()) {
+                            e.data.options.api.query['max'] = '';
+                            e.data.options.api.query['search'] = $(this).val();
                             readAPIFile(handle_json_data, e.data.options);
                         }
                     });
                     obj.attr('hasevents', 'ready');
                 }
-                num++;
                 var res = $('#chart_canvas_wie_ontv_strt_results');
                 res.html('');
                 var i = 0;
-                var numofresults = 78 - options.searchbox.max;
-                var posttxt = Object.keys(tmp_data).length > 1 ? Object.keys(tmp_data).length - 1 <= options.searchbox.cut ? '' : options.searchbox.max_results.replace('[x]', numofresults) : options.searchbox.no_results;
-                for (var d in tmp_data) {
-                    if (d != 'data') {
-                        if (Object.keys(tmp_data).length - 1 <= options.searchbox.cut || i < options.searchbox.max) {
-                            i++;
-                            var row = $('<a class="searchrow">' + tmp_data[d] + '</a>');
-                            row.bind('click', { id: d }, function (e) {
+                /* general
+                var numofresults = 78 - options.searchbox.max;var posttxt = Object.keys(tmp_data['result']).length > 1 ? Object.keys(tmp_data['result']).length - 1 <= options.searchbox.cut ? '' : options.searchbox.max_results.replace('[x]', numofresults) : options.searchbox.no_results;
+                */
 
-                                console.log('go', e.data.id);
-                            
-                            });
-                            res.append(row);
+                for (var d in data) {
+                    //if (Object.keys(data).length - 1 <= options.searchbox.cut || i < options.searchbox.max) {
+                    i++;
+                    var row = $('<a class="searchrow">' + data[d]['title'] + '<div style="display:inline-block;float:right;color:black;">' + format_number(data[d]['value'], { currency: 'EUR' }) + '</div></a>');
+                    row.bind('click', { id: data[d]['identifier'], options: options }, function (e) {
+                        if (minfin_api.path.identifier == 'hoofdstukken') {
+                            var referrer = 'hoofdstuk';
+                        } else if (minfin_api.path.identifier == 'artikelen') {
+                            var referrer = 'artikel';
+                        } else if (minfin_api.path.identifier == 'regelingen') {
+                            var referrer = 'regeling';
+                        } else {
+                            var referrer = 'ontvanger';
                         }
-                    }
+                        window.location.href = '/wie-ontvingen/visual?referrer=' + referrer + '&referrer_id' + '=' + e.data.id;
+                        });
+                        res.append(row);
+                    //}
                 }
-                var row = $('<div class="postsearchrow">' + posttxt + '</div>');
-                res.append(row);
+                var numofresults = tmp_data['total_results'] - aantal;
+                // still more results
+                if(numofresults) {
+                    var posttxt = Object.keys(tmp_data['result']).length < aantal ? '' : options.searchbox.max_results.replace('[x]', numofresults);
+                    var row = $('<div class="postsearchrow">' + posttxt + '</div>');
+                    var lnk = $('<a class="postsearchlink"href="javascript:void(0)">Toon meer resultaten</a>');
+                    lnk.bind('click', {max: mx, options: options }, function(e) {
+                        e.data.options.api.query['max'] = mx - 1;
+                        readAPIFile(handle_json_data, e.data.options);
+                    });
+                    row.append(lnk);
+                    res.append(row);
+                } else if(!i && !numofresults) { // no results
+                    res.append($('<div class="postsearchrow">' + options.searchbox.no_results + '</div>'));
+                } else if(options.api.query['query'] != '') {
+                    res.append($('<div class="postsearchrow">' + options.searchbox.no_good_results + '</div>'));
+                } else {
+                    res.append($('<div class="postsearchrow">--</div>'));
+                }
+
                 return data;
+            }
+            // wie ontvingen
+            // handle slider change
+            function change_slider_wie_ontv(obj) {
+                // reload with new min + max
+                //console.log(obj)
+                minfin_data[obj.options.chartId].options.api.query['min'] = obj.start;
+                minfin_data[obj.options.chartId].options.api.query['max'] = obj.end;
+                reloadnow(obj.options.chartId);
             }
             // wie ontvingen
             // init visual
@@ -8321,36 +8531,40 @@
                         type: 'json',
                         query: {
                             referrer: 'ontvanger',
-                            referrer_id: 'Algemeen Pensioenfonds van Curacao',
-                            jaar: 2022,
-                            type: 'regeling',
-                            min: 0,
-                            max: 1000,
-                            title: ''
+                            referrer_id: '',
+                            jaar: '',
+                            type: 'ontvanger',
+                            min: '',
+                            max: '',
+                            search: ''
                         },
                         handling: 'handling_wie_ontv',
                         usepath: true
                     },
                     collect: {
-                        from: 7,
+                        from: 14,
                         title: 'Overig'
                     },
-                    select: [{
-                        query: 'jaar',
-                        type: 'year',
-                        size: 0.25,
-                        options: ["2020", "2021", "2022", "2023", "2024", "2025"]
-                    }, {
-                        query: 'type',
-                        type: 'type',
-                        options: ["ministerie", "artikel", "regeling", "ontvanger"]
-                    }, {
-                        query: 'title',
-                        type: 'title',
-                        options:['Oi', '1', 'testing']
-                    }],
+                    select: [
+                        {
+                            query: 'jaar',
+                            api: '/financiele_instrumenten/available_years',
+                            type: 'year',
+                            size: 0.25,
+                            options: []
+                        }, {
+                            query: 'type',
+                            type: 'type',
+                            exclude: 'referrer',
+                            options: ["hoofdstuk", "artikel", "regeling", "ontvanger"]
+                        }, {
+                            query: 'title',
+                            type: 'title',
+                            options:['Oi', '1', 'testing']
+                        }
+                    ],
                     input: [{
-                        query: 'title',
+                        query: 'search',
                         type: 'title',
                         size: 0.4,
                         placeholder: 'Zoek titel...',
@@ -8377,64 +8591,157 @@
                     target: 'chart_canvas_wie_ontv',
                     legend: true,
                     graph: 'sankey',
-                    divider: 1,
-                    multiplier: 1000000
+                    divider: 1000,
+                    multiplier: 1
                 });
             }
             // wie ontvingen
             // handle api data for visual
             function handling_wie_ontv(tmp_data, options) {
-                var num = 0;
                 var data = [];
 
-                var min = 1000000000000;
-                var max = 0;
+                if(tmp_data['title'] == null) {
+                    tmp_data['title'] = '';
+                }
+                if(tmp_data['max'] == null) {
+                    tmp_data['max'] = 1;
+                }
 
-                for (var d in tmp_data) {
-                    if (d != 'data') {
-                        data.push({
-                            identifier: d,
-                            title: tmp_data[d],
-                            value: 100 + num
-                        });
-                        num += 50;
+                // foreword or backward visual
+                var testarray = ['', 'hoofdstuk', 'artikel', 'regeling', 'ontvanger'];
+                options.targetfrom = testarray.indexOf(tmp_data.referrer) < testarray.indexOf(options.api.query.type) ? true : false;
+
+                // make titles
+                var m = options.api.query.type;
+                if (m == 'artikel' || m == 'regeling') {
+                    m += 'en';
+                } else if (m == 'hoofdstuk') {
+                    m += 'ken';
+                } else {
+                    m += 's';
+                }
+                if (options.targetfrom) {
+                    $('.wie-ontvingen-title').html('Van ' + tmp_data.referrer + ' ' + tmp_data.title + ' naar ' + m);
+                    options.legend_title = 'Totaal ontvangen van ' + tmp_data.referrer + ' ' + tmp_data.title;
+                } else {
+                    $('.wie-ontvingen-title').html('Van ' + m + ' naar ' + tmp_data.referrer + ' ' + tmp_data.title);
+                    options.legend_title = 'Totaal ontvangen van ' + m;
+                }
+
+                // set first record
+                var data = [];
+                var obj = {
+                    title: tmp_data['title'],
+                    nodeColor: "#01689B",
+                    noindex: true
+                };
+                if (options.targetfrom) {
+                    obj['to'] = tmp_data['title'];
+                } else {
+                    obj['from'] = tmp_data['title'];
+                }
+                data.push(obj);
+
+                // add rest of data
+                var index = 0;
+                var totaal = typeof (tmp_data['total']) != 'undefined' ? tmp_data['total'] : tmp_data['max'];
+                var totaalshown = 0;
+                var value = 0;
+                for (var r in tmp_data['result']) {
+                    if (Object.keys(tmp_data['result']).length < options['collect'].from + 3 || (typeof (options['collect']) != 'undefined' && index < options['collect'].from)) {
+                        value = tmp_data['result'][r]['amount'];
+                        totaalshown += value;
+                        obj = {
+                            link: 'execute:reload_wie_ontv|' + options.api.query.type + '|' + tmp_data['result'][r]['id'],
+                            value: tmp_data['result'][r]['amount'],
+                            title: tmp_data['result'][r]['title'], // + ' ' + (index + 1),
+                            type: options.api.query.type
+                        };
+                        if (options.targetfrom) {
+                            obj['pre'] = 'Door naar';
+                            obj['from'] = tmp_data['referrer_id'];
+                            obj['to'] = tmp_data['result'][r]['title'] + ' ' + (index + 1);
+                            obj['popup_title'] = 'Van ' + tmp_data.referrer + ' ' + tmp_data.title + ' naar ' + options.api.query.type + ' ' + tmp_data['result'][r]['title'];
+                        } else {
+                            obj['pre'] = 'Terug naar';
+                            obj['to'] = tmp_data['referrer_id'];
+                            obj['from'] = tmp_data['result'][r]['title'] + ' ' + (index + 1);
+                            obj['popup_title'] = 'Van ' + options.api.query.type + ' ' + tmp_data['result'][r]['title'] + ' naar ' + tmp_data.referrer + ' ' + tmp_data.title;
+                        }
+                        data.push(obj);
+                        index++;
                     }
                 }
 
-                // prepare slider
-                options.slider['start'] = options.api.query['min'] < min ? options.api.query['min'] : min;
-                options.slider['end'] = options.api.query['max'] > max ? options.api.query['max'] : max;
-                options.slider['min'] = 200; // tmp_data.min;
-                options.slider['max'] = 3200; //tmp_data.max;
+                // set arrow id only a single result
+                if(index == 1 || index == 2) {
+                    $('#' + options.target).addClass('sankey_background');
+                } else {
+                    $('#' + options.target).removeClass('sankey_background');
+                }
 
-                return [
-        { to: "Alles verzemelen in een lange zin", nodeColor: "#01689B", noindex: true },
-        { from: "Alles verzemelen in een lange zin", to: "Broodkruimels om de weg te vinden", value: 10, title: "Broodkruimels om de weg te vinden", nodeColor: "red" },
-        { from: "Alles verzemelen in een lange zin", to: "Crooswijk is een dorp in de stad", value: 8, title: "Crooswijk is een dorp in de stad", nodeColor: "orange" },
-        { from: "Alles verzemelen in een lange zin", to: "De grote boze wolf", value: 4, title: "De grote boze wolf", nodeColor: "yellow" },
-        { from: "Alles verzemelen in een lange zin", to: "En daar is dan eindelijk de laatste zin", value: 3, title: "En daar is dan eindelijk de laatste zin", nodeColor: "orange" },
-                    // { from: "A", to: "F", value: 5, title: "F" },
-                    // { from: "A", to: "G", value: 2, title: "G" },
-                    // { from: "A", to: "H", value: 3, title: "H" },
-                    // { from: "A", to: "I", value: 6, title: "I" },
-                    // { from: "A", to: "J", value: 5, title: "J" },
-                    // { from: "A", to: "K", value: 1, title: "K" },
-        { from: "Alles verzemelen in een lange zin", to: "Lastercampagnes leveren veel elende op voor het individu", value: 9, title: "Lastercampagnes leveren veel elende op voor het individu", nodeColor: "green" },
-                ];
-                // return [
-                //     { from: "A", nodeColor: "#01689B", noindex: true },
-                //     { to: "A", from: "B", value: 10, title: "B", nodeColor: "red" },
-                //     { to: "A", from: "C", value: 8, title: "C", nodeColor: "orange" },
-                //     { to: "A", from: "D", value: 4, title: "D", nodeColor: "orange" },
-                //     { to: "A", from: "E", value: 3, title: "E", nodeColor: "orange" },
-                //     { to: "A", from: "F", value: 5, title: "F" },
-                //     { to: "A", from: "G", value: 2, title: "G" },
-                //     { to: "A", from: "H", value: 3, title: "H" },
-                //     { to: "A", from: "I", value: 6, title: "I" },
-                //     { to: "A", from: "J", value: 5, title: "J" },
-                //     { to: "A", from: "K", value: 1, title: "K" },
-                //     { to: "A", from: "L", value: 9, title: "L" },
-                // ];
+                // prepare slider
+                var min = tmp_data['min'];
+                var max = tmp_data['max'];
+                options.slider['start'] = options.api.query['min'] != '' && options.api.query['min'] > min ? options.api.query['min'] : min;
+                options.slider['end'] = options.api.query['max'] && options.api.query['max'] < max ? options.api.query['max'] : max;
+                options.slider['min'] = tmp_data.min;
+                options.slider['max'] = tmp_data.max;
+
+                // set 'other' value for manual legend item
+                options['legend'] = []
+                if (tmp_data.total_results > index) {
+                    options['legend'].push(
+                        {
+                            //value: (totaal - totaalshown),
+                            title: 'Toon meer ' + m,
+                            type: 'other',
+                            link: 'execute:set_min_wie_ontv|' + (value)
+                        }
+                    );
+                    options['legend'].push(
+                        {
+                            title: tmp_data['title'] + ' ',
+                            type: "fill", // fill, pattern, line, bullet, dash
+                            color: "blue",
+                            value: totaalshown
+                        }
+                    );
+                }
+
+                options.total = totaal;
+
+                // back link and title
+                var r = tmp_data['referrer'];
+                if (r == 'artikel' || r == 'regeling') {
+                    r += 'en';
+                } else if (r == 'hoofdstuk') {
+                    r += 'ken';
+                } else {
+                    r += 's';
+                }
+                $('#navigation_links a').html(cap(r) + ' zoeken');
+                $('#navigation_links').bind('click', function () {
+                    document.location.href = '/wie-ontvingen/' + r;
+                });
+
+                return data;
+            }
+            function reload_wie_ontv(args) {
+                minfin_data[args[2]].options.api.query['type'] = args[0] == 'ontvanger' ? 'hoofdstuk' : 'ontvanger';
+                minfin_data[args[2]].options.api.query['referrer'] = args[0];
+                minfin_data[args[2]].options.api.query['referrer_id'] = args[1];
+                minfin_data[args[2]].options.api.query['min'] = '';
+                minfin_data[args[2]].options.api.query['max'] = '';
+                //minfin_data[args[1]].options.api.query['min'] = minfin_data[args[1]].options.slider['min'];
+                //minfin_data[args[1]].options.api.query['max'] = args[0];
+                reloadnow(args[2]);
+            }
+            function set_min_wie_ontv(args) {
+                //console.log(minfin_data[args[1]].options)
+                minfin_data[args[1]].options.api.query['min'] = minfin_data[args[1]].options.slider['min'];
+                minfin_data[args[1]].options.api.query['max'] = args[0] - 1;
+                reloadnow(args[1]);
             }
 
         // END INIT
